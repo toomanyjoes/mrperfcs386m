@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topo xsi:noNamespaceSchemaLocation="topology.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<machine_type>
+		<name>End Host</name>
+<!--		<disk>
+			<type>Seagate</type>
+			<capa>250</capa>
+			<num>1</num>
+		</disk>-->
+		<disk>
+			<type>Seagate</type>
+			<capa>750</capa>
+			<num>1</num>
+		</disk>
+		<cpu>
+			<type>Xeon 2.5GHz L5420</type>
+			<number_of_cores>2</number_of_cores>
+			<num>1</num>
+		</cpu>
+		<mem>
+			<type>ECC</type>
+			<capa>4096</capa>
+		</mem>
+		<nic>
+			<type>1Gbps</type>
+			<num>1</num>
+		</nic>
+	</machine_type>
+	<rack_group>
+		<compute_node_group>
+			<machine_type_name>End Host</machine_type_name>
+			<node_index>00</node_index>
+		</compute_node_group>
+		<name>rg1</name>
+<!--	</rack_group>
+	<rack_group>-->
+		<compute_node_group>
+			<machine_type_name>End Host</machine_type_name>
+			<node_index>00</node_index>
+		</compute_node_group>
+		<rack_index>2</rack_index>
+		<!--	</rack_group>
+	<rack_group>-->
+		<compute_node_group>
+			<machine_type_name>End Host</machine_type_name>
+			<node_index>00</node_index>
+		</compute_node_group>
+		<rack_index>3</rack_index>
+		<!--	</rack_group>
+	<rack_group>-->
+		<compute_node_group>
+			<machine_type_name>End Host</machine_type_name>
+			<node_index>00</node_index>
+		</compute_node_group>
+		<rack_index>4</rack_index>
+		<!--	</rack_group>
+	<rack_group>-->
+		<compute_node_group>
+			<machine_type_name>End Host</machine_type_name>
+			<node_index>00</node_index>
+		</compute_node_group>
+		<rack_index>5</rack_index>
+		<compute_node_group>
+			<machine_type_name>End Host</machine_type_name>
+			<node_index>00</node_index>
+		</compute_node_group>
+		<rack_index>6</rack_index>
+	</rack_group>
+
+<!--
+-->
+	<data_nodes>6</data_nodes>
+	<job_tracker>n_rg0_1_ng0_0</job_tracker>
+<!--
+	<topology>dcell</topology>
+-->
+</topo>
