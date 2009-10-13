@@ -35,7 +35,7 @@ proc create-router-topology { linkBW {sf 1} } {
 }
 
 
-$ns rtproto DV
+#$ns rtproto DV
 puts "creating router topology"
 array set routers [create-router-topology 1Gb]
 puts "topology created"
@@ -43,54 +43,54 @@ puts "topology created"
 
 set int_bw 14Mb
 set int_latency 0.15ms
-set r_rg0_0 [$ns node]
+#set r_rg0_0 [$ns node]
 for {set i 0} {$i < 1} {incr i} {
-	newnode "n_rg0_0_ng0_$i" $routers(9)
+	newnode "n_rg0_0_ng0_$i" $routers(9) 14Mb 0.15ms
 	$n30 set tasklist [new MRPerf/TaskList 2500000000.000000 2]
 	for {set j 0} {$j < 1} {incr j} {
 		$n30 newdisk 293601280.000000 78643200.000000
 	}
 }
 
-set r_rg0_1 [$ns node]
+#set r_rg0_1 [$ns node]
 for {set i 0} {$i < 1} {incr i} {
-	newnode "n_rg0_1_ng0_$i" $routers(8)
+	newnode "n_rg0_1_ng0_$i" $routers(8) 14Mb 0.15ms
 	$n30 set tasklist [new MRPerf/TaskList 2500000000.000000 2]
 	for {set j 0} {$j < 1} {incr j} {
 		$n30 newdisk 293601280.000000 78643200.000000
 	}
 }
 
-set r_rg0_2 [$ns node]
+#set r_rg0_2 [$ns node]
 for {set i 0} {$i < 1} {incr i} {
-	newnode "n_rg0_2_ng0_$i" $routers(7)
+	newnode "n_rg0_2_ng0_$i" $routers(7) 14Mb 0.15ms
 	$n30 set tasklist [new MRPerf/TaskList 2500000000.000000 2]
 	for {set j 0} {$j < 1} {incr j} {
 		$n30 newdisk 293601280.000000 78643200.000000
 	}
 }
 
-set r_rg0_3 [$ns node]
+#set r_rg0_3 [$ns node]
 for {set i 0} {$i < 1} {incr i} {
-	newnode "n_rg0_3_ng0_$i" $routers(6)
+	newnode "n_rg0_3_ng0_$i" $routers(6) 14Mb 0.15ms
 	$n30 set tasklist [new MRPerf/TaskList 2500000000.000000 2]
 	for {set j 0} {$j < 1} {incr j} {
 		$n30 newdisk 293601280.000000 78643200.000000
 	}
 }
 
-set r_rg0_4 [$ns node]
+#set r_rg0_4 [$ns node]
 for {set i 0} {$i < 1} {incr i} {
-	newnode "n_rg0_4_ng0_$i" $routers(5)
+	newnode "n_rg0_4_ng0_$i" $routers(5) 14Mb 0.15ms
 	$n30 set tasklist [new MRPerf/TaskList 2500000000.000000 2]
 	for {set j 0} {$j < 1} {incr j} {
 		$n30 newdisk 293601280.000000 78643200.000000
 	}
 }
 
-set r_rg0_5 [$ns node]
+#set r_rg0_5 [$ns node]
 for {set i 0} {$i < 1} {incr i} {
-	newnode "n_rg0_5_ng0_$i" $routers(4)
+	newnode "n_rg0_5_ng0_$i" $routers(4) 14Mb 0.15ms
 	$n30 set tasklist [new MRPerf/TaskList 2500000000.000000 2]
 	for {set j 0} {$j < 1} {incr j} {
 		$n30 newdisk 293601280.000000 78643200.000000

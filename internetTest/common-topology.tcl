@@ -10,8 +10,8 @@ proc newnodealone {nodename} {
 	$n30 set nsnode $nsnode
 }
 
-proc newnode {nodename router {gyaddr ""}} {
-	global n30 ns allnode int_bw int_latency
+proc newnode {nodename router int_bw int_latency {gyaddr ""}} {
+	global n30 ns allnode
 	upvar #0 $nodename local
 	set n30 [set local [new MRPerf/Node]]
 	if {$gyaddr == ""} {
