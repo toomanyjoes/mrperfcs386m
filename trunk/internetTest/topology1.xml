@@ -30,41 +30,14 @@
 		<compute_node_group>
 			<machine_type_name>End Host</machine_type_name>
 			<node_index>00</node_index>
-		</compute_node_group>
+		    </compute_node_group>
+		    <rack_index>1</rack_index>
+		    <rack_index>2</rack_index>
+		    <rack_index>3</rack_index>
+		    <rack_index>4</rack_index>
+		    <rack_index>5</rack_index>
+		    <rack_index>6</rack_index>
 		<name>rg1</name>
-<!--	</rack_group>
-	<rack_group>-->
-		<compute_node_group>
-			<machine_type_name>End Host</machine_type_name>
-			<node_index>00</node_index>
-		</compute_node_group>
-		<rack_index>2</rack_index>
-		<!--	</rack_group>
-	<rack_group>-->
-		<compute_node_group>
-			<machine_type_name>End Host</machine_type_name>
-			<node_index>00</node_index>
-		</compute_node_group>
-		<rack_index>3</rack_index>
-		<!--	</rack_group>
-	<rack_group>-->
-		<compute_node_group>
-			<machine_type_name>End Host</machine_type_name>
-			<node_index>00</node_index>
-		</compute_node_group>
-		<rack_index>4</rack_index>
-		<!--	</rack_group>
-	<rack_group>-->
-		<compute_node_group>
-			<machine_type_name>End Host</machine_type_name>
-			<node_index>00</node_index>
-		</compute_node_group>
-		<rack_index>5</rack_index>
-		<compute_node_group>
-			<machine_type_name>End Host</machine_type_name>
-			<node_index>00</node_index>
-		</compute_node_group>
-		<rack_index>6</rack_index>
 	</rack_group>
 
 <!--
