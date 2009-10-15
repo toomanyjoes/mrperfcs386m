@@ -22,7 +22,7 @@
 			<capa>4096</capa>
 		</mem>
 		<nic>
-			<type>1Gbps</type>
+			<type>100Mbps</type>
 			<num>1</num>
 		</nic>
 	</machine_type>
