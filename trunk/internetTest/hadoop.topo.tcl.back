@@ -34,261 +34,74 @@ proc create-router-topology { linkBW {sf 1} } {
 	array get n
 }
 
-proc create-end-host-topology { routerNames } {
-	global ns
 
-	upvar 1 $routerNames routers
-
-	for {set i 0} {$i < 6} {incr i} {
-		set n($i) [$ns node]
-	}
-#for {set j [$i + 1]} {$j < 6} {
-#set 
-#	}
-	$ns duplex-link $n(0) $routers(9) 7Mb 10.608ms DropTail
-	$ns duplex-link $n(1) $routers(6) 14Mb 22.866ms DropTail
-	$ns duplex-link $n(2) $routers(8) 14Mb 22.866ms DropTail
-	$ns duplex-link $n(3) $routers(4) 14Mb 22.866ms DropTail
-	$ns duplex-link $n(4) $routers(2) 14Mb 22.866ms DropTail
-	$ns duplex-link $n(5) $routers(1) 10Mb 22.866ms DropTail
-}
+#$ns rtproto DV
+puts "creating router topology"
+array set routers [create-router-topology 1Gb]
+puts "topology created"
 
 
-set int_bw 1Gb
+set int_bw 14Mb
 set int_latency 0.15ms
-set r_rg0_0 [$ns node]
+#set r_rg0_0 [$ns node]
 for {set i 0} {$i < 1} {incr i} {
-	newnode "n_rg0_0_ng0_$i" $r_rg0_0
-	$n30 set tasklist [new MRPerf/TaskList 2500000000.000000 2]
-	for {set j 0} {$j < 1} {incr j} {
-		$n30 newdisk 293601280.000000 78643200.000000
-	}
-}
-for {set i 0} {$i < 1} {incr i} {
-	newnode "n_rg0_0_ng1_$i" $r_rg0_0
-	$n30 set tasklist [new MRPerf/TaskList 2500000000.000000 2]
-	for {set j 0} {$j < 1} {incr j} {
-		$n30 newdisk 293601280.000000 78643200.000000
-	}
-}
-for {set i 0} {$i < 1} {incr i} {
-	newnode "n_rg0_0_ng2_$i" $r_rg0_0
-	$n30 set tasklist [new MRPerf/TaskList 2500000000.000000 2]
-	for {set j 0} {$j < 1} {incr j} {
-		$n30 newdisk 293601280.000000 78643200.000000
-	}
-}
-for {set i 0} {$i < 1} {incr i} {
-	newnode "n_rg0_0_ng3_$i" $r_rg0_0
-	$n30 set tasklist [new MRPerf/TaskList 2500000000.000000 2]
-	for {set j 0} {$j < 1} {incr j} {
-		$n30 newdisk 293601280.000000 78643200.000000
-	}
-}
-for {set i 0} {$i < 1} {incr i} {
-	newnode "n_rg0_0_ng4_$i" $r_rg0_0
-	$n30 set tasklist [new MRPerf/TaskList 2500000000.000000 2]
-	for {set j 0} {$j < 1} {incr j} {
-		$n30 newdisk 293601280.000000 78643200.000000
-	}
-}
-for {set i 0} {$i < 1} {incr i} {
-	newnode "n_rg0_0_ng5_$i" $r_rg0_0
+	newnode "n_rg0_0_ng0_$i" $routers(9) 14Mb 0.15ms
 	$n30 set tasklist [new MRPerf/TaskList 2500000000.000000 2]
 	for {set j 0} {$j < 1} {incr j} {
 		$n30 newdisk 293601280.000000 78643200.000000
 	}
 }
 
-set r_rg0_1 [$ns node]
+#set r_rg0_1 [$ns node]
 for {set i 0} {$i < 1} {incr i} {
-	newnode "n_rg0_1_ng0_$i" $r_rg0_1
-	$n30 set tasklist [new MRPerf/TaskList 2500000000.000000 2]
-	for {set j 0} {$j < 1} {incr j} {
-		$n30 newdisk 293601280.000000 78643200.000000
-	}
-}
-for {set i 0} {$i < 1} {incr i} {
-	newnode "n_rg0_1_ng1_$i" $r_rg0_1
-	$n30 set tasklist [new MRPerf/TaskList 2500000000.000000 2]
-	for {set j 0} {$j < 1} {incr j} {
-		$n30 newdisk 293601280.000000 78643200.000000
-	}
-}
-for {set i 0} {$i < 1} {incr i} {
-	newnode "n_rg0_1_ng2_$i" $r_rg0_1
-	$n30 set tasklist [new MRPerf/TaskList 2500000000.000000 2]
-	for {set j 0} {$j < 1} {incr j} {
-		$n30 newdisk 293601280.000000 78643200.000000
-	}
-}
-for {set i 0} {$i < 1} {incr i} {
-	newnode "n_rg0_1_ng3_$i" $r_rg0_1
-	$n30 set tasklist [new MRPerf/TaskList 2500000000.000000 2]
-	for {set j 0} {$j < 1} {incr j} {
-		$n30 newdisk 293601280.000000 78643200.000000
-	}
-}
-for {set i 0} {$i < 1} {incr i} {
-	newnode "n_rg0_1_ng4_$i" $r_rg0_1
-	$n30 set tasklist [new MRPerf/TaskList 2500000000.000000 2]
-	for {set j 0} {$j < 1} {incr j} {
-		$n30 newdisk 293601280.000000 78643200.000000
-	}
-}
-for {set i 0} {$i < 1} {incr i} {
-	newnode "n_rg0_1_ng5_$i" $r_rg0_1
+	newnode "n_rg0_1_ng0_$i" $routers(8) 14Mb 0.15ms
 	$n30 set tasklist [new MRPerf/TaskList 2500000000.000000 2]
 	for {set j 0} {$j < 1} {incr j} {
 		$n30 newdisk 293601280.000000 78643200.000000
 	}
 }
 
-set r_rg0_2 [$ns node]
+#set r_rg0_2 [$ns node]
 for {set i 0} {$i < 1} {incr i} {
-	newnode "n_rg0_2_ng0_$i" $r_rg0_2
-	$n30 set tasklist [new MRPerf/TaskList 2500000000.000000 2]
-	for {set j 0} {$j < 1} {incr j} {
-		$n30 newdisk 293601280.000000 78643200.000000
-	}
-}
-for {set i 0} {$i < 1} {incr i} {
-	newnode "n_rg0_2_ng1_$i" $r_rg0_2
-	$n30 set tasklist [new MRPerf/TaskList 2500000000.000000 2]
-	for {set j 0} {$j < 1} {incr j} {
-		$n30 newdisk 293601280.000000 78643200.000000
-	}
-}
-for {set i 0} {$i < 1} {incr i} {
-	newnode "n_rg0_2_ng2_$i" $r_rg0_2
-	$n30 set tasklist [new MRPerf/TaskList 2500000000.000000 2]
-	for {set j 0} {$j < 1} {incr j} {
-		$n30 newdisk 293601280.000000 78643200.000000
-	}
-}
-for {set i 0} {$i < 1} {incr i} {
-	newnode "n_rg0_2_ng3_$i" $r_rg0_2
-	$n30 set tasklist [new MRPerf/TaskList 2500000000.000000 2]
-	for {set j 0} {$j < 1} {incr j} {
-		$n30 newdisk 293601280.000000 78643200.000000
-	}
-}
-for {set i 0} {$i < 1} {incr i} {
-	newnode "n_rg0_2_ng4_$i" $r_rg0_2
-	$n30 set tasklist [new MRPerf/TaskList 2500000000.000000 2]
-	for {set j 0} {$j < 1} {incr j} {
-		$n30 newdisk 293601280.000000 78643200.000000
-	}
-}
-for {set i 0} {$i < 1} {incr i} {
-	newnode "n_rg0_2_ng5_$i" $r_rg0_2
+	newnode "n_rg0_2_ng0_$i" $routers(7) 14Mb 0.15ms
 	$n30 set tasklist [new MRPerf/TaskList 2500000000.000000 2]
 	for {set j 0} {$j < 1} {incr j} {
 		$n30 newdisk 293601280.000000 78643200.000000
 	}
 }
 
-set r_rg0_3 [$ns node]
+#set r_rg0_3 [$ns node]
 for {set i 0} {$i < 1} {incr i} {
-	newnode "n_rg0_3_ng0_$i" $r_rg0_3
-	$n30 set tasklist [new MRPerf/TaskList 2500000000.000000 2]
-	for {set j 0} {$j < 1} {incr j} {
-		$n30 newdisk 293601280.000000 78643200.000000
-	}
-}
-for {set i 0} {$i < 1} {incr i} {
-	newnode "n_rg0_3_ng1_$i" $r_rg0_3
-	$n30 set tasklist [new MRPerf/TaskList 2500000000.000000 2]
-	for {set j 0} {$j < 1} {incr j} {
-		$n30 newdisk 293601280.000000 78643200.000000
-	}
-}
-for {set i 0} {$i < 1} {incr i} {
-	newnode "n_rg0_3_ng2_$i" $r_rg0_3
-	$n30 set tasklist [new MRPerf/TaskList 2500000000.000000 2]
-	for {set j 0} {$j < 1} {incr j} {
-		$n30 newdisk 293601280.000000 78643200.000000
-	}
-}
-for {set i 0} {$i < 1} {incr i} {
-	newnode "n_rg0_3_ng3_$i" $r_rg0_3
-	$n30 set tasklist [new MRPerf/TaskList 2500000000.000000 2]
-	for {set j 0} {$j < 1} {incr j} {
-		$n30 newdisk 293601280.000000 78643200.000000
-	}
-}
-for {set i 0} {$i < 1} {incr i} {
-	newnode "n_rg0_3_ng4_$i" $r_rg0_3
-	$n30 set tasklist [new MRPerf/TaskList 2500000000.000000 2]
-	for {set j 0} {$j < 1} {incr j} {
-		$n30 newdisk 293601280.000000 78643200.000000
-	}
-}
-for {set i 0} {$i < 1} {incr i} {
-	newnode "n_rg0_3_ng5_$i" $r_rg0_3
+	newnode "n_rg0_3_ng0_$i" $routers(6) 14Mb 0.15ms
 	$n30 set tasklist [new MRPerf/TaskList 2500000000.000000 2]
 	for {set j 0} {$j < 1} {incr j} {
 		$n30 newdisk 293601280.000000 78643200.000000
 	}
 }
 
-set r_rg0_4 [$ns node]
+#set r_rg0_4 [$ns node]
 for {set i 0} {$i < 1} {incr i} {
-	newnode "n_rg0_4_ng0_$i" $r_rg0_4
-	$n30 set tasklist [new MRPerf/TaskList 2500000000.000000 2]
-	for {set j 0} {$j < 1} {incr j} {
-		$n30 newdisk 293601280.000000 78643200.000000
-	}
-}
-for {set i 0} {$i < 1} {incr i} {
-	newnode "n_rg0_4_ng1_$i" $r_rg0_4
-	$n30 set tasklist [new MRPerf/TaskList 2500000000.000000 2]
-	for {set j 0} {$j < 1} {incr j} {
-		$n30 newdisk 293601280.000000 78643200.000000
-	}
-}
-for {set i 0} {$i < 1} {incr i} {
-	newnode "n_rg0_4_ng2_$i" $r_rg0_4
-	$n30 set tasklist [new MRPerf/TaskList 2500000000.000000 2]
-	for {set j 0} {$j < 1} {incr j} {
-		$n30 newdisk 293601280.000000 78643200.000000
-	}
-}
-for {set i 0} {$i < 1} {incr i} {
-	newnode "n_rg0_4_ng3_$i" $r_rg0_4
-	$n30 set tasklist [new MRPerf/TaskList 2500000000.000000 2]
-	for {set j 0} {$j < 1} {incr j} {
-		$n30 newdisk 293601280.000000 78643200.000000
-	}
-}
-for {set i 0} {$i < 1} {incr i} {
-	newnode "n_rg0_4_ng4_$i" $r_rg0_4
-	$n30 set tasklist [new MRPerf/TaskList 2500000000.000000 2]
-	for {set j 0} {$j < 1} {incr j} {
-		$n30 newdisk 293601280.000000 78643200.000000
-	}
-}
-for {set i 0} {$i < 1} {incr i} {
-	newnode "n_rg0_4_ng5_$i" $r_rg0_4
+	newnode "n_rg0_4_ng0_$i" $routers(5) 14Mb 0.15ms
 	$n30 set tasklist [new MRPerf/TaskList 2500000000.000000 2]
 	for {set j 0} {$j < 1} {incr j} {
 		$n30 newdisk 293601280.000000 78643200.000000
 	}
 }
 
+#set r_rg0_5 [$ns node]
+for {set i 0} {$i < 1} {incr i} {
+	newnode "n_rg0_5_ng0_$i" $routers(4) 14Mb 0.15ms
+	$n30 set tasklist [new MRPerf/TaskList 2500000000.000000 2]
+	for {set j 0} {$j < 1} {incr j} {
+		$n30 newdisk 293601280.000000 78643200.000000
+	}
+}
 
 set num_of_nodes 6
 
-$ns rtproto DV
-puts "creating router topology"
-array set routers [create-router-topology 1Gb]
-puts "creating end host topology"
-create-end-host-topology routers
-puts "topology created"
-
 set jt $n_rg0_1_ng0_0
-set racks 5
+set racks 6
 set nodes 1
 set data_nodes 6
-set_mapnodes 5 1 6
+set_mapnodes 6 1 6
 
