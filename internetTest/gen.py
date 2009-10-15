@@ -252,11 +252,13 @@ class topology_t:
 			node = children[i]
 		return node
 
-	def totcl(self, topo_tcl):
+	def totcl(self, topo_tcl, netsize):
 		f = open(topo_tcl, 'w')
 
-		f.write('set int_bw %s\n' % (int_bw))
-		f.write('set int_latency %s\n' % (int_latency))
+		#f.write('set int_bw %s\n' % (int_bw))
+		#f.write('set int_latency %s\n' % (int_latency))
+		f.write('source router.topo.tcl\n')
+		f.write('array set routers [create-router-topology]\n\n')
 		num_of_nodes = 0
 
 		if self.topology == 'dcell':
@@ -289,7 +291,8 @@ class topology_t:
 		for rg in self.htree.children():
 			self.racks = len(rg.children())
 			for r in rg.children():
-				f.write('set %s [$ns node]\n' % (r.name()))
+				# Sam Palmer commented out
+				#f.write('set %s [$ns node]\n' % (r.name()))
 				for ng in r.children():
 					self.nodes = len(ng.children())
 					mt = ng.reserved
@@ -303,7 +306,10 @@ class topology_t:
 
 					f.write('for {set i 0} {$i < %d} {incr i} {\n' \
 								% (len(ng.children())))
-					f.write('\tnewnode "%s_$i" $%s\n' % (ng.name(), r.name()))
+					# Sam Palmer
+					#hostSpeeds = {0 : '6Mb', 1 : '30Mb', 2 : '4Mb', 3 : '5Mb', 4 : '5Mb', 5 : '6Mb', 6 : '6Mb', 7 : '6Mb', 8 : '7Mb', 9 : '7Mb', 10 : '8Mb', 11 : '10Mb', 12 : '10Mb', 13 : '14Mb', 14 : '14Mb', 15 : '14Mb', 16 : '30Mb', 17 : '30Mb', 18 : '30Mb',}
+					f.write('\tnewnode "%s_$i" $routers(%s) %sMb %sms\n' % (ng.name(), random.randint(0,int(netsize)-1), abs(random.normalvariate(16.0, 8.0)), abs(random.normalvariate(0.25, 0.07))))
+#					f.write('\tnewnode "%s_$i" $%s\n' % (ng.name(), r.name()))
 					num_of_nodes += len(ng.children())
 					#f.write('\t$n30 set freq %f\n' % (freq))
 					f.write('\t$n30 set tasklist [new MRPerf/TaskList %f %d]\n' % (freq, cores))

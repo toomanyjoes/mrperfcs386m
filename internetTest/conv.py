@@ -90,6 +90,8 @@ def main():
 	parser.add_option("-J", "--jobout", dest="job_tcl", 
 					help="output tcl file describing job",
 					default="hadoop.job.tcl")
+	parser.add_option("-N", "--netsize", dest="netsize", 
+					help="number of routers in the topology")
 	(options, args) = parser.parse_args()
 
 	if None in (options.topo_xml, options.meta_xml, options.job_xml):
@@ -100,7 +102,7 @@ def main():
 	topo = topology_t(options.topo_xml)
 	job = job_t(options.job_xml)
 
-	topo.totcl(options.topo_tcl)
+	topo.totcl(options.topo_tcl, options.netsize)
 	topo.totcl2('mapnodes.tcl')
 
 '''
