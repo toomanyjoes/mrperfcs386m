@@ -1,19 +1,31 @@
 # 4513:4513
-for{set i 0} {$i < 13} {incr i} {
-  set n(4513:Frankfurt,Germany) [$ns node]
-  set n(4513:Fullerton,CA) [$ns node]
-  set n(4513:Amsterdam,Netherlands) [$ns node]
-  set n(4513:SanJose,CA) [$ns node]
-  set n(4513:NewYork,NY) [$ns node]
-  set n(4513:PaloAlto,CA) [$ns node]
-  set n(4513:Atlanta,GA) [$ns node]
-  set n(4513:Seattle,WA) [$ns node]
-  set n(4513:Chicago,IL) [$ns node]
-  set n(4513:London,UnitedKingdom) [$ns node]
-  set n(4513:SanFrancisco,CA) [$ns node]
-  set n(4513:Boston,MA) [$ns node]
-  set n(4513:Washington,DC) [$ns node]
-}
+  if { [info exists n("4513:Frankfurt,Germany")] == 0 } {
+    set n("4513:Frankfurt,Germany") [$ns node] }
+  if { [info exists n("4513:Fullerton,CA")] == 0 } {
+    set n("4513:Fullerton,CA") [$ns node] }
+  if { [info exists n("4513:Amsterdam,Netherlands")] == 0 } {
+    set n("4513:Amsterdam,Netherlands") [$ns node] }
+  if { [info exists n("4513:SanJose,CA")] == 0 } {
+    set n("4513:SanJose,CA") [$ns node] }
+  if { [info exists n("4513:NewYork,NY")] == 0 } {
+    set n("4513:NewYork,NY") [$ns node] }
+  if { [info exists n("4513:PaloAlto,CA")] == 0 } {
+    set n("4513:PaloAlto,CA") [$ns node] }
+  if { [info exists n("4513:Atlanta,GA")] == 0 } {
+    set n("4513:Atlanta,GA") [$ns node] }
+  if { [info exists n("4513:Seattle,WA")] == 0 } {
+    set n("4513:Seattle,WA") [$ns node] }
+  if { [info exists n("4513:Chicago,IL")] == 0 } {
+    set n("4513:Chicago,IL") [$ns node] }
+  if { [info exists n("4513:London,UnitedKingdom")] == 0 } {
+    set n("4513:London,UnitedKingdom") [$ns node] }
+  if { [info exists n("4513:SanFrancisco,CA")] == 0 } {
+    set n("4513:SanFrancisco,CA") [$ns node] }
+  if { [info exists n("4513:Boston,MA")] == 0 } {
+    set n("4513:Boston,MA") [$ns node] }
+  if { [info exists n("4513:Washington,DC")] == 0 } {
+    set n("4513:Washington,DC") [$ns node] }
+
 #4513:Amsterdam, Netherlands -> 4513:London, UnitedKingdom 1.88532911009081
 $ns duplex-link $n("4513:Amsterdam,Netherlands") $n("4513:London,UnitedKingdom") 10.0Gb 1.88532911009081ms DropTail
 

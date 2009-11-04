@@ -1,38 +1,69 @@
 # 3356:3320
-for{set i 0} {$i < 32} {incr i} {
-  set n(3320:London,UnitedKingdom) [$ns node]
-  set n(3320:Braunschweig,Germany) [$ns node]
-  set n(3320:Dusseldorf,Germany) [$ns node]
-  set n(3320:Wiesbaden,Germany) [$ns node]
-  set n(3320:Stuttgart,Germany) [$ns node]
-  set n(3320:Karlsruhe,Germany) [$ns node]
-  set n(3320:Frankfurt,Germany) [$ns node]
-  set n(3320:Bielefeld,Germany) [$ns node]
-  set n(3320:Mannheim,Germany) [$ns node]
-  set n(3320:Konstanz,Germany) [$ns node]
-  set n(3320:Duisburg,Germany) [$ns node]
-  set n(3320:Dortmund,Germany) [$ns node]
-  set n(3320:Munster,Germany) [$ns node]
-  set n(3320:Leipzig,Germany) [$ns node]
-  set n(3320:Hanover,Germany) [$ns node]
-  set n(3320:Cologne,Germany) [$ns node]
-  set n(3320:Munich,Germany) [$ns node]
-  set n(3320:Lubeck,Germany) [$ns node]
-  set n(3320:Kassel,Germany) [$ns node]
-  set n(3320:Erfurt,Germany) [$ns node]
-  set n(3320:Berlin,Germany) [$ns node]
-  set n(3320:Mainz,Germany) [$ns node]
-  set n(3320:Bonn,Germany) [$ns node]
-  set n(3320:Ulm,Germany) [$ns node]
-  set n(3320:Zurich,Switzerland) [$ns node]
-  set n(3320:NewYork,NY) [$ns node]
-  set n(3356:London,UnitedKingdom) [$ns node]
-  set n(3356:Hamburg,Germany) [$ns node]
-  set n(3320:Vienna,Austria) [$ns node]
-  set n(3320:Prague,CzechRepublic) [$ns node]
-  set n(3320:Paris,France) [$ns node]
-  set n(3356:NewYork,NY) [$ns node]
-}
+  if { [info exists n("3320:London,UnitedKingdom")] == 0 } {
+    set n("3320:London,UnitedKingdom") [$ns node] }
+  if { [info exists n("3320:Braunschweig,Germany")] == 0 } {
+    set n("3320:Braunschweig,Germany") [$ns node] }
+  if { [info exists n("3320:Dusseldorf,Germany")] == 0 } {
+    set n("3320:Dusseldorf,Germany") [$ns node] }
+  if { [info exists n("3320:Wiesbaden,Germany")] == 0 } {
+    set n("3320:Wiesbaden,Germany") [$ns node] }
+  if { [info exists n("3320:Stuttgart,Germany")] == 0 } {
+    set n("3320:Stuttgart,Germany") [$ns node] }
+  if { [info exists n("3320:Karlsruhe,Germany")] == 0 } {
+    set n("3320:Karlsruhe,Germany") [$ns node] }
+  if { [info exists n("3320:Frankfurt,Germany")] == 0 } {
+    set n("3320:Frankfurt,Germany") [$ns node] }
+  if { [info exists n("3320:Bielefeld,Germany")] == 0 } {
+    set n("3320:Bielefeld,Germany") [$ns node] }
+  if { [info exists n("3320:Mannheim,Germany")] == 0 } {
+    set n("3320:Mannheim,Germany") [$ns node] }
+  if { [info exists n("3320:Konstanz,Germany")] == 0 } {
+    set n("3320:Konstanz,Germany") [$ns node] }
+  if { [info exists n("3320:Duisburg,Germany")] == 0 } {
+    set n("3320:Duisburg,Germany") [$ns node] }
+  if { [info exists n("3320:Dortmund,Germany")] == 0 } {
+    set n("3320:Dortmund,Germany") [$ns node] }
+  if { [info exists n("3320:Munster,Germany")] == 0 } {
+    set n("3320:Munster,Germany") [$ns node] }
+  if { [info exists n("3320:Leipzig,Germany")] == 0 } {
+    set n("3320:Leipzig,Germany") [$ns node] }
+  if { [info exists n("3320:Hanover,Germany")] == 0 } {
+    set n("3320:Hanover,Germany") [$ns node] }
+  if { [info exists n("3320:Cologne,Germany")] == 0 } {
+    set n("3320:Cologne,Germany") [$ns node] }
+  if { [info exists n("3320:Munich,Germany")] == 0 } {
+    set n("3320:Munich,Germany") [$ns node] }
+  if { [info exists n("3320:Lubeck,Germany")] == 0 } {
+    set n("3320:Lubeck,Germany") [$ns node] }
+  if { [info exists n("3320:Kassel,Germany")] == 0 } {
+    set n("3320:Kassel,Germany") [$ns node] }
+  if { [info exists n("3320:Erfurt,Germany")] == 0 } {
+    set n("3320:Erfurt,Germany") [$ns node] }
+  if { [info exists n("3320:Berlin,Germany")] == 0 } {
+    set n("3320:Berlin,Germany") [$ns node] }
+  if { [info exists n("3320:Mainz,Germany")] == 0 } {
+    set n("3320:Mainz,Germany") [$ns node] }
+  if { [info exists n("3320:Bonn,Germany")] == 0 } {
+    set n("3320:Bonn,Germany") [$ns node] }
+  if { [info exists n("3320:Ulm,Germany")] == 0 } {
+    set n("3320:Ulm,Germany") [$ns node] }
+  if { [info exists n("3320:Zurich,Switzerland")] == 0 } {
+    set n("3320:Zurich,Switzerland") [$ns node] }
+  if { [info exists n("3320:NewYork,NY")] == 0 } {
+    set n("3320:NewYork,NY") [$ns node] }
+  if { [info exists n("3356:London,UnitedKingdom")] == 0 } {
+    set n("3356:London,UnitedKingdom") [$ns node] }
+  if { [info exists n("3356:Hamburg,Germany")] == 0 } {
+    set n("3356:Hamburg,Germany") [$ns node] }
+  if { [info exists n("3320:Vienna,Austria")] == 0 } {
+    set n("3320:Vienna,Austria") [$ns node] }
+  if { [info exists n("3320:Prague,CzechRepublic")] == 0 } {
+    set n("3320:Prague,CzechRepublic") [$ns node] }
+  if { [info exists n("3320:Paris,France")] == 0 } {
+    set n("3320:Paris,France") [$ns node] }
+  if { [info exists n("3356:NewYork,NY")] == 0 } {
+    set n("3356:NewYork,NY") [$ns node] }
+
 #3356:Hamburg, Germany -> 3320:Vienna, Austria 3.70683568100165
 $ns duplex-link $n("3356:Hamburg,Germany") $n("3320:Vienna,Austria") 10.0Gb 3.70683568100165ms DropTail
 

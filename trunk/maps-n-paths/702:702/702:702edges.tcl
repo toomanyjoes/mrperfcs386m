@@ -1,89 +1,171 @@
 # 702:702
-for{set i 0} {$i < 83} {incr i} {
-  set n(702:Melbourne,Australia) [$ns node]
-  set n(702:Augsburg,Germany) [$ns node]
-  set n(702:Wuppertal,Germany) [$ns node]
-  set n(702:Wiesbaden,Germany) [$ns node]
-  set n(702:Utrecht,Netherlands) [$ns node]
-  set n(702:Marseille,France) [$ns node]
-  set n(702:Aachen,Germany) [$ns node]
-  set n(702:Singapore) [$ns node]
-  set n(702:Rome,Italy) [$ns node]
-  set n(702:Lille,France) [$ns node]
-  set n(702:Amsterdam,Netherlands) [$ns node]
-  set n(702:Lyon,France) [$ns node]
-  set n(702:Berlin,Germany) [$ns node]
-  set n(702:Johannesburg,SouthAfrica) [$ns node]
-  set n(702:Bremen,Germany) [$ns node]
-  set n(702:Oslo,Norway) [$ns node]
-  set n(702:Dusseldorf,Germany) [$ns node]
-  set n(702:Bonn,Germany) [$ns node]
-  set n(702:Cologne,Germany) [$ns node]
-  set n(702:Nantes,France) [$ns node]
-  set n(702:Aarhus,Denmark) [$ns node]
-  set n(702:Dortmund,Germany) [$ns node]
-  set n(702:Oreleans,France) [$ns node]
-  set n(702:Nancy,France) [$ns node]
-  set n(702:Duisburg,Germany) [$ns node]
-  set n(702:Copenhagen,Denmark) [$ns node]
-  set n(702:Barcelona,Spain) [$ns node]
-  set n(702:Nice,France) [$ns node]
-  set n(702:Palaiseau,France) [$ns node]
-  set n(702:Perth,Australia) [$ns node]
-  set n(702:Frankfurt,Germany) [$ns node]
-  set n(702:Antwerp,Belgium) [$ns node]
-  set n(702:Paris,France) [$ns node]
-  set n(702:Gothenburg,Sweden) [$ns node]
-  set n(702:Prague,CzechRepublic) [$ns node]
-  set n(702:Brussels,Belgium) [$ns node]
-  set n(702:Eindhoven,Netherlands) [$ns node]
-  set n(702:Budapest,Hungary) [$ns node]
-  set n(702:Sydney,Australia) [$ns node]
-  set n(702:Luxembourg,Luxembourg) [$ns node]
-  set n(702:Manchester,UnitedKingdom) [$ns node]
-  set n(702:Hamburg,Germany) [$ns node]
-  set n(702:Hanover,Germany) [$ns node]
-  set n(702:Zurich,Switzerland) [$ns node]
-  set n(702:London,UnitedKingdom) [$ns node]
-  set n(702:Hilden,Germany) [$ns node]
-  set n(702:Nagoya,Japan) [$ns node]
-  set n(702:Kaiserslautern,Germany) [$ns node]
-  set n(702:Osaka,Japan) [$ns node]
-  set n(702:Adelaide,Australia) [$ns node]
-  set n(702:Karlsruhe,Germany) [$ns node]
-  set n(702:Geneva,Switzerland) [$ns node]
-  set n(702:Vienna,Austria) [$ns node]
-  set n(702:Brisbane,Australia) [$ns node]
-  set n(702:Helsinki,Finland) [$ns node]
-  set n(702:Canberra,Australia) [$ns node]
-  set n(702:Ghent,Belgium) [$ns node]
-  set n(702:Mannheim,Germany) [$ns node]
-  set n(702:Munich,Germany) [$ns node]
-  set n(702:Malmo,Sweden) [$ns node]
-  set n(702:Nuremberg,Germany) [$ns node]
-  set n(702:Athens,Greece) [$ns node]
-  set n(702:HongKong) [$ns node]
-  set n(702:Oldenburg,Germany) [$ns node]
-  set n(702:Tokyo,Japan) [$ns node]
-  set n(702:Guam,USA) [$ns node]
-  set n(702:Madrid,Spain) [$ns node]
-  set n(702:Lisbon,Portugal) [$ns node]
-  set n(702:Milan,Italy) [$ns node]
-  set n(702:Saarbrucken,Germany) [$ns node]
-  set n(702:Hobart,Australia) [$ns node]
-  set n(702:Stockholm,Sweden) [$ns node]
-  set n(702:CapeTown,SouthAfrica) [$ns node]
-  set n(702:Strasburg,Germany) [$ns node]
-  set n(702:Stuttgart,Germany) [$ns node]
-  set n(702:Birmingham,UnitedKingdom) [$ns node]
-  set n(702:Schwerin,Germany) [$ns node]
-  set n(702:Yokohama,Japan) [$ns node]
-  set n(702:Rotterdam,Netherlands) [$ns node]
-  set n(702:Chiba,Japan) [$ns node]
-  set n(702:LosAngeles,CA) [$ns node]
-  set n(702:Padova,Italy) [$ns node]
-  set n(702:TheHague,Netherlands) [$ns node]
-}
+  if { [info exists n("702:Melbourne,Australia")] == 0 } {
+    set n("702:Melbourne,Australia") [$ns node] }
+  if { [info exists n("702:Augsburg,Germany")] == 0 } {
+    set n("702:Augsburg,Germany") [$ns node] }
+  if { [info exists n("702:Wuppertal,Germany")] == 0 } {
+    set n("702:Wuppertal,Germany") [$ns node] }
+  if { [info exists n("702:Wiesbaden,Germany")] == 0 } {
+    set n("702:Wiesbaden,Germany") [$ns node] }
+  if { [info exists n("702:Utrecht,Netherlands")] == 0 } {
+    set n("702:Utrecht,Netherlands") [$ns node] }
+  if { [info exists n("702:Marseille,France")] == 0 } {
+    set n("702:Marseille,France") [$ns node] }
+  if { [info exists n("702:Aachen,Germany")] == 0 } {
+    set n("702:Aachen,Germany") [$ns node] }
+  if { [info exists n("702:Singapore")] == 0 } {
+    set n("702:Singapore") [$ns node] }
+  if { [info exists n("702:Rome,Italy")] == 0 } {
+    set n("702:Rome,Italy") [$ns node] }
+  if { [info exists n("702:Lille,France")] == 0 } {
+    set n("702:Lille,France") [$ns node] }
+  if { [info exists n("702:Amsterdam,Netherlands")] == 0 } {
+    set n("702:Amsterdam,Netherlands") [$ns node] }
+  if { [info exists n("702:Lyon,France")] == 0 } {
+    set n("702:Lyon,France") [$ns node] }
+  if { [info exists n("702:Berlin,Germany")] == 0 } {
+    set n("702:Berlin,Germany") [$ns node] }
+  if { [info exists n("702:Johannesburg,SouthAfrica")] == 0 } {
+    set n("702:Johannesburg,SouthAfrica") [$ns node] }
+  if { [info exists n("702:Bremen,Germany")] == 0 } {
+    set n("702:Bremen,Germany") [$ns node] }
+  if { [info exists n("702:Oslo,Norway")] == 0 } {
+    set n("702:Oslo,Norway") [$ns node] }
+  if { [info exists n("702:Dusseldorf,Germany")] == 0 } {
+    set n("702:Dusseldorf,Germany") [$ns node] }
+  if { [info exists n("702:Bonn,Germany")] == 0 } {
+    set n("702:Bonn,Germany") [$ns node] }
+  if { [info exists n("702:Cologne,Germany")] == 0 } {
+    set n("702:Cologne,Germany") [$ns node] }
+  if { [info exists n("702:Nantes,France")] == 0 } {
+    set n("702:Nantes,France") [$ns node] }
+  if { [info exists n("702:Aarhus,Denmark")] == 0 } {
+    set n("702:Aarhus,Denmark") [$ns node] }
+  if { [info exists n("702:Dortmund,Germany")] == 0 } {
+    set n("702:Dortmund,Germany") [$ns node] }
+  if { [info exists n("702:Oreleans,France")] == 0 } {
+    set n("702:Oreleans,France") [$ns node] }
+  if { [info exists n("702:Nancy,France")] == 0 } {
+    set n("702:Nancy,France") [$ns node] }
+  if { [info exists n("702:Duisburg,Germany")] == 0 } {
+    set n("702:Duisburg,Germany") [$ns node] }
+  if { [info exists n("702:Copenhagen,Denmark")] == 0 } {
+    set n("702:Copenhagen,Denmark") [$ns node] }
+  if { [info exists n("702:Barcelona,Spain")] == 0 } {
+    set n("702:Barcelona,Spain") [$ns node] }
+  if { [info exists n("702:Nice,France")] == 0 } {
+    set n("702:Nice,France") [$ns node] }
+  if { [info exists n("702:Palaiseau,France")] == 0 } {
+    set n("702:Palaiseau,France") [$ns node] }
+  if { [info exists n("702:Perth,Australia")] == 0 } {
+    set n("702:Perth,Australia") [$ns node] }
+  if { [info exists n("702:Frankfurt,Germany")] == 0 } {
+    set n("702:Frankfurt,Germany") [$ns node] }
+  if { [info exists n("702:Antwerp,Belgium")] == 0 } {
+    set n("702:Antwerp,Belgium") [$ns node] }
+  if { [info exists n("702:Paris,France")] == 0 } {
+    set n("702:Paris,France") [$ns node] }
+  if { [info exists n("702:Gothenburg,Sweden")] == 0 } {
+    set n("702:Gothenburg,Sweden") [$ns node] }
+  if { [info exists n("702:Prague,CzechRepublic")] == 0 } {
+    set n("702:Prague,CzechRepublic") [$ns node] }
+  if { [info exists n("702:Brussels,Belgium")] == 0 } {
+    set n("702:Brussels,Belgium") [$ns node] }
+  if { [info exists n("702:Eindhoven,Netherlands")] == 0 } {
+    set n("702:Eindhoven,Netherlands") [$ns node] }
+  if { [info exists n("702:Budapest,Hungary")] == 0 } {
+    set n("702:Budapest,Hungary") [$ns node] }
+  if { [info exists n("702:Sydney,Australia")] == 0 } {
+    set n("702:Sydney,Australia") [$ns node] }
+  if { [info exists n("702:Luxembourg,Luxembourg")] == 0 } {
+    set n("702:Luxembourg,Luxembourg") [$ns node] }
+  if { [info exists n("702:Manchester,UnitedKingdom")] == 0 } {
+    set n("702:Manchester,UnitedKingdom") [$ns node] }
+  if { [info exists n("702:Hamburg,Germany")] == 0 } {
+    set n("702:Hamburg,Germany") [$ns node] }
+  if { [info exists n("702:Hanover,Germany")] == 0 } {
+    set n("702:Hanover,Germany") [$ns node] }
+  if { [info exists n("702:Zurich,Switzerland")] == 0 } {
+    set n("702:Zurich,Switzerland") [$ns node] }
+  if { [info exists n("702:London,UnitedKingdom")] == 0 } {
+    set n("702:London,UnitedKingdom") [$ns node] }
+  if { [info exists n("702:Hilden,Germany")] == 0 } {
+    set n("702:Hilden,Germany") [$ns node] }
+  if { [info exists n("702:Nagoya,Japan")] == 0 } {
+    set n("702:Nagoya,Japan") [$ns node] }
+  if { [info exists n("702:Kaiserslautern,Germany")] == 0 } {
+    set n("702:Kaiserslautern,Germany") [$ns node] }
+  if { [info exists n("702:Osaka,Japan")] == 0 } {
+    set n("702:Osaka,Japan") [$ns node] }
+  if { [info exists n("702:Adelaide,Australia")] == 0 } {
+    set n("702:Adelaide,Australia") [$ns node] }
+  if { [info exists n("702:Karlsruhe,Germany")] == 0 } {
+    set n("702:Karlsruhe,Germany") [$ns node] }
+  if { [info exists n("702:Geneva,Switzerland")] == 0 } {
+    set n("702:Geneva,Switzerland") [$ns node] }
+  if { [info exists n("702:Vienna,Austria")] == 0 } {
+    set n("702:Vienna,Austria") [$ns node] }
+  if { [info exists n("702:Brisbane,Australia")] == 0 } {
+    set n("702:Brisbane,Australia") [$ns node] }
+  if { [info exists n("702:Helsinki,Finland")] == 0 } {
+    set n("702:Helsinki,Finland") [$ns node] }
+  if { [info exists n("702:Canberra,Australia")] == 0 } {
+    set n("702:Canberra,Australia") [$ns node] }
+  if { [info exists n("702:Ghent,Belgium")] == 0 } {
+    set n("702:Ghent,Belgium") [$ns node] }
+  if { [info exists n("702:Mannheim,Germany")] == 0 } {
+    set n("702:Mannheim,Germany") [$ns node] }
+  if { [info exists n("702:Munich,Germany")] == 0 } {
+    set n("702:Munich,Germany") [$ns node] }
+  if { [info exists n("702:Malmo,Sweden")] == 0 } {
+    set n("702:Malmo,Sweden") [$ns node] }
+  if { [info exists n("702:Nuremberg,Germany")] == 0 } {
+    set n("702:Nuremberg,Germany") [$ns node] }
+  if { [info exists n("702:Athens,Greece")] == 0 } {
+    set n("702:Athens,Greece") [$ns node] }
+  if { [info exists n("702:HongKong")] == 0 } {
+    set n("702:HongKong") [$ns node] }
+  if { [info exists n("702:Oldenburg,Germany")] == 0 } {
+    set n("702:Oldenburg,Germany") [$ns node] }
+  if { [info exists n("702:Tokyo,Japan")] == 0 } {
+    set n("702:Tokyo,Japan") [$ns node] }
+  if { [info exists n("702:Guam,USA")] == 0 } {
+    set n("702:Guam,USA") [$ns node] }
+  if { [info exists n("702:Madrid,Spain")] == 0 } {
+    set n("702:Madrid,Spain") [$ns node] }
+  if { [info exists n("702:Lisbon,Portugal")] == 0 } {
+    set n("702:Lisbon,Portugal") [$ns node] }
+  if { [info exists n("702:Milan,Italy")] == 0 } {
+    set n("702:Milan,Italy") [$ns node] }
+  if { [info exists n("702:Saarbrucken,Germany")] == 0 } {
+    set n("702:Saarbrucken,Germany") [$ns node] }
+  if { [info exists n("702:Hobart,Australia")] == 0 } {
+    set n("702:Hobart,Australia") [$ns node] }
+  if { [info exists n("702:Stockholm,Sweden")] == 0 } {
+    set n("702:Stockholm,Sweden") [$ns node] }
+  if { [info exists n("702:CapeTown,SouthAfrica")] == 0 } {
+    set n("702:CapeTown,SouthAfrica") [$ns node] }
+  if { [info exists n("702:Strasburg,Germany")] == 0 } {
+    set n("702:Strasburg,Germany") [$ns node] }
+  if { [info exists n("702:Stuttgart,Germany")] == 0 } {
+    set n("702:Stuttgart,Germany") [$ns node] }
+  if { [info exists n("702:Birmingham,UnitedKingdom")] == 0 } {
+    set n("702:Birmingham,UnitedKingdom") [$ns node] }
+  if { [info exists n("702:Schwerin,Germany")] == 0 } {
+    set n("702:Schwerin,Germany") [$ns node] }
+  if { [info exists n("702:Yokohama,Japan")] == 0 } {
+    set n("702:Yokohama,Japan") [$ns node] }
+  if { [info exists n("702:Rotterdam,Netherlands")] == 0 } {
+    set n("702:Rotterdam,Netherlands") [$ns node] }
+  if { [info exists n("702:Chiba,Japan")] == 0 } {
+    set n("702:Chiba,Japan") [$ns node] }
+  if { [info exists n("702:LosAngeles,CA")] == 0 } {
+    set n("702:LosAngeles,CA") [$ns node] }
+  if { [info exists n("702:Padova,Italy")] == 0 } {
+    set n("702:Padova,Italy") [$ns node] }
+  if { [info exists n("702:TheHague,Netherlands")] == 0 } {
+    set n("702:TheHague,Netherlands") [$ns node] }
+
 #702:Aachen, Germany -> 702:Hilden, Germany 0.368528028480266
 $ns duplex-link $n("702:Aachen,Germany") $n("702:Hilden,Germany") 10.0Gb 0.368528028480266ms DropTail
 

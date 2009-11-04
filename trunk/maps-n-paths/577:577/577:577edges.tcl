@@ -1,35 +1,63 @@
 # 577:577
-for{set i 0} {$i < 29} {incr i} {
-  set n(577:Quebec,Canada) [$ns node]
-  set n(577:Sherbrooke,Canada) [$ns node]
-  set n(577:Regina,Canada) [$ns node]
-  set n(577:Sudbury,Canada) [$ns node]
-  set n(577:Toronto,Canada) [$ns node]
-  set n(577:Vancouver,Canada) [$ns node]
-  set n(577:Burlington,Canada) [$ns node]
-  set n(577:Belleville,Canada) [$ns node]
-  set n(577:Winnipeg,Canada) [$ns node]
-  set n(577:Windsor,Canada) [$ns node]
-  set n(577:Barrie,Canada) [$ns node]
-  set n(577:Calgary,Canada) [$ns node]
-  set n(577:Seattle,WA) [$ns node]
-  set n(577:Edmonton,Canada) [$ns node]
-  set n(577:Guelph,Canada) [$ns node]
-  set n(577:Hamilton,Canada) [$ns node]
-  set n(577:Halifax,Canada) [$ns node]
-  set n(577:NewYork,NY) [$ns node]
-  set n(577:Kitchener,Canada) [$ns node]
-  set n(577:Chicago,IL) [$ns node]
-  set n(577:Kingston,Canada) [$ns node]
-  set n(577:PaloAlto,CA) [$ns node]
-  set n(577:London,Canada) [$ns node]
-  set n(577:Montreal,Canada) [$ns node]
-  set n(577:NewMarket,Canada) [$ns node]
-  set n(577:NorthBay,Canada) [$ns node]
-  set n(577:Ottawa,Canada) [$ns node]
-  set n(577:Oshawa,Canada) [$ns node]
-  set n(577:SaintCatharines,Canada) [$ns node]
-}
+  if { [info exists n("577:Quebec,Canada")] == 0 } {
+    set n("577:Quebec,Canada") [$ns node] }
+  if { [info exists n("577:Sherbrooke,Canada")] == 0 } {
+    set n("577:Sherbrooke,Canada") [$ns node] }
+  if { [info exists n("577:Regina,Canada")] == 0 } {
+    set n("577:Regina,Canada") [$ns node] }
+  if { [info exists n("577:Sudbury,Canada")] == 0 } {
+    set n("577:Sudbury,Canada") [$ns node] }
+  if { [info exists n("577:Toronto,Canada")] == 0 } {
+    set n("577:Toronto,Canada") [$ns node] }
+  if { [info exists n("577:Vancouver,Canada")] == 0 } {
+    set n("577:Vancouver,Canada") [$ns node] }
+  if { [info exists n("577:Burlington,Canada")] == 0 } {
+    set n("577:Burlington,Canada") [$ns node] }
+  if { [info exists n("577:Belleville,Canada")] == 0 } {
+    set n("577:Belleville,Canada") [$ns node] }
+  if { [info exists n("577:Winnipeg,Canada")] == 0 } {
+    set n("577:Winnipeg,Canada") [$ns node] }
+  if { [info exists n("577:Windsor,Canada")] == 0 } {
+    set n("577:Windsor,Canada") [$ns node] }
+  if { [info exists n("577:Barrie,Canada")] == 0 } {
+    set n("577:Barrie,Canada") [$ns node] }
+  if { [info exists n("577:Calgary,Canada")] == 0 } {
+    set n("577:Calgary,Canada") [$ns node] }
+  if { [info exists n("577:Seattle,WA")] == 0 } {
+    set n("577:Seattle,WA") [$ns node] }
+  if { [info exists n("577:Edmonton,Canada")] == 0 } {
+    set n("577:Edmonton,Canada") [$ns node] }
+  if { [info exists n("577:Guelph,Canada")] == 0 } {
+    set n("577:Guelph,Canada") [$ns node] }
+  if { [info exists n("577:Hamilton,Canada")] == 0 } {
+    set n("577:Hamilton,Canada") [$ns node] }
+  if { [info exists n("577:Halifax,Canada")] == 0 } {
+    set n("577:Halifax,Canada") [$ns node] }
+  if { [info exists n("577:NewYork,NY")] == 0 } {
+    set n("577:NewYork,NY") [$ns node] }
+  if { [info exists n("577:Kitchener,Canada")] == 0 } {
+    set n("577:Kitchener,Canada") [$ns node] }
+  if { [info exists n("577:Chicago,IL")] == 0 } {
+    set n("577:Chicago,IL") [$ns node] }
+  if { [info exists n("577:Kingston,Canada")] == 0 } {
+    set n("577:Kingston,Canada") [$ns node] }
+  if { [info exists n("577:PaloAlto,CA")] == 0 } {
+    set n("577:PaloAlto,CA") [$ns node] }
+  if { [info exists n("577:London,Canada")] == 0 } {
+    set n("577:London,Canada") [$ns node] }
+  if { [info exists n("577:Montreal,Canada")] == 0 } {
+    set n("577:Montreal,Canada") [$ns node] }
+  if { [info exists n("577:NewMarket,Canada")] == 0 } {
+    set n("577:NewMarket,Canada") [$ns node] }
+  if { [info exists n("577:NorthBay,Canada")] == 0 } {
+    set n("577:NorthBay,Canada") [$ns node] }
+  if { [info exists n("577:Ottawa,Canada")] == 0 } {
+    set n("577:Ottawa,Canada") [$ns node] }
+  if { [info exists n("577:Oshawa,Canada")] == 0 } {
+    set n("577:Oshawa,Canada") [$ns node] }
+  if { [info exists n("577:SaintCatharines,Canada")] == 0 } {
+    set n("577:SaintCatharines,Canada") [$ns node] }
+
 #577:Barrie, Canada -> 577:Toronto, Canada 0.424714168378852
 $ns duplex-link $n("577:Barrie,Canada") $n("577:Toronto,Canada") 10.0Gb 0.424714168378852ms DropTail
 

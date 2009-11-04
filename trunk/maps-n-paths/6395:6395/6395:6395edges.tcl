@@ -1,31 +1,55 @@
 # 6395:6395
-for{set i 0} {$i < 25} {incr i} {
-  set n(6395:SaltLakeCity,UT) [$ns node]
-  set n(6395:Phoenix,AZ) [$ns node]
-  set n(6395:Seattle,WA) [$ns node]
-  set n(6395:Rochester,NY) [$ns node]
-  set n(6395:Chicago,IL) [$ns node]
-  set n(6395:Dallas,TX) [$ns node]
-  set n(6395:FortWorth,TX) [$ns node]
-  set n(6395:Anaheim,CA) [$ns node]
-  set n(6395:Relay,MD) [$ns node]
-  set n(6395:Baltimore,MD) [$ns node]
-  set n(6395:SanFrancisco,CA) [$ns node]
-  set n(6395:KansasCity,MO) [$ns node]
-  set n(6395:Boston,MA) [$ns node]
-  set n(6395:Washington,DC) [$ns node]
-  set n(6395:Hayward,CA) [$ns node]
-  set n(6395:SanJose,CA) [$ns node]
-  set n(6395:Denver,CO) [$ns node]
-  set n(6395:NewYork,NY) [$ns node]
-  set n(6395:Cincinnati,OH) [$ns node]
-  set n(6395:Vienna,VA) [$ns node]
-  set n(6395:LosAngeles,CA) [$ns node]
-  set n(6395:Newark,NJ) [$ns node]
-  set n(6395:Buffalo,NY) [$ns node]
-  set n(6395:SantaClara,CA) [$ns node]
-  set n(6395:Atlanta,GA) [$ns node]
-}
+  if { [info exists n("6395:SaltLakeCity,UT")] == 0 } {
+    set n("6395:SaltLakeCity,UT") [$ns node] }
+  if { [info exists n("6395:Phoenix,AZ")] == 0 } {
+    set n("6395:Phoenix,AZ") [$ns node] }
+  if { [info exists n("6395:Seattle,WA")] == 0 } {
+    set n("6395:Seattle,WA") [$ns node] }
+  if { [info exists n("6395:Rochester,NY")] == 0 } {
+    set n("6395:Rochester,NY") [$ns node] }
+  if { [info exists n("6395:Chicago,IL")] == 0 } {
+    set n("6395:Chicago,IL") [$ns node] }
+  if { [info exists n("6395:Dallas,TX")] == 0 } {
+    set n("6395:Dallas,TX") [$ns node] }
+  if { [info exists n("6395:FortWorth,TX")] == 0 } {
+    set n("6395:FortWorth,TX") [$ns node] }
+  if { [info exists n("6395:Anaheim,CA")] == 0 } {
+    set n("6395:Anaheim,CA") [$ns node] }
+  if { [info exists n("6395:Relay,MD")] == 0 } {
+    set n("6395:Relay,MD") [$ns node] }
+  if { [info exists n("6395:Baltimore,MD")] == 0 } {
+    set n("6395:Baltimore,MD") [$ns node] }
+  if { [info exists n("6395:SanFrancisco,CA")] == 0 } {
+    set n("6395:SanFrancisco,CA") [$ns node] }
+  if { [info exists n("6395:KansasCity,MO")] == 0 } {
+    set n("6395:KansasCity,MO") [$ns node] }
+  if { [info exists n("6395:Boston,MA")] == 0 } {
+    set n("6395:Boston,MA") [$ns node] }
+  if { [info exists n("6395:Washington,DC")] == 0 } {
+    set n("6395:Washington,DC") [$ns node] }
+  if { [info exists n("6395:Hayward,CA")] == 0 } {
+    set n("6395:Hayward,CA") [$ns node] }
+  if { [info exists n("6395:SanJose,CA")] == 0 } {
+    set n("6395:SanJose,CA") [$ns node] }
+  if { [info exists n("6395:Denver,CO")] == 0 } {
+    set n("6395:Denver,CO") [$ns node] }
+  if { [info exists n("6395:NewYork,NY")] == 0 } {
+    set n("6395:NewYork,NY") [$ns node] }
+  if { [info exists n("6395:Cincinnati,OH")] == 0 } {
+    set n("6395:Cincinnati,OH") [$ns node] }
+  if { [info exists n("6395:Vienna,VA")] == 0 } {
+    set n("6395:Vienna,VA") [$ns node] }
+  if { [info exists n("6395:LosAngeles,CA")] == 0 } {
+    set n("6395:LosAngeles,CA") [$ns node] }
+  if { [info exists n("6395:Newark,NJ")] == 0 } {
+    set n("6395:Newark,NJ") [$ns node] }
+  if { [info exists n("6395:Buffalo,NY")] == 0 } {
+    set n("6395:Buffalo,NY") [$ns node] }
+  if { [info exists n("6395:SantaClara,CA")] == 0 } {
+    set n("6395:SantaClara,CA") [$ns node] }
+  if { [info exists n("6395:Atlanta,GA")] == 0 } {
+    set n("6395:Atlanta,GA") [$ns node] }
+
 #6395:Anaheim, CA -> 6395:Hayward, CA 2.8396894075039
 $ns duplex-link $n("6395:Anaheim,CA") $n("6395:Hayward,CA") 10.0Gb 2.8396894075039ms DropTail
 

@@ -1,20 +1,33 @@
 # 1299:1
-for{set i 0} {$i < 14} {incr i} {
-  set n(1299:SantaClara,CA) [$ns node]
-  set n(1299:Herndon,VA) [$ns node]
-  set n(1:Chicago,IL) [$ns node]
-  set n(1299:Dallas,TX) [$ns node]
-  set n(1299:Chicago,IL) [$ns node]
-  set n(1299:London,UnitedKingdom) [$ns node]
-  set n(1:NewYork,NY) [$ns node]
-  set n(1299:Copenhagen,Denmark) [$ns node]
-  set n(1:Carrollton,TX) [$ns node]
-  set n(1299:NewYork,NY) [$ns node]
-  set n(1:Dallas,TX) [$ns node]
-  set n(1:LosAngeles,CA) [$ns node]
-  set n(1299:LosAngeles,CA) [$ns node]
-  set n(1:PaloAlto,CA) [$ns node]
-}
+  if { [info exists n("1299:SantaClara,CA")] == 0 } {
+    set n("1299:SantaClara,CA") [$ns node] }
+  if { [info exists n("1299:Herndon,VA")] == 0 } {
+    set n("1299:Herndon,VA") [$ns node] }
+  if { [info exists n("1:Chicago,IL")] == 0 } {
+    set n("1:Chicago,IL") [$ns node] }
+  if { [info exists n("1299:Dallas,TX")] == 0 } {
+    set n("1299:Dallas,TX") [$ns node] }
+  if { [info exists n("1299:Chicago,IL")] == 0 } {
+    set n("1299:Chicago,IL") [$ns node] }
+  if { [info exists n("1299:London,UnitedKingdom")] == 0 } {
+    set n("1299:London,UnitedKingdom") [$ns node] }
+  if { [info exists n("1:NewYork,NY")] == 0 } {
+    set n("1:NewYork,NY") [$ns node] }
+  if { [info exists n("1299:Copenhagen,Denmark")] == 0 } {
+    set n("1299:Copenhagen,Denmark") [$ns node] }
+  if { [info exists n("1:Carrollton,TX")] == 0 } {
+    set n("1:Carrollton,TX") [$ns node] }
+  if { [info exists n("1299:NewYork,NY")] == 0 } {
+    set n("1299:NewYork,NY") [$ns node] }
+  if { [info exists n("1:Dallas,TX")] == 0 } {
+    set n("1:Dallas,TX") [$ns node] }
+  if { [info exists n("1:LosAngeles,CA")] == 0 } {
+    set n("1:LosAngeles,CA") [$ns node] }
+  if { [info exists n("1299:LosAngeles,CA")] == 0 } {
+    set n("1299:LosAngeles,CA") [$ns node] }
+  if { [info exists n("1:PaloAlto,CA")] == 0 } {
+    set n("1:PaloAlto,CA") [$ns node] }
+
 #1299:Chicago, IL -> 1:Chicago, IL 0
 $ns duplex-link $n("1299:Chicago,IL") $n("1:Chicago,IL") 10.0Gb 0ms DropTail
 

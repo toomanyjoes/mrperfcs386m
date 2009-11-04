@@ -1,20 +1,33 @@
 # 2914:174
-for{set i 0} {$i < 14} {incr i} {
-  set n(2914:Ashburn,VA) [$ns node]
-  set n(2914:SanFrancisco,CA) [$ns node]
-  set n(2914:Boston,MA) [$ns node]
-  set n(2914:SanJose,CA) [$ns node]
-  set n(174:Cleveland,OH) [$ns node]
-  set n(2914:Portland,OR) [$ns node]
-  set n(174:Chicago,IL) [$ns node]
-  set n(174:Dallas,TX) [$ns node]
-  set n(174:Boston,MA) [$ns node]
-  set n(174:SanJose,CA) [$ns node]
-  set n(174:Washington,DC) [$ns node]
-  set n(174:Milwaukee,WI) [$ns node]
-  set n(2914:Dallas,TX) [$ns node]
-  set n(2914:Chicago,IL) [$ns node]
-}
+  if { [info exists n("2914:Ashburn,VA")] == 0 } {
+    set n("2914:Ashburn,VA") [$ns node] }
+  if { [info exists n("2914:SanFrancisco,CA")] == 0 } {
+    set n("2914:SanFrancisco,CA") [$ns node] }
+  if { [info exists n("2914:Boston,MA")] == 0 } {
+    set n("2914:Boston,MA") [$ns node] }
+  if { [info exists n("2914:SanJose,CA")] == 0 } {
+    set n("2914:SanJose,CA") [$ns node] }
+  if { [info exists n("174:Cleveland,OH")] == 0 } {
+    set n("174:Cleveland,OH") [$ns node] }
+  if { [info exists n("2914:Portland,OR")] == 0 } {
+    set n("2914:Portland,OR") [$ns node] }
+  if { [info exists n("174:Chicago,IL")] == 0 } {
+    set n("174:Chicago,IL") [$ns node] }
+  if { [info exists n("174:Dallas,TX")] == 0 } {
+    set n("174:Dallas,TX") [$ns node] }
+  if { [info exists n("174:Boston,MA")] == 0 } {
+    set n("174:Boston,MA") [$ns node] }
+  if { [info exists n("174:SanJose,CA")] == 0 } {
+    set n("174:SanJose,CA") [$ns node] }
+  if { [info exists n("174:Washington,DC")] == 0 } {
+    set n("174:Washington,DC") [$ns node] }
+  if { [info exists n("174:Milwaukee,WI")] == 0 } {
+    set n("174:Milwaukee,WI") [$ns node] }
+  if { [info exists n("2914:Dallas,TX")] == 0 } {
+    set n("2914:Dallas,TX") [$ns node] }
+  if { [info exists n("2914:Chicago,IL")] == 0 } {
+    set n("2914:Chicago,IL") [$ns node] }
+
 #2914:Ashburn, VA -> 174:Washington, DC 0.225316255475169
 $ns duplex-link $n("2914:Ashburn,VA") $n("174:Washington,DC") 10.0Gb 0.225316255475169ms DropTail
 

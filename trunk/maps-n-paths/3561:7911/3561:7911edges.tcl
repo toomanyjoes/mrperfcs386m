@@ -1,20 +1,33 @@
 # 3561:7911
-for{set i 0} {$i < 14} {incr i} {
-  set n(7911:SantaClara,CA) [$ns node]
-  set n(7911:Herndon,VA) [$ns node]
-  set n(7911:Dallas,TX) [$ns node]
-  set n(7911:Chicago,IL) [$ns node]
-  set n(3561:Reston,VA) [$ns node]
-  set n(3561:Dallas,TX) [$ns node]
-  set n(3561:Chicago,IL) [$ns node]
-  set n(7911:Anaheim,CA) [$ns node]
-  set n(7911:SanFrancisco,CA) [$ns node]
-  set n(3561:SanFrancisco,CA) [$ns node]
-  set n(7911:NewYork,NY) [$ns node]
-  set n(3561:PaloAlto,CA) [$ns node]
-  set n(7911:Tulsa,OK) [$ns node]
-  set n(3561:Tulsa,OK) [$ns node]
-}
+  if { [info exists n("7911:SantaClara,CA")] == 0 } {
+    set n("7911:SantaClara,CA") [$ns node] }
+  if { [info exists n("7911:Herndon,VA")] == 0 } {
+    set n("7911:Herndon,VA") [$ns node] }
+  if { [info exists n("7911:Dallas,TX")] == 0 } {
+    set n("7911:Dallas,TX") [$ns node] }
+  if { [info exists n("7911:Chicago,IL")] == 0 } {
+    set n("7911:Chicago,IL") [$ns node] }
+  if { [info exists n("3561:Reston,VA")] == 0 } {
+    set n("3561:Reston,VA") [$ns node] }
+  if { [info exists n("3561:Dallas,TX")] == 0 } {
+    set n("3561:Dallas,TX") [$ns node] }
+  if { [info exists n("3561:Chicago,IL")] == 0 } {
+    set n("3561:Chicago,IL") [$ns node] }
+  if { [info exists n("7911:Anaheim,CA")] == 0 } {
+    set n("7911:Anaheim,CA") [$ns node] }
+  if { [info exists n("7911:SanFrancisco,CA")] == 0 } {
+    set n("7911:SanFrancisco,CA") [$ns node] }
+  if { [info exists n("3561:SanFrancisco,CA")] == 0 } {
+    set n("3561:SanFrancisco,CA") [$ns node] }
+  if { [info exists n("7911:NewYork,NY")] == 0 } {
+    set n("7911:NewYork,NY") [$ns node] }
+  if { [info exists n("3561:PaloAlto,CA")] == 0 } {
+    set n("3561:PaloAlto,CA") [$ns node] }
+  if { [info exists n("7911:Tulsa,OK")] == 0 } {
+    set n("7911:Tulsa,OK") [$ns node] }
+  if { [info exists n("3561:Tulsa,OK")] == 0 } {
+    set n("3561:Tulsa,OK") [$ns node] }
+
 #3561:Chicago, IL -> 7911:Chicago, IL 0
 $ns duplex-link $n("3561:Chicago,IL") $n("7911:Chicago,IL") 10.0Gb 0ms DropTail
 

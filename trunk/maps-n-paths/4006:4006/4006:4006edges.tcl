@@ -1,13 +1,19 @@
 # 4006:4006
-for{set i 0} {$i < 7} {incr i} {
-  set n(4006:PaloAlto,CA) [$ns node]
-  set n(4006:NewYork,NY) [$ns node]
-  set n(4006:Dallas,TX) [$ns node]
-  set n(4006:Chicago,IL) [$ns node]
-  set n(4006:FortWorth,TX) [$ns node]
-  set n(4006:SanFrancisco,CA) [$ns node]
-  set n(4006:Washington,DC) [$ns node]
-}
+  if { [info exists n("4006:PaloAlto,CA")] == 0 } {
+    set n("4006:PaloAlto,CA") [$ns node] }
+  if { [info exists n("4006:NewYork,NY")] == 0 } {
+    set n("4006:NewYork,NY") [$ns node] }
+  if { [info exists n("4006:Dallas,TX")] == 0 } {
+    set n("4006:Dallas,TX") [$ns node] }
+  if { [info exists n("4006:Chicago,IL")] == 0 } {
+    set n("4006:Chicago,IL") [$ns node] }
+  if { [info exists n("4006:FortWorth,TX")] == 0 } {
+    set n("4006:FortWorth,TX") [$ns node] }
+  if { [info exists n("4006:SanFrancisco,CA")] == 0 } {
+    set n("4006:SanFrancisco,CA") [$ns node] }
+  if { [info exists n("4006:Washington,DC")] == 0 } {
+    set n("4006:Washington,DC") [$ns node] }
+
 #4006:Chicago, IL -> 4006:Dallas, TX 6.43760504337832
 $ns duplex-link $n("4006:Chicago,IL") $n("4006:Dallas,TX") 10.0Gb 6.43760504337832ms DropTail
 

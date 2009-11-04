@@ -1,14 +1,21 @@
 # 1299:209
-for{set i 0} {$i < 8} {incr i} {
-  set n(1299:SantaClara,CA) [$ns node]
-  set n(1299:Dallas,TX) [$ns node]
-  set n(1299:NewYork,NY) [$ns node]
-  set n(1299:LosAngeles,CA) [$ns node]
-  set n(209:NewYork,NY) [$ns node]
-  set n(209:LosAngeles,CA) [$ns node]
-  set n(209:Dallas,TX) [$ns node]
-  set n(209:PaloAlto,CA) [$ns node]
-}
+  if { [info exists n("1299:SantaClara,CA")] == 0 } {
+    set n("1299:SantaClara,CA") [$ns node] }
+  if { [info exists n("1299:Dallas,TX")] == 0 } {
+    set n("1299:Dallas,TX") [$ns node] }
+  if { [info exists n("1299:NewYork,NY")] == 0 } {
+    set n("1299:NewYork,NY") [$ns node] }
+  if { [info exists n("1299:LosAngeles,CA")] == 0 } {
+    set n("1299:LosAngeles,CA") [$ns node] }
+  if { [info exists n("209:NewYork,NY")] == 0 } {
+    set n("209:NewYork,NY") [$ns node] }
+  if { [info exists n("209:LosAngeles,CA")] == 0 } {
+    set n("209:LosAngeles,CA") [$ns node] }
+  if { [info exists n("209:Dallas,TX")] == 0 } {
+    set n("209:Dallas,TX") [$ns node] }
+  if { [info exists n("209:PaloAlto,CA")] == 0 } {
+    set n("209:PaloAlto,CA") [$ns node] }
+
 #1299:Dallas, TX -> 209:Dallas, TX 0
 $ns duplex-link $n("1299:Dallas,TX") $n("209:Dallas,TX") 10.0Gb 0ms DropTail
 

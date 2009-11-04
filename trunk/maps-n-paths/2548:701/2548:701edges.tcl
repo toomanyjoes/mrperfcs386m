@@ -1,16 +1,25 @@
 # 2548:701
-for{set i 0} {$i < 10} {incr i} {
-  set n(2548:SanFrancisco,CA) [$ns node]
-  set n(2548:NewYork,NY) [$ns node]
-  set n(701:Richmond,VA) [$ns node]
-  set n(701:SantaClara,CA) [$ns node]
-  set n(701:Atlanta,GA) [$ns node]
-  set n(2548:Richmond,VA) [$ns node]
-  set n(2548:Atlanta,GA) [$ns node]
-  set n(701:NewYork,NY) [$ns node]
-  set n(701:Chicago,IL) [$ns node]
-  set n(2548:Chicago,IL) [$ns node]
-}
+  if { [info exists n("2548:SanFrancisco,CA")] == 0 } {
+    set n("2548:SanFrancisco,CA") [$ns node] }
+  if { [info exists n("2548:NewYork,NY")] == 0 } {
+    set n("2548:NewYork,NY") [$ns node] }
+  if { [info exists n("701:Richmond,VA")] == 0 } {
+    set n("701:Richmond,VA") [$ns node] }
+  if { [info exists n("701:SantaClara,CA")] == 0 } {
+    set n("701:SantaClara,CA") [$ns node] }
+  if { [info exists n("701:Atlanta,GA")] == 0 } {
+    set n("701:Atlanta,GA") [$ns node] }
+  if { [info exists n("2548:Richmond,VA")] == 0 } {
+    set n("2548:Richmond,VA") [$ns node] }
+  if { [info exists n("2548:Atlanta,GA")] == 0 } {
+    set n("2548:Atlanta,GA") [$ns node] }
+  if { [info exists n("701:NewYork,NY")] == 0 } {
+    set n("701:NewYork,NY") [$ns node] }
+  if { [info exists n("701:Chicago,IL")] == 0 } {
+    set n("701:Chicago,IL") [$ns node] }
+  if { [info exists n("2548:Chicago,IL")] == 0 } {
+    set n("2548:Chicago,IL") [$ns node] }
+
 #2548:Atlanta, GA -> 701:Atlanta, GA 0
 $ns duplex-link $n("2548:Atlanta,GA") $n("701:Atlanta,GA") 10.0Gb 0ms DropTail
 

@@ -1,16 +1,25 @@
 # 8220:4323
-for{set i 0} {$i < 10} {incr i} {
-  set n(8220:London,UnitedKingdom) [$ns node]
-  set n(4323:NewYork,NY) [$ns node]
-  set n(8220:Strasburg,Germany) [$ns node]
-  set n(8220:Frankfurt,Germany) [$ns node]
-  set n(8220:Hanover,Germany) [$ns node]
-  set n(8220:Berlin,Germany) [$ns node]
-  set n(8220:Madrid,Spain) [$ns node]
-  set n(8220:Brussels,Belgium) [$ns node]
-  set n(8220:Vienna,Austria) [$ns node]
-  set n(8220:Paris,France) [$ns node]
-}
+  if { [info exists n("8220:London,UnitedKingdom")] == 0 } {
+    set n("8220:London,UnitedKingdom") [$ns node] }
+  if { [info exists n("4323:NewYork,NY")] == 0 } {
+    set n("4323:NewYork,NY") [$ns node] }
+  if { [info exists n("8220:Strasburg,Germany")] == 0 } {
+    set n("8220:Strasburg,Germany") [$ns node] }
+  if { [info exists n("8220:Frankfurt,Germany")] == 0 } {
+    set n("8220:Frankfurt,Germany") [$ns node] }
+  if { [info exists n("8220:Hanover,Germany")] == 0 } {
+    set n("8220:Hanover,Germany") [$ns node] }
+  if { [info exists n("8220:Berlin,Germany")] == 0 } {
+    set n("8220:Berlin,Germany") [$ns node] }
+  if { [info exists n("8220:Madrid,Spain")] == 0 } {
+    set n("8220:Madrid,Spain") [$ns node] }
+  if { [info exists n("8220:Brussels,Belgium")] == 0 } {
+    set n("8220:Brussels,Belgium") [$ns node] }
+  if { [info exists n("8220:Vienna,Austria")] == 0 } {
+    set n("8220:Vienna,Austria") [$ns node] }
+  if { [info exists n("8220:Paris,France")] == 0 } {
+    set n("8220:Paris,France") [$ns node] }
+
 #8220:Berlin, Germany -> 4323:New York, NY 31.8835920327574
 $ns duplex-link $n("8220:Berlin,Germany") $n("4323:NewYork,NY") 10.0Gb 31.8835920327574ms DropTail
 

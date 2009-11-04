@@ -1,9 +1,11 @@
 # 11608:11608
-for{set i 0} {$i < 3} {incr i} {
-  set n(11608:PaloAlto,CA) [$ns node]
-  set n(11608:NewYork,NY) [$ns node]
-  set n(11608:Seattle,WA) [$ns node]
-}
+  if { [info exists n("11608:PaloAlto,CA")] == 0 } {
+    set n("11608:PaloAlto,CA") [$ns node] }
+  if { [info exists n("11608:NewYork,NY")] == 0 } {
+    set n("11608:NewYork,NY") [$ns node] }
+  if { [info exists n("11608:Seattle,WA")] == 0 } {
+    set n("11608:Seattle,WA") [$ns node] }
+
 #11608:New York, NY -> 11608:Seattle, WA 19.3209613118993
 $ns duplex-link $n("11608:NewYork,NY") $n("11608:Seattle,WA") 10.0Gb 19.3209613118993ms DropTail
 

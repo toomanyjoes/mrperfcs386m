@@ -1,19 +1,31 @@
 # 1299:2914
-for{set i 0} {$i < 13} {incr i} {
-  set n(1299:SantaClara,CA) [$ns node]
-  set n(2914:London,UnitedKingdom) [$ns node]
-  set n(1299:Dallas,TX) [$ns node]
-  set n(2914:Frankfurt,Germany) [$ns node]
-  set n(1299:London,UnitedKingdom) [$ns node]
-  set n(1299:Frankfurt,Germany) [$ns node]
-  set n(2914:PaloAlto,CA) [$ns node]
-  set n(2914:NewYork,NY) [$ns node]
-  set n(1299:NewYork,NY) [$ns node]
-  set n(2914:Paris,France) [$ns node]
-  set n(1299:Paris,France) [$ns node]
-  set n(2914:Chicago,IL) [$ns node]
-  set n(2914:Dallas,TX) [$ns node]
-}
+  if { [info exists n("1299:SantaClara,CA")] == 0 } {
+    set n("1299:SantaClara,CA") [$ns node] }
+  if { [info exists n("2914:London,UnitedKingdom")] == 0 } {
+    set n("2914:London,UnitedKingdom") [$ns node] }
+  if { [info exists n("1299:Dallas,TX")] == 0 } {
+    set n("1299:Dallas,TX") [$ns node] }
+  if { [info exists n("2914:Frankfurt,Germany")] == 0 } {
+    set n("2914:Frankfurt,Germany") [$ns node] }
+  if { [info exists n("1299:London,UnitedKingdom")] == 0 } {
+    set n("1299:London,UnitedKingdom") [$ns node] }
+  if { [info exists n("1299:Frankfurt,Germany")] == 0 } {
+    set n("1299:Frankfurt,Germany") [$ns node] }
+  if { [info exists n("2914:PaloAlto,CA")] == 0 } {
+    set n("2914:PaloAlto,CA") [$ns node] }
+  if { [info exists n("2914:NewYork,NY")] == 0 } {
+    set n("2914:NewYork,NY") [$ns node] }
+  if { [info exists n("1299:NewYork,NY")] == 0 } {
+    set n("1299:NewYork,NY") [$ns node] }
+  if { [info exists n("2914:Paris,France")] == 0 } {
+    set n("2914:Paris,France") [$ns node] }
+  if { [info exists n("1299:Paris,France")] == 0 } {
+    set n("1299:Paris,France") [$ns node] }
+  if { [info exists n("2914:Chicago,IL")] == 0 } {
+    set n("2914:Chicago,IL") [$ns node] }
+  if { [info exists n("2914:Dallas,TX")] == 0 } {
+    set n("2914:Dallas,TX") [$ns node] }
+
 #1299:Dallas, TX -> 2914:Chicago, IL 6.43760504337832
 $ns duplex-link $n("1299:Dallas,TX") $n("2914:Chicago,IL") 10.0Gb 6.43760504337832ms DropTail
 

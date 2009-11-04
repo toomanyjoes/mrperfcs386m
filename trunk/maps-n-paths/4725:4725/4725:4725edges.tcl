@@ -1,17 +1,27 @@
 # 4725:4725
-for{set i 0} {$i < 11} {incr i} {
-  set n(4725:Shintokyo,Japan) [$ns node]
-  set n(4725:Atsuta,Japan) [$ns node]
-  set n(4725:Ashburn,VA) [$ns node]
-  set n(4725:Kyoto,Japan) [$ns node]
-  set n(4725:Tokyo,Japan) [$ns node]
-  set n(4725:Chiba,Japan) [$ns node]
-  set n(4725:Osaka,Japan) [$ns node]
-  set n(4725:Washington,DC) [$ns node]
-  set n(4725:PaloAlto,CA) [$ns node]
-  set n(4725:Vienna,VA) [$ns node]
-  set n(4725:LosAngeles,CA) [$ns node]
-}
+  if { [info exists n("4725:Shintokyo,Japan")] == 0 } {
+    set n("4725:Shintokyo,Japan") [$ns node] }
+  if { [info exists n("4725:Atsuta,Japan")] == 0 } {
+    set n("4725:Atsuta,Japan") [$ns node] }
+  if { [info exists n("4725:Ashburn,VA")] == 0 } {
+    set n("4725:Ashburn,VA") [$ns node] }
+  if { [info exists n("4725:Kyoto,Japan")] == 0 } {
+    set n("4725:Kyoto,Japan") [$ns node] }
+  if { [info exists n("4725:Tokyo,Japan")] == 0 } {
+    set n("4725:Tokyo,Japan") [$ns node] }
+  if { [info exists n("4725:Chiba,Japan")] == 0 } {
+    set n("4725:Chiba,Japan") [$ns node] }
+  if { [info exists n("4725:Osaka,Japan")] == 0 } {
+    set n("4725:Osaka,Japan") [$ns node] }
+  if { [info exists n("4725:Washington,DC")] == 0 } {
+    set n("4725:Washington,DC") [$ns node] }
+  if { [info exists n("4725:PaloAlto,CA")] == 0 } {
+    set n("4725:PaloAlto,CA") [$ns node] }
+  if { [info exists n("4725:Vienna,VA")] == 0 } {
+    set n("4725:Vienna,VA") [$ns node] }
+  if { [info exists n("4725:LosAngeles,CA")] == 0 } {
+    set n("4725:LosAngeles,CA") [$ns node] }
+
 #4725:Ashburn, VA -> 4725:Vienna, VA 0.124424989353785
 $ns duplex-link $n("4725:Ashburn,VA") $n("4725:Vienna,VA") 10.0Gb 0.124424989353785ms DropTail
 

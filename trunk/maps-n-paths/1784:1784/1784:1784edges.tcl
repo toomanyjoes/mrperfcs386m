@@ -1,14 +1,21 @@
 # 1784:1784
-for{set i 0} {$i < 8} {incr i} {
-  set n(1784:Charlotte,NC) [$ns node]
-  set n(1784:Quincy,MA) [$ns node]
-  set n(1784:NewYork,NY) [$ns node]
-  set n(1784:PaloAlto,CA) [$ns node]
-  set n(1784:Miami,FL) [$ns node]
-  set n(1784:Atlanta,GA) [$ns node]
-  set n(1784:Reston,VA) [$ns node]
-  set n(1784:Chicago,IL) [$ns node]
-}
+  if { [info exists n("1784:Charlotte,NC")] == 0 } {
+    set n("1784:Charlotte,NC") [$ns node] }
+  if { [info exists n("1784:Quincy,MA")] == 0 } {
+    set n("1784:Quincy,MA") [$ns node] }
+  if { [info exists n("1784:NewYork,NY")] == 0 } {
+    set n("1784:NewYork,NY") [$ns node] }
+  if { [info exists n("1784:PaloAlto,CA")] == 0 } {
+    set n("1784:PaloAlto,CA") [$ns node] }
+  if { [info exists n("1784:Miami,FL")] == 0 } {
+    set n("1784:Miami,FL") [$ns node] }
+  if { [info exists n("1784:Atlanta,GA")] == 0 } {
+    set n("1784:Atlanta,GA") [$ns node] }
+  if { [info exists n("1784:Reston,VA")] == 0 } {
+    set n("1784:Reston,VA") [$ns node] }
+  if { [info exists n("1784:Chicago,IL")] == 0 } {
+    set n("1784:Chicago,IL") [$ns node] }
+
 #1784:Atlanta, GA -> 1784:Charlotte, NC 1.83053301410572
 $ns duplex-link $n("1784:Atlanta,GA") $n("1784:Charlotte,NC") 10.0Gb 1.83053301410572ms DropTail
 

@@ -1,18 +1,29 @@
 # 2914:16631
-for{set i 0} {$i < 12} {incr i} {
-  set n(2914:SanFrancisco,CA) [$ns node]
-  set n(16631:Chicago,IL) [$ns node]
-  set n(16631:SanFrancisco,CA) [$ns node]
-  set n(2914:PaloAlto,CA) [$ns node]
-  set n(16631:Washington,DC) [$ns node]
-  set n(2914:Miami,FL) [$ns node]
-  set n(2914:LosAngeles,CA) [$ns node]
-  set n(16631:PaloAlto,CA) [$ns node]
-  set n(2914:McLean,VA) [$ns node]
-  set n(16631:Miami,FL) [$ns node]
-  set n(16631:LosAngeles,CA) [$ns node]
-  set n(2914:Chicago,IL) [$ns node]
-}
+  if { [info exists n("2914:SanFrancisco,CA")] == 0 } {
+    set n("2914:SanFrancisco,CA") [$ns node] }
+  if { [info exists n("16631:Chicago,IL")] == 0 } {
+    set n("16631:Chicago,IL") [$ns node] }
+  if { [info exists n("16631:SanFrancisco,CA")] == 0 } {
+    set n("16631:SanFrancisco,CA") [$ns node] }
+  if { [info exists n("2914:PaloAlto,CA")] == 0 } {
+    set n("2914:PaloAlto,CA") [$ns node] }
+  if { [info exists n("16631:Washington,DC")] == 0 } {
+    set n("16631:Washington,DC") [$ns node] }
+  if { [info exists n("2914:Miami,FL")] == 0 } {
+    set n("2914:Miami,FL") [$ns node] }
+  if { [info exists n("2914:LosAngeles,CA")] == 0 } {
+    set n("2914:LosAngeles,CA") [$ns node] }
+  if { [info exists n("16631:PaloAlto,CA")] == 0 } {
+    set n("16631:PaloAlto,CA") [$ns node] }
+  if { [info exists n("2914:McLean,VA")] == 0 } {
+    set n("2914:McLean,VA") [$ns node] }
+  if { [info exists n("16631:Miami,FL")] == 0 } {
+    set n("16631:Miami,FL") [$ns node] }
+  if { [info exists n("16631:LosAngeles,CA")] == 0 } {
+    set n("16631:LosAngeles,CA") [$ns node] }
+  if { [info exists n("2914:Chicago,IL")] == 0 } {
+    set n("2914:Chicago,IL") [$ns node] }
+
 #2914:Chicago, IL -> 16631:Chicago, IL 0
 $ns duplex-link $n("2914:Chicago,IL") $n("16631:Chicago,IL") 10.0Gb 0ms DropTail
 

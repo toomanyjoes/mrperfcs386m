@@ -1,21 +1,35 @@
 # 4323:1239
-for{set i 0} {$i < 15} {incr i} {
-  set n(1239:Atlanta,GA) [$ns node]
-  set n(1239:Tucson,AZ) [$ns node]
-  set n(4323:NewYork,NY) [$ns node]
-  set n(1239:Dallas,TX) [$ns node]
-  set n(1239:Chicago,IL) [$ns node]
-  set n(1239:Anaheim,CA) [$ns node]
-  set n(4323:LosAngeles,CA) [$ns node]
-  set n(4323:Milwaukee,WI) [$ns node]
-  set n(4323:Atlanta,GA) [$ns node]
-  set n(1239:NewYork,NY) [$ns node]
-  set n(4323:Tucson,AZ) [$ns node]
-  set n(4323:Dallas,TX) [$ns node]
-  set n(4323:Chicago,IL) [$ns node]
-  set n(4323:Anaheim,CA) [$ns node]
-  set n(1239:Milwaukee,WI) [$ns node]
-}
+  if { [info exists n("1239:Atlanta,GA")] == 0 } {
+    set n("1239:Atlanta,GA") [$ns node] }
+  if { [info exists n("1239:Tucson,AZ")] == 0 } {
+    set n("1239:Tucson,AZ") [$ns node] }
+  if { [info exists n("4323:NewYork,NY")] == 0 } {
+    set n("4323:NewYork,NY") [$ns node] }
+  if { [info exists n("1239:Dallas,TX")] == 0 } {
+    set n("1239:Dallas,TX") [$ns node] }
+  if { [info exists n("1239:Chicago,IL")] == 0 } {
+    set n("1239:Chicago,IL") [$ns node] }
+  if { [info exists n("1239:Anaheim,CA")] == 0 } {
+    set n("1239:Anaheim,CA") [$ns node] }
+  if { [info exists n("4323:LosAngeles,CA")] == 0 } {
+    set n("4323:LosAngeles,CA") [$ns node] }
+  if { [info exists n("4323:Milwaukee,WI")] == 0 } {
+    set n("4323:Milwaukee,WI") [$ns node] }
+  if { [info exists n("4323:Atlanta,GA")] == 0 } {
+    set n("4323:Atlanta,GA") [$ns node] }
+  if { [info exists n("1239:NewYork,NY")] == 0 } {
+    set n("1239:NewYork,NY") [$ns node] }
+  if { [info exists n("4323:Tucson,AZ")] == 0 } {
+    set n("4323:Tucson,AZ") [$ns node] }
+  if { [info exists n("4323:Dallas,TX")] == 0 } {
+    set n("4323:Dallas,TX") [$ns node] }
+  if { [info exists n("4323:Chicago,IL")] == 0 } {
+    set n("4323:Chicago,IL") [$ns node] }
+  if { [info exists n("4323:Anaheim,CA")] == 0 } {
+    set n("4323:Anaheim,CA") [$ns node] }
+  if { [info exists n("1239:Milwaukee,WI")] == 0 } {
+    set n("1239:Milwaukee,WI") [$ns node] }
+
 #4323:Anaheim, CA -> 1239:Anaheim, CA 0
 $ns duplex-link $n("4323:Anaheim,CA") $n("1239:Anaheim,CA") 10.0Gb 0ms DropTail
 

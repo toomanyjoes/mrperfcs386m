@@ -1,26 +1,45 @@
 # 1668:209
-for{set i 0} {$i < 20} {incr i} {
-  set n(1668:Washington,DC) [$ns node]
-  set n(1668:Orange,CA) [$ns node]
-  set n(1668:Sunnyvale,CA) [$ns node]
-  set n(1668:SanDiego,CA) [$ns node]
-  set n(1668:Memphis,TN) [$ns node]
-  set n(1668:DesertCities,CA) [$ns node]
-  set n(1668:LosAngeles,CA) [$ns node]
-  set n(1668:Chatsworth,CA) [$ns node]
-  set n(209:Atlanta,GA) [$ns node]
-  set n(209:Burbank,CA) [$ns node]
-  set n(1668:Atlanta,GA) [$ns node]
-  set n(209:Sunnyvale,CA) [$ns node]
-  set n(1668:Burbank,CA) [$ns node]
-  set n(209:Dallas,TX) [$ns node]
-  set n(209:LosAngeles,CA) [$ns node]
-  set n(1668:Dallas,TX) [$ns node]
-  set n(1668:Chicago,IL) [$ns node]
-  set n(1668:Ashburn,VA) [$ns node]
-  set n(209:Washington,DC) [$ns node]
-  set n(1668:Torrance,CA) [$ns node]
-}
+  if { [info exists n("1668:Washington,DC")] == 0 } {
+    set n("1668:Washington,DC") [$ns node] }
+  if { [info exists n("1668:Orange,CA")] == 0 } {
+    set n("1668:Orange,CA") [$ns node] }
+  if { [info exists n("1668:Sunnyvale,CA")] == 0 } {
+    set n("1668:Sunnyvale,CA") [$ns node] }
+  if { [info exists n("1668:SanDiego,CA")] == 0 } {
+    set n("1668:SanDiego,CA") [$ns node] }
+  if { [info exists n("1668:Memphis,TN")] == 0 } {
+    set n("1668:Memphis,TN") [$ns node] }
+  if { [info exists n("1668:DesertCities,CA")] == 0 } {
+    set n("1668:DesertCities,CA") [$ns node] }
+  if { [info exists n("1668:LosAngeles,CA")] == 0 } {
+    set n("1668:LosAngeles,CA") [$ns node] }
+  if { [info exists n("1668:Chatsworth,CA")] == 0 } {
+    set n("1668:Chatsworth,CA") [$ns node] }
+  if { [info exists n("209:Atlanta,GA")] == 0 } {
+    set n("209:Atlanta,GA") [$ns node] }
+  if { [info exists n("209:Burbank,CA")] == 0 } {
+    set n("209:Burbank,CA") [$ns node] }
+  if { [info exists n("1668:Atlanta,GA")] == 0 } {
+    set n("1668:Atlanta,GA") [$ns node] }
+  if { [info exists n("209:Sunnyvale,CA")] == 0 } {
+    set n("209:Sunnyvale,CA") [$ns node] }
+  if { [info exists n("1668:Burbank,CA")] == 0 } {
+    set n("1668:Burbank,CA") [$ns node] }
+  if { [info exists n("209:Dallas,TX")] == 0 } {
+    set n("209:Dallas,TX") [$ns node] }
+  if { [info exists n("209:LosAngeles,CA")] == 0 } {
+    set n("209:LosAngeles,CA") [$ns node] }
+  if { [info exists n("1668:Dallas,TX")] == 0 } {
+    set n("1668:Dallas,TX") [$ns node] }
+  if { [info exists n("1668:Chicago,IL")] == 0 } {
+    set n("1668:Chicago,IL") [$ns node] }
+  if { [info exists n("1668:Ashburn,VA")] == 0 } {
+    set n("1668:Ashburn,VA") [$ns node] }
+  if { [info exists n("209:Washington,DC")] == 0 } {
+    set n("209:Washington,DC") [$ns node] }
+  if { [info exists n("1668:Torrance,CA")] == 0 } {
+    set n("1668:Torrance,CA") [$ns node] }
+
 #1668:Ashburn, VA -> 209:Washington, DC 0.225316255475169
 $ns duplex-link $n("1668:Ashburn,VA") $n("209:Washington,DC") 10.0Gb 0.225316255475169ms DropTail
 

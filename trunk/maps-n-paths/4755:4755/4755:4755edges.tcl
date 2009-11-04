@@ -1,15 +1,23 @@
 # 4755:4755
-for{set i 0} {$i < 9} {incr i} {
-  set n(4755:Bombay,IN) [$ns node]
-  set n(4755:Bangalore,IN) [$ns node]
-  set n(4755:London,UnitedKingdom) [$ns node]
-  set n(4755:Mumbai,IN) [$ns node]
-  set n(4755:Madras,IN) [$ns node]
-  set n(4755:Delhi,IN) [$ns node]
-  set n(4755:NewYork,NY) [$ns node]
-  set n(4755:Hyderabad,IN) [$ns node]
-  set n(4755:Ahmedabad,IN) [$ns node]
-}
+  if { [info exists n("4755:Bombay,IN")] == 0 } {
+    set n("4755:Bombay,IN") [$ns node] }
+  if { [info exists n("4755:Bangalore,IN")] == 0 } {
+    set n("4755:Bangalore,IN") [$ns node] }
+  if { [info exists n("4755:London,UnitedKingdom")] == 0 } {
+    set n("4755:London,UnitedKingdom") [$ns node] }
+  if { [info exists n("4755:Mumbai,IN")] == 0 } {
+    set n("4755:Mumbai,IN") [$ns node] }
+  if { [info exists n("4755:Madras,IN")] == 0 } {
+    set n("4755:Madras,IN") [$ns node] }
+  if { [info exists n("4755:Delhi,IN")] == 0 } {
+    set n("4755:Delhi,IN") [$ns node] }
+  if { [info exists n("4755:NewYork,NY")] == 0 } {
+    set n("4755:NewYork,NY") [$ns node] }
+  if { [info exists n("4755:Hyderabad,IN")] == 0 } {
+    set n("4755:Hyderabad,IN") [$ns node] }
+  if { [info exists n("4755:Ahmedabad,IN")] == 0 } {
+    set n("4755:Ahmedabad,IN") [$ns node] }
+
 #4755:Ahmedabad, IN -> 4755:New York, NY 60.6239067475396
 $ns duplex-link $n("4755:Ahmedabad,IN") $n("4755:NewYork,NY") 10.0Gb 60.6239067475396ms DropTail
 

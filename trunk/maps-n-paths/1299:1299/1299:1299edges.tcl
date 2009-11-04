@@ -1,37 +1,67 @@
 # 1299:1299
-for{set i 0} {$i < 31} {incr i} {
-  set n(1299:SantaClara,CA) [$ns node]
-  set n(1299:Atlanta,GA) [$ns node]
-  set n(1299:Herndon,VA) [$ns node]
-  set n(1299:Chicago,IL) [$ns node]
-  set n(1299:Dallas,TX) [$ns node]
-  set n(1299:SaintPetersburg,Russia) [$ns node]
-  set n(1299:Manchester,UnitedKingdom) [$ns node]
-  set n(1299:Birmingham,UnitedKingdom) [$ns node]
-  set n(1299:London,UnitedKingdom) [$ns node]
-  set n(1299:Moscow,Russia) [$ns node]
-  set n(1299:Stockholm,Sweden) [$ns node]
-  set n(1299:Sundsvell,Sweden) [$ns node]
-  set n(1299:Frankfurt,Germany) [$ns node]
-  set n(1299:Hamburg,Germany) [$ns node]
-  set n(1299:Copenhagen,Denmark) [$ns node]
-  set n(1299:Amsterdam,Netherlands) [$ns node]
-  set n(1299:SanJose,CA) [$ns node]
-  set n(1299:Helsinki,Finland) [$ns node]
-  set n(1299:Madrid,Spain) [$ns node]
-  set n(1299:Zurich,Switzerland) [$ns node]
-  set n(1299:Riga,Latvia) [$ns node]
-  set n(1299:PaloAlto,CA) [$ns node]
-  set n(1299:NewYork,NY) [$ns node]
-  set n(1299:Warsaw,Poland) [$ns node]
-  set n(1299:Budapest,Hungary) [$ns node]
-  set n(1299:Milan,Italy) [$ns node]
-  set n(1299:Miami,FL) [$ns node]
-  set n(1299:LosAngeles,CA) [$ns node]
-  set n(1299:Oslo,Norway) [$ns node]
-  set n(1299:Vienna,Austria) [$ns node]
-  set n(1299:Paris,France) [$ns node]
-}
+  if { [info exists n("1299:SantaClara,CA")] == 0 } {
+    set n("1299:SantaClara,CA") [$ns node] }
+  if { [info exists n("1299:Atlanta,GA")] == 0 } {
+    set n("1299:Atlanta,GA") [$ns node] }
+  if { [info exists n("1299:Herndon,VA")] == 0 } {
+    set n("1299:Herndon,VA") [$ns node] }
+  if { [info exists n("1299:Chicago,IL")] == 0 } {
+    set n("1299:Chicago,IL") [$ns node] }
+  if { [info exists n("1299:Dallas,TX")] == 0 } {
+    set n("1299:Dallas,TX") [$ns node] }
+  if { [info exists n("1299:SaintPetersburg,Russia")] == 0 } {
+    set n("1299:SaintPetersburg,Russia") [$ns node] }
+  if { [info exists n("1299:Manchester,UnitedKingdom")] == 0 } {
+    set n("1299:Manchester,UnitedKingdom") [$ns node] }
+  if { [info exists n("1299:Birmingham,UnitedKingdom")] == 0 } {
+    set n("1299:Birmingham,UnitedKingdom") [$ns node] }
+  if { [info exists n("1299:London,UnitedKingdom")] == 0 } {
+    set n("1299:London,UnitedKingdom") [$ns node] }
+  if { [info exists n("1299:Moscow,Russia")] == 0 } {
+    set n("1299:Moscow,Russia") [$ns node] }
+  if { [info exists n("1299:Stockholm,Sweden")] == 0 } {
+    set n("1299:Stockholm,Sweden") [$ns node] }
+  if { [info exists n("1299:Sundsvell,Sweden")] == 0 } {
+    set n("1299:Sundsvell,Sweden") [$ns node] }
+  if { [info exists n("1299:Frankfurt,Germany")] == 0 } {
+    set n("1299:Frankfurt,Germany") [$ns node] }
+  if { [info exists n("1299:Hamburg,Germany")] == 0 } {
+    set n("1299:Hamburg,Germany") [$ns node] }
+  if { [info exists n("1299:Copenhagen,Denmark")] == 0 } {
+    set n("1299:Copenhagen,Denmark") [$ns node] }
+  if { [info exists n("1299:Amsterdam,Netherlands")] == 0 } {
+    set n("1299:Amsterdam,Netherlands") [$ns node] }
+  if { [info exists n("1299:SanJose,CA")] == 0 } {
+    set n("1299:SanJose,CA") [$ns node] }
+  if { [info exists n("1299:Helsinki,Finland")] == 0 } {
+    set n("1299:Helsinki,Finland") [$ns node] }
+  if { [info exists n("1299:Madrid,Spain")] == 0 } {
+    set n("1299:Madrid,Spain") [$ns node] }
+  if { [info exists n("1299:Zurich,Switzerland")] == 0 } {
+    set n("1299:Zurich,Switzerland") [$ns node] }
+  if { [info exists n("1299:Riga,Latvia")] == 0 } {
+    set n("1299:Riga,Latvia") [$ns node] }
+  if { [info exists n("1299:PaloAlto,CA")] == 0 } {
+    set n("1299:PaloAlto,CA") [$ns node] }
+  if { [info exists n("1299:NewYork,NY")] == 0 } {
+    set n("1299:NewYork,NY") [$ns node] }
+  if { [info exists n("1299:Warsaw,Poland")] == 0 } {
+    set n("1299:Warsaw,Poland") [$ns node] }
+  if { [info exists n("1299:Budapest,Hungary")] == 0 } {
+    set n("1299:Budapest,Hungary") [$ns node] }
+  if { [info exists n("1299:Milan,Italy")] == 0 } {
+    set n("1299:Milan,Italy") [$ns node] }
+  if { [info exists n("1299:Miami,FL")] == 0 } {
+    set n("1299:Miami,FL") [$ns node] }
+  if { [info exists n("1299:LosAngeles,CA")] == 0 } {
+    set n("1299:LosAngeles,CA") [$ns node] }
+  if { [info exists n("1299:Oslo,Norway")] == 0 } {
+    set n("1299:Oslo,Norway") [$ns node] }
+  if { [info exists n("1299:Vienna,Austria")] == 0 } {
+    set n("1299:Vienna,Austria") [$ns node] }
+  if { [info exists n("1299:Paris,France")] == 0 } {
+    set n("1299:Paris,France") [$ns node] }
+
 #1299:Amsterdam, Netherlands -> 1299:Copenhagen, Denmark 3.1318247112441
 $ns duplex-link $n("1299:Amsterdam,Netherlands") $n("1299:Copenhagen,Denmark") 10.0Gb 3.1318247112441ms DropTail
 

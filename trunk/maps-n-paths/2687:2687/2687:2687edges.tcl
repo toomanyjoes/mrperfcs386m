@@ -1,17 +1,27 @@
 # 2687:2687
-for{set i 0} {$i < 11} {incr i} {
-  set n(2687:Singapore) [$ns node]
-  set n(2687:HongKong) [$ns node]
-  set n(2687:LosAngeles,CA) [$ns node]
-  set n(2687:Taipei,Taiwan) [$ns node]
-  set n(2687:Melbourne,Australia) [$ns node]
-  set n(2687:Sydney,Australia) [$ns node]
-  set n(2687:Tokyo,Japan) [$ns node]
-  set n(2687:Wellington,NewZealand) [$ns node]
-  set n(2687:SanFrancisco,CA) [$ns node]
-  set n(2687:Auckland,NewZealand) [$ns node]
-  set n(2687:Manila,Philippines) [$ns node]
-}
+  if { [info exists n("2687:Singapore")] == 0 } {
+    set n("2687:Singapore") [$ns node] }
+  if { [info exists n("2687:HongKong")] == 0 } {
+    set n("2687:HongKong") [$ns node] }
+  if { [info exists n("2687:LosAngeles,CA")] == 0 } {
+    set n("2687:LosAngeles,CA") [$ns node] }
+  if { [info exists n("2687:Taipei,Taiwan")] == 0 } {
+    set n("2687:Taipei,Taiwan") [$ns node] }
+  if { [info exists n("2687:Melbourne,Australia")] == 0 } {
+    set n("2687:Melbourne,Australia") [$ns node] }
+  if { [info exists n("2687:Sydney,Australia")] == 0 } {
+    set n("2687:Sydney,Australia") [$ns node] }
+  if { [info exists n("2687:Tokyo,Japan")] == 0 } {
+    set n("2687:Tokyo,Japan") [$ns node] }
+  if { [info exists n("2687:Wellington,NewZealand")] == 0 } {
+    set n("2687:Wellington,NewZealand") [$ns node] }
+  if { [info exists n("2687:SanFrancisco,CA")] == 0 } {
+    set n("2687:SanFrancisco,CA") [$ns node] }
+  if { [info exists n("2687:Auckland,NewZealand")] == 0 } {
+    set n("2687:Auckland,NewZealand") [$ns node] }
+  if { [info exists n("2687:Manila,Philippines")] == 0 } {
+    set n("2687:Manila,Philippines") [$ns node] }
+
 #2687:Auckland, NewZealand -> 2687:Los Angeles, CA 52.4196392730013
 $ns duplex-link $n("2687:Auckland,NewZealand") $n("2687:LosAngeles,CA") 10.0Gb 52.4196392730013ms DropTail
 

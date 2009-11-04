@@ -1,9 +1,11 @@
 # 11537:101
-for{set i 0} {$i < 3} {incr i} {
-  set n(11537:Seattle,WA) [$ns node]
-  set n(101:Seattle,WA) [$ns node]
-  set n(11537:Sunnyvale,CA) [$ns node]
-}
+  if { [info exists n("11537:Seattle,WA")] == 0 } {
+    set n("11537:Seattle,WA") [$ns node] }
+  if { [info exists n("101:Seattle,WA")] == 0 } {
+    set n("101:Seattle,WA") [$ns node] }
+  if { [info exists n("11537:Sunnyvale,CA")] == 0 } {
+    set n("11537:Sunnyvale,CA") [$ns node] }
+
 #11537:Seattle, WA -> 101:Seattle, WA 0
 $ns duplex-link $n("11537:Seattle,WA") $n("101:Seattle,WA") 10.0Gb 0ms DropTail
 

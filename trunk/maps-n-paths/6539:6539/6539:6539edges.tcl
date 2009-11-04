@@ -1,13 +1,19 @@
 # 6539:6539
-for{set i 0} {$i < 7} {incr i} {
-  set n(6539:Seattle,WA) [$ns node]
-  set n(6539:SaintJohns,Canada) [$ns node]
-  set n(6539:Vancouver,Canada) [$ns node]
-  set n(6539:Montreal,Canada) [$ns node]
-  set n(6539:Toronto,Canada) [$ns node]
-  set n(6539:Halifax,Canada) [$ns node]
-  set n(6539:Calgary,Canada) [$ns node]
-}
+  if { [info exists n("6539:Seattle,WA")] == 0 } {
+    set n("6539:Seattle,WA") [$ns node] }
+  if { [info exists n("6539:SaintJohns,Canada")] == 0 } {
+    set n("6539:SaintJohns,Canada") [$ns node] }
+  if { [info exists n("6539:Vancouver,Canada")] == 0 } {
+    set n("6539:Vancouver,Canada") [$ns node] }
+  if { [info exists n("6539:Montreal,Canada")] == 0 } {
+    set n("6539:Montreal,Canada") [$ns node] }
+  if { [info exists n("6539:Toronto,Canada")] == 0 } {
+    set n("6539:Toronto,Canada") [$ns node] }
+  if { [info exists n("6539:Halifax,Canada")] == 0 } {
+    set n("6539:Halifax,Canada") [$ns node] }
+  if { [info exists n("6539:Calgary,Canada")] == 0 } {
+    set n("6539:Calgary,Canada") [$ns node] }
+
 #6539:Calgary, Canada -> 6539:Toronto, Canada 13.5517615742068
 $ns duplex-link $n("6539:Calgary,Canada") $n("6539:Toronto,Canada") 10.0Gb 13.5517615742068ms DropTail
 

@@ -1,24 +1,41 @@
 # 701:3549
-for{set i 0} {$i < 18} {incr i} {
-  set n(701:Washington,DC) [$ns node]
-  set n(3549:Atlanta,GA) [$ns node]
-  set n(701:Sacramento,CA) [$ns node]
-  set n(3549:Seattle,WA) [$ns node]
-  set n(3549:Dallas,TX) [$ns node]
-  set n(3549:Chicago,IL) [$ns node]
-  set n(3549:SanFrancisco,CA) [$ns node]
-  set n(3549:Washington,DC) [$ns node]
-  set n(701:Seattle,WA) [$ns node]
-  set n(3549:NewYork,NY) [$ns node]
-  set n(3549:Miami,FL) [$ns node]
-  set n(701:Atlanta,GA) [$ns node]
-  set n(3549:LosAngeles,CA) [$ns node]
-  set n(701:NewYork,NY) [$ns node]
-  set n(701:Miami,FL) [$ns node]
-  set n(701:Chicago,IL) [$ns node]
-  set n(701:LosAngeles,CA) [$ns node]
-  set n(701:Dallas,TX) [$ns node]
-}
+  if { [info exists n("701:Washington,DC")] == 0 } {
+    set n("701:Washington,DC") [$ns node] }
+  if { [info exists n("3549:Atlanta,GA")] == 0 } {
+    set n("3549:Atlanta,GA") [$ns node] }
+  if { [info exists n("701:Sacramento,CA")] == 0 } {
+    set n("701:Sacramento,CA") [$ns node] }
+  if { [info exists n("3549:Seattle,WA")] == 0 } {
+    set n("3549:Seattle,WA") [$ns node] }
+  if { [info exists n("3549:Dallas,TX")] == 0 } {
+    set n("3549:Dallas,TX") [$ns node] }
+  if { [info exists n("3549:Chicago,IL")] == 0 } {
+    set n("3549:Chicago,IL") [$ns node] }
+  if { [info exists n("3549:SanFrancisco,CA")] == 0 } {
+    set n("3549:SanFrancisco,CA") [$ns node] }
+  if { [info exists n("3549:Washington,DC")] == 0 } {
+    set n("3549:Washington,DC") [$ns node] }
+  if { [info exists n("701:Seattle,WA")] == 0 } {
+    set n("701:Seattle,WA") [$ns node] }
+  if { [info exists n("3549:NewYork,NY")] == 0 } {
+    set n("3549:NewYork,NY") [$ns node] }
+  if { [info exists n("3549:Miami,FL")] == 0 } {
+    set n("3549:Miami,FL") [$ns node] }
+  if { [info exists n("701:Atlanta,GA")] == 0 } {
+    set n("701:Atlanta,GA") [$ns node] }
+  if { [info exists n("3549:LosAngeles,CA")] == 0 } {
+    set n("3549:LosAngeles,CA") [$ns node] }
+  if { [info exists n("701:NewYork,NY")] == 0 } {
+    set n("701:NewYork,NY") [$ns node] }
+  if { [info exists n("701:Miami,FL")] == 0 } {
+    set n("701:Miami,FL") [$ns node] }
+  if { [info exists n("701:Chicago,IL")] == 0 } {
+    set n("701:Chicago,IL") [$ns node] }
+  if { [info exists n("701:LosAngeles,CA")] == 0 } {
+    set n("701:LosAngeles,CA") [$ns node] }
+  if { [info exists n("701:Dallas,TX")] == 0 } {
+    set n("701:Dallas,TX") [$ns node] }
+
 #701:Atlanta, GA -> 3549:Atlanta, GA 0
 $ns duplex-link $n("701:Atlanta,GA") $n("3549:Atlanta,GA") 10.0Gb 0ms DropTail
 

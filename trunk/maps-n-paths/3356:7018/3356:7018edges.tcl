@@ -1,21 +1,35 @@
 # 3356:7018
-for{set i 0} {$i < 15} {incr i} {
-  set n(3356:LosAngeles,CA) [$ns node]
-  set n(7018:SanFrancisco,CA) [$ns node]
-  set n(7018:Washington,DC) [$ns node]
-  set n(7018:SanJose,CA) [$ns node]
-  set n(3356:Seattle,WA) [$ns node]
-  set n(7018:NewYork,NY) [$ns node]
-  set n(3356:Dallas,TX) [$ns node]
-  set n(3356:Chicago,IL) [$ns node]
-  set n(7018:LosAngeles,CA) [$ns node]
-  set n(3356:Washington,DC) [$ns node]
-  set n(3356:SanJose,CA) [$ns node]
-  set n(7018:Seattle,WA) [$ns node]
-  set n(3356:NewYork,NY) [$ns node]
-  set n(7018:Dallas,TX) [$ns node]
-  set n(7018:Chicago,IL) [$ns node]
-}
+  if { [info exists n("3356:LosAngeles,CA")] == 0 } {
+    set n("3356:LosAngeles,CA") [$ns node] }
+  if { [info exists n("7018:SanFrancisco,CA")] == 0 } {
+    set n("7018:SanFrancisco,CA") [$ns node] }
+  if { [info exists n("7018:Washington,DC")] == 0 } {
+    set n("7018:Washington,DC") [$ns node] }
+  if { [info exists n("7018:SanJose,CA")] == 0 } {
+    set n("7018:SanJose,CA") [$ns node] }
+  if { [info exists n("3356:Seattle,WA")] == 0 } {
+    set n("3356:Seattle,WA") [$ns node] }
+  if { [info exists n("7018:NewYork,NY")] == 0 } {
+    set n("7018:NewYork,NY") [$ns node] }
+  if { [info exists n("3356:Dallas,TX")] == 0 } {
+    set n("3356:Dallas,TX") [$ns node] }
+  if { [info exists n("3356:Chicago,IL")] == 0 } {
+    set n("3356:Chicago,IL") [$ns node] }
+  if { [info exists n("7018:LosAngeles,CA")] == 0 } {
+    set n("7018:LosAngeles,CA") [$ns node] }
+  if { [info exists n("3356:Washington,DC")] == 0 } {
+    set n("3356:Washington,DC") [$ns node] }
+  if { [info exists n("3356:SanJose,CA")] == 0 } {
+    set n("3356:SanJose,CA") [$ns node] }
+  if { [info exists n("7018:Seattle,WA")] == 0 } {
+    set n("7018:Seattle,WA") [$ns node] }
+  if { [info exists n("3356:NewYork,NY")] == 0 } {
+    set n("3356:NewYork,NY") [$ns node] }
+  if { [info exists n("7018:Dallas,TX")] == 0 } {
+    set n("7018:Dallas,TX") [$ns node] }
+  if { [info exists n("7018:Chicago,IL")] == 0 } {
+    set n("7018:Chicago,IL") [$ns node] }
+
 #3356:Chicago, IL -> 7018:Chicago, IL 0
 $ns duplex-link $n("3356:Chicago,IL") $n("7018:Chicago,IL") 10.0Gb 0ms DropTail
 

@@ -1,10 +1,13 @@
 # 6461:13129
-for{set i 0} {$i < 4} {incr i} {
-  set n(6461:Frankfurt,Germany) [$ns node]
-  set n(13129:Frankfurt,Germany) [$ns node]
-  set n(13129:Hamburg,Germany) [$ns node]
-  set n(13129:Berlin,Germany) [$ns node]
-}
+  if { [info exists n("6461:Frankfurt,Germany")] == 0 } {
+    set n("6461:Frankfurt,Germany") [$ns node] }
+  if { [info exists n("13129:Frankfurt,Germany")] == 0 } {
+    set n("13129:Frankfurt,Germany") [$ns node] }
+  if { [info exists n("13129:Hamburg,Germany")] == 0 } {
+    set n("13129:Hamburg,Germany") [$ns node] }
+  if { [info exists n("13129:Berlin,Germany")] == 0 } {
+    set n("13129:Berlin,Germany") [$ns node] }
+
 #6461:Frankfurt, Germany -> 13129:Berlin, Germany 2.16152721948152
 $ns duplex-link $n("6461:Frankfurt,Germany") $n("13129:Berlin,Germany") 10.0Gb 2.16152721948152ms DropTail
 

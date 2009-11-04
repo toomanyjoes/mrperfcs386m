@@ -1,12 +1,17 @@
 # 6461:6939
-for{set i 0} {$i < 6} {incr i} {
-  set n(6939:SanJose,CA) [$ns node]
-  set n(6939:PaloAlto,CA) [$ns node]
-  set n(6939:NewYork,NY) [$ns node]
-  set n(6461:SanJose,CA) [$ns node]
-  set n(6461:PaloAlto,CA) [$ns node]
-  set n(6461:NewYork,NY) [$ns node]
-}
+  if { [info exists n("6939:SanJose,CA")] == 0 } {
+    set n("6939:SanJose,CA") [$ns node] }
+  if { [info exists n("6939:PaloAlto,CA")] == 0 } {
+    set n("6939:PaloAlto,CA") [$ns node] }
+  if { [info exists n("6939:NewYork,NY")] == 0 } {
+    set n("6939:NewYork,NY") [$ns node] }
+  if { [info exists n("6461:SanJose,CA")] == 0 } {
+    set n("6461:SanJose,CA") [$ns node] }
+  if { [info exists n("6461:PaloAlto,CA")] == 0 } {
+    set n("6461:PaloAlto,CA") [$ns node] }
+  if { [info exists n("6461:NewYork,NY")] == 0 } {
+    set n("6461:NewYork,NY") [$ns node] }
+
 #6461:New York, NY -> 6939:New York, NY 0
 $ns duplex-link $n("6461:NewYork,NY") $n("6939:NewYork,NY") 10.0Gb 0ms DropTail
 

@@ -1,51 +1,95 @@
 # 174:174
-for{set i 0} {$i < 45} {incr i} {
-  set n(174:Pontiac,MI) [$ns node]
-  set n(174:Newark,NJ) [$ns node]
-  set n(174:Amsterdam,Netherlands) [$ns node]
-  set n(174:Berlin,Germany) [$ns node]
-  set n(174:Antwerp,Netherlands) [$ns node]
-  set n(174:Cologne,Germany) [$ns node]
-  set n(174:Dusseldorf,Germany) [$ns node]
-  set n(174:Barcelona,Spain) [$ns node]
-  set n(174:Dublin,Ireland) [$ns node]
-  set n(174:Frankfurt,Germany) [$ns node]
-  set n(174:Paris,France) [$ns node]
-  set n(174:Basel,Switzerland) [$ns node]
-  set n(174:Brussels,Belgium) [$ns node]
-  set n(174:Budapest,Hungary) [$ns node]
-  set n(174:Zaragoza,Spain) [$ns node]
-  set n(174:Luxembourg,Luxembourg) [$ns node]
-  set n(174:Hamburg,Germany) [$ns node]
-  set n(174:Zurich,Switzerland) [$ns node]
-  set n(174:London,UnitedKingdom) [$ns node]
-  set n(174:SantaAna,CA) [$ns node]
-  set n(174:Detroit,MI) [$ns node]
-  set n(174:Geneva,Switzerland) [$ns node]
-  set n(174:Vienna,Austria) [$ns node]
-  set n(174:Koeln,Germany) [$ns node]
-  set n(174:Munich,Germany) [$ns node]
-  set n(174:Atlanta,GA) [$ns node]
-  set n(174:Reading,UnitedKingdom) [$ns node]
-  set n(174:Albany,NY) [$ns node]
-  set n(174:SanFrancisco,CA) [$ns node]
-  set n(174:Westchester,NY) [$ns node]
-  set n(174:Ashburn,VA) [$ns node]
-  set n(174:NewYork,NY) [$ns node]
-  set n(174:Innsbruck,Austria) [$ns node]
-  set n(174:Stuttgart,Germany) [$ns node]
-  set n(174:Birmingham,UnitedKingdom) [$ns node]
-  set n(174:Chicago,IL) [$ns node]
-  set n(174:Bedford,MA) [$ns node]
-  set n(174:LosAngeles,CA) [$ns node]
-  set n(174:Dallas,TX) [$ns node]
-  set n(174:Cityreach,UnitedKingdom) [$ns node]
-  set n(174:Cambridge,UnitedKingdom) [$ns node]
-  set n(174:Boston,MA) [$ns node]
-  set n(174:SanJose,CA) [$ns node]
-  set n(174:Washington,DC) [$ns node]
-  set n(174:Edinburgh,UnitedKingdom) [$ns node]
-}
+  if { [info exists n("174:Pontiac,MI")] == 0 } {
+    set n("174:Pontiac,MI") [$ns node] }
+  if { [info exists n("174:Newark,NJ")] == 0 } {
+    set n("174:Newark,NJ") [$ns node] }
+  if { [info exists n("174:Amsterdam,Netherlands")] == 0 } {
+    set n("174:Amsterdam,Netherlands") [$ns node] }
+  if { [info exists n("174:Berlin,Germany")] == 0 } {
+    set n("174:Berlin,Germany") [$ns node] }
+  if { [info exists n("174:Antwerp,Netherlands")] == 0 } {
+    set n("174:Antwerp,Netherlands") [$ns node] }
+  if { [info exists n("174:Cologne,Germany")] == 0 } {
+    set n("174:Cologne,Germany") [$ns node] }
+  if { [info exists n("174:Dusseldorf,Germany")] == 0 } {
+    set n("174:Dusseldorf,Germany") [$ns node] }
+  if { [info exists n("174:Barcelona,Spain")] == 0 } {
+    set n("174:Barcelona,Spain") [$ns node] }
+  if { [info exists n("174:Dublin,Ireland")] == 0 } {
+    set n("174:Dublin,Ireland") [$ns node] }
+  if { [info exists n("174:Frankfurt,Germany")] == 0 } {
+    set n("174:Frankfurt,Germany") [$ns node] }
+  if { [info exists n("174:Paris,France")] == 0 } {
+    set n("174:Paris,France") [$ns node] }
+  if { [info exists n("174:Basel,Switzerland")] == 0 } {
+    set n("174:Basel,Switzerland") [$ns node] }
+  if { [info exists n("174:Brussels,Belgium")] == 0 } {
+    set n("174:Brussels,Belgium") [$ns node] }
+  if { [info exists n("174:Budapest,Hungary")] == 0 } {
+    set n("174:Budapest,Hungary") [$ns node] }
+  if { [info exists n("174:Zaragoza,Spain")] == 0 } {
+    set n("174:Zaragoza,Spain") [$ns node] }
+  if { [info exists n("174:Luxembourg,Luxembourg")] == 0 } {
+    set n("174:Luxembourg,Luxembourg") [$ns node] }
+  if { [info exists n("174:Hamburg,Germany")] == 0 } {
+    set n("174:Hamburg,Germany") [$ns node] }
+  if { [info exists n("174:Zurich,Switzerland")] == 0 } {
+    set n("174:Zurich,Switzerland") [$ns node] }
+  if { [info exists n("174:London,UnitedKingdom")] == 0 } {
+    set n("174:London,UnitedKingdom") [$ns node] }
+  if { [info exists n("174:SantaAna,CA")] == 0 } {
+    set n("174:SantaAna,CA") [$ns node] }
+  if { [info exists n("174:Detroit,MI")] == 0 } {
+    set n("174:Detroit,MI") [$ns node] }
+  if { [info exists n("174:Geneva,Switzerland")] == 0 } {
+    set n("174:Geneva,Switzerland") [$ns node] }
+  if { [info exists n("174:Vienna,Austria")] == 0 } {
+    set n("174:Vienna,Austria") [$ns node] }
+  if { [info exists n("174:Koeln,Germany")] == 0 } {
+    set n("174:Koeln,Germany") [$ns node] }
+  if { [info exists n("174:Munich,Germany")] == 0 } {
+    set n("174:Munich,Germany") [$ns node] }
+  if { [info exists n("174:Atlanta,GA")] == 0 } {
+    set n("174:Atlanta,GA") [$ns node] }
+  if { [info exists n("174:Reading,UnitedKingdom")] == 0 } {
+    set n("174:Reading,UnitedKingdom") [$ns node] }
+  if { [info exists n("174:Albany,NY")] == 0 } {
+    set n("174:Albany,NY") [$ns node] }
+  if { [info exists n("174:SanFrancisco,CA")] == 0 } {
+    set n("174:SanFrancisco,CA") [$ns node] }
+  if { [info exists n("174:Westchester,NY")] == 0 } {
+    set n("174:Westchester,NY") [$ns node] }
+  if { [info exists n("174:Ashburn,VA")] == 0 } {
+    set n("174:Ashburn,VA") [$ns node] }
+  if { [info exists n("174:NewYork,NY")] == 0 } {
+    set n("174:NewYork,NY") [$ns node] }
+  if { [info exists n("174:Innsbruck,Austria")] == 0 } {
+    set n("174:Innsbruck,Austria") [$ns node] }
+  if { [info exists n("174:Stuttgart,Germany")] == 0 } {
+    set n("174:Stuttgart,Germany") [$ns node] }
+  if { [info exists n("174:Birmingham,UnitedKingdom")] == 0 } {
+    set n("174:Birmingham,UnitedKingdom") [$ns node] }
+  if { [info exists n("174:Chicago,IL")] == 0 } {
+    set n("174:Chicago,IL") [$ns node] }
+  if { [info exists n("174:Bedford,MA")] == 0 } {
+    set n("174:Bedford,MA") [$ns node] }
+  if { [info exists n("174:LosAngeles,CA")] == 0 } {
+    set n("174:LosAngeles,CA") [$ns node] }
+  if { [info exists n("174:Dallas,TX")] == 0 } {
+    set n("174:Dallas,TX") [$ns node] }
+  if { [info exists n("174:Cityreach,UnitedKingdom")] == 0 } {
+    set n("174:Cityreach,UnitedKingdom") [$ns node] }
+  if { [info exists n("174:Cambridge,UnitedKingdom")] == 0 } {
+    set n("174:Cambridge,UnitedKingdom") [$ns node] }
+  if { [info exists n("174:Boston,MA")] == 0 } {
+    set n("174:Boston,MA") [$ns node] }
+  if { [info exists n("174:SanJose,CA")] == 0 } {
+    set n("174:SanJose,CA") [$ns node] }
+  if { [info exists n("174:Washington,DC")] == 0 } {
+    set n("174:Washington,DC") [$ns node] }
+  if { [info exists n("174:Edinburgh,UnitedKingdom")] == 0 } {
+    set n("174:Edinburgh,UnitedKingdom") [$ns node] }
+
 #174:Albany, NY -> 174:Boston, MA 1.11646443455727
 $ns duplex-link $n("174:Albany,NY") $n("174:Boston,MA") 10.0Gb 1.11646443455727ms DropTail
 

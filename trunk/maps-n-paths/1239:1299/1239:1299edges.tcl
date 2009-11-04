@@ -1,11 +1,15 @@
 # 1239:1299
-for{set i 0} {$i < 5} {incr i} {
-  set n(1299:Moscow,Russia) [$ns node]
-  set n(1299:Stockholm,Sweden) [$ns node]
-  set n(1239:Stockholm,Sweden) [$ns node]
-  set n(1299:NewYork,NY) [$ns node]
-  set n(1239:NewYork,NY) [$ns node]
-}
+  if { [info exists n("1299:Moscow,Russia")] == 0 } {
+    set n("1299:Moscow,Russia") [$ns node] }
+  if { [info exists n("1299:Stockholm,Sweden")] == 0 } {
+    set n("1299:Stockholm,Sweden") [$ns node] }
+  if { [info exists n("1239:Stockholm,Sweden")] == 0 } {
+    set n("1239:Stockholm,Sweden") [$ns node] }
+  if { [info exists n("1299:NewYork,NY")] == 0 } {
+    set n("1299:NewYork,NY") [$ns node] }
+  if { [info exists n("1239:NewYork,NY")] == 0 } {
+    set n("1239:NewYork,NY") [$ns node] }
+
 #1239:New York, NY -> 1299:New York, NY 0
 $ns duplex-link $n("1239:NewYork,NY") $n("1299:NewYork,NY") 10.0Gb 0ms DropTail
 

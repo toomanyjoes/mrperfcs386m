@@ -1,13 +1,19 @@
 # 1299:7132
-for{set i 0} {$i < 7} {incr i} {
-  set n(1299:SantaClara,CA) [$ns node]
-  set n(1299:Herndon,VA) [$ns node]
-  set n(7132:LosAngeles,CA) [$ns node]
-  set n(7132:SantaClara,CA) [$ns node]
-  set n(7132:Herndon,VA) [$ns node]
-  set n(1299:LosAngeles,CA) [$ns node]
-  set n(7132:PaloAlto,CA) [$ns node]
-}
+  if { [info exists n("1299:SantaClara,CA")] == 0 } {
+    set n("1299:SantaClara,CA") [$ns node] }
+  if { [info exists n("1299:Herndon,VA")] == 0 } {
+    set n("1299:Herndon,VA") [$ns node] }
+  if { [info exists n("7132:LosAngeles,CA")] == 0 } {
+    set n("7132:LosAngeles,CA") [$ns node] }
+  if { [info exists n("7132:SantaClara,CA")] == 0 } {
+    set n("7132:SantaClara,CA") [$ns node] }
+  if { [info exists n("7132:Herndon,VA")] == 0 } {
+    set n("7132:Herndon,VA") [$ns node] }
+  if { [info exists n("1299:LosAngeles,CA")] == 0 } {
+    set n("1299:LosAngeles,CA") [$ns node] }
+  if { [info exists n("7132:PaloAlto,CA")] == 0 } {
+    set n("7132:PaloAlto,CA") [$ns node] }
+
 #1299:Herndon, VA -> 7132:Herndon, VA 0
 $ns duplex-link $n("1299:Herndon,VA") $n("7132:Herndon,VA") 10.0Gb 0ms DropTail
 

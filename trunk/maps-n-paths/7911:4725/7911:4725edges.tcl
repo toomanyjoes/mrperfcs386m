@@ -1,10 +1,13 @@
 # 7911:4725
-for{set i 0} {$i < 4} {incr i} {
-  set n(4725:SantaClara,CA) [$ns node]
-  set n(7911:SantaClara,CA) [$ns node]
-  set n(4725:Chiba,Japan) [$ns node]
-  set n(4725:PaloAlto,CA) [$ns node]
-}
+  if { [info exists n("4725:SantaClara,CA")] == 0 } {
+    set n("4725:SantaClara,CA") [$ns node] }
+  if { [info exists n("7911:SantaClara,CA")] == 0 } {
+    set n("7911:SantaClara,CA") [$ns node] }
+  if { [info exists n("4725:Chiba,Japan")] == 0 } {
+    set n("4725:Chiba,Japan") [$ns node] }
+  if { [info exists n("4725:PaloAlto,CA")] == 0 } {
+    set n("4725:PaloAlto,CA") [$ns node] }
+
 #7911:Santa Clara, CA -> 4725:Chiba, Japan 41.4964990683224
 $ns duplex-link $n("7911:SantaClara,CA") $n("4725:Chiba,Japan") 10.0Gb 41.4964990683224ms DropTail
 

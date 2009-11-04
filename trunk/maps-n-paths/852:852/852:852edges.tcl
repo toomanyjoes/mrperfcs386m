@@ -1,36 +1,65 @@
 # 852:852
-for{set i 0} {$i < 30} {incr i} {
-  set n(852:Ottawa,Canada) [$ns node]
-  set n(852:SaintMargaretBay,Canada) [$ns node]
-  set n(852:Quebec,Canada) [$ns node]
-  set n(852:Rimouski,Canada) [$ns node]
-  set n(852:ThetfordMines,Canada) [$ns node]
-  set n(852:Surrey,Canada) [$ns node]
-  set n(852:Sydney,Canada) [$ns node]
-  set n(852:Toronto,Canada) [$ns node]
-  set n(852:Vancouver,Canada) [$ns node]
-  set n(852:Victoria,Canada) [$ns node]
-  set n(852:Bonaventure,Canada) [$ns node]
-  set n(852:Winnipeg,Canada) [$ns node]
-  set n(852:Calgary,Canada) [$ns node]
-  set n(852:Seattle,WA) [$ns node]
-  set n(852:Edmonton,Canada) [$ns node]
-  set n(852:GrandePrairie,Canada) [$ns node]
-  set n(852:Hauterive,Canada) [$ns node]
-  set n(852:Halifax,Canada) [$ns node]
-  set n(852:NewYork,NY) [$ns node]
-  set n(852:Chicago,IL) [$ns node]
-  set n(852:Kingston,Canada) [$ns node]
-  set n(852:Kamloops,Canada) [$ns node]
-  set n(852:NewWestminster,Canada) [$ns node]
-  set n(852:PaloAlto,CA) [$ns node]
-  set n(852:Montreal,Canada) [$ns node]
-  set n(852:Markham,Canada) [$ns node]
-  set n(852:Moncton,Canada) [$ns node]
-  set n(852:Matane,Canada) [$ns node]
-  set n(852:NewMarket,Canada) [$ns node]
-  set n(852:SaintGeorgesdeBeauce,Canada) [$ns node]
-}
+  if { [info exists n("852:Ottawa,Canada")] == 0 } {
+    set n("852:Ottawa,Canada") [$ns node] }
+  if { [info exists n("852:SaintMargaretBay,Canada")] == 0 } {
+    set n("852:SaintMargaretBay,Canada") [$ns node] }
+  if { [info exists n("852:Quebec,Canada")] == 0 } {
+    set n("852:Quebec,Canada") [$ns node] }
+  if { [info exists n("852:Rimouski,Canada")] == 0 } {
+    set n("852:Rimouski,Canada") [$ns node] }
+  if { [info exists n("852:ThetfordMines,Canada")] == 0 } {
+    set n("852:ThetfordMines,Canada") [$ns node] }
+  if { [info exists n("852:Surrey,Canada")] == 0 } {
+    set n("852:Surrey,Canada") [$ns node] }
+  if { [info exists n("852:Sydney,Canada")] == 0 } {
+    set n("852:Sydney,Canada") [$ns node] }
+  if { [info exists n("852:Toronto,Canada")] == 0 } {
+    set n("852:Toronto,Canada") [$ns node] }
+  if { [info exists n("852:Vancouver,Canada")] == 0 } {
+    set n("852:Vancouver,Canada") [$ns node] }
+  if { [info exists n("852:Victoria,Canada")] == 0 } {
+    set n("852:Victoria,Canada") [$ns node] }
+  if { [info exists n("852:Bonaventure,Canada")] == 0 } {
+    set n("852:Bonaventure,Canada") [$ns node] }
+  if { [info exists n("852:Winnipeg,Canada")] == 0 } {
+    set n("852:Winnipeg,Canada") [$ns node] }
+  if { [info exists n("852:Calgary,Canada")] == 0 } {
+    set n("852:Calgary,Canada") [$ns node] }
+  if { [info exists n("852:Seattle,WA")] == 0 } {
+    set n("852:Seattle,WA") [$ns node] }
+  if { [info exists n("852:Edmonton,Canada")] == 0 } {
+    set n("852:Edmonton,Canada") [$ns node] }
+  if { [info exists n("852:GrandePrairie,Canada")] == 0 } {
+    set n("852:GrandePrairie,Canada") [$ns node] }
+  if { [info exists n("852:Hauterive,Canada")] == 0 } {
+    set n("852:Hauterive,Canada") [$ns node] }
+  if { [info exists n("852:Halifax,Canada")] == 0 } {
+    set n("852:Halifax,Canada") [$ns node] }
+  if { [info exists n("852:NewYork,NY")] == 0 } {
+    set n("852:NewYork,NY") [$ns node] }
+  if { [info exists n("852:Chicago,IL")] == 0 } {
+    set n("852:Chicago,IL") [$ns node] }
+  if { [info exists n("852:Kingston,Canada")] == 0 } {
+    set n("852:Kingston,Canada") [$ns node] }
+  if { [info exists n("852:Kamloops,Canada")] == 0 } {
+    set n("852:Kamloops,Canada") [$ns node] }
+  if { [info exists n("852:NewWestminster,Canada")] == 0 } {
+    set n("852:NewWestminster,Canada") [$ns node] }
+  if { [info exists n("852:PaloAlto,CA")] == 0 } {
+    set n("852:PaloAlto,CA") [$ns node] }
+  if { [info exists n("852:Montreal,Canada")] == 0 } {
+    set n("852:Montreal,Canada") [$ns node] }
+  if { [info exists n("852:Markham,Canada")] == 0 } {
+    set n("852:Markham,Canada") [$ns node] }
+  if { [info exists n("852:Moncton,Canada")] == 0 } {
+    set n("852:Moncton,Canada") [$ns node] }
+  if { [info exists n("852:Matane,Canada")] == 0 } {
+    set n("852:Matane,Canada") [$ns node] }
+  if { [info exists n("852:NewMarket,Canada")] == 0 } {
+    set n("852:NewMarket,Canada") [$ns node] }
+  if { [info exists n("852:SaintGeorgesdeBeauce,Canada")] == 0 } {
+    set n("852:SaintGeorgesdeBeauce,Canada") [$ns node] }
+
 #852:Bonaventure, Canada -> 852:Rimouski, Canada 1.15452398844909
 $ns duplex-link $n("852:Bonaventure,Canada") $n("852:Rimouski,Canada") 10.0Gb 1.15452398844909ms DropTail
 

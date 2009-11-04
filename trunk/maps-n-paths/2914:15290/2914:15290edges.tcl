@@ -1,9 +1,11 @@
 # 2914:15290
-for{set i 0} {$i < 3} {incr i} {
-  set n(15290:Toronto,Canada) [$ns node]
-  set n(2914:NewYork,NY) [$ns node]
-  set n(2914:Chicago,IL) [$ns node]
-}
+  if { [info exists n("15290:Toronto,Canada")] == 0 } {
+    set n("15290:Toronto,Canada") [$ns node] }
+  if { [info exists n("2914:NewYork,NY")] == 0 } {
+    set n("2914:NewYork,NY") [$ns node] }
+  if { [info exists n("2914:Chicago,IL")] == 0 } {
+    set n("2914:Chicago,IL") [$ns node] }
+
 #2914:Chicago, IL -> 15290:Toronto, Canada 3.52496412161527
 $ns duplex-link $n("2914:Chicago,IL") $n("15290:Toronto,Canada") 10.0Gb 3.52496412161527ms DropTail
 

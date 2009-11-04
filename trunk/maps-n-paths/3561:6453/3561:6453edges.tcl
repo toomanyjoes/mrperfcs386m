@@ -1,13 +1,19 @@
 # 3561:6453
-for{set i 0} {$i < 7} {incr i} {
-  set n(6453:NewYork,NY) [$ns node]
-  set n(6453:DesLaurentides,Canada) [$ns node]
-  set n(3561:London,UnitedKingdom) [$ns node]
-  set n(3561:Washington,DC) [$ns node]
-  set n(3561:NewYork,NY) [$ns node]
-  set n(6453:London,UnitedKingdom) [$ns node]
-  set n(3561:DesLaurentides,Canada) [$ns node]
-}
+  if { [info exists n("6453:NewYork,NY")] == 0 } {
+    set n("6453:NewYork,NY") [$ns node] }
+  if { [info exists n("6453:DesLaurentides,Canada")] == 0 } {
+    set n("6453:DesLaurentides,Canada") [$ns node] }
+  if { [info exists n("3561:London,UnitedKingdom")] == 0 } {
+    set n("3561:London,UnitedKingdom") [$ns node] }
+  if { [info exists n("3561:Washington,DC")] == 0 } {
+    set n("3561:Washington,DC") [$ns node] }
+  if { [info exists n("3561:NewYork,NY")] == 0 } {
+    set n("3561:NewYork,NY") [$ns node] }
+  if { [info exists n("6453:London,UnitedKingdom")] == 0 } {
+    set n("6453:London,UnitedKingdom") [$ns node] }
+  if { [info exists n("3561:DesLaurentides,Canada")] == 0 } {
+    set n("3561:DesLaurentides,Canada") [$ns node] }
+
 #3561:Des Laurentides, Canada -> 6453:Des Laurentides, Canada 0
 $ns duplex-link $n("3561:DesLaurentides,Canada") $n("6453:DesLaurentides,Canada") 10.0Gb 0ms DropTail
 

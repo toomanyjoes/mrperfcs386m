@@ -1,28 +1,49 @@
 # 16631:16631
-for{set i 0} {$i < 22} {incr i} {
-  set n(16631:Atlanta,GA) [$ns node]
-  set n(16631:Seattle,WA) [$ns node]
-  set n(16631:Jacksonville,FL) [$ns node]
-  set n(16631:Dallas,TX) [$ns node]
-  set n(16631:Chicago,IL) [$ns node]
-  set n(16631:Orlando,FL) [$ns node]
-  set n(16631:Baltimore,MD) [$ns node]
-  set n(16631:SanFrancisco,CA) [$ns node]
-  set n(16631:Boston,MA) [$ns node]
-  set n(16631:KansasCity,MO) [$ns node]
-  set n(16631:Washington,DC) [$ns node]
-  set n(16631:SanDiego,CA) [$ns node]
-  set n(16631:Denver,CO) [$ns node]
-  set n(16631:SanJose,CA) [$ns node]
-  set n(16631:NewYork,NY) [$ns node]
-  set n(16631:PaloAlto,CA) [$ns node]
-  set n(16631:Philadelphia,PA) [$ns node]
-  set n(16631:Miami,FL) [$ns node]
-  set n(16631:LosAngeles,CA) [$ns node]
-  set n(16631:Toronto,Canada) [$ns node]
-  set n(16631:Houston,TX) [$ns node]
-  set n(16631:Tampa,FL) [$ns node]
-}
+  if { [info exists n("16631:Atlanta,GA")] == 0 } {
+    set n("16631:Atlanta,GA") [$ns node] }
+  if { [info exists n("16631:Seattle,WA")] == 0 } {
+    set n("16631:Seattle,WA") [$ns node] }
+  if { [info exists n("16631:Jacksonville,FL")] == 0 } {
+    set n("16631:Jacksonville,FL") [$ns node] }
+  if { [info exists n("16631:Dallas,TX")] == 0 } {
+    set n("16631:Dallas,TX") [$ns node] }
+  if { [info exists n("16631:Chicago,IL")] == 0 } {
+    set n("16631:Chicago,IL") [$ns node] }
+  if { [info exists n("16631:Orlando,FL")] == 0 } {
+    set n("16631:Orlando,FL") [$ns node] }
+  if { [info exists n("16631:Baltimore,MD")] == 0 } {
+    set n("16631:Baltimore,MD") [$ns node] }
+  if { [info exists n("16631:SanFrancisco,CA")] == 0 } {
+    set n("16631:SanFrancisco,CA") [$ns node] }
+  if { [info exists n("16631:Boston,MA")] == 0 } {
+    set n("16631:Boston,MA") [$ns node] }
+  if { [info exists n("16631:KansasCity,MO")] == 0 } {
+    set n("16631:KansasCity,MO") [$ns node] }
+  if { [info exists n("16631:Washington,DC")] == 0 } {
+    set n("16631:Washington,DC") [$ns node] }
+  if { [info exists n("16631:SanDiego,CA")] == 0 } {
+    set n("16631:SanDiego,CA") [$ns node] }
+  if { [info exists n("16631:Denver,CO")] == 0 } {
+    set n("16631:Denver,CO") [$ns node] }
+  if { [info exists n("16631:SanJose,CA")] == 0 } {
+    set n("16631:SanJose,CA") [$ns node] }
+  if { [info exists n("16631:NewYork,NY")] == 0 } {
+    set n("16631:NewYork,NY") [$ns node] }
+  if { [info exists n("16631:PaloAlto,CA")] == 0 } {
+    set n("16631:PaloAlto,CA") [$ns node] }
+  if { [info exists n("16631:Philadelphia,PA")] == 0 } {
+    set n("16631:Philadelphia,PA") [$ns node] }
+  if { [info exists n("16631:Miami,FL")] == 0 } {
+    set n("16631:Miami,FL") [$ns node] }
+  if { [info exists n("16631:LosAngeles,CA")] == 0 } {
+    set n("16631:LosAngeles,CA") [$ns node] }
+  if { [info exists n("16631:Toronto,Canada")] == 0 } {
+    set n("16631:Toronto,Canada") [$ns node] }
+  if { [info exists n("16631:Houston,TX")] == 0 } {
+    set n("16631:Houston,TX") [$ns node] }
+  if { [info exists n("16631:Tampa,FL")] == 0 } {
+    set n("16631:Tampa,FL") [$ns node] }
+
 #16631:Atlanta, GA -> 16631:Jacksonville, FL 2.30230902274313
 $ns duplex-link $n("16631:Atlanta,GA") $n("16631:Jacksonville,FL") 10.0Gb 2.30230902274313ms DropTail
 

@@ -1,21 +1,35 @@
 # 3356:1
-for{set i 0} {$i < 15} {incr i} {
-  set n(1:Denver,CO) [$ns node]
-  set n(3356:LosAngeles,CA) [$ns node]
-  set n(1:Chicago,IL) [$ns node]
-  set n(1:NewYork,NY) [$ns node]
-  set n(3356:Seattle,WA) [$ns node]
-  set n(3356:Chicago,IL) [$ns node]
-  set n(3356:Washington,DC) [$ns node]
-  set n(1:Ashburn,VA) [$ns node]
-  set n(1:LosAngeles,CA) [$ns node]
-  set n(1:Seattle,WA) [$ns node]
-  set n(3356:SanJose,CA) [$ns node]
-  set n(3356:Denver,CO) [$ns node]
-  set n(1:PaloAlto,CA) [$ns node]
-  set n(1:Everett,WA) [$ns node]
-  set n(3356:NewYork,NY) [$ns node]
-}
+  if { [info exists n("1:Denver,CO")] == 0 } {
+    set n("1:Denver,CO") [$ns node] }
+  if { [info exists n("3356:LosAngeles,CA")] == 0 } {
+    set n("3356:LosAngeles,CA") [$ns node] }
+  if { [info exists n("1:Chicago,IL")] == 0 } {
+    set n("1:Chicago,IL") [$ns node] }
+  if { [info exists n("1:NewYork,NY")] == 0 } {
+    set n("1:NewYork,NY") [$ns node] }
+  if { [info exists n("3356:Seattle,WA")] == 0 } {
+    set n("3356:Seattle,WA") [$ns node] }
+  if { [info exists n("3356:Chicago,IL")] == 0 } {
+    set n("3356:Chicago,IL") [$ns node] }
+  if { [info exists n("3356:Washington,DC")] == 0 } {
+    set n("3356:Washington,DC") [$ns node] }
+  if { [info exists n("1:Ashburn,VA")] == 0 } {
+    set n("1:Ashburn,VA") [$ns node] }
+  if { [info exists n("1:LosAngeles,CA")] == 0 } {
+    set n("1:LosAngeles,CA") [$ns node] }
+  if { [info exists n("1:Seattle,WA")] == 0 } {
+    set n("1:Seattle,WA") [$ns node] }
+  if { [info exists n("3356:SanJose,CA")] == 0 } {
+    set n("3356:SanJose,CA") [$ns node] }
+  if { [info exists n("3356:Denver,CO")] == 0 } {
+    set n("3356:Denver,CO") [$ns node] }
+  if { [info exists n("1:PaloAlto,CA")] == 0 } {
+    set n("1:PaloAlto,CA") [$ns node] }
+  if { [info exists n("1:Everett,WA")] == 0 } {
+    set n("1:Everett,WA") [$ns node] }
+  if { [info exists n("3356:NewYork,NY")] == 0 } {
+    set n("3356:NewYork,NY") [$ns node] }
+
 #3356:Chicago, IL -> 1:Chicago, IL 0
 $ns duplex-link $n("3356:Chicago,IL") $n("1:Chicago,IL") 10.0Gb 0ms DropTail
 
