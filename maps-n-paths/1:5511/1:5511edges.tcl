@@ -1,13 +1,19 @@
 # 1:5511
-for{set i 0} {$i < 7} {incr i} {
-  set n(1:Chicago,IL) [$ns node]
-  set n(5511:Chicago,IL) [$ns node]
-  set n(5511:Ashburn,VA) [$ns node]
-  set n(5511:SanJose,CA) [$ns node]
-  set n(1:Ashburn,VA) [$ns node]
-  set n(5511:PaloAlto,CA) [$ns node]
-  set n(1:PaloAlto,CA) [$ns node]
-}
+  if { [info exists n("1:Chicago,IL")] == 0 } {
+    set n("1:Chicago,IL") [$ns node] }
+  if { [info exists n("5511:Chicago,IL")] == 0 } {
+    set n("5511:Chicago,IL") [$ns node] }
+  if { [info exists n("5511:Ashburn,VA")] == 0 } {
+    set n("5511:Ashburn,VA") [$ns node] }
+  if { [info exists n("5511:SanJose,CA")] == 0 } {
+    set n("5511:SanJose,CA") [$ns node] }
+  if { [info exists n("1:Ashburn,VA")] == 0 } {
+    set n("1:Ashburn,VA") [$ns node] }
+  if { [info exists n("5511:PaloAlto,CA")] == 0 } {
+    set n("5511:PaloAlto,CA") [$ns node] }
+  if { [info exists n("1:PaloAlto,CA")] == 0 } {
+    set n("1:PaloAlto,CA") [$ns node] }
+
 #1:Ashburn, VA -> 5511:Ashburn, VA 0
 $ns duplex-link $n("1:Ashburn,VA") $n("5511:Ashburn,VA") 10.0Gb 0ms DropTail
 

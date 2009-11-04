@@ -1,12 +1,17 @@
 # 4544:7018
-for{set i 0} {$i < 6} {incr i} {
-  set n(7018:SanFrancisco,CA) [$ns node]
-  set n(7018:Washington,DC) [$ns node]
-  set n(4544:Sunnyvale,CA) [$ns node]
-  set n(4544:Herndon,VA) [$ns node]
-  set n(4544:Dallas,TX) [$ns node]
-  set n(7018:Dallas,TX) [$ns node]
-}
+  if { [info exists n("7018:SanFrancisco,CA")] == 0 } {
+    set n("7018:SanFrancisco,CA") [$ns node] }
+  if { [info exists n("7018:Washington,DC")] == 0 } {
+    set n("7018:Washington,DC") [$ns node] }
+  if { [info exists n("4544:Sunnyvale,CA")] == 0 } {
+    set n("4544:Sunnyvale,CA") [$ns node] }
+  if { [info exists n("4544:Herndon,VA")] == 0 } {
+    set n("4544:Herndon,VA") [$ns node] }
+  if { [info exists n("4544:Dallas,TX")] == 0 } {
+    set n("4544:Dallas,TX") [$ns node] }
+  if { [info exists n("7018:Dallas,TX")] == 0 } {
+    set n("7018:Dallas,TX") [$ns node] }
+
 #4544:Dallas, TX -> 7018:Dallas, TX 0
 $ns duplex-link $n("4544:Dallas,TX") $n("7018:Dallas,TX") 10.0Gb 0ms DropTail
 

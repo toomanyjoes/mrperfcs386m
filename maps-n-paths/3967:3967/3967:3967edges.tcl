@@ -1,13 +1,19 @@
 # 3967:3967
-for{set i 0} {$i < 7} {incr i} {
-  set n(3967:PaloAlto,CA) [$ns node]
-  set n(3967:NewYork,NY) [$ns node]
-  set n(3967:SantaClara,CA) [$ns node]
-  set n(3967:ElSegundo,CA) [$ns node]
-  set n(3967:Sunnyvale,CA) [$ns node]
-  set n(3967:Irvine,CA) [$ns node]
-  set n(3967:SanJose,CA) [$ns node]
-}
+  if { [info exists n("3967:PaloAlto,CA")] == 0 } {
+    set n("3967:PaloAlto,CA") [$ns node] }
+  if { [info exists n("3967:NewYork,NY")] == 0 } {
+    set n("3967:NewYork,NY") [$ns node] }
+  if { [info exists n("3967:SantaClara,CA")] == 0 } {
+    set n("3967:SantaClara,CA") [$ns node] }
+  if { [info exists n("3967:ElSegundo,CA")] == 0 } {
+    set n("3967:ElSegundo,CA") [$ns node] }
+  if { [info exists n("3967:Sunnyvale,CA")] == 0 } {
+    set n("3967:Sunnyvale,CA") [$ns node] }
+  if { [info exists n("3967:Irvine,CA")] == 0 } {
+    set n("3967:Irvine,CA") [$ns node] }
+  if { [info exists n("3967:SanJose,CA")] == 0 } {
+    set n("3967:SanJose,CA") [$ns node] }
+
 #3967:El Segundo, CA -> 3967:Irvine, CA 0.302952246334439
 $ns duplex-link $n("3967:ElSegundo,CA") $n("3967:Irvine,CA") 10.0Gb 0.302952246334439ms DropTail
 

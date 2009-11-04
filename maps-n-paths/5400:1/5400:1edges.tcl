@@ -1,10 +1,13 @@
 # 5400:1
-for{set i 0} {$i < 4} {incr i} {
-  set n(5400:Ashburn,VA) [$ns node]
-  set n(1:Chicago,IL) [$ns node]
-  set n(5400:NewYork,NY) [$ns node]
-  set n(1:Washington,DC) [$ns node]
-}
+  if { [info exists n("5400:Ashburn,VA")] == 0 } {
+    set n("5400:Ashburn,VA") [$ns node] }
+  if { [info exists n("1:Chicago,IL")] == 0 } {
+    set n("1:Chicago,IL") [$ns node] }
+  if { [info exists n("5400:NewYork,NY")] == 0 } {
+    set n("5400:NewYork,NY") [$ns node] }
+  if { [info exists n("1:Washington,DC")] == 0 } {
+    set n("1:Washington,DC") [$ns node] }
+
 #5400:Ashburn, VA -> 1:Washington, DC 0.225316255475169
 $ns duplex-link $n("5400:Ashburn,VA") $n("1:Washington,DC") 10.0Gb 0.225316255475169ms DropTail
 

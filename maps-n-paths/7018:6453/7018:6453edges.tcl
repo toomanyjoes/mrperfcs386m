@@ -1,13 +1,19 @@
 # 7018:6453
-for{set i 0} {$i < 7} {incr i} {
-  set n(6453:LosAngeles,CA) [$ns node]
-  set n(7018:StLouis,MO) [$ns node]
-  set n(7018:Detroit,MI) [$ns node]
-  set n(7018:LosAngeles,CA) [$ns node]
-  set n(6453:Chicago,IL) [$ns node]
-  set n(7018:Cambridge,MA) [$ns node]
-  set n(7018:Chicago,IL) [$ns node]
-}
+  if { [info exists n("6453:LosAngeles,CA")] == 0 } {
+    set n("6453:LosAngeles,CA") [$ns node] }
+  if { [info exists n("7018:StLouis,MO")] == 0 } {
+    set n("7018:StLouis,MO") [$ns node] }
+  if { [info exists n("7018:Detroit,MI")] == 0 } {
+    set n("7018:Detroit,MI") [$ns node] }
+  if { [info exists n("7018:LosAngeles,CA")] == 0 } {
+    set n("7018:LosAngeles,CA") [$ns node] }
+  if { [info exists n("6453:Chicago,IL")] == 0 } {
+    set n("6453:Chicago,IL") [$ns node] }
+  if { [info exists n("7018:Cambridge,MA")] == 0 } {
+    set n("7018:Cambridge,MA") [$ns node] }
+  if { [info exists n("7018:Chicago,IL")] == 0 } {
+    set n("7018:Chicago,IL") [$ns node] }
+
 #7018:Cambridge, MA -> 6453:Chicago, IL 6.8145233115144
 $ns duplex-link $n("7018:Cambridge,MA") $n("6453:Chicago,IL") 10.0Gb 6.8145233115144ms DropTail
 

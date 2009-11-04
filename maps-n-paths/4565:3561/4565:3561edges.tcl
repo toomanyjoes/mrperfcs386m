@@ -1,12 +1,17 @@
 # 4565:3561
-for{set i 0} {$i < 6} {incr i} {
-  set n(4565:Napa,CA) [$ns node]
-  set n(4565:Washington,DC) [$ns node]
-  set n(3561:Washington,DC) [$ns node]
-  set n(4565:PaloAlto,CA) [$ns node]
-  set n(3561:PaloAlto,CA) [$ns node]
-  set n(4565:LosAngeles,CA) [$ns node]
-}
+  if { [info exists n("4565:Napa,CA")] == 0 } {
+    set n("4565:Napa,CA") [$ns node] }
+  if { [info exists n("4565:Washington,DC")] == 0 } {
+    set n("4565:Washington,DC") [$ns node] }
+  if { [info exists n("3561:Washington,DC")] == 0 } {
+    set n("3561:Washington,DC") [$ns node] }
+  if { [info exists n("4565:PaloAlto,CA")] == 0 } {
+    set n("4565:PaloAlto,CA") [$ns node] }
+  if { [info exists n("3561:PaloAlto,CA")] == 0 } {
+    set n("3561:PaloAlto,CA") [$ns node] }
+  if { [info exists n("4565:LosAngeles,CA")] == 0 } {
+    set n("4565:LosAngeles,CA") [$ns node] }
+
 #4565:Los Angeles, CA -> 3561:Palo Alto, CA 2.50820183694084
 $ns duplex-link $n("4565:LosAngeles,CA") $n("3561:PaloAlto,CA") 10.0Gb 2.50820183694084ms DropTail
 

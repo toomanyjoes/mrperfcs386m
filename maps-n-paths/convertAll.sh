@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# cd into all directories and call convert2ns.awk. output "dirName"edges.tcl
+
 AS_DIRS="`ls -F | grep "/"`"
 
 for AS in $AS_DIRS

@@ -1,36 +1,65 @@
 # 5400:5400
-for{set i 0} {$i < 30} {incr i} {
-  set n(->5400:LosAngeles,CA) [$ns node]
-  set n(5400:Chicago,IL) [$ns node]
-  set n(5400:Ashburn,VA) [$ns node]
-  set n(5400:Tokyo,Japan) [$ns node]
-  set n(5400:Goonhilly,UnitedKingdom) [$ns node]
-  set n(5400:Reading,UnitedKingdom) [$ns node]
-  set n(5400:London,UnitedKingdom) [$ns node]
-  set n(5400:Madley,UnitedKingdom) [$ns node]
-  set n(5400:SanFrancisco,CA) [$ns node]
-  set n(5400:Washington,DC) [$ns node]
-  set n(5400:Stockholm,Sweden) [$ns node]
-  set n(5400:Frankfurt,Germany) [$ns node]
-  set n(5400:Hayward,CA) [$ns node]
-  set n(5400:Dublin,Ireland) [$ns node]
-  set n(5400:Amsterdam,Netherlands) [$ns node]
-  set n(5400:SanJose,CA) [$ns node]
-  set n(5400:Madrid,Spain) [$ns node]
-  set n(5400:Zurich,Switzerland) [$ns node]
-  set n(5400:Singapore) [$ns node]
-  set n(5400:NewYork,NY) [$ns node]
-  set n(5400:Brussels,Belgium) [$ns node]
-  set n(5400:Budapest,Hungary) [$ns node]
-  set n(5400:Milan,Italy) [$ns node]
-  set n(5400:HongKong) [$ns node]
-  set n(5400:LosAngeles,CA) [$ns node]
-  set n(5400:Sydney,Australia) [$ns node]
-  set n(5400:Vienna,Austria) [$ns node]
-  set n(5400:Paris,France) [$ns node]
-  set n(5400:McLean,VA) [$ns node]
-  set n(5400:Atlanta,GA) [$ns node]
-}
+  if { [info exists n("->5400:LosAngeles,CA")] == 0 } {
+    set n("->5400:LosAngeles,CA") [$ns node] }
+  if { [info exists n("5400:Chicago,IL")] == 0 } {
+    set n("5400:Chicago,IL") [$ns node] }
+  if { [info exists n("5400:Ashburn,VA")] == 0 } {
+    set n("5400:Ashburn,VA") [$ns node] }
+  if { [info exists n("5400:Tokyo,Japan")] == 0 } {
+    set n("5400:Tokyo,Japan") [$ns node] }
+  if { [info exists n("5400:Goonhilly,UnitedKingdom")] == 0 } {
+    set n("5400:Goonhilly,UnitedKingdom") [$ns node] }
+  if { [info exists n("5400:Reading,UnitedKingdom")] == 0 } {
+    set n("5400:Reading,UnitedKingdom") [$ns node] }
+  if { [info exists n("5400:London,UnitedKingdom")] == 0 } {
+    set n("5400:London,UnitedKingdom") [$ns node] }
+  if { [info exists n("5400:Madley,UnitedKingdom")] == 0 } {
+    set n("5400:Madley,UnitedKingdom") [$ns node] }
+  if { [info exists n("5400:SanFrancisco,CA")] == 0 } {
+    set n("5400:SanFrancisco,CA") [$ns node] }
+  if { [info exists n("5400:Washington,DC")] == 0 } {
+    set n("5400:Washington,DC") [$ns node] }
+  if { [info exists n("5400:Stockholm,Sweden")] == 0 } {
+    set n("5400:Stockholm,Sweden") [$ns node] }
+  if { [info exists n("5400:Frankfurt,Germany")] == 0 } {
+    set n("5400:Frankfurt,Germany") [$ns node] }
+  if { [info exists n("5400:Hayward,CA")] == 0 } {
+    set n("5400:Hayward,CA") [$ns node] }
+  if { [info exists n("5400:Dublin,Ireland")] == 0 } {
+    set n("5400:Dublin,Ireland") [$ns node] }
+  if { [info exists n("5400:Amsterdam,Netherlands")] == 0 } {
+    set n("5400:Amsterdam,Netherlands") [$ns node] }
+  if { [info exists n("5400:SanJose,CA")] == 0 } {
+    set n("5400:SanJose,CA") [$ns node] }
+  if { [info exists n("5400:Madrid,Spain")] == 0 } {
+    set n("5400:Madrid,Spain") [$ns node] }
+  if { [info exists n("5400:Zurich,Switzerland")] == 0 } {
+    set n("5400:Zurich,Switzerland") [$ns node] }
+  if { [info exists n("5400:Singapore")] == 0 } {
+    set n("5400:Singapore") [$ns node] }
+  if { [info exists n("5400:NewYork,NY")] == 0 } {
+    set n("5400:NewYork,NY") [$ns node] }
+  if { [info exists n("5400:Brussels,Belgium")] == 0 } {
+    set n("5400:Brussels,Belgium") [$ns node] }
+  if { [info exists n("5400:Budapest,Hungary")] == 0 } {
+    set n("5400:Budapest,Hungary") [$ns node] }
+  if { [info exists n("5400:Milan,Italy")] == 0 } {
+    set n("5400:Milan,Italy") [$ns node] }
+  if { [info exists n("5400:HongKong")] == 0 } {
+    set n("5400:HongKong") [$ns node] }
+  if { [info exists n("5400:LosAngeles,CA")] == 0 } {
+    set n("5400:LosAngeles,CA") [$ns node] }
+  if { [info exists n("5400:Sydney,Australia")] == 0 } {
+    set n("5400:Sydney,Australia") [$ns node] }
+  if { [info exists n("5400:Vienna,Austria")] == 0 } {
+    set n("5400:Vienna,Austria") [$ns node] }
+  if { [info exists n("5400:Paris,France")] == 0 } {
+    set n("5400:Paris,France") [$ns node] }
+  if { [info exists n("5400:McLean,VA")] == 0 } {
+    set n("5400:McLean,VA") [$ns node] }
+  if { [info exists n("5400:Atlanta,GA")] == 0 } {
+    set n("5400:Atlanta,GA") [$ns node] }
+
 #5400:Amsterdam, Netherlands -> 5400:Ashburn, VA 31.2427358333483
 $ns duplex-link $n("5400:Amsterdam,Netherlands") $n("5400:Ashburn,VA") 10.0Gb 31.2427358333483ms DropTail
 

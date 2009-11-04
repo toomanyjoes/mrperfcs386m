@@ -1,20 +1,33 @@
 # 6461:2914
-for{set i 0} {$i < 14} {incr i} {
-  set n(2914:Ashburn,VA) [$ns node]
-  set n(6461:Seattle,WA) [$ns node]
-  set n(6461:Dallas,TX) [$ns node]
-  set n(6461:Chicago,IL) [$ns node]
-  set n(6461:London,UnitedKingdom) [$ns node]
-  set n(6461:Washington,DC) [$ns node]
-  set n(2914:PaloAlto,CA) [$ns node]
-  set n(2914:NewYork,NY) [$ns node]
-  set n(6461:SanJose,CA) [$ns node]
-  set n(6461:PaloAlto,CA) [$ns node]
-  set n(6461:NewYork,NY) [$ns node]
-  set n(2914:Seattle,WA) [$ns node]
-  set n(2914:Dallas,TX) [$ns node]
-  set n(2914:Chicago,IL) [$ns node]
-}
+  if { [info exists n("2914:Ashburn,VA")] == 0 } {
+    set n("2914:Ashburn,VA") [$ns node] }
+  if { [info exists n("6461:Seattle,WA")] == 0 } {
+    set n("6461:Seattle,WA") [$ns node] }
+  if { [info exists n("6461:Dallas,TX")] == 0 } {
+    set n("6461:Dallas,TX") [$ns node] }
+  if { [info exists n("6461:Chicago,IL")] == 0 } {
+    set n("6461:Chicago,IL") [$ns node] }
+  if { [info exists n("6461:London,UnitedKingdom")] == 0 } {
+    set n("6461:London,UnitedKingdom") [$ns node] }
+  if { [info exists n("6461:Washington,DC")] == 0 } {
+    set n("6461:Washington,DC") [$ns node] }
+  if { [info exists n("2914:PaloAlto,CA")] == 0 } {
+    set n("2914:PaloAlto,CA") [$ns node] }
+  if { [info exists n("2914:NewYork,NY")] == 0 } {
+    set n("2914:NewYork,NY") [$ns node] }
+  if { [info exists n("6461:SanJose,CA")] == 0 } {
+    set n("6461:SanJose,CA") [$ns node] }
+  if { [info exists n("6461:PaloAlto,CA")] == 0 } {
+    set n("6461:PaloAlto,CA") [$ns node] }
+  if { [info exists n("6461:NewYork,NY")] == 0 } {
+    set n("6461:NewYork,NY") [$ns node] }
+  if { [info exists n("2914:Seattle,WA")] == 0 } {
+    set n("2914:Seattle,WA") [$ns node] }
+  if { [info exists n("2914:Dallas,TX")] == 0 } {
+    set n("2914:Dallas,TX") [$ns node] }
+  if { [info exists n("2914:Chicago,IL")] == 0 } {
+    set n("2914:Chicago,IL") [$ns node] }
+
 #6461:Chicago, IL -> 2914:Chicago, IL 0
 $ns duplex-link $n("6461:Chicago,IL") $n("2914:Chicago,IL") 10.0Gb 0ms DropTail
 

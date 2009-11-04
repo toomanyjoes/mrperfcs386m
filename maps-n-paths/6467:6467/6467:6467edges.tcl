@@ -1,26 +1,45 @@
 # 6467:6467
-for{set i 0} {$i < 20} {incr i} {
-  set n(6467:Tulsa,OK) [$ns node]
-  set n(6467:Tampa,FL) [$ns node]
-  set n(6467:Lexington,KY) [$ns node]
-  set n(6467:ElPaso,TX) [$ns node]
-  set n(6467:Columbus,GA) [$ns node]
-  set n(6467:Atlanta,GA) [$ns node]
-  set n(6467:FortLauderdale,FL) [$ns node]
-  set n(6467:Tucson,AZ) [$ns node]
-  set n(6467:Jacksonville,FL) [$ns node]
-  set n(6467:Albuquerque,NM) [$ns node]
-  set n(6467:Dallas,TX) [$ns node]
-  set n(6467:Chicago,IL) [$ns node]
-  set n(6467:FortWorth,TX) [$ns node]
-  set n(6467:LasVegas,NV) [$ns node]
-  set n(6467:Baltimore,MD) [$ns node]
-  set n(6467:KansasCity,MO) [$ns node]
-  set n(6467:Washington,DC) [$ns node]
-  set n(6467:Montgomery,AL) [$ns node]
-  set n(6467:SanJose,CA) [$ns node]
-  set n(6467:ColoradoSprings,CO) [$ns node]
-}
+  if { [info exists n("6467:Tulsa,OK")] == 0 } {
+    set n("6467:Tulsa,OK") [$ns node] }
+  if { [info exists n("6467:Tampa,FL")] == 0 } {
+    set n("6467:Tampa,FL") [$ns node] }
+  if { [info exists n("6467:Lexington,KY")] == 0 } {
+    set n("6467:Lexington,KY") [$ns node] }
+  if { [info exists n("6467:ElPaso,TX")] == 0 } {
+    set n("6467:ElPaso,TX") [$ns node] }
+  if { [info exists n("6467:Columbus,GA")] == 0 } {
+    set n("6467:Columbus,GA") [$ns node] }
+  if { [info exists n("6467:Atlanta,GA")] == 0 } {
+    set n("6467:Atlanta,GA") [$ns node] }
+  if { [info exists n("6467:FortLauderdale,FL")] == 0 } {
+    set n("6467:FortLauderdale,FL") [$ns node] }
+  if { [info exists n("6467:Tucson,AZ")] == 0 } {
+    set n("6467:Tucson,AZ") [$ns node] }
+  if { [info exists n("6467:Jacksonville,FL")] == 0 } {
+    set n("6467:Jacksonville,FL") [$ns node] }
+  if { [info exists n("6467:Albuquerque,NM")] == 0 } {
+    set n("6467:Albuquerque,NM") [$ns node] }
+  if { [info exists n("6467:Dallas,TX")] == 0 } {
+    set n("6467:Dallas,TX") [$ns node] }
+  if { [info exists n("6467:Chicago,IL")] == 0 } {
+    set n("6467:Chicago,IL") [$ns node] }
+  if { [info exists n("6467:FortWorth,TX")] == 0 } {
+    set n("6467:FortWorth,TX") [$ns node] }
+  if { [info exists n("6467:LasVegas,NV")] == 0 } {
+    set n("6467:LasVegas,NV") [$ns node] }
+  if { [info exists n("6467:Baltimore,MD")] == 0 } {
+    set n("6467:Baltimore,MD") [$ns node] }
+  if { [info exists n("6467:KansasCity,MO")] == 0 } {
+    set n("6467:KansasCity,MO") [$ns node] }
+  if { [info exists n("6467:Washington,DC")] == 0 } {
+    set n("6467:Washington,DC") [$ns node] }
+  if { [info exists n("6467:Montgomery,AL")] == 0 } {
+    set n("6467:Montgomery,AL") [$ns node] }
+  if { [info exists n("6467:SanJose,CA")] == 0 } {
+    set n("6467:SanJose,CA") [$ns node] }
+  if { [info exists n("6467:ColoradoSprings,CO")] == 0 } {
+    set n("6467:ColoradoSprings,CO") [$ns node] }
+
 #6467:Albuquerque, NM -> 6467:Colorado Springs, CO 2.23351822833121
 $ns duplex-link $n("6467:Albuquerque,NM") $n("6467:ColoradoSprings,CO") 10.0Gb 2.23351822833121ms DropTail
 

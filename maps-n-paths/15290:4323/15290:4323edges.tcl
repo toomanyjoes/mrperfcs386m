@@ -1,10 +1,13 @@
 # 15290:4323
-for{set i 0} {$i < 4} {incr i} {
-  set n(15290:Toronto,Canada) [$ns node]
-  set n(15290:Seattle,WA) [$ns node]
-  set n(4323:Seattle,WA) [$ns node]
-  set n(4323:Chicago,IL) [$ns node]
-}
+  if { [info exists n("15290:Toronto,Canada")] == 0 } {
+    set n("15290:Toronto,Canada") [$ns node] }
+  if { [info exists n("15290:Seattle,WA")] == 0 } {
+    set n("15290:Seattle,WA") [$ns node] }
+  if { [info exists n("4323:Seattle,WA")] == 0 } {
+    set n("4323:Seattle,WA") [$ns node] }
+  if { [info exists n("4323:Chicago,IL")] == 0 } {
+    set n("4323:Chicago,IL") [$ns node] }
+
 #15290:Seattle, WA -> 4323:Seattle, WA 0
 $ns duplex-link $n("15290:Seattle,WA") $n("4323:Seattle,WA") 10.0Gb 0ms DropTail
 

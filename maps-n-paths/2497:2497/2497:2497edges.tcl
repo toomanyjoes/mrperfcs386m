@@ -1,16 +1,25 @@
 # 2497:2497
-for{set i 0} {$i < 10} {incr i} {
-  set n(2497:PaloAlto,CA) [$ns node]
-  set n(2497:NewYork,NY) [$ns node]
-  set n(2497:Milan,Italy) [$ns node]
-  set n(2497:LosAngeles,CA) [$ns node]
-  set n(2497:Ariake,Japan) [$ns node]
-  set n(2497:Tokyo,Japan) [$ns node]
-  set n(2497:Osaka,Japan) [$ns node]
-  set n(2497:Ashburn,VA) [$ns node]
-  set n(2497:Washington,DC) [$ns node]
-  set n(2497:SanJose,CA) [$ns node]
-}
+  if { [info exists n("2497:PaloAlto,CA")] == 0 } {
+    set n("2497:PaloAlto,CA") [$ns node] }
+  if { [info exists n("2497:NewYork,NY")] == 0 } {
+    set n("2497:NewYork,NY") [$ns node] }
+  if { [info exists n("2497:Milan,Italy")] == 0 } {
+    set n("2497:Milan,Italy") [$ns node] }
+  if { [info exists n("2497:LosAngeles,CA")] == 0 } {
+    set n("2497:LosAngeles,CA") [$ns node] }
+  if { [info exists n("2497:Ariake,Japan")] == 0 } {
+    set n("2497:Ariake,Japan") [$ns node] }
+  if { [info exists n("2497:Tokyo,Japan")] == 0 } {
+    set n("2497:Tokyo,Japan") [$ns node] }
+  if { [info exists n("2497:Osaka,Japan")] == 0 } {
+    set n("2497:Osaka,Japan") [$ns node] }
+  if { [info exists n("2497:Ashburn,VA")] == 0 } {
+    set n("2497:Ashburn,VA") [$ns node] }
+  if { [info exists n("2497:Washington,DC")] == 0 } {
+    set n("2497:Washington,DC") [$ns node] }
+  if { [info exists n("2497:SanJose,CA")] == 0 } {
+    set n("2497:SanJose,CA") [$ns node] }
+
 #2497:Ariake, Japan -> 2497:Milan, Italy 100000
 $ns duplex-link $n("2497:Ariake,Japan") $n("2497:Milan,Italy") 10.0Gb 100000ms DropTail
 

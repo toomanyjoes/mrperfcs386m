@@ -1,26 +1,45 @@
 # 4565:4565
-for{set i 0} {$i < 20} {incr i} {
-  set n(4565:Atlanta,GA) [$ns node]
-  set n(4565:Napa,CA) [$ns node]
-  set n(4565:Seattle,WA) [$ns node]
-  set n(4565:Chicago,IL) [$ns node]
-  set n(4565:Dallas,TX) [$ns node]
-  set n(4565:Ashburn,VA) [$ns node]
-  set n(4565:Relay,MD) [$ns node]
-  set n(4565:LasVegas,NV) [$ns node]
-  set n(4565:Baltimore,MD) [$ns node]
-  set n(4565:Boston,MA) [$ns node]
-  set n(4565:Washington,DC) [$ns node]
-  set n(4565:SanFranciso,CA) [$ns node]
-  set n(4565:PaloAlto,CA) [$ns node]
-  set n(4565:NewYork,NY) [$ns node]
-  set n(4565:Philadelphia,PA) [$ns node]
-  set n(4565:Detroit,MI) [$ns node]
-  set n(4565:LosAngeles,CA) [$ns node]
-  set n(4565:Portland,OR) [$ns node]
-  set n(4565:Charlottesville,VA) [$ns node]
-  set n(4565:SantaAna,CA) [$ns node]
-}
+  if { [info exists n("4565:Atlanta,GA")] == 0 } {
+    set n("4565:Atlanta,GA") [$ns node] }
+  if { [info exists n("4565:Napa,CA")] == 0 } {
+    set n("4565:Napa,CA") [$ns node] }
+  if { [info exists n("4565:Seattle,WA")] == 0 } {
+    set n("4565:Seattle,WA") [$ns node] }
+  if { [info exists n("4565:Chicago,IL")] == 0 } {
+    set n("4565:Chicago,IL") [$ns node] }
+  if { [info exists n("4565:Dallas,TX")] == 0 } {
+    set n("4565:Dallas,TX") [$ns node] }
+  if { [info exists n("4565:Ashburn,VA")] == 0 } {
+    set n("4565:Ashburn,VA") [$ns node] }
+  if { [info exists n("4565:Relay,MD")] == 0 } {
+    set n("4565:Relay,MD") [$ns node] }
+  if { [info exists n("4565:LasVegas,NV")] == 0 } {
+    set n("4565:LasVegas,NV") [$ns node] }
+  if { [info exists n("4565:Baltimore,MD")] == 0 } {
+    set n("4565:Baltimore,MD") [$ns node] }
+  if { [info exists n("4565:Boston,MA")] == 0 } {
+    set n("4565:Boston,MA") [$ns node] }
+  if { [info exists n("4565:Washington,DC")] == 0 } {
+    set n("4565:Washington,DC") [$ns node] }
+  if { [info exists n("4565:SanFranciso,CA")] == 0 } {
+    set n("4565:SanFranciso,CA") [$ns node] }
+  if { [info exists n("4565:PaloAlto,CA")] == 0 } {
+    set n("4565:PaloAlto,CA") [$ns node] }
+  if { [info exists n("4565:NewYork,NY")] == 0 } {
+    set n("4565:NewYork,NY") [$ns node] }
+  if { [info exists n("4565:Philadelphia,PA")] == 0 } {
+    set n("4565:Philadelphia,PA") [$ns node] }
+  if { [info exists n("4565:Detroit,MI")] == 0 } {
+    set n("4565:Detroit,MI") [$ns node] }
+  if { [info exists n("4565:LosAngeles,CA")] == 0 } {
+    set n("4565:LosAngeles,CA") [$ns node] }
+  if { [info exists n("4565:Portland,OR")] == 0 } {
+    set n("4565:Portland,OR") [$ns node] }
+  if { [info exists n("4565:Charlottesville,VA")] == 0 } {
+    set n("4565:Charlottesville,VA") [$ns node] }
+  if { [info exists n("4565:SantaAna,CA")] == 0 } {
+    set n("4565:SantaAna,CA") [$ns node] }
+
 #4565:Ashburn, VA -> 4565:Washington, DC 0.225316255475169
 $ns duplex-link $n("4565:Ashburn,VA") $n("4565:Washington,DC") 10.0Gb 0.225316255475169ms DropTail
 

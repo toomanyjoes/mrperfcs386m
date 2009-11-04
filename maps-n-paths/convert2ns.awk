@@ -1,3 +1,5 @@
+# Beasts through an edges.lat file from RocketFuel and outputs NS2 tcl code
+
 BEGIN { }
 NF == 4 {
   result = result "#" $0 "\n"
@@ -118,9 +120,11 @@ NF < 4 || NF > 10 { result = result "ERROR3\n" $0 "\n\n" }
 END {
   counter = 0
   for(r in router) counter++
-  print "for{set i 0} {$i < " counter "} {incr i} {"
+  #print "for { set i 0 } { $i < " counter " } { incr i } {"
   for(r in router) {
-      print "  set n(" r ") [$ns node]"
+      print "  if { [info exists n(\"" r "\")] == 0 } {"
+      print "    set n(\"" r "\") [$ns node] }"
   }
-  print "}\n" result
+  #print "}"
+  print "\n" result "\n\n"
 }

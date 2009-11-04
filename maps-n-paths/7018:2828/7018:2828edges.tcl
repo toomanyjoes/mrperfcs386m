@@ -1,13 +1,19 @@
 # 7018:2828
-for{set i 0} {$i < 7} {incr i} {
-  set n(2828:SanFrancisco,CA) [$ns node]
-  set n(2828:Washington,DC) [$ns node]
-  set n(7018:SanFrancisco,CA) [$ns node]
-  set n(7018:Washington,DC) [$ns node]
-  set n(2828:Chicago,IL) [$ns node]
-  set n(7018:Abingdon,VA) [$ns node]
-  set n(7018:Chicago,IL) [$ns node]
-}
+  if { [info exists n("2828:SanFrancisco,CA")] == 0 } {
+    set n("2828:SanFrancisco,CA") [$ns node] }
+  if { [info exists n("2828:Washington,DC")] == 0 } {
+    set n("2828:Washington,DC") [$ns node] }
+  if { [info exists n("7018:SanFrancisco,CA")] == 0 } {
+    set n("7018:SanFrancisco,CA") [$ns node] }
+  if { [info exists n("7018:Washington,DC")] == 0 } {
+    set n("7018:Washington,DC") [$ns node] }
+  if { [info exists n("2828:Chicago,IL")] == 0 } {
+    set n("2828:Chicago,IL") [$ns node] }
+  if { [info exists n("7018:Abingdon,VA")] == 0 } {
+    set n("7018:Abingdon,VA") [$ns node] }
+  if { [info exists n("7018:Chicago,IL")] == 0 } {
+    set n("7018:Chicago,IL") [$ns node] }
+
 #7018:Abingdon, VA -> 2828:Washington, DC 2.50061812014333
 $ns duplex-link $n("7018:Abingdon,VA") $n("2828:Washington,DC") 10.0Gb 2.50061812014333ms DropTail
 

@@ -1,64 +1,121 @@
 # 209:209
-for{set i 0} {$i < 58} {incr i} {
-  set n(209:Sacramento,CA) [$ns node]
-  set n(209:SiouxFalls,SD) [$ns node]
-  set n(209:SiouxCity,IA) [$ns node]
-  set n(209:Billings,MT) [$ns node]
-  set n(209:Boise,ID) [$ns node]
-  set n(209:Newark,NJ) [$ns node]
-  set n(209:Fargo,ND) [$ns node]
-  set n(209:Tukwila,WA) [$ns node]
-  set n(209:Portland,OR) [$ns node]
-  set n(209:ColoradoSprings,CO) [$ns node]
-  set n(209:Denver,CO) [$ns node]
-  set n(209:Duluth,MN) [$ns node]
-  set n(209:Sydney,Australia) [$ns node]
-  set n(209:Tampa,FL) [$ns node]
-  set n(209:CrescentCity,CA) [$ns node]
-  set n(209:CedarRapids,IA) [$ns node]
-  set n(209:KansasCity,MO) [$ns node]
-  set n(209:LasVegas,NV) [$ns node]
-  set n(209:Phoenix,AZ) [$ns node]
-  set n(209:Cheyenne,WY) [$ns node]
-  set n(209:DesMoines,IA) [$ns node]
-  set n(209:Columbus,OH) [$ns node]
-  set n(209:Helena,MT) [$ns node]
-  set n(209:SaltLakeCity,UT) [$ns node]
-  set n(209:Seattle,WA) [$ns node]
-  set n(209:Spokane,WA) [$ns node]
-  set n(209:Tucson,AZ) [$ns node]
-  set n(209:Bismark,ND) [$ns node]
-  set n(209:Orange,CA) [$ns node]
-  set n(209:Atlanta,GA) [$ns node]
-  set n(209:Minneapolis,MN) [$ns node]
-  set n(209:HongKong) [$ns node]
-  set n(209:Tokyo,Japan) [$ns node]
-  set n(209:Arlington,VA) [$ns node]
-  set n(209:SanFrancisco,CA) [$ns node]
-  set n(209:Rochester,MN) [$ns node]
-  set n(209:Albuquerque,NM) [$ns node]
-  set n(209:Houston,TX) [$ns node]
-  set n(209:Burbank,CA) [$ns node]
-  set n(209:Ashburn,VA) [$ns node]
-  set n(209:Eugene,OR) [$ns node]
-  set n(209:Sunnyvale,CA) [$ns node]
-  set n(209:NewYork,NY) [$ns node]
-  set n(209:Naples,FL) [$ns node]
-  set n(209:Miami,FL) [$ns node]
-  set n(209:Anaheim,CA) [$ns node]
-  set n(209:Chicago,IL) [$ns node]
-  set n(209:SanDiego,CA) [$ns node]
-  set n(209:Bellevue,WA) [$ns node]
-  set n(209:Englewood,CO) [$ns node]
-  set n(209:LosAngeles,CA) [$ns node]
-  set n(209:Dallas,TX) [$ns node]
-  set n(209:PaloAlto,CA) [$ns node]
-  set n(209:Philadelphia,PA) [$ns node]
-  set n(209:Boston,MA) [$ns node]
-  set n(209:SanJose,CA) [$ns node]
-  set n(209:Omaha,NE) [$ns node]
-  set n(209:Washington,DC) [$ns node]
-}
+  if { [info exists n("209:Sacramento,CA")] == 0 } {
+    set n("209:Sacramento,CA") [$ns node] }
+  if { [info exists n("209:SiouxFalls,SD")] == 0 } {
+    set n("209:SiouxFalls,SD") [$ns node] }
+  if { [info exists n("209:SiouxCity,IA")] == 0 } {
+    set n("209:SiouxCity,IA") [$ns node] }
+  if { [info exists n("209:Billings,MT")] == 0 } {
+    set n("209:Billings,MT") [$ns node] }
+  if { [info exists n("209:Boise,ID")] == 0 } {
+    set n("209:Boise,ID") [$ns node] }
+  if { [info exists n("209:Newark,NJ")] == 0 } {
+    set n("209:Newark,NJ") [$ns node] }
+  if { [info exists n("209:Fargo,ND")] == 0 } {
+    set n("209:Fargo,ND") [$ns node] }
+  if { [info exists n("209:Tukwila,WA")] == 0 } {
+    set n("209:Tukwila,WA") [$ns node] }
+  if { [info exists n("209:Portland,OR")] == 0 } {
+    set n("209:Portland,OR") [$ns node] }
+  if { [info exists n("209:ColoradoSprings,CO")] == 0 } {
+    set n("209:ColoradoSprings,CO") [$ns node] }
+  if { [info exists n("209:Denver,CO")] == 0 } {
+    set n("209:Denver,CO") [$ns node] }
+  if { [info exists n("209:Duluth,MN")] == 0 } {
+    set n("209:Duluth,MN") [$ns node] }
+  if { [info exists n("209:Sydney,Australia")] == 0 } {
+    set n("209:Sydney,Australia") [$ns node] }
+  if { [info exists n("209:Tampa,FL")] == 0 } {
+    set n("209:Tampa,FL") [$ns node] }
+  if { [info exists n("209:CrescentCity,CA")] == 0 } {
+    set n("209:CrescentCity,CA") [$ns node] }
+  if { [info exists n("209:CedarRapids,IA")] == 0 } {
+    set n("209:CedarRapids,IA") [$ns node] }
+  if { [info exists n("209:KansasCity,MO")] == 0 } {
+    set n("209:KansasCity,MO") [$ns node] }
+  if { [info exists n("209:LasVegas,NV")] == 0 } {
+    set n("209:LasVegas,NV") [$ns node] }
+  if { [info exists n("209:Phoenix,AZ")] == 0 } {
+    set n("209:Phoenix,AZ") [$ns node] }
+  if { [info exists n("209:Cheyenne,WY")] == 0 } {
+    set n("209:Cheyenne,WY") [$ns node] }
+  if { [info exists n("209:DesMoines,IA")] == 0 } {
+    set n("209:DesMoines,IA") [$ns node] }
+  if { [info exists n("209:Columbus,OH")] == 0 } {
+    set n("209:Columbus,OH") [$ns node] }
+  if { [info exists n("209:Helena,MT")] == 0 } {
+    set n("209:Helena,MT") [$ns node] }
+  if { [info exists n("209:SaltLakeCity,UT")] == 0 } {
+    set n("209:SaltLakeCity,UT") [$ns node] }
+  if { [info exists n("209:Seattle,WA")] == 0 } {
+    set n("209:Seattle,WA") [$ns node] }
+  if { [info exists n("209:Spokane,WA")] == 0 } {
+    set n("209:Spokane,WA") [$ns node] }
+  if { [info exists n("209:Tucson,AZ")] == 0 } {
+    set n("209:Tucson,AZ") [$ns node] }
+  if { [info exists n("209:Bismark,ND")] == 0 } {
+    set n("209:Bismark,ND") [$ns node] }
+  if { [info exists n("209:Orange,CA")] == 0 } {
+    set n("209:Orange,CA") [$ns node] }
+  if { [info exists n("209:Atlanta,GA")] == 0 } {
+    set n("209:Atlanta,GA") [$ns node] }
+  if { [info exists n("209:Minneapolis,MN")] == 0 } {
+    set n("209:Minneapolis,MN") [$ns node] }
+  if { [info exists n("209:HongKong")] == 0 } {
+    set n("209:HongKong") [$ns node] }
+  if { [info exists n("209:Tokyo,Japan")] == 0 } {
+    set n("209:Tokyo,Japan") [$ns node] }
+  if { [info exists n("209:Arlington,VA")] == 0 } {
+    set n("209:Arlington,VA") [$ns node] }
+  if { [info exists n("209:SanFrancisco,CA")] == 0 } {
+    set n("209:SanFrancisco,CA") [$ns node] }
+  if { [info exists n("209:Rochester,MN")] == 0 } {
+    set n("209:Rochester,MN") [$ns node] }
+  if { [info exists n("209:Albuquerque,NM")] == 0 } {
+    set n("209:Albuquerque,NM") [$ns node] }
+  if { [info exists n("209:Houston,TX")] == 0 } {
+    set n("209:Houston,TX") [$ns node] }
+  if { [info exists n("209:Burbank,CA")] == 0 } {
+    set n("209:Burbank,CA") [$ns node] }
+  if { [info exists n("209:Ashburn,VA")] == 0 } {
+    set n("209:Ashburn,VA") [$ns node] }
+  if { [info exists n("209:Eugene,OR")] == 0 } {
+    set n("209:Eugene,OR") [$ns node] }
+  if { [info exists n("209:Sunnyvale,CA")] == 0 } {
+    set n("209:Sunnyvale,CA") [$ns node] }
+  if { [info exists n("209:NewYork,NY")] == 0 } {
+    set n("209:NewYork,NY") [$ns node] }
+  if { [info exists n("209:Naples,FL")] == 0 } {
+    set n("209:Naples,FL") [$ns node] }
+  if { [info exists n("209:Miami,FL")] == 0 } {
+    set n("209:Miami,FL") [$ns node] }
+  if { [info exists n("209:Anaheim,CA")] == 0 } {
+    set n("209:Anaheim,CA") [$ns node] }
+  if { [info exists n("209:Chicago,IL")] == 0 } {
+    set n("209:Chicago,IL") [$ns node] }
+  if { [info exists n("209:SanDiego,CA")] == 0 } {
+    set n("209:SanDiego,CA") [$ns node] }
+  if { [info exists n("209:Bellevue,WA")] == 0 } {
+    set n("209:Bellevue,WA") [$ns node] }
+  if { [info exists n("209:Englewood,CO")] == 0 } {
+    set n("209:Englewood,CO") [$ns node] }
+  if { [info exists n("209:LosAngeles,CA")] == 0 } {
+    set n("209:LosAngeles,CA") [$ns node] }
+  if { [info exists n("209:Dallas,TX")] == 0 } {
+    set n("209:Dallas,TX") [$ns node] }
+  if { [info exists n("209:PaloAlto,CA")] == 0 } {
+    set n("209:PaloAlto,CA") [$ns node] }
+  if { [info exists n("209:Philadelphia,PA")] == 0 } {
+    set n("209:Philadelphia,PA") [$ns node] }
+  if { [info exists n("209:Boston,MA")] == 0 } {
+    set n("209:Boston,MA") [$ns node] }
+  if { [info exists n("209:SanJose,CA")] == 0 } {
+    set n("209:SanJose,CA") [$ns node] }
+  if { [info exists n("209:Omaha,NE")] == 0 } {
+    set n("209:Omaha,NE") [$ns node] }
+  if { [info exists n("209:Washington,DC")] == 0 } {
+    set n("209:Washington,DC") [$ns node] }
+
 #209:Albuquerque, NM -> 209:Denver, CO 2.69636495068146
 $ns duplex-link $n("209:Albuquerque,NM") $n("209:Denver,CO") 10.0Gb 2.69636495068146ms DropTail
 

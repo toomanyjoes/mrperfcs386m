@@ -1,19 +1,31 @@
 # 3356:6453
-for{set i 0} {$i < 13} {incr i} {
-  set n(6453:SanJose,CA) [$ns node]
-  set n(3356:LosAngeles,CA) [$ns node]
-  set n(6453:LosAngeles,CA) [$ns node]
-  set n(6453:Newark,NJ) [$ns node]
-  set n(3356:Seattle,WA) [$ns node]
-  set n(3356:Ashburn,VA) [$ns node]
-  set n(3356:London,UnitedKingdom) [$ns node]
-  set n(6453:Seattle,WA) [$ns node]
-  set n(3356:Washington,DC) [$ns node]
-  set n(6453:Ashburn,VA) [$ns node]
-  set n(6453:London,UnitedKingdom) [$ns node]
-  set n(3356:SanJose,CA) [$ns node]
-  set n(3356:NewYork,NY) [$ns node]
-}
+  if { [info exists n("6453:SanJose,CA")] == 0 } {
+    set n("6453:SanJose,CA") [$ns node] }
+  if { [info exists n("3356:LosAngeles,CA")] == 0 } {
+    set n("3356:LosAngeles,CA") [$ns node] }
+  if { [info exists n("6453:LosAngeles,CA")] == 0 } {
+    set n("6453:LosAngeles,CA") [$ns node] }
+  if { [info exists n("6453:Newark,NJ")] == 0 } {
+    set n("6453:Newark,NJ") [$ns node] }
+  if { [info exists n("3356:Seattle,WA")] == 0 } {
+    set n("3356:Seattle,WA") [$ns node] }
+  if { [info exists n("3356:Ashburn,VA")] == 0 } {
+    set n("3356:Ashburn,VA") [$ns node] }
+  if { [info exists n("3356:London,UnitedKingdom")] == 0 } {
+    set n("3356:London,UnitedKingdom") [$ns node] }
+  if { [info exists n("6453:Seattle,WA")] == 0 } {
+    set n("6453:Seattle,WA") [$ns node] }
+  if { [info exists n("3356:Washington,DC")] == 0 } {
+    set n("3356:Washington,DC") [$ns node] }
+  if { [info exists n("6453:Ashburn,VA")] == 0 } {
+    set n("6453:Ashburn,VA") [$ns node] }
+  if { [info exists n("6453:London,UnitedKingdom")] == 0 } {
+    set n("6453:London,UnitedKingdom") [$ns node] }
+  if { [info exists n("3356:SanJose,CA")] == 0 } {
+    set n("3356:SanJose,CA") [$ns node] }
+  if { [info exists n("3356:NewYork,NY")] == 0 } {
+    set n("3356:NewYork,NY") [$ns node] }
+
 #3356:Ashburn, VA -> 6453:Ashburn, VA 0
 $ns duplex-link $n("3356:Ashburn,VA") $n("6453:Ashburn,VA") 10.0Gb 0ms DropTail
 

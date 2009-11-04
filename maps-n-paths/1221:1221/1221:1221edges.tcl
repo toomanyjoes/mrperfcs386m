@@ -1,50 +1,93 @@
 # 1221:1221
-for{set i 0} {$i < 44} {incr i} {
-  set n(1221:PortMaquarie,Australia) [$ns node]
-  set n(1221:LosAngeles,CA) [$ns node]
-  set n(1221:Campbelltown,Australia) [$ns node]
-  set n(1221:MountGambier,Australia) [$ns node]
-  set n(1221:Maroochydore,Australia) [$ns node]
-  set n(1221:Rockhampton,Australia) [$ns node]
-  set n(1221:Wollongong,Australia) [$ns node]
-  set n(1221:Warnambool,Australia) [$ns node]
-  set n(1221:Townsville,Australia) [$ns node]
-  set n(1221:Shepparton,Australia) [$ns node]
-  set n(1221:Kalgoorlie,Australia) [$ns node]
-  set n(1221:Yorketown,Australia) [$ns node]
-  set n(1221:Melbourne,Australia) [$ns node]
-  set n(1221:Toowoomba,Australia) [$ns node]
-  set n(1221:Newcastle,Australia) [$ns node]
-  set n(1221:Southport,Australia) [$ns node]
-  set n(1221:PortPirie,Australia) [$ns node]
-  set n(1221:Adelaide,Australia) [$ns node]
-  set n(1221:Brisbane,Australia) [$ns node]
-  set n(1221:Tamworth,Australia) [$ns node]
-  set n(1221:Canberra,Australia) [$ns node]
-  set n(1221:Bathurst,Australia) [$ns node]
-  set n(1221:Armidale,Australia) [$ns node]
-  set n(1221:Ballarat,Australia) [$ns node]
-  set n(1221:Penrith,Australia) [$ns node]
-  set n(1221:Lismore,Australia) [$ns node]
-  set n(1221:Gosford,Australia) [$ns node]
-  set n(1221:Bunbury,Australia) [$ns node]
-  set n(1221:Mildura,Australia) [$ns node]
-  set n(1221:Bendigo,Australia) [$ns node]
-  set n(1221:Sydney,Australia) [$ns node]
-  set n(1221:Hobart,Australia) [$ns node]
-  set n(1221:Orange,Australia) [$ns node]
-  set n(1221:Albury,Australia) [$ns node]
-  set n(1221:Mackay,Australia) [$ns node]
-  set n(1221:Darwin,Australia) [$ns node]
-  set n(1221:Cairns,Australia) [$ns node]
-  set n(1221:Moree,Australia) [$ns node]
-  set n(1221:Perth,Australia) [$ns node]
-  set n(1221:SanJose,CA) [$ns node]
-  set n(1221:PaloAlto,CA) [$ns node]
-  set n(1221:Ulverstone,Tasmania) [$ns node]
-  set n(1221:Launceston,Tazmania) [$ns node]
-  set n(1221:VictorHarbour,Australia) [$ns node]
-}
+  if { [info exists n("1221:PortMaquarie,Australia")] == 0 } {
+    set n("1221:PortMaquarie,Australia") [$ns node] }
+  if { [info exists n("1221:LosAngeles,CA")] == 0 } {
+    set n("1221:LosAngeles,CA") [$ns node] }
+  if { [info exists n("1221:Campbelltown,Australia")] == 0 } {
+    set n("1221:Campbelltown,Australia") [$ns node] }
+  if { [info exists n("1221:MountGambier,Australia")] == 0 } {
+    set n("1221:MountGambier,Australia") [$ns node] }
+  if { [info exists n("1221:Maroochydore,Australia")] == 0 } {
+    set n("1221:Maroochydore,Australia") [$ns node] }
+  if { [info exists n("1221:Rockhampton,Australia")] == 0 } {
+    set n("1221:Rockhampton,Australia") [$ns node] }
+  if { [info exists n("1221:Wollongong,Australia")] == 0 } {
+    set n("1221:Wollongong,Australia") [$ns node] }
+  if { [info exists n("1221:Warnambool,Australia")] == 0 } {
+    set n("1221:Warnambool,Australia") [$ns node] }
+  if { [info exists n("1221:Townsville,Australia")] == 0 } {
+    set n("1221:Townsville,Australia") [$ns node] }
+  if { [info exists n("1221:Shepparton,Australia")] == 0 } {
+    set n("1221:Shepparton,Australia") [$ns node] }
+  if { [info exists n("1221:Kalgoorlie,Australia")] == 0 } {
+    set n("1221:Kalgoorlie,Australia") [$ns node] }
+  if { [info exists n("1221:Yorketown,Australia")] == 0 } {
+    set n("1221:Yorketown,Australia") [$ns node] }
+  if { [info exists n("1221:Melbourne,Australia")] == 0 } {
+    set n("1221:Melbourne,Australia") [$ns node] }
+  if { [info exists n("1221:Toowoomba,Australia")] == 0 } {
+    set n("1221:Toowoomba,Australia") [$ns node] }
+  if { [info exists n("1221:Newcastle,Australia")] == 0 } {
+    set n("1221:Newcastle,Australia") [$ns node] }
+  if { [info exists n("1221:Southport,Australia")] == 0 } {
+    set n("1221:Southport,Australia") [$ns node] }
+  if { [info exists n("1221:PortPirie,Australia")] == 0 } {
+    set n("1221:PortPirie,Australia") [$ns node] }
+  if { [info exists n("1221:Adelaide,Australia")] == 0 } {
+    set n("1221:Adelaide,Australia") [$ns node] }
+  if { [info exists n("1221:Brisbane,Australia")] == 0 } {
+    set n("1221:Brisbane,Australia") [$ns node] }
+  if { [info exists n("1221:Tamworth,Australia")] == 0 } {
+    set n("1221:Tamworth,Australia") [$ns node] }
+  if { [info exists n("1221:Canberra,Australia")] == 0 } {
+    set n("1221:Canberra,Australia") [$ns node] }
+  if { [info exists n("1221:Bathurst,Australia")] == 0 } {
+    set n("1221:Bathurst,Australia") [$ns node] }
+  if { [info exists n("1221:Armidale,Australia")] == 0 } {
+    set n("1221:Armidale,Australia") [$ns node] }
+  if { [info exists n("1221:Ballarat,Australia")] == 0 } {
+    set n("1221:Ballarat,Australia") [$ns node] }
+  if { [info exists n("1221:Penrith,Australia")] == 0 } {
+    set n("1221:Penrith,Australia") [$ns node] }
+  if { [info exists n("1221:Lismore,Australia")] == 0 } {
+    set n("1221:Lismore,Australia") [$ns node] }
+  if { [info exists n("1221:Gosford,Australia")] == 0 } {
+    set n("1221:Gosford,Australia") [$ns node] }
+  if { [info exists n("1221:Bunbury,Australia")] == 0 } {
+    set n("1221:Bunbury,Australia") [$ns node] }
+  if { [info exists n("1221:Mildura,Australia")] == 0 } {
+    set n("1221:Mildura,Australia") [$ns node] }
+  if { [info exists n("1221:Bendigo,Australia")] == 0 } {
+    set n("1221:Bendigo,Australia") [$ns node] }
+  if { [info exists n("1221:Sydney,Australia")] == 0 } {
+    set n("1221:Sydney,Australia") [$ns node] }
+  if { [info exists n("1221:Hobart,Australia")] == 0 } {
+    set n("1221:Hobart,Australia") [$ns node] }
+  if { [info exists n("1221:Orange,Australia")] == 0 } {
+    set n("1221:Orange,Australia") [$ns node] }
+  if { [info exists n("1221:Albury,Australia")] == 0 } {
+    set n("1221:Albury,Australia") [$ns node] }
+  if { [info exists n("1221:Mackay,Australia")] == 0 } {
+    set n("1221:Mackay,Australia") [$ns node] }
+  if { [info exists n("1221:Darwin,Australia")] == 0 } {
+    set n("1221:Darwin,Australia") [$ns node] }
+  if { [info exists n("1221:Cairns,Australia")] == 0 } {
+    set n("1221:Cairns,Australia") [$ns node] }
+  if { [info exists n("1221:Moree,Australia")] == 0 } {
+    set n("1221:Moree,Australia") [$ns node] }
+  if { [info exists n("1221:Perth,Australia")] == 0 } {
+    set n("1221:Perth,Australia") [$ns node] }
+  if { [info exists n("1221:SanJose,CA")] == 0 } {
+    set n("1221:SanJose,CA") [$ns node] }
+  if { [info exists n("1221:PaloAlto,CA")] == 0 } {
+    set n("1221:PaloAlto,CA") [$ns node] }
+  if { [info exists n("1221:Ulverstone,Tasmania")] == 0 } {
+    set n("1221:Ulverstone,Tasmania") [$ns node] }
+  if { [info exists n("1221:Launceston,Tazmania")] == 0 } {
+    set n("1221:Launceston,Tazmania") [$ns node] }
+  if { [info exists n("1221:VictorHarbour,Australia")] == 0 } {
+    set n("1221:VictorHarbour,Australia") [$ns node] }
+
 #1221:Adelaide, Australia -> 1221:Darwin, Australia 13.0551821715223
 $ns duplex-link $n("1221:Adelaide,Australia") $n("1221:Darwin,Australia") 10.0Gb 13.0551821715223ms DropTail
 

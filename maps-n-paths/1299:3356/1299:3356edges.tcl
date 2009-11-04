@@ -1,19 +1,31 @@
 # 1299:3356
-for{set i 0} {$i < 13} {incr i} {
-  set n(3356:LosAngeles,CA) [$ns node]
-  set n(1299:London,UnitedKingdom) [$ns node]
-  set n(1299:Frankfurt,Germany) [$ns node]
-  set n(1299:Copenhagen,Denmark) [$ns node]
-  set n(1299:Amsterdam,Netherlands) [$ns node]
-  set n(1299:SanJose,CA) [$ns node]
-  set n(3356:London,UnitedKingdom) [$ns node]
-  set n(1299:NewYork,NY) [$ns node]
-  set n(3356:Frankfurt,Germany) [$ns node]
-  set n(1299:LosAngeles,CA) [$ns node]
-  set n(3356:Amsterdam,Netherlands) [$ns node]
-  set n(3356:SanJose,CA) [$ns node]
-  set n(3356:NewYork,NY) [$ns node]
-}
+  if { [info exists n("3356:LosAngeles,CA")] == 0 } {
+    set n("3356:LosAngeles,CA") [$ns node] }
+  if { [info exists n("1299:London,UnitedKingdom")] == 0 } {
+    set n("1299:London,UnitedKingdom") [$ns node] }
+  if { [info exists n("1299:Frankfurt,Germany")] == 0 } {
+    set n("1299:Frankfurt,Germany") [$ns node] }
+  if { [info exists n("1299:Copenhagen,Denmark")] == 0 } {
+    set n("1299:Copenhagen,Denmark") [$ns node] }
+  if { [info exists n("1299:Amsterdam,Netherlands")] == 0 } {
+    set n("1299:Amsterdam,Netherlands") [$ns node] }
+  if { [info exists n("1299:SanJose,CA")] == 0 } {
+    set n("1299:SanJose,CA") [$ns node] }
+  if { [info exists n("3356:London,UnitedKingdom")] == 0 } {
+    set n("3356:London,UnitedKingdom") [$ns node] }
+  if { [info exists n("1299:NewYork,NY")] == 0 } {
+    set n("1299:NewYork,NY") [$ns node] }
+  if { [info exists n("3356:Frankfurt,Germany")] == 0 } {
+    set n("3356:Frankfurt,Germany") [$ns node] }
+  if { [info exists n("1299:LosAngeles,CA")] == 0 } {
+    set n("1299:LosAngeles,CA") [$ns node] }
+  if { [info exists n("3356:Amsterdam,Netherlands")] == 0 } {
+    set n("3356:Amsterdam,Netherlands") [$ns node] }
+  if { [info exists n("3356:SanJose,CA")] == 0 } {
+    set n("3356:SanJose,CA") [$ns node] }
+  if { [info exists n("3356:NewYork,NY")] == 0 } {
+    set n("3356:NewYork,NY") [$ns node] }
+
 #1299:Amsterdam, Netherlands -> 3356:Amsterdam, Netherlands 0
 $ns duplex-link $n("1299:Amsterdam,Netherlands") $n("3356:Amsterdam,Netherlands") 10.0Gb 0ms DropTail
 

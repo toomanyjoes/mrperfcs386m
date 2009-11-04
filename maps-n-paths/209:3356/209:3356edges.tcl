@@ -1,26 +1,45 @@
 # 209:3356
-for{set i 0} {$i < 20} {incr i} {
-  set n(209:Boise,ID) [$ns node]
-  set n(209:Newark,NJ) [$ns node]
-  set n(3356:LosAngeles,CA) [$ns node]
-  set n(209:Denver,CO) [$ns node]
-  set n(209:Phoenix,AZ) [$ns node]
-  set n(3356:Seattle,WA) [$ns node]
-  set n(3356:Dallas,TX) [$ns node]
-  set n(209:Seattle,WA) [$ns node]
-  set n(209:Minneapolis,MN) [$ns node]
-  set n(3356:Washington,DC) [$ns node]
-  set n(209:Sunnyvale,CA) [$ns node]
-  set n(209:NewYork,NY) [$ns node]
-  set n(3356:SanJose,CA) [$ns node]
-  set n(3356:Denver,CO) [$ns node]
-  set n(209:LosAngeles,CA) [$ns node]
-  set n(209:Dallas,TX) [$ns node]
-  set n(3356:NewYork,NY) [$ns node]
-  set n(209:SanJose,CA) [$ns node]
-  set n(209:Omaha,NE) [$ns node]
-  set n(209:Washington,DC) [$ns node]
-}
+  if { [info exists n("209:Boise,ID")] == 0 } {
+    set n("209:Boise,ID") [$ns node] }
+  if { [info exists n("209:Newark,NJ")] == 0 } {
+    set n("209:Newark,NJ") [$ns node] }
+  if { [info exists n("3356:LosAngeles,CA")] == 0 } {
+    set n("3356:LosAngeles,CA") [$ns node] }
+  if { [info exists n("209:Denver,CO")] == 0 } {
+    set n("209:Denver,CO") [$ns node] }
+  if { [info exists n("209:Phoenix,AZ")] == 0 } {
+    set n("209:Phoenix,AZ") [$ns node] }
+  if { [info exists n("3356:Seattle,WA")] == 0 } {
+    set n("3356:Seattle,WA") [$ns node] }
+  if { [info exists n("3356:Dallas,TX")] == 0 } {
+    set n("3356:Dallas,TX") [$ns node] }
+  if { [info exists n("209:Seattle,WA")] == 0 } {
+    set n("209:Seattle,WA") [$ns node] }
+  if { [info exists n("209:Minneapolis,MN")] == 0 } {
+    set n("209:Minneapolis,MN") [$ns node] }
+  if { [info exists n("3356:Washington,DC")] == 0 } {
+    set n("3356:Washington,DC") [$ns node] }
+  if { [info exists n("209:Sunnyvale,CA")] == 0 } {
+    set n("209:Sunnyvale,CA") [$ns node] }
+  if { [info exists n("209:NewYork,NY")] == 0 } {
+    set n("209:NewYork,NY") [$ns node] }
+  if { [info exists n("3356:SanJose,CA")] == 0 } {
+    set n("3356:SanJose,CA") [$ns node] }
+  if { [info exists n("3356:Denver,CO")] == 0 } {
+    set n("3356:Denver,CO") [$ns node] }
+  if { [info exists n("209:LosAngeles,CA")] == 0 } {
+    set n("209:LosAngeles,CA") [$ns node] }
+  if { [info exists n("209:Dallas,TX")] == 0 } {
+    set n("209:Dallas,TX") [$ns node] }
+  if { [info exists n("3356:NewYork,NY")] == 0 } {
+    set n("3356:NewYork,NY") [$ns node] }
+  if { [info exists n("209:SanJose,CA")] == 0 } {
+    set n("209:SanJose,CA") [$ns node] }
+  if { [info exists n("209:Omaha,NE")] == 0 } {
+    set n("209:Omaha,NE") [$ns node] }
+  if { [info exists n("209:Washington,DC")] == 0 } {
+    set n("209:Washington,DC") [$ns node] }
+
 #209:Boise, ID -> 3356:Seattle, WA 3.2684260711766
 $ns duplex-link $n("209:Boise,ID") $n("3356:Seattle,WA") 10.0Gb 3.2684260711766ms DropTail
 

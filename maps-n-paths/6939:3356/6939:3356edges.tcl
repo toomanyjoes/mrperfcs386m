@@ -1,13 +1,19 @@
 # 6939:3356
-for{set i 0} {$i < 7} {incr i} {
-  set n(6939:Washington,DC) [$ns node]
-  set n(6939:SanJose,CA) [$ns node]
-  set n(6939:PaloAlto,CA) [$ns node]
-  set n(6939:NewYork,NY) [$ns node]
-  set n(3356:Washington,DC) [$ns node]
-  set n(3356:SanJose,CA) [$ns node]
-  set n(6939:Fremont,CA) [$ns node]
-}
+  if { [info exists n("6939:Washington,DC")] == 0 } {
+    set n("6939:Washington,DC") [$ns node] }
+  if { [info exists n("6939:SanJose,CA")] == 0 } {
+    set n("6939:SanJose,CA") [$ns node] }
+  if { [info exists n("6939:PaloAlto,CA")] == 0 } {
+    set n("6939:PaloAlto,CA") [$ns node] }
+  if { [info exists n("6939:NewYork,NY")] == 0 } {
+    set n("6939:NewYork,NY") [$ns node] }
+  if { [info exists n("3356:Washington,DC")] == 0 } {
+    set n("3356:Washington,DC") [$ns node] }
+  if { [info exists n("3356:SanJose,CA")] == 0 } {
+    set n("3356:SanJose,CA") [$ns node] }
+  if { [info exists n("6939:Fremont,CA")] == 0 } {
+    set n("6939:Fremont,CA") [$ns node] }
+
 #6939:Fremont, CA -> 3356:San Jose, CA 0.126134115671986
 $ns duplex-link $n("6939:Fremont,CA") $n("3356:SanJose,CA") 10.0Gb 0.126134115671986ms DropTail
 

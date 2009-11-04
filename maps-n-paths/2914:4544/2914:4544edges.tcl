@@ -1,11 +1,15 @@
 # 2914:4544
-for{set i 0} {$i < 5} {incr i} {
-  set n(4544:Washington,DC) [$ns node]
-  set n(4544:Sunnyvale,CA) [$ns node]
-  set n(2914:SanJose,CA) [$ns node]
-  set n(4544:PaloAlto,CA) [$ns node]
-  set n(2914:McLean,VA) [$ns node]
-}
+  if { [info exists n("4544:Washington,DC")] == 0 } {
+    set n("4544:Washington,DC") [$ns node] }
+  if { [info exists n("4544:Sunnyvale,CA")] == 0 } {
+    set n("4544:Sunnyvale,CA") [$ns node] }
+  if { [info exists n("2914:SanJose,CA")] == 0 } {
+    set n("2914:SanJose,CA") [$ns node] }
+  if { [info exists n("4544:PaloAlto,CA")] == 0 } {
+    set n("4544:PaloAlto,CA") [$ns node] }
+  if { [info exists n("2914:McLean,VA")] == 0 } {
+    set n("2914:McLean,VA") [$ns node] }
+
 #2914:McLean, VA -> 4544:Washington, DC 0.0791793285538616
 $ns duplex-link $n("2914:McLean,VA") $n("4544:Washington,DC") 10.0Gb 0.0791793285538616ms DropTail
 

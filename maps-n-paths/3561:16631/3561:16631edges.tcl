@@ -1,13 +1,19 @@
 # 3561:16631
-for{set i 0} {$i < 7} {incr i} {
-  set n(3561:Reston,VA) [$ns node]
-  set n(3561:SanFrancisco,CA) [$ns node]
-  set n(16631:SanFrancisco,CA) [$ns node]
-  set n(16631:Washington,DC) [$ns node]
-  set n(3561:PaloAlto,CA) [$ns node]
-  set n(3561:Miami,FL) [$ns node]
-  set n(16631:Miami,FL) [$ns node]
-}
+  if { [info exists n("3561:Reston,VA")] == 0 } {
+    set n("3561:Reston,VA") [$ns node] }
+  if { [info exists n("3561:SanFrancisco,CA")] == 0 } {
+    set n("3561:SanFrancisco,CA") [$ns node] }
+  if { [info exists n("16631:SanFrancisco,CA")] == 0 } {
+    set n("16631:SanFrancisco,CA") [$ns node] }
+  if { [info exists n("16631:Washington,DC")] == 0 } {
+    set n("16631:Washington,DC") [$ns node] }
+  if { [info exists n("3561:PaloAlto,CA")] == 0 } {
+    set n("3561:PaloAlto,CA") [$ns node] }
+  if { [info exists n("3561:Miami,FL")] == 0 } {
+    set n("3561:Miami,FL") [$ns node] }
+  if { [info exists n("16631:Miami,FL")] == 0 } {
+    set n("16631:Miami,FL") [$ns node] }
+
 #3561:Miami, FL -> 16631:Miami, FL 0
 $ns duplex-link $n("3561:Miami,FL") $n("16631:Miami,FL") 10.0Gb 0ms DropTail
 

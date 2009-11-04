@@ -1,10 +1,13 @@
 # 3257:3356
-for{set i 0} {$i < 4} {incr i} {
-  set n(3257:NewYork,NY) [$ns node]
-  set n(3356:Washington,DC) [$ns node]
-  set n(3257:Chicago,IL) [$ns node]
-  set n(3356:SanJose,CA) [$ns node]
-}
+  if { [info exists n("3257:NewYork,NY")] == 0 } {
+    set n("3257:NewYork,NY") [$ns node] }
+  if { [info exists n("3356:Washington,DC")] == 0 } {
+    set n("3356:Washington,DC") [$ns node] }
+  if { [info exists n("3257:Chicago,IL")] == 0 } {
+    set n("3257:Chicago,IL") [$ns node] }
+  if { [info exists n("3356:SanJose,CA")] == 0 } {
+    set n("3356:SanJose,CA") [$ns node] }
+
 #3257:Chicago, IL -> 3356:San Jose, CA 14.7744081963979
 $ns duplex-link $n("3257:Chicago,IL") $n("3356:SanJose,CA") 10.0Gb 14.7744081963979ms DropTail
 

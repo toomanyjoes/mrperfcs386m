@@ -1,11 +1,15 @@
 # 4544:3356
-for{set i 0} {$i < 5} {incr i} {
-  set n(4544:Denver,CO) [$ns node]
-  set n(4544:PaloAlto,CA) [$ns node]
-  set n(3356:Washington,DC) [$ns node]
-  set n(3356:SanJose,CA) [$ns node]
-  set n(4544:Ashburn,VA) [$ns node]
-}
+  if { [info exists n("4544:Denver,CO")] == 0 } {
+    set n("4544:Denver,CO") [$ns node] }
+  if { [info exists n("4544:PaloAlto,CA")] == 0 } {
+    set n("4544:PaloAlto,CA") [$ns node] }
+  if { [info exists n("3356:Washington,DC")] == 0 } {
+    set n("3356:Washington,DC") [$ns node] }
+  if { [info exists n("3356:SanJose,CA")] == 0 } {
+    set n("3356:SanJose,CA") [$ns node] }
+  if { [info exists n("4544:Ashburn,VA")] == 0 } {
+    set n("4544:Ashburn,VA") [$ns node] }
+
 #4544:Ashburn, VA -> 3356:Washington, DC 0.225316255475169
 $ns duplex-link $n("4544:Ashburn,VA") $n("3356:Washington,DC") 10.0Gb 0.225316255475169ms DropTail
 

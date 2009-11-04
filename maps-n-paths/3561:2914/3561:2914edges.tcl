@@ -1,21 +1,35 @@
 # 3561:2914
-for{set i 0} {$i < 15} {incr i} {
-  set n(2914:Ashburn,VA) [$ns node]
-  set n(2914:BocaRaton,FL) [$ns node]
-  set n(3561:SantaClara,CA) [$ns node]
-  set n(3561:Seattle,WA) [$ns node]
-  set n(3561:Reston,VA) [$ns node]
-  set n(3561:Dallas,TX) [$ns node]
-  set n(3561:Anaheim,CA) [$ns node]
-  set n(2914:PaloAlto,CA) [$ns node]
-  set n(2914:NewYork,NY) [$ns node]
-  set n(2914:LosAngeles,CA) [$ns node]
-  set n(3561:PaloAlto,CA) [$ns node]
-  set n(3561:NewYork,NY) [$ns node]
-  set n(3561:Miami,FL) [$ns node]
-  set n(2914:Seattle,WA) [$ns node]
-  set n(2914:Dallas,TX) [$ns node]
-}
+  if { [info exists n("2914:Ashburn,VA")] == 0 } {
+    set n("2914:Ashburn,VA") [$ns node] }
+  if { [info exists n("2914:BocaRaton,FL")] == 0 } {
+    set n("2914:BocaRaton,FL") [$ns node] }
+  if { [info exists n("3561:SantaClara,CA")] == 0 } {
+    set n("3561:SantaClara,CA") [$ns node] }
+  if { [info exists n("3561:Seattle,WA")] == 0 } {
+    set n("3561:Seattle,WA") [$ns node] }
+  if { [info exists n("3561:Reston,VA")] == 0 } {
+    set n("3561:Reston,VA") [$ns node] }
+  if { [info exists n("3561:Dallas,TX")] == 0 } {
+    set n("3561:Dallas,TX") [$ns node] }
+  if { [info exists n("3561:Anaheim,CA")] == 0 } {
+    set n("3561:Anaheim,CA") [$ns node] }
+  if { [info exists n("2914:PaloAlto,CA")] == 0 } {
+    set n("2914:PaloAlto,CA") [$ns node] }
+  if { [info exists n("2914:NewYork,NY")] == 0 } {
+    set n("2914:NewYork,NY") [$ns node] }
+  if { [info exists n("2914:LosAngeles,CA")] == 0 } {
+    set n("2914:LosAngeles,CA") [$ns node] }
+  if { [info exists n("3561:PaloAlto,CA")] == 0 } {
+    set n("3561:PaloAlto,CA") [$ns node] }
+  if { [info exists n("3561:NewYork,NY")] == 0 } {
+    set n("3561:NewYork,NY") [$ns node] }
+  if { [info exists n("3561:Miami,FL")] == 0 } {
+    set n("3561:Miami,FL") [$ns node] }
+  if { [info exists n("2914:Seattle,WA")] == 0 } {
+    set n("2914:Seattle,WA") [$ns node] }
+  if { [info exists n("2914:Dallas,TX")] == 0 } {
+    set n("2914:Dallas,TX") [$ns node] }
+
 #3561:Anaheim, CA -> 2914:Los Angeles, CA 0.268083922965192
 $ns duplex-link $n("3561:Anaheim,CA") $n("2914:LosAngeles,CA") 10.0Gb 0.268083922965192ms DropTail
 

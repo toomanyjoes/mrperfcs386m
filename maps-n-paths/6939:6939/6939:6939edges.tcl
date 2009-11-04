@@ -1,14 +1,21 @@
 # 6939:6939
-for{set i 0} {$i < 8} {incr i} {
-  set n(6939:Chicago,IL) [$ns node]
-  set n(6939:Ashburn,VA) [$ns node]
-  set n(6939:Washington,DC) [$ns node]
-  set n(6939:SanJose,CA) [$ns node]
-  set n(6939:PaloAlto,CA) [$ns node]
-  set n(6939:NewYork,NY) [$ns node]
-  set n(6939:McLean,VA) [$ns node]
-  set n(6939:Fremont,CA) [$ns node]
-}
+  if { [info exists n("6939:Chicago,IL")] == 0 } {
+    set n("6939:Chicago,IL") [$ns node] }
+  if { [info exists n("6939:Ashburn,VA")] == 0 } {
+    set n("6939:Ashburn,VA") [$ns node] }
+  if { [info exists n("6939:Washington,DC")] == 0 } {
+    set n("6939:Washington,DC") [$ns node] }
+  if { [info exists n("6939:SanJose,CA")] == 0 } {
+    set n("6939:SanJose,CA") [$ns node] }
+  if { [info exists n("6939:PaloAlto,CA")] == 0 } {
+    set n("6939:PaloAlto,CA") [$ns node] }
+  if { [info exists n("6939:NewYork,NY")] == 0 } {
+    set n("6939:NewYork,NY") [$ns node] }
+  if { [info exists n("6939:McLean,VA")] == 0 } {
+    set n("6939:McLean,VA") [$ns node] }
+  if { [info exists n("6939:Fremont,CA")] == 0 } {
+    set n("6939:Fremont,CA") [$ns node] }
+
 #6939:Ashburn, VA -> 6939:New York, NY 1.75053383532763
 $ns duplex-link $n("6939:Ashburn,VA") $n("6939:NewYork,NY") 10.0Gb 1.75053383532763ms DropTail
 

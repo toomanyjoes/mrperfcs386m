@@ -1,11 +1,15 @@
 # 5511:3561
-for{set i 0} {$i < 5} {incr i} {
-  set n(5511:SanJose,CA) [$ns node]
-  set n(3561:PaloAlto,CA) [$ns node]
-  set n(3561:NewYork,NY) [$ns node]
-  set n(5511:PaloAlto,CA) [$ns node]
-  set n(5511:NewYork,NY) [$ns node]
-}
+  if { [info exists n("5511:SanJose,CA")] == 0 } {
+    set n("5511:SanJose,CA") [$ns node] }
+  if { [info exists n("3561:PaloAlto,CA")] == 0 } {
+    set n("3561:PaloAlto,CA") [$ns node] }
+  if { [info exists n("3561:NewYork,NY")] == 0 } {
+    set n("3561:NewYork,NY") [$ns node] }
+  if { [info exists n("5511:PaloAlto,CA")] == 0 } {
+    set n("5511:PaloAlto,CA") [$ns node] }
+  if { [info exists n("5511:NewYork,NY")] == 0 } {
+    set n("5511:NewYork,NY") [$ns node] }
+
 #5511:New York, NY -> 3561:New York, NY 0
 $ns duplex-link $n("5511:NewYork,NY") $n("3561:NewYork,NY") 10.0Gb 0ms DropTail
 

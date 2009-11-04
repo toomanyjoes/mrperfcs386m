@@ -1,46 +1,85 @@
 # 2828:2828
-for{set i 0} {$i < 40} {incr i} {
-  set n(2828:LasVegas,NV) [$ns node]
-  set n(2828:SanFrancisco,CA) [$ns node]
-  set n(2828:Washington,DC) [$ns node]
-  set n(2828:Roseville,CA) [$ns node]
-  set n(2828:SanDiego,CA) [$ns node]
-  set n(2828:Memphis,TN) [$ns node]
-  set n(2828:Irvine,CA) [$ns node]
-  set n(2828:SanJose,CA) [$ns node]
-  set n(2828:Denver,CO) [$ns node]
-  set n(2828:MarylandHeights,MO) [$ns node]
-  set n(2828:NewYork,NY) [$ns node]
-  set n(2828:PaloAlto,CA) [$ns node]
-  set n(2828:Philadelphia,PA) [$ns node]
-  set n(2828:Miami,FL) [$ns node]
-  set n(2828:Austin,TX) [$ns node]
-  set n(2828:Secaucus,NJ) [$ns node]
-  set n(2828:Columbus,OH) [$ns node]
-  set n(2828:LosAngeles,CA) [$ns node]
-  set n(2828:Houston,TX) [$ns node]
-  set n(2828:OakBrook,IL) [$ns node]
-  set n(2828:Tampa,FL) [$ns node]
-  set n(2828:Nashville,TN) [$ns node]
-  set n(2828:McLean,VA) [$ns node]
-  set n(2828:Smyrna,GA) [$ns node]
-  set n(2828:Beaverton,OR) [$ns node]
-  set n(2828:Southfield,MI) [$ns node]
-  set n(2828:SantaAna,CA) [$ns node]
-  set n(2828:Cleveland,OH) [$ns node]
-  set n(2828:SantaClara,CA) [$ns node]
-  set n(2828:Atlanta,GA) [$ns node]
-  set n(2828:SaltLakeCity,UT) [$ns node]
-  set n(2828:Fremont,CA) [$ns node]
-  set n(2828:Phoenix,AZ) [$ns node]
-  set n(2828:Seattle,WA) [$ns node]
-  set n(2828:Englewood,CO) [$ns node]
-  set n(2828:Spokane,WA) [$ns node]
-  set n(2828:Cambridge,MA) [$ns node]
-  set n(2828:Chicago,IL) [$ns node]
-  set n(2828:Dallas,TX) [$ns node]
-  set n(2828:Ashburn,VA) [$ns node]
-}
+  if { [info exists n("2828:LasVegas,NV")] == 0 } {
+    set n("2828:LasVegas,NV") [$ns node] }
+  if { [info exists n("2828:SanFrancisco,CA")] == 0 } {
+    set n("2828:SanFrancisco,CA") [$ns node] }
+  if { [info exists n("2828:Washington,DC")] == 0 } {
+    set n("2828:Washington,DC") [$ns node] }
+  if { [info exists n("2828:Roseville,CA")] == 0 } {
+    set n("2828:Roseville,CA") [$ns node] }
+  if { [info exists n("2828:SanDiego,CA")] == 0 } {
+    set n("2828:SanDiego,CA") [$ns node] }
+  if { [info exists n("2828:Memphis,TN")] == 0 } {
+    set n("2828:Memphis,TN") [$ns node] }
+  if { [info exists n("2828:Irvine,CA")] == 0 } {
+    set n("2828:Irvine,CA") [$ns node] }
+  if { [info exists n("2828:SanJose,CA")] == 0 } {
+    set n("2828:SanJose,CA") [$ns node] }
+  if { [info exists n("2828:Denver,CO")] == 0 } {
+    set n("2828:Denver,CO") [$ns node] }
+  if { [info exists n("2828:MarylandHeights,MO")] == 0 } {
+    set n("2828:MarylandHeights,MO") [$ns node] }
+  if { [info exists n("2828:NewYork,NY")] == 0 } {
+    set n("2828:NewYork,NY") [$ns node] }
+  if { [info exists n("2828:PaloAlto,CA")] == 0 } {
+    set n("2828:PaloAlto,CA") [$ns node] }
+  if { [info exists n("2828:Philadelphia,PA")] == 0 } {
+    set n("2828:Philadelphia,PA") [$ns node] }
+  if { [info exists n("2828:Miami,FL")] == 0 } {
+    set n("2828:Miami,FL") [$ns node] }
+  if { [info exists n("2828:Austin,TX")] == 0 } {
+    set n("2828:Austin,TX") [$ns node] }
+  if { [info exists n("2828:Secaucus,NJ")] == 0 } {
+    set n("2828:Secaucus,NJ") [$ns node] }
+  if { [info exists n("2828:Columbus,OH")] == 0 } {
+    set n("2828:Columbus,OH") [$ns node] }
+  if { [info exists n("2828:LosAngeles,CA")] == 0 } {
+    set n("2828:LosAngeles,CA") [$ns node] }
+  if { [info exists n("2828:Houston,TX")] == 0 } {
+    set n("2828:Houston,TX") [$ns node] }
+  if { [info exists n("2828:OakBrook,IL")] == 0 } {
+    set n("2828:OakBrook,IL") [$ns node] }
+  if { [info exists n("2828:Tampa,FL")] == 0 } {
+    set n("2828:Tampa,FL") [$ns node] }
+  if { [info exists n("2828:Nashville,TN")] == 0 } {
+    set n("2828:Nashville,TN") [$ns node] }
+  if { [info exists n("2828:McLean,VA")] == 0 } {
+    set n("2828:McLean,VA") [$ns node] }
+  if { [info exists n("2828:Smyrna,GA")] == 0 } {
+    set n("2828:Smyrna,GA") [$ns node] }
+  if { [info exists n("2828:Beaverton,OR")] == 0 } {
+    set n("2828:Beaverton,OR") [$ns node] }
+  if { [info exists n("2828:Southfield,MI")] == 0 } {
+    set n("2828:Southfield,MI") [$ns node] }
+  if { [info exists n("2828:SantaAna,CA")] == 0 } {
+    set n("2828:SantaAna,CA") [$ns node] }
+  if { [info exists n("2828:Cleveland,OH")] == 0 } {
+    set n("2828:Cleveland,OH") [$ns node] }
+  if { [info exists n("2828:SantaClara,CA")] == 0 } {
+    set n("2828:SantaClara,CA") [$ns node] }
+  if { [info exists n("2828:Atlanta,GA")] == 0 } {
+    set n("2828:Atlanta,GA") [$ns node] }
+  if { [info exists n("2828:SaltLakeCity,UT")] == 0 } {
+    set n("2828:SaltLakeCity,UT") [$ns node] }
+  if { [info exists n("2828:Fremont,CA")] == 0 } {
+    set n("2828:Fremont,CA") [$ns node] }
+  if { [info exists n("2828:Phoenix,AZ")] == 0 } {
+    set n("2828:Phoenix,AZ") [$ns node] }
+  if { [info exists n("2828:Seattle,WA")] == 0 } {
+    set n("2828:Seattle,WA") [$ns node] }
+  if { [info exists n("2828:Englewood,CO")] == 0 } {
+    set n("2828:Englewood,CO") [$ns node] }
+  if { [info exists n("2828:Spokane,WA")] == 0 } {
+    set n("2828:Spokane,WA") [$ns node] }
+  if { [info exists n("2828:Cambridge,MA")] == 0 } {
+    set n("2828:Cambridge,MA") [$ns node] }
+  if { [info exists n("2828:Chicago,IL")] == 0 } {
+    set n("2828:Chicago,IL") [$ns node] }
+  if { [info exists n("2828:Dallas,TX")] == 0 } {
+    set n("2828:Dallas,TX") [$ns node] }
+  if { [info exists n("2828:Ashburn,VA")] == 0 } {
+    set n("2828:Ashburn,VA") [$ns node] }
+
 #2828:Ashburn, VA -> 2828:Washington, DC 0.225316255475169
 $ns duplex-link $n("2828:Ashburn,VA") $n("2828:Washington,DC") 10.0Gb 0.225316255475169ms DropTail
 

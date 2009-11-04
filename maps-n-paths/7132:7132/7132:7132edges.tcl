@@ -1,34 +1,61 @@
 # 7132:7132
-for{set i 0} {$i < 28} {incr i} {
-  set n(7132:LittleRock,AR) [$ns node]
-  set n(7132:Wichita,KS) [$ns node]
-  set n(7132:Vienna,VA) [$ns node]
-  set n(7132:Austin,TX) [$ns node]
-  set n(7132:Richardson,TX) [$ns node]
-  set n(7132:Tulsa,OK) [$ns node]
-  set n(7132:Waco,TX) [$ns node]
-  set n(7132:SanAntonio,TX) [$ns node]
-  set n(7132:Abilene,TX) [$ns node]
-  set n(7132:Houston,TX) [$ns node]
-  set n(7132:Springfield,MO) [$ns node]
-  set n(7132:ElPaso,TX) [$ns node]
-  set n(7132:Seattle,WA) [$ns node]
-  set n(7132:Fayetteville,AR) [$ns node]
-  set n(7132:Herndon,VA) [$ns node]
-  set n(7132:Dallas,TX) [$ns node]
-  set n(7132:Ashburn,VA) [$ns node]
-  set n(7132:CorpusChristi,TX) [$ns node]
-  set n(7132:SanFrancisco,CA) [$ns node]
-  set n(7132:KansasCity,MO) [$ns node]
-  set n(7132:Lauback,TX) [$ns node]
-  set n(7132:OklahomaCity,OK) [$ns node]
-  set n(7132:Washington,DC) [$ns node]
-  set n(7132:StLouis,MO) [$ns node]
-  set n(7132:Topeka,KS) [$ns node]
-  set n(7132:NewYork,NY) [$ns node]
-  set n(7132:PaloAlto,CA) [$ns node]
-  set n(7132:LongView,TX) [$ns node]
-}
+  if { [info exists n("7132:LittleRock,AR")] == 0 } {
+    set n("7132:LittleRock,AR") [$ns node] }
+  if { [info exists n("7132:Wichita,KS")] == 0 } {
+    set n("7132:Wichita,KS") [$ns node] }
+  if { [info exists n("7132:Vienna,VA")] == 0 } {
+    set n("7132:Vienna,VA") [$ns node] }
+  if { [info exists n("7132:Austin,TX")] == 0 } {
+    set n("7132:Austin,TX") [$ns node] }
+  if { [info exists n("7132:Richardson,TX")] == 0 } {
+    set n("7132:Richardson,TX") [$ns node] }
+  if { [info exists n("7132:Tulsa,OK")] == 0 } {
+    set n("7132:Tulsa,OK") [$ns node] }
+  if { [info exists n("7132:Waco,TX")] == 0 } {
+    set n("7132:Waco,TX") [$ns node] }
+  if { [info exists n("7132:SanAntonio,TX")] == 0 } {
+    set n("7132:SanAntonio,TX") [$ns node] }
+  if { [info exists n("7132:Abilene,TX")] == 0 } {
+    set n("7132:Abilene,TX") [$ns node] }
+  if { [info exists n("7132:Houston,TX")] == 0 } {
+    set n("7132:Houston,TX") [$ns node] }
+  if { [info exists n("7132:Springfield,MO")] == 0 } {
+    set n("7132:Springfield,MO") [$ns node] }
+  if { [info exists n("7132:ElPaso,TX")] == 0 } {
+    set n("7132:ElPaso,TX") [$ns node] }
+  if { [info exists n("7132:Seattle,WA")] == 0 } {
+    set n("7132:Seattle,WA") [$ns node] }
+  if { [info exists n("7132:Fayetteville,AR")] == 0 } {
+    set n("7132:Fayetteville,AR") [$ns node] }
+  if { [info exists n("7132:Herndon,VA")] == 0 } {
+    set n("7132:Herndon,VA") [$ns node] }
+  if { [info exists n("7132:Dallas,TX")] == 0 } {
+    set n("7132:Dallas,TX") [$ns node] }
+  if { [info exists n("7132:Ashburn,VA")] == 0 } {
+    set n("7132:Ashburn,VA") [$ns node] }
+  if { [info exists n("7132:CorpusChristi,TX")] == 0 } {
+    set n("7132:CorpusChristi,TX") [$ns node] }
+  if { [info exists n("7132:SanFrancisco,CA")] == 0 } {
+    set n("7132:SanFrancisco,CA") [$ns node] }
+  if { [info exists n("7132:KansasCity,MO")] == 0 } {
+    set n("7132:KansasCity,MO") [$ns node] }
+  if { [info exists n("7132:Lauback,TX")] == 0 } {
+    set n("7132:Lauback,TX") [$ns node] }
+  if { [info exists n("7132:OklahomaCity,OK")] == 0 } {
+    set n("7132:OklahomaCity,OK") [$ns node] }
+  if { [info exists n("7132:Washington,DC")] == 0 } {
+    set n("7132:Washington,DC") [$ns node] }
+  if { [info exists n("7132:StLouis,MO")] == 0 } {
+    set n("7132:StLouis,MO") [$ns node] }
+  if { [info exists n("7132:Topeka,KS")] == 0 } {
+    set n("7132:Topeka,KS") [$ns node] }
+  if { [info exists n("7132:NewYork,NY")] == 0 } {
+    set n("7132:NewYork,NY") [$ns node] }
+  if { [info exists n("7132:PaloAlto,CA")] == 0 } {
+    set n("7132:PaloAlto,CA") [$ns node] }
+  if { [info exists n("7132:LongView,TX")] == 0 } {
+    set n("7132:LongView,TX") [$ns node] }
+
 #7132:Abilene, TX -> 7132:Richardson, TX 1.43240301040864
 $ns duplex-link $n("7132:Abilene,TX") $n("7132:Richardson,TX") 10.0Gb 1.43240301040864ms DropTail
 

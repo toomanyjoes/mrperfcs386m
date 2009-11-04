@@ -1,15 +1,23 @@
 # 1239:6453
-for{set i 0} {$i < 9} {incr i} {
-  set n(6453:NewYork,NY) [$ns node]
-  set n(6453:Tacoma,WA) [$ns node]
-  set n(1239:Dallas,TX) [$ns node]
-  set n(1239:Anaheim,CA) [$ns node]
-  set n(6453:Seattle,WA) [$ns node]
-  set n(1239:NewYork,NY) [$ns node]
-  set n(6453:Dallas,TX) [$ns node]
-  set n(1239:Tacoma,WA) [$ns node]
-  set n(6453:Anaheim,CA) [$ns node]
-}
+  if { [info exists n("6453:NewYork,NY")] == 0 } {
+    set n("6453:NewYork,NY") [$ns node] }
+  if { [info exists n("6453:Tacoma,WA")] == 0 } {
+    set n("6453:Tacoma,WA") [$ns node] }
+  if { [info exists n("1239:Dallas,TX")] == 0 } {
+    set n("1239:Dallas,TX") [$ns node] }
+  if { [info exists n("1239:Anaheim,CA")] == 0 } {
+    set n("1239:Anaheim,CA") [$ns node] }
+  if { [info exists n("6453:Seattle,WA")] == 0 } {
+    set n("6453:Seattle,WA") [$ns node] }
+  if { [info exists n("1239:NewYork,NY")] == 0 } {
+    set n("1239:NewYork,NY") [$ns node] }
+  if { [info exists n("6453:Dallas,TX")] == 0 } {
+    set n("6453:Dallas,TX") [$ns node] }
+  if { [info exists n("1239:Tacoma,WA")] == 0 } {
+    set n("1239:Tacoma,WA") [$ns node] }
+  if { [info exists n("6453:Anaheim,CA")] == 0 } {
+    set n("6453:Anaheim,CA") [$ns node] }
+
 #1239:Anaheim, CA -> 6453:Anaheim, CA 0
 $ns duplex-link $n("1239:Anaheim,CA") $n("6453:Anaheim,CA") 10.0Gb 0ms DropTail
 

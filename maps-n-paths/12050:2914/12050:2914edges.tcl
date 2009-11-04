@@ -1,12 +1,17 @@
 # 12050:2914
-for{set i 0} {$i < 6} {incr i} {
-  set n(12050:Washington,DC) [$ns node]
-  set n(12050:PaloAlto,CA) [$ns node]
-  set n(2914:PaloAlto,CA) [$ns node]
-  set n(2914:McLean,VA) [$ns node]
-  set n(12050:Chicago,IL) [$ns node]
-  set n(2914:Chicago,IL) [$ns node]
-}
+  if { [info exists n("12050:Washington,DC")] == 0 } {
+    set n("12050:Washington,DC") [$ns node] }
+  if { [info exists n("12050:PaloAlto,CA")] == 0 } {
+    set n("12050:PaloAlto,CA") [$ns node] }
+  if { [info exists n("2914:PaloAlto,CA")] == 0 } {
+    set n("2914:PaloAlto,CA") [$ns node] }
+  if { [info exists n("2914:McLean,VA")] == 0 } {
+    set n("2914:McLean,VA") [$ns node] }
+  if { [info exists n("12050:Chicago,IL")] == 0 } {
+    set n("12050:Chicago,IL") [$ns node] }
+  if { [info exists n("2914:Chicago,IL")] == 0 } {
+    set n("2914:Chicago,IL") [$ns node] }
+
 #12050:Chicago, IL -> 2914:Chicago, IL 0
 $ns duplex-link $n("12050:Chicago,IL") $n("2914:Chicago,IL") 10.0Gb 0ms DropTail
 

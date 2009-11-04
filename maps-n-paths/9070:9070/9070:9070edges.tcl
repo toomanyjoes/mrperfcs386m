@@ -1,10 +1,13 @@
 # 9070:9070
-for{set i 0} {$i < 4} {incr i} {
-  set n(9070:Asenovgrad,Bulgaria) [$ns node]
-  set n(9070:Brussels,Belgium) [$ns node]
-  set n(9070:Varna,Bulgaria) [$ns node]
-  set n(9070:Sofia,Bulgaria) [$ns node]
-}
+  if { [info exists n("9070:Asenovgrad,Bulgaria")] == 0 } {
+    set n("9070:Asenovgrad,Bulgaria") [$ns node] }
+  if { [info exists n("9070:Brussels,Belgium")] == 0 } {
+    set n("9070:Brussels,Belgium") [$ns node] }
+  if { [info exists n("9070:Varna,Bulgaria")] == 0 } {
+    set n("9070:Varna,Bulgaria") [$ns node] }
+  if { [info exists n("9070:Sofia,Bulgaria")] == 0 } {
+    set n("9070:Sofia,Bulgaria") [$ns node] }
+
 #9070:Asenovgrad, Bulgaria -> 9070:Brussels, Belgium 9.21624309244514
 $ns duplex-link $n("9070:Asenovgrad,Bulgaria") $n("9070:Brussels,Belgium") 10.0Gb 9.21624309244514ms DropTail
 

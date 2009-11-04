@@ -1,34 +1,61 @@
 # 1239:3561
-for{set i 0} {$i < 28} {incr i} {
-  set n(3561:Atlanta,GA) [$ns node]
-  set n(1239:Atlanta,GA) [$ns node]
-  set n(3561:Roachdale,IN) [$ns node]
-  set n(1239:Roachdale,IN) [$ns node]
-  set n(3561:Seattle,WA) [$ns node]
-  set n(1239:Seattle,WA) [$ns node]
-  set n(3561:Chicago,IL) [$ns node]
-  set n(3561:Dallas,TX) [$ns node]
-  set n(1239:Dallas,TX) [$ns node]
-  set n(1239:Chicago,IL) [$ns node]
-  set n(3561:Reston,VA) [$ns node]
-  set n(1239:Ashburn,VA) [$ns node]
-  set n(3561:Anaheim,CA) [$ns node]
-  set n(1239:Anaheim,CA) [$ns node]
-  set n(3561:Relay,MD) [$ns node]
-  set n(1239:Relay,MD) [$ns node]
-  set n(3561:London,UnitedKingdom) [$ns node]
-  set n(1239:London,UnitedKingdom) [$ns node]
-  set n(3561:KansasCity,MO) [$ns node]
-  set n(1239:KansasCity,MO) [$ns node]
-  set n(3561:Frankfurt,Germany) [$ns node]
-  set n(1239:Frankfurt,Germany) [$ns node]
-  set n(3561:Amsterdam,Netherlands) [$ns node]
-  set n(1239:Amsterdam,Netherlands) [$ns node]
-  set n(3561:NewYork,NY) [$ns node]
-  set n(1239:NewYork,NY) [$ns node]
-  set n(1239:Tacoma,WA) [$ns node]
-  set n(1239:OakBrook,IL) [$ns node]
-}
+  if { [info exists n("3561:Atlanta,GA")] == 0 } {
+    set n("3561:Atlanta,GA") [$ns node] }
+  if { [info exists n("1239:Atlanta,GA")] == 0 } {
+    set n("1239:Atlanta,GA") [$ns node] }
+  if { [info exists n("3561:Roachdale,IN")] == 0 } {
+    set n("3561:Roachdale,IN") [$ns node] }
+  if { [info exists n("1239:Roachdale,IN")] == 0 } {
+    set n("1239:Roachdale,IN") [$ns node] }
+  if { [info exists n("3561:Seattle,WA")] == 0 } {
+    set n("3561:Seattle,WA") [$ns node] }
+  if { [info exists n("1239:Seattle,WA")] == 0 } {
+    set n("1239:Seattle,WA") [$ns node] }
+  if { [info exists n("3561:Chicago,IL")] == 0 } {
+    set n("3561:Chicago,IL") [$ns node] }
+  if { [info exists n("3561:Dallas,TX")] == 0 } {
+    set n("3561:Dallas,TX") [$ns node] }
+  if { [info exists n("1239:Dallas,TX")] == 0 } {
+    set n("1239:Dallas,TX") [$ns node] }
+  if { [info exists n("1239:Chicago,IL")] == 0 } {
+    set n("1239:Chicago,IL") [$ns node] }
+  if { [info exists n("3561:Reston,VA")] == 0 } {
+    set n("3561:Reston,VA") [$ns node] }
+  if { [info exists n("1239:Ashburn,VA")] == 0 } {
+    set n("1239:Ashburn,VA") [$ns node] }
+  if { [info exists n("3561:Anaheim,CA")] == 0 } {
+    set n("3561:Anaheim,CA") [$ns node] }
+  if { [info exists n("1239:Anaheim,CA")] == 0 } {
+    set n("1239:Anaheim,CA") [$ns node] }
+  if { [info exists n("3561:Relay,MD")] == 0 } {
+    set n("3561:Relay,MD") [$ns node] }
+  if { [info exists n("1239:Relay,MD")] == 0 } {
+    set n("1239:Relay,MD") [$ns node] }
+  if { [info exists n("3561:London,UnitedKingdom")] == 0 } {
+    set n("3561:London,UnitedKingdom") [$ns node] }
+  if { [info exists n("1239:London,UnitedKingdom")] == 0 } {
+    set n("1239:London,UnitedKingdom") [$ns node] }
+  if { [info exists n("3561:KansasCity,MO")] == 0 } {
+    set n("3561:KansasCity,MO") [$ns node] }
+  if { [info exists n("1239:KansasCity,MO")] == 0 } {
+    set n("1239:KansasCity,MO") [$ns node] }
+  if { [info exists n("3561:Frankfurt,Germany")] == 0 } {
+    set n("3561:Frankfurt,Germany") [$ns node] }
+  if { [info exists n("1239:Frankfurt,Germany")] == 0 } {
+    set n("1239:Frankfurt,Germany") [$ns node] }
+  if { [info exists n("3561:Amsterdam,Netherlands")] == 0 } {
+    set n("3561:Amsterdam,Netherlands") [$ns node] }
+  if { [info exists n("1239:Amsterdam,Netherlands")] == 0 } {
+    set n("1239:Amsterdam,Netherlands") [$ns node] }
+  if { [info exists n("3561:NewYork,NY")] == 0 } {
+    set n("3561:NewYork,NY") [$ns node] }
+  if { [info exists n("1239:NewYork,NY")] == 0 } {
+    set n("1239:NewYork,NY") [$ns node] }
+  if { [info exists n("1239:Tacoma,WA")] == 0 } {
+    set n("1239:Tacoma,WA") [$ns node] }
+  if { [info exists n("1239:OakBrook,IL")] == 0 } {
+    set n("1239:OakBrook,IL") [$ns node] }
+
 #1239:Amsterdam, Netherlands -> 3561:Amsterdam, Netherlands 0
 $ns duplex-link $n("1239:Amsterdam,Netherlands") $n("3561:Amsterdam,Netherlands") 10.0Gb 0ms DropTail
 

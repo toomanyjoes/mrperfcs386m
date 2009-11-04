@@ -1,11 +1,15 @@
 # 701:4513
-for{set i 0} {$i < 5} {incr i} {
-  set n(4513:SanJose,CA) [$ns node]
-  set n(4513:NewYork,NY) [$ns node]
-  set n(701:SanFrancisco,CA) [$ns node]
-  set n(701:NewYork,NY) [$ns node]
-  set n(4513:SanFrancisco,CA) [$ns node]
-}
+  if { [info exists n("4513:SanJose,CA")] == 0 } {
+    set n("4513:SanJose,CA") [$ns node] }
+  if { [info exists n("4513:NewYork,NY")] == 0 } {
+    set n("4513:NewYork,NY") [$ns node] }
+  if { [info exists n("701:SanFrancisco,CA")] == 0 } {
+    set n("701:SanFrancisco,CA") [$ns node] }
+  if { [info exists n("701:NewYork,NY")] == 0 } {
+    set n("701:NewYork,NY") [$ns node] }
+  if { [info exists n("4513:SanFrancisco,CA")] == 0 } {
+    set n("4513:SanFrancisco,CA") [$ns node] }
+
 #701:New York, NY -> 4513:New York, NY 0
 $ns duplex-link $n("701:NewYork,NY") $n("4513:NewYork,NY") 10.0Gb 0ms DropTail
 

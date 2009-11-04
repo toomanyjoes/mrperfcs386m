@@ -1,14 +1,21 @@
 # 3257:1
-for{set i 0} {$i < 8} {incr i} {
-  set n(3257:SanJose,CA) [$ns node]
-  set n(1:Chicago,IL) [$ns node]
-  set n(1:Carrollton,TX) [$ns node]
-  set n(3257:Dallas,TX) [$ns node]
-  set n(3257:Chicago,IL) [$ns node]
-  set n(1:Washington,DC) [$ns node]
-  set n(1:SanJose,CA) [$ns node]
-  set n(3257:Washington,DC) [$ns node]
-}
+  if { [info exists n("3257:SanJose,CA")] == 0 } {
+    set n("3257:SanJose,CA") [$ns node] }
+  if { [info exists n("1:Chicago,IL")] == 0 } {
+    set n("1:Chicago,IL") [$ns node] }
+  if { [info exists n("1:Carrollton,TX")] == 0 } {
+    set n("1:Carrollton,TX") [$ns node] }
+  if { [info exists n("3257:Dallas,TX")] == 0 } {
+    set n("3257:Dallas,TX") [$ns node] }
+  if { [info exists n("3257:Chicago,IL")] == 0 } {
+    set n("3257:Chicago,IL") [$ns node] }
+  if { [info exists n("1:Washington,DC")] == 0 } {
+    set n("1:Washington,DC") [$ns node] }
+  if { [info exists n("1:SanJose,CA")] == 0 } {
+    set n("1:SanJose,CA") [$ns node] }
+  if { [info exists n("3257:Washington,DC")] == 0 } {
+    set n("3257:Washington,DC") [$ns node] }
+
 #3257:Chicago, IL -> 1:Chicago, IL 0
 $ns duplex-link $n("3257:Chicago,IL") $n("1:Chicago,IL") 10.0Gb 0ms DropTail
 

@@ -1,12 +1,17 @@
 # 701:4544
-for{set i 0} {$i < 6} {incr i} {
-  set n(701:Washington,DC) [$ns node]
-  set n(701:Sacramento,CA) [$ns node]
-  set n(4544:SanFrancisco,CA) [$ns node]
-  set n(4544:Washington,DC) [$ns node]
-  set n(4544:Sacramento,CA) [$ns node]
-  set n(4544:Ashburn,VA) [$ns node]
-}
+  if { [info exists n("701:Washington,DC")] == 0 } {
+    set n("701:Washington,DC") [$ns node] }
+  if { [info exists n("701:Sacramento,CA")] == 0 } {
+    set n("701:Sacramento,CA") [$ns node] }
+  if { [info exists n("4544:SanFrancisco,CA")] == 0 } {
+    set n("4544:SanFrancisco,CA") [$ns node] }
+  if { [info exists n("4544:Washington,DC")] == 0 } {
+    set n("4544:Washington,DC") [$ns node] }
+  if { [info exists n("4544:Sacramento,CA")] == 0 } {
+    set n("4544:Sacramento,CA") [$ns node] }
+  if { [info exists n("4544:Ashburn,VA")] == 0 } {
+    set n("4544:Ashburn,VA") [$ns node] }
+
 #701:Sacramento, CA -> 4544:Sacramento, CA 0
 $ns duplex-link $n("701:Sacramento,CA") $n("4544:Sacramento,CA") 10.0Gb 0ms DropTail
 

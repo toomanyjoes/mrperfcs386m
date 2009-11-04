@@ -1,44 +1,81 @@
 # 4637:4637
-for{set i 0} {$i < 38} {incr i} {
-  set n(4637:SanJose,CA) [$ns node]
-  set n(4637:tmh) [$ns node]
-  set n(4637:PaloAlto,CA) [$ns node]
-  set n(4637:NewYork,NY) [$ns node]
-  set n(->4637:SanFrancisco,CA) [$ns node]
-  set n(4637:Miami,FL) [$ns node]
-  set n(4637:yck) [$ns node]
-  set n(4637:HongKong) [$ns node]
-  set n(4637:LosAngeles,CA) [$ns node]
-  set n(4637:xeig) [$ns node]
-  set n(4637:Newark,NJ) [$ns node]
-  set n(4637:Sydney,Australia) [$ns node]
-  set n(->4637:SanJose,CA) [$ns node]
-  set n(4637:Perth,Australia) [$ns node]
-  set n(4637:tmhs) [$ns node]
-  set n(->4637:NewYork,NY) [$ns node]
-  set n(->4637:PaloAlto,CA) [$ns node]
-  set n(4637:hhts) [$ns node]
-  set n(4637:Chicago,IL) [$ns node]
-  set n(->4637:LosAngeles,CA) [$ns node]
-  set n(4637:Dallas,TX) [$ns node]
-  set n(4637:tmhs100000) [$ns node]
-  set n(4637:hhts100000) [$ns node]
-  set n(4637:tmh100000) [$ns node]
-  set n(4637:hht100000) [$ns node]
-  set n(4637:yck100000) [$ns node]
-  set n(4637:car100000) [$ns node]
-  set n(4637:Tokyo,Japan) [$ns node]
-  set n(4637:Kyoto,Japan) [$ns node]
-  set n(4637:Ashburn,VA) [$ns node]
-  set n(4637:hht) [$ns node]
-  set n(4637:Anaheim,CA) [$ns node]
-  set n(4637:London,UnitedKingdom) [$ns node]
-  set n(4637:Relay,MD) [$ns node]
-  set n(4637:SanFrancisco,CA) [$ns node]
-  set n(4637:car) [$ns node]
-  set n(4637:Auckland,NewZealand) [$ns node]
-  set n(4637:Washington,DC) [$ns node]
-}
+  if { [info exists n("4637:SanJose,CA")] == 0 } {
+    set n("4637:SanJose,CA") [$ns node] }
+  if { [info exists n("4637:tmh")] == 0 } {
+    set n("4637:tmh") [$ns node] }
+  if { [info exists n("4637:PaloAlto,CA")] == 0 } {
+    set n("4637:PaloAlto,CA") [$ns node] }
+  if { [info exists n("4637:NewYork,NY")] == 0 } {
+    set n("4637:NewYork,NY") [$ns node] }
+  if { [info exists n("->4637:SanFrancisco,CA")] == 0 } {
+    set n("->4637:SanFrancisco,CA") [$ns node] }
+  if { [info exists n("4637:Miami,FL")] == 0 } {
+    set n("4637:Miami,FL") [$ns node] }
+  if { [info exists n("4637:yck")] == 0 } {
+    set n("4637:yck") [$ns node] }
+  if { [info exists n("4637:HongKong")] == 0 } {
+    set n("4637:HongKong") [$ns node] }
+  if { [info exists n("4637:LosAngeles,CA")] == 0 } {
+    set n("4637:LosAngeles,CA") [$ns node] }
+  if { [info exists n("4637:xeig")] == 0 } {
+    set n("4637:xeig") [$ns node] }
+  if { [info exists n("4637:Newark,NJ")] == 0 } {
+    set n("4637:Newark,NJ") [$ns node] }
+  if { [info exists n("4637:Sydney,Australia")] == 0 } {
+    set n("4637:Sydney,Australia") [$ns node] }
+  if { [info exists n("->4637:SanJose,CA")] == 0 } {
+    set n("->4637:SanJose,CA") [$ns node] }
+  if { [info exists n("4637:Perth,Australia")] == 0 } {
+    set n("4637:Perth,Australia") [$ns node] }
+  if { [info exists n("4637:tmhs")] == 0 } {
+    set n("4637:tmhs") [$ns node] }
+  if { [info exists n("->4637:NewYork,NY")] == 0 } {
+    set n("->4637:NewYork,NY") [$ns node] }
+  if { [info exists n("->4637:PaloAlto,CA")] == 0 } {
+    set n("->4637:PaloAlto,CA") [$ns node] }
+  if { [info exists n("4637:hhts")] == 0 } {
+    set n("4637:hhts") [$ns node] }
+  if { [info exists n("4637:Chicago,IL")] == 0 } {
+    set n("4637:Chicago,IL") [$ns node] }
+  if { [info exists n("->4637:LosAngeles,CA")] == 0 } {
+    set n("->4637:LosAngeles,CA") [$ns node] }
+  if { [info exists n("4637:Dallas,TX")] == 0 } {
+    set n("4637:Dallas,TX") [$ns node] }
+  if { [info exists n("4637:tmhs100000")] == 0 } {
+    set n("4637:tmhs100000") [$ns node] }
+  if { [info exists n("4637:hhts100000")] == 0 } {
+    set n("4637:hhts100000") [$ns node] }
+  if { [info exists n("4637:tmh100000")] == 0 } {
+    set n("4637:tmh100000") [$ns node] }
+  if { [info exists n("4637:hht100000")] == 0 } {
+    set n("4637:hht100000") [$ns node] }
+  if { [info exists n("4637:yck100000")] == 0 } {
+    set n("4637:yck100000") [$ns node] }
+  if { [info exists n("4637:car100000")] == 0 } {
+    set n("4637:car100000") [$ns node] }
+  if { [info exists n("4637:Tokyo,Japan")] == 0 } {
+    set n("4637:Tokyo,Japan") [$ns node] }
+  if { [info exists n("4637:Kyoto,Japan")] == 0 } {
+    set n("4637:Kyoto,Japan") [$ns node] }
+  if { [info exists n("4637:Ashburn,VA")] == 0 } {
+    set n("4637:Ashburn,VA") [$ns node] }
+  if { [info exists n("4637:hht")] == 0 } {
+    set n("4637:hht") [$ns node] }
+  if { [info exists n("4637:Anaheim,CA")] == 0 } {
+    set n("4637:Anaheim,CA") [$ns node] }
+  if { [info exists n("4637:London,UnitedKingdom")] == 0 } {
+    set n("4637:London,UnitedKingdom") [$ns node] }
+  if { [info exists n("4637:Relay,MD")] == 0 } {
+    set n("4637:Relay,MD") [$ns node] }
+  if { [info exists n("4637:SanFrancisco,CA")] == 0 } {
+    set n("4637:SanFrancisco,CA") [$ns node] }
+  if { [info exists n("4637:car")] == 0 } {
+    set n("4637:car") [$ns node] }
+  if { [info exists n("4637:Auckland,NewZealand")] == 0 } {
+    set n("4637:Auckland,NewZealand") [$ns node] }
+  if { [info exists n("4637:Washington,DC")] == 0 } {
+    set n("4637:Washington,DC") [$ns node] }
+
 #4637:Anaheim, CA -> 4637:Los Angeles, CA 0.268083922965192
 $ns duplex-link $n("4637:Anaheim,CA") $n("4637:LosAngeles,CA") 10.0Gb 0.268083922965192ms DropTail
 

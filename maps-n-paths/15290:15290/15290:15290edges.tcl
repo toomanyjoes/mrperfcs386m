@@ -1,23 +1,39 @@
 # 15290:15290
-for{set i 0} {$i < 17} {incr i} {
-  set n(15290:Vancouver,Canada) [$ns node]
-  set n(15290:NewMarket,Canada) [$ns node]
-  set n(15290:Winnipeg,Canada) [$ns node]
-  set n(15290:Montreal,Canada) [$ns node]
-  set n(15290:Hamilton,Canada) [$ns node]
-  set n(15290:Edmonton,Canada) [$ns node]
-  set n(15290:Toronto,Canada) [$ns node]
-  set n(15290:Windsor,Canada) [$ns node]
-  set n(15290:Calgary,Canada) [$ns node]
-  set n(15290:RedDeer,Canada) [$ns node]
-  set n(15290:Halifax,Canada) [$ns node]
-  set n(15290:Sarnia,Canada) [$ns node]
-  set n(15290:Ottawa,Canada) [$ns node]
-  set n(15290:London,Canada) [$ns node]
-  set n(15290:Regina,Canada) [$ns node]
-  set n(15290:Quebec,Canada) [$ns node]
-  set n(15290:Seattle,WA) [$ns node]
-}
+  if { [info exists n("15290:Vancouver,Canada")] == 0 } {
+    set n("15290:Vancouver,Canada") [$ns node] }
+  if { [info exists n("15290:NewMarket,Canada")] == 0 } {
+    set n("15290:NewMarket,Canada") [$ns node] }
+  if { [info exists n("15290:Winnipeg,Canada")] == 0 } {
+    set n("15290:Winnipeg,Canada") [$ns node] }
+  if { [info exists n("15290:Montreal,Canada")] == 0 } {
+    set n("15290:Montreal,Canada") [$ns node] }
+  if { [info exists n("15290:Hamilton,Canada")] == 0 } {
+    set n("15290:Hamilton,Canada") [$ns node] }
+  if { [info exists n("15290:Edmonton,Canada")] == 0 } {
+    set n("15290:Edmonton,Canada") [$ns node] }
+  if { [info exists n("15290:Toronto,Canada")] == 0 } {
+    set n("15290:Toronto,Canada") [$ns node] }
+  if { [info exists n("15290:Windsor,Canada")] == 0 } {
+    set n("15290:Windsor,Canada") [$ns node] }
+  if { [info exists n("15290:Calgary,Canada")] == 0 } {
+    set n("15290:Calgary,Canada") [$ns node] }
+  if { [info exists n("15290:RedDeer,Canada")] == 0 } {
+    set n("15290:RedDeer,Canada") [$ns node] }
+  if { [info exists n("15290:Halifax,Canada")] == 0 } {
+    set n("15290:Halifax,Canada") [$ns node] }
+  if { [info exists n("15290:Sarnia,Canada")] == 0 } {
+    set n("15290:Sarnia,Canada") [$ns node] }
+  if { [info exists n("15290:Ottawa,Canada")] == 0 } {
+    set n("15290:Ottawa,Canada") [$ns node] }
+  if { [info exists n("15290:London,Canada")] == 0 } {
+    set n("15290:London,Canada") [$ns node] }
+  if { [info exists n("15290:Regina,Canada")] == 0 } {
+    set n("15290:Regina,Canada") [$ns node] }
+  if { [info exists n("15290:Quebec,Canada")] == 0 } {
+    set n("15290:Quebec,Canada") [$ns node] }
+  if { [info exists n("15290:Seattle,WA")] == 0 } {
+    set n("15290:Seattle,WA") [$ns node] }
+
 #15290:Calgary, Canada -> 15290:Edmonton, Canada 1.40476322288213
 $ns duplex-link $n("15290:Calgary,Canada") $n("15290:Edmonton,Canada") 10.0Gb 1.40476322288213ms DropTail
 

@@ -1,33 +1,59 @@
 # 3967:3561
-for{set i 0} {$i < 27} {incr i} {
-  set n(3561:Waltham,MA) [$ns node]
-  set n(3967:PaloAlto,CA) [$ns node]
-  set n(3967:NewYork,NY) [$ns node]
-  set n(3561:SantaClara,CA) [$ns node]
-  set n(3561:Herndon,VA) [$ns node]
-  set n(3561:Chicago,IL) [$ns node]
-  set n(3967:OakBrook,IL) [$ns node]
-  set n(3561:Tokyo,Japan) [$ns node]
-  set n(3967:Waltham,MA) [$ns node]
-  set n(3561:Boston,MA) [$ns node]
-  set n(3561:Washington,DC) [$ns node]
-  set n(3561:Sterling,VA) [$ns node]
-  set n(3561:ElSegundo,CA) [$ns node]
-  set n(3967:SantaClara,CA) [$ns node]
-  set n(3561:JerseyCity,NJ) [$ns node]
-  set n(3561:Sunnyvale,CA) [$ns node]
-  set n(3967:Herndon,VA) [$ns node]
-  set n(3967:Chicago,IL) [$ns node]
-  set n(3967:Tokyo,Japan) [$ns node]
-  set n(3561:PaloAlto,CA) [$ns node]
-  set n(3561:NewYork,NY) [$ns node]
-  set n(3967:Washington,DC) [$ns node]
-  set n(3967:Sterling,VA) [$ns node]
-  set n(3967:ElSegundo,CA) [$ns node]
-  set n(3967:JerseyCity,NJ) [$ns node]
-  set n(3967:Sunnyvale,CA) [$ns node]
-  set n(3561:OakBrook,IL) [$ns node]
-}
+  if { [info exists n("3561:Waltham,MA")] == 0 } {
+    set n("3561:Waltham,MA") [$ns node] }
+  if { [info exists n("3967:PaloAlto,CA")] == 0 } {
+    set n("3967:PaloAlto,CA") [$ns node] }
+  if { [info exists n("3967:NewYork,NY")] == 0 } {
+    set n("3967:NewYork,NY") [$ns node] }
+  if { [info exists n("3561:SantaClara,CA")] == 0 } {
+    set n("3561:SantaClara,CA") [$ns node] }
+  if { [info exists n("3561:Herndon,VA")] == 0 } {
+    set n("3561:Herndon,VA") [$ns node] }
+  if { [info exists n("3561:Chicago,IL")] == 0 } {
+    set n("3561:Chicago,IL") [$ns node] }
+  if { [info exists n("3967:OakBrook,IL")] == 0 } {
+    set n("3967:OakBrook,IL") [$ns node] }
+  if { [info exists n("3561:Tokyo,Japan")] == 0 } {
+    set n("3561:Tokyo,Japan") [$ns node] }
+  if { [info exists n("3967:Waltham,MA")] == 0 } {
+    set n("3967:Waltham,MA") [$ns node] }
+  if { [info exists n("3561:Boston,MA")] == 0 } {
+    set n("3561:Boston,MA") [$ns node] }
+  if { [info exists n("3561:Washington,DC")] == 0 } {
+    set n("3561:Washington,DC") [$ns node] }
+  if { [info exists n("3561:Sterling,VA")] == 0 } {
+    set n("3561:Sterling,VA") [$ns node] }
+  if { [info exists n("3561:ElSegundo,CA")] == 0 } {
+    set n("3561:ElSegundo,CA") [$ns node] }
+  if { [info exists n("3967:SantaClara,CA")] == 0 } {
+    set n("3967:SantaClara,CA") [$ns node] }
+  if { [info exists n("3561:JerseyCity,NJ")] == 0 } {
+    set n("3561:JerseyCity,NJ") [$ns node] }
+  if { [info exists n("3561:Sunnyvale,CA")] == 0 } {
+    set n("3561:Sunnyvale,CA") [$ns node] }
+  if { [info exists n("3967:Herndon,VA")] == 0 } {
+    set n("3967:Herndon,VA") [$ns node] }
+  if { [info exists n("3967:Chicago,IL")] == 0 } {
+    set n("3967:Chicago,IL") [$ns node] }
+  if { [info exists n("3967:Tokyo,Japan")] == 0 } {
+    set n("3967:Tokyo,Japan") [$ns node] }
+  if { [info exists n("3561:PaloAlto,CA")] == 0 } {
+    set n("3561:PaloAlto,CA") [$ns node] }
+  if { [info exists n("3561:NewYork,NY")] == 0 } {
+    set n("3561:NewYork,NY") [$ns node] }
+  if { [info exists n("3967:Washington,DC")] == 0 } {
+    set n("3967:Washington,DC") [$ns node] }
+  if { [info exists n("3967:Sterling,VA")] == 0 } {
+    set n("3967:Sterling,VA") [$ns node] }
+  if { [info exists n("3967:ElSegundo,CA")] == 0 } {
+    set n("3967:ElSegundo,CA") [$ns node] }
+  if { [info exists n("3967:JerseyCity,NJ")] == 0 } {
+    set n("3967:JerseyCity,NJ") [$ns node] }
+  if { [info exists n("3967:Sunnyvale,CA")] == 0 } {
+    set n("3967:Sunnyvale,CA") [$ns node] }
+  if { [info exists n("3561:OakBrook,IL")] == 0 } {
+    set n("3561:OakBrook,IL") [$ns node] }
+
 #3967:Chicago, IL -> 3561:Chicago, IL 0
 $ns duplex-link $n("3967:Chicago,IL") $n("3561:Chicago,IL") 10.0Gb 0ms DropTail
 

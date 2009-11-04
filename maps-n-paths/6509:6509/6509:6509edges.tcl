@@ -1,18 +1,29 @@
 # 6509:6509
-for{set i 0} {$i < 12} {incr i} {
-  set n(6509:Seattle,WA) [$ns node]
-  set n(6509:Chicago,IL) [$ns node]
-  set n(6509:Vancouver,Canada) [$ns node]
-  set n(6509:Winnipeg,Canada) [$ns node]
-  set n(6509:Montreal,Canada) [$ns node]
-  set n(6509:Victoria,Canada) [$ns node]
-  set n(6509:Edmonton,Canada) [$ns node]
-  set n(6509:Toronto,Canada) [$ns node]
-  set n(6509:Calgary,Canada) [$ns node]
-  set n(6509:Halifax,Canada) [$ns node]
-  set n(6509:Regina,Canada) [$ns node]
-  set n(6509:Ottawa,Canada) [$ns node]
-}
+  if { [info exists n("6509:Seattle,WA")] == 0 } {
+    set n("6509:Seattle,WA") [$ns node] }
+  if { [info exists n("6509:Chicago,IL")] == 0 } {
+    set n("6509:Chicago,IL") [$ns node] }
+  if { [info exists n("6509:Vancouver,Canada")] == 0 } {
+    set n("6509:Vancouver,Canada") [$ns node] }
+  if { [info exists n("6509:Winnipeg,Canada")] == 0 } {
+    set n("6509:Winnipeg,Canada") [$ns node] }
+  if { [info exists n("6509:Montreal,Canada")] == 0 } {
+    set n("6509:Montreal,Canada") [$ns node] }
+  if { [info exists n("6509:Victoria,Canada")] == 0 } {
+    set n("6509:Victoria,Canada") [$ns node] }
+  if { [info exists n("6509:Edmonton,Canada")] == 0 } {
+    set n("6509:Edmonton,Canada") [$ns node] }
+  if { [info exists n("6509:Toronto,Canada")] == 0 } {
+    set n("6509:Toronto,Canada") [$ns node] }
+  if { [info exists n("6509:Calgary,Canada")] == 0 } {
+    set n("6509:Calgary,Canada") [$ns node] }
+  if { [info exists n("6509:Halifax,Canada")] == 0 } {
+    set n("6509:Halifax,Canada") [$ns node] }
+  if { [info exists n("6509:Regina,Canada")] == 0 } {
+    set n("6509:Regina,Canada") [$ns node] }
+  if { [info exists n("6509:Ottawa,Canada")] == 0 } {
+    set n("6509:Ottawa,Canada") [$ns node] }
+
 #6509:Calgary, Canada -> 6509:Seattle, WA 3.54622119361288
 $ns duplex-link $n("6509:Calgary,Canada") $n("6509:Seattle,WA") 10.0Gb 3.54622119361288ms DropTail
 

@@ -1,12 +1,17 @@
 # 4006:1
-for{set i 0} {$i < 6} {incr i} {
-  set n(4006:PaloAlto,CA) [$ns node]
-  set n(1:Carrollton,TX) [$ns node]
-  set n(4006:Dallas,TX) [$ns node]
-  set n(4006:SanFrancisco,CA) [$ns node]
-  set n(1:SanJose,CA) [$ns node]
-  set n(1:PaloAlto,CA) [$ns node]
-}
+  if { [info exists n("4006:PaloAlto,CA")] == 0 } {
+    set n("4006:PaloAlto,CA") [$ns node] }
+  if { [info exists n("1:Carrollton,TX")] == 0 } {
+    set n("1:Carrollton,TX") [$ns node] }
+  if { [info exists n("4006:Dallas,TX")] == 0 } {
+    set n("4006:Dallas,TX") [$ns node] }
+  if { [info exists n("4006:SanFrancisco,CA")] == 0 } {
+    set n("4006:SanFrancisco,CA") [$ns node] }
+  if { [info exists n("1:SanJose,CA")] == 0 } {
+    set n("1:SanJose,CA") [$ns node] }
+  if { [info exists n("1:PaloAlto,CA")] == 0 } {
+    set n("1:PaloAlto,CA") [$ns node] }
+
 #4006:Dallas, TX -> 1:Carrollton, TX 0.114973409205073
 $ns duplex-link $n("4006:Dallas,TX") $n("1:Carrollton,TX") 10.0Gb 0.114973409205073ms DropTail
 

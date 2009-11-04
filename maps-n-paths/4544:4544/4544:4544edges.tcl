@@ -1,20 +1,33 @@
 # 4544:4544
-for{set i 0} {$i < 14} {incr i} {
-  set n(4544:SanFrancisco,CA) [$ns node]
-  set n(4544:Washington,DC) [$ns node]
-  set n(4544:Sunnyvale,CA) [$ns node]
-  set n(4544:Denver,CO) [$ns node]
-  set n(4544:Sacramento,CA) [$ns node]
-  set n(4544:PaloAlto,CA) [$ns node]
-  set n(4544:NewYork,NY) [$ns node]
-  set n(4544:LosAngeles,CA) [$ns node]
-  set n(4544:Atlanta,GA) [$ns node]
-  set n(4544:Seattle,WA) [$ns node]
-  set n(4544:Herndon,VA) [$ns node]
-  set n(4544:Chicago,IL) [$ns node]
-  set n(4544:Dallas,TX) [$ns node]
-  set n(4544:Ashburn,VA) [$ns node]
-}
+  if { [info exists n("4544:SanFrancisco,CA")] == 0 } {
+    set n("4544:SanFrancisco,CA") [$ns node] }
+  if { [info exists n("4544:Washington,DC")] == 0 } {
+    set n("4544:Washington,DC") [$ns node] }
+  if { [info exists n("4544:Sunnyvale,CA")] == 0 } {
+    set n("4544:Sunnyvale,CA") [$ns node] }
+  if { [info exists n("4544:Denver,CO")] == 0 } {
+    set n("4544:Denver,CO") [$ns node] }
+  if { [info exists n("4544:Sacramento,CA")] == 0 } {
+    set n("4544:Sacramento,CA") [$ns node] }
+  if { [info exists n("4544:PaloAlto,CA")] == 0 } {
+    set n("4544:PaloAlto,CA") [$ns node] }
+  if { [info exists n("4544:NewYork,NY")] == 0 } {
+    set n("4544:NewYork,NY") [$ns node] }
+  if { [info exists n("4544:LosAngeles,CA")] == 0 } {
+    set n("4544:LosAngeles,CA") [$ns node] }
+  if { [info exists n("4544:Atlanta,GA")] == 0 } {
+    set n("4544:Atlanta,GA") [$ns node] }
+  if { [info exists n("4544:Seattle,WA")] == 0 } {
+    set n("4544:Seattle,WA") [$ns node] }
+  if { [info exists n("4544:Herndon,VA")] == 0 } {
+    set n("4544:Herndon,VA") [$ns node] }
+  if { [info exists n("4544:Chicago,IL")] == 0 } {
+    set n("4544:Chicago,IL") [$ns node] }
+  if { [info exists n("4544:Dallas,TX")] == 0 } {
+    set n("4544:Dallas,TX") [$ns node] }
+  if { [info exists n("4544:Ashburn,VA")] == 0 } {
+    set n("4544:Ashburn,VA") [$ns node] }
+
 #4544:Ashburn, VA -> 4544:Atlanta, GA 4.26986836312155
 $ns duplex-link $n("4544:Ashburn,VA") $n("4544:Atlanta,GA") 10.0Gb 4.26986836312155ms DropTail
 
