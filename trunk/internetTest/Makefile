@@ -12,7 +12,7 @@ gen:
 
 topo:
 	# create hadoop.topo.tcl and mapnodes.tcl (topology)
-	./conv.py -t topology1.xml -m random.xml -j job1.xml -N 10
+	./conv.py -t topology1.xml -m random.xml -j job1.xml -N 10000000000000
 
 job:
 	# create hadoop.job.tcl (job characteristics)
