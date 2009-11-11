@@ -258,7 +258,18 @@ class topology_t:
 		#f.write('set int_bw %s\n' % (int_bw))
 		#f.write('set int_latency %s\n' % (int_latency))
 		f.write('source router.topo.tcl\n')
-		f.write('array set routers [create-router-topology]\n\n')
+		f.write('array set routersArr [create-router-topology]\n\n')
+		f.write('set numRouters [array size routersArr]\n')
+		f.write('set toList [array get routersArr]\n\n')
+		f.write('set i 0\n')
+		f.write('set counter 0\n')
+		f.write('foreach router [array get routersArr] {\n')
+		f.write('\tif { ($i % 2) > 0 } {\n')
+		f.write('\t\tset routers($counter) $router\n')
+		f.write('\t\tset counter [expr $counter + 1]\n')
+		f.write('\t}\n\tset i [expr $i + 1]\n')
+		f.write('}\n\n')
+		
 		num_of_nodes = 0
 
 		if self.topology == 'dcell':
@@ -289,26 +300,33 @@ class topology_t:
 			return
 
 		for rg in self.htree.children():
-			self.racks = len(rg.children())
+			#self.racks = len(rg.children())
+			#print "self.htree.children loop %s" % self.racks
+			self.nodes = len(rg.children())
 			for r in rg.children():
-				# Sam Palmer commented out
+				self.racks = len(r.children())
+				#print "rg.children loop %s" % self.racks
+				# spalmer commented out
 				#f.write('set %s [$ns node]\n' % (r.name()))
 				for ng in r.children():
-					self.nodes = len(ng.children())
-					mt = ng.reserved
-
+					#print "r.children loop"
+					#self.racks = len(ng.children())
+					#self.nodes = len(ng.children())
+					mt = ng.reserved 
 					# cpu information for all nodes in a node group
 					freq = freq_table[mt.cpu.type]
 					cores = mt.cpu.cores * mt.cpu.num
 					# disk read and write bandwidths
 					rbw = read_bw_table[mt.disk.type]
 					wbw = write_bw_table[mt.disk.type]
+					
+					f.write('# cpu.type = %s cpu.cores = %s hd.type = %s\n' % (mt.cpu.type, mt.cpu.cores, mt.disk.type))
 
 					f.write('for {set i 0} {$i < %d} {incr i} {\n' \
 								% (len(ng.children())))
 					# Sam Palmer
 					#hostSpeeds = {0 : '6Mb', 1 : '30Mb', 2 : '4Mb', 3 : '5Mb', 4 : '5Mb', 5 : '6Mb', 6 : '6Mb', 7 : '6Mb', 8 : '7Mb', 9 : '7Mb', 10 : '8Mb', 11 : '10Mb', 12 : '10Mb', 13 : '14Mb', 14 : '14Mb', 15 : '14Mb', 16 : '30Mb', 17 : '30Mb', 18 : '30Mb',}
-					f.write('\tnewnode "%s_$i" $routers(%s) %sMb %sms\n' % (ng.name(), random.randint(0,int(netsize)-1), abs(random.normalvariate(16.0, 8.0)), abs(random.normalvariate(0.25, 0.07))))
+					f.write('\tnewnode "%s_$i" $routers([expr %s %% $numRouters]) %sMb %sms\n' % (ng.name(), random.randint(0,int(netsize)-1), abs(random.normalvariate(16.0, 8.0)), abs(random.normalvariate(0.25, 0.07))))
 #					f.write('\tnewnode "%s_$i" $%s\n' % (ng.name(), r.name()))
 					num_of_nodes += len(ng.children())
 					#f.write('\t$n30 set freq %f\n' % (freq))
@@ -341,7 +359,8 @@ class topology_t:
 			f.write('for {set j 0} {$j < %d} {incr j} {\n' \
 						% (mt.disk.num))
 			f.write('\t$jt newdisk %f %f\n' % (rbw, wbw))
-			f.write('}\n')'''
+			f.write('}\n')
+			'''
 		#f.write("\nset num_of_nodes %d\n" % (num_of_nodes))
 		f.write("\nset num_of_nodes %d\n" % (self.data_nodes))
 
@@ -369,6 +388,7 @@ class topology_t:
 		for rg_id in range(len(self.htree.children())):
 			rg = self.htree.children()[rg_id]
 			racks = len(rg.children())
+			#racks = len(rg.children()[0].children())
 			f.write('for {set i 0} {$i < %d} {incr i} {\n' % (racks))
 			r = rg.children()[0]
 			for ng_id in range(len(r.children())):
@@ -386,7 +406,7 @@ class topology_t:
 		$ns at 0.05 "$app11 snd {heartbeat}"
 '''
 
-				f.write('\t\tset mn [format "%%s%%s%%s%%s" "\\$n_rg%d_" $i "_ng%d_" $j]\n' % (rg_id, ng_id))
+				f.write('\t\tset mn [format "%%s%%s%%s%%s" "\\$n_rg%d_" 0 "_ng%d_" $j]\n' % (rg_id, ng_id))
 				f.write('\t\tset tcp0 [new Agent/TCP/FullTcp]\n')
 				f.write('\t\tset dummy [new MRPerf/NodeApp $tcp0]\n')
 				f.write('\t\teval "$dummy set hnode $mn"\n')
