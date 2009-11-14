@@ -7,12 +7,8 @@
     set n("3300:KualaLumpur,Malaysia") [$ns node] }
   if { [info exists n("3300:tmhs")] == 0 } {
     set n("3300:tmhs") [$ns node] }
-  if { [info exists n("4637:tmhs100000")] == 0 } {
-    set n("4637:tmhs100000") [$ns node] }
   if { [info exists n("3300:HongKong")] == 0 } {
     set n("3300:HongKong") [$ns node] }
-  if { [info exists n("4637:tmh100000")] == 0 } {
-    set n("4637:tmh100000") [$ns node] }
   if { [info exists n("3300:tmh")] == 0 } {
     set n("3300:tmh") [$ns node] }
 

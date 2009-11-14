@@ -41,18 +41,6 @@
     set n("->4637:LosAngeles,CA") [$ns node] }
   if { [info exists n("4637:Dallas,TX")] == 0 } {
     set n("4637:Dallas,TX") [$ns node] }
-  if { [info exists n("4637:tmhs100000")] == 0 } {
-    set n("4637:tmhs100000") [$ns node] }
-  if { [info exists n("4637:hhts100000")] == 0 } {
-    set n("4637:hhts100000") [$ns node] }
-  if { [info exists n("4637:tmh100000")] == 0 } {
-    set n("4637:tmh100000") [$ns node] }
-  if { [info exists n("4637:hht100000")] == 0 } {
-    set n("4637:hht100000") [$ns node] }
-  if { [info exists n("4637:yck100000")] == 0 } {
-    set n("4637:yck100000") [$ns node] }
-  if { [info exists n("4637:car100000")] == 0 } {
-    set n("4637:car100000") [$ns node] }
   if { [info exists n("4637:Tokyo,Japan")] == 0 } {
     set n("4637:Tokyo,Japan") [$ns node] }
   if { [info exists n("4637:Kyoto,Japan")] == 0 } {

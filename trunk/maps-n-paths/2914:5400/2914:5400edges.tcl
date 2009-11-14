@@ -3,8 +3,6 @@
     set n("2914:London,UnitedKingdom") [$ns node] }
   if { [info exists n("5400:Chicago,IL")] == 0 } {
     set n("5400:Chicago,IL") [$ns node] }
-  if { [info exists n("5400:Singapore0")] == 0 } {
-    set n("5400:Singapore0") [$ns node] }
   if { [info exists n("5400:London,UnitedKingdom")] == 0 } {
     set n("5400:London,UnitedKingdom") [$ns node] }
   if { [info exists n("2914:SanJose,CA")] == 0 } {
@@ -13,6 +11,8 @@
     set n("2914:Singapore") [$ns node] }
   if { [info exists n("5400:SanJose,CA")] == 0 } {
     set n("5400:SanJose,CA") [$ns node] }
+  if { [info exists n("5400:Singapore")] == 0 } {
+    set n("5400:Singapore") [$ns node] }
   if { [info exists n("2914:McLean,VA")] == 0 } {
     set n("2914:McLean,VA") [$ns node] }
   if { [info exists n("5400:McLean,VA")] == 0 } {
