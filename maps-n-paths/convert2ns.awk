@@ -1,3 +1,5 @@
+#!/usr/bin/awk -f
+
 # Beasts through an edges.lat file from RocketFuel and outputs NS2 tcl code
 
 BEGIN { }
@@ -6,7 +8,7 @@ NF == 4 {
   if($2 == "->") {
     result = result "$ns duplex-link $n(\"" $1 "\") $n(\"" $3 "\") 10.0Gb " $4 "ms DropTail\n\n"
     router[$1] = 1
-    router[$3 $4] = 1
+    router[$3] = 1
   }
   else
     result = result "ERROR1\n\n"
