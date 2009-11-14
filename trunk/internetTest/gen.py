@@ -308,6 +308,7 @@ class topology_t:
 				#print "rg.children loop %s" % self.racks
 				# spalmer commented out
 				#f.write('set %s [$ns node]\n' % (r.name()))
+				nodeCtr = 0
 				for ng in r.children():
 					#print "r.children loop"
 					#self.racks = len(ng.children())
@@ -326,7 +327,8 @@ class topology_t:
 								% (len(ng.children())))
 					# Sam Palmer
 					#hostSpeeds = {0 : '6Mb', 1 : '30Mb', 2 : '4Mb', 3 : '5Mb', 4 : '5Mb', 5 : '6Mb', 6 : '6Mb', 7 : '6Mb', 8 : '7Mb', 9 : '7Mb', 10 : '8Mb', 11 : '10Mb', 12 : '10Mb', 13 : '14Mb', 14 : '14Mb', 15 : '14Mb', 16 : '30Mb', 17 : '30Mb', 18 : '30Mb',}
-					f.write('\tnewnode "%s_$i" $routers([expr %s %% $numRouters]) %sMb %sms\n' % (ng.name(), random.randint(0,int(netsize)-1), abs(random.normalvariate(16.0, 8.0)), abs(random.normalvariate(0.25, 0.07))))
+					f.write('\tnewnode "n_rg0_%d_ng0_$i" $routers([expr %s %% $numRouters]) %sMb %sms\n' % (nodeCtr, random.randint(0,int(netsize)-1), abs(random.normalvariate(16.0, 8.0)), abs(random.normalvariate(0.25, 0.07))))
+					nodeCtr = nodeCtr + 1
 #					f.write('\tnewnode "%s_$i" $%s\n' % (ng.name(), r.name()))
 					num_of_nodes += len(ng.children())
 					#f.write('\t$n30 set freq %f\n' % (freq))
@@ -406,7 +408,7 @@ class topology_t:
 		$ns at 0.05 "$app11 snd {heartbeat}"
 '''
 
-				f.write('\t\tset mn [format "%%s%%s%%s%%s" "\\$n_rg%d_" 0 "_ng%d_" $j]\n' % (rg_id, ng_id))
+				f.write('\t\tset mn [format "%%s%%s%%s%%s" "\\$n_rg%d_" $i "_ng%d_" $j]\n' % (rg_id, ng_id))
 				f.write('\t\tset tcp0 [new Agent/TCP/FullTcp]\n')
 				f.write('\t\tset dummy [new MRPerf/NodeApp $tcp0]\n')
 				f.write('\t\teval "$dummy set hnode $mn"\n')
@@ -828,7 +830,12 @@ def gen(topo, conf):
 			for node in method.distribute_chunk(conf.replicas):
 				new_replica = replica_node.cloneNode(True)
 				text_node = new_replica.childNodes[0]
-				text_node.nodeValue = unicode(node.name(), 'utf-8')
+				splitname = node.name().split("_")
+				#print "splitname: %s" % splitname
+				#print "replace %s    %s" % (splitname[3], splitname[3].replace("ng",""))
+				realnodename = "%s_%s_%s_ng0_%s_%s" % (splitname[0], splitname[1], splitname[3].replace("ng",""), splitname[4], splitname[5])
+				text_node.nodeValue = unicode(realnodename, 'utf-8')
+				#print "test_node.nodevalue: %s" % text_node.nodeValue
 				new_chunk.appendChild(new_replica)
 
 	#TODO: make xml prettier. see results from the following two commented lines
