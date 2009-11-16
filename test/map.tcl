@@ -1,7 +1,7 @@
 
 MRPerf/MapTask instproc schedule {hnode} {
-	$self def-schedule $hnode
-	#$self remote-schedule $hnode
+	#$self def-schedule $hnode
+	$self remote-schedule $hnode
 }
 
 MRPerf/MapTask instproc add-counter {name} {
