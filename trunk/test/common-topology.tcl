@@ -10,8 +10,8 @@ proc newnodealone {nodename} {
 	$n30 set nsnode $nsnode
 }
 
-proc newnode {nodename router int_bw int_latency {gyaddr ""}} {
-	global n30 ns allnode
+proc newnode {nodename router {gyaddr ""}} {
+	global n30 ns allnode int_bw int_latency
 	upvar #0 $nodename local
 	set n30 [set local [new MRPerf/Node]]
 	if {$gyaddr == ""} {
@@ -55,7 +55,9 @@ proc set_mapnodes {racks nodes data_nodes} {
 	global ns jt
 	for {set i 0} {$i < $racks && $i*$nodes < $data_nodes} {incr i} {
 		for {set j 0} {$j < $nodes && $i*$nodes+$j<$data_nodes} {incr j} {
+			#puts "n_rg0_$i\_ng0_$j"
 			upvar #0 n_rg0_$i\_ng0_$j mn
+			#upvar #0 n_rg0_0_ng$i\_$j mn
 			set tcp0 [new Agent/TCP/FullTcp]
 			set dummy [new MRPerf/NodeApp $tcp0]
 			eval "$dummy set hnode $mn"

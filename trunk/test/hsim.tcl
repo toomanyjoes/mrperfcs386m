@@ -12,7 +12,7 @@ source shuffle.tcl
 set nf [open $namfile w]
 #$ns namtrace-all $nf
 set f [open $tracefile w]
-$ns trace-all $f
+#$ns trace-all $f
 
 set stats [open $statsfile w]
 
