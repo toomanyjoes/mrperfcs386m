@@ -15,9 +15,11 @@ if len(sys.argv) > 2:
 random.seed(seed)
 machineTypeCounter = 0
 
-print "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
-print "<topo xsi:noNamespaceSchemaLocation=\"topology.xsd\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">"
-print "\n<!-- seed to generate this file = %s -->\n" % seed
+topoFile = open('topology1.xml', 'w')
+
+topoFile.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n")
+topoFile.write("<topo xsi:noNamespaceSchemaLocation=\"topology.xsd\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n")
+topoFile.write("\n<!-- seed to generate this file = %s -->\n\n" % seed)
 
 machineTypes = { }
 # loop over cpu types
@@ -53,8 +55,9 @@ for cpu in freq_table:
 								machineTypes[machineTypeCounter] = machineTypes[machineTypeCounter] +  "            <type>%s</type>\n" % nic
 								machineTypes[machineTypeCounter] = machineTypes[machineTypeCounter] +  "            <num>1</num>\n"
 								machineTypes[machineTypeCounter] = machineTypes[machineTypeCounter] +  "        </nic>\n"
-								machineTypes[machineTypeCounter] = machineTypes[machineTypeCounter] +  "    </machine_type>"
+								machineTypes[machineTypeCounter] = machineTypes[machineTypeCounter] +  "    </machine_type>\n"
 								machineTypeCounter = machineTypeCounter + 1
+
 
 machines = { }
 for i in range(machineTypeCounter-1):
@@ -65,25 +68,47 @@ for i in range(int(numNodes)):
 	
 for machineType in range(machineTypeCounter-1):
 	if machines[machineType] > 0:
-		print machineTypes[machineType]
+		topoFile.write(machineTypes[machineType])
 
 nodeCounter = 0
 rackCounter = 0
-print "    <rack_group>"
-print "        <name>rg%s</name>" % rackCounter
+topoFile.write("    <rack_group>\n")
+topoFile.write("        <name>rg%s</name>\n" % rackCounter)
 #rackCounter = rackCounter + 1
 for machineType in range(machineTypeCounter-1):
 	if machines[machineType] > 0:
-		print "        <compute_node_group>"
-		print "            <machine_type_name>EndHost%s</machine_type_name>" % machineType
+		topoFile.write("        <compute_node_group>\n")
+		topoFile.write("            <machine_type_name>EndHost%s</machine_type_name>\n" % machineType)
 		for i in range(machines[machineType]):
-			print "                <node_index>%s</node_index>" % nodeCounter
+			topoFile.write("                <node_index>%s</node_index>\n" % nodeCounter)
 			nodeCounter = nodeCounter + 1
-		print "        </compute_node_group>"
+		topoFile.write("        </compute_node_group>\n")
 #for i in range(numNodes):
-#	print "        <rack_index>%s</rack_index>" % i
-print "    </rack_group>"
-print "    <data_nodes>%s</data_nodes>" % (numNodes - 1) # one node is the job tracker and not a data node
-print "    <job_tracker>n_rg0_0_ng0_0</job_tracker>"
-print "</topo>\n"
+#	topoFile.write("        <rack_index>%s</rack_index>" % i
+topoFile.write("    </rack_group>")
+topoFile.write("    <data_nodes>%s</data_nodes>\n" % (numNodes - 1)) # one node is the job tracker and not a data node
+topoFile.write("    <job_tracker>n_rg0_0_ng0_0</job_tracker>\n")
+topoFile.write("</topo>\n")
+topoFile.close()
+
+
+metadataFile = open('metadata_gen1.xml', 'w')
+metadataFile.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n")
+metadataFile.write("<conf xsi:noNamespaceSchemaLocation=\"metadata_gen.xsd\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n")
+metadataFile.write("	<path>/data</path>\n")
+metadataFile.write("	<number_files>\n")
+metadataFile.write("		<min_files>1</min_files>\n")
+metadataFile.write("		<max_files>1</max_files>\n")
+metadataFile.write("	</number_files>\n")
+metadataFile.write("	<file_size>\n")
+metadataFile.write("		<unit_size>512</unit_size>\n")
+metadataFile.write("		<min_unit>%s</min_unit>\n" % numNodes)
+metadataFile.write("		<max_unit>%s</max_unit>\n"% numNodes)
+metadataFile.write("	</file_size>\n")
+metadataFile.write("	<replication_level>3</replication_level>\n")
+metadataFile.write("	<gen_method>random</gen_method>\n")
+metadataFile.write("	<name_node>jt</name_node>\n")
+metadataFile.write("</conf>\n")
+metadataFile.close()
+
 
