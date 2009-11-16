@@ -1,9 +1,10 @@
 #include "datalayout.h"
 #include "mrperf.h"
-
+#define KB = 0
+#define MB = 1
 namespace MRPerf {
-
-const int CHUNK_SIZE=16*1024*1024;
+int size = KB;
+const int CHUNK_SIZE=16*(size*1024)*1024;
 
 static class NodeClass: public TclClass {
 public:
@@ -195,7 +196,7 @@ Chunk::Chunk()
 	memcpy(filename, "filename", 9);
 	chunk = 0;
 	offset = 0;
-	length = 128 * 1024 * 1024;
+	length = 128 * (size*1024) * 1024;
 
 	//workers_ = new set<Node *>;
 	//hosts_ = new set<Node *>;
@@ -346,7 +347,7 @@ fprintf(stderr, "meta_xml:\n%s\n\n", meta_xml);
 
 	for ( ; cur && (xmlStrcmp(cur->name, (const xmlChar *)"chunk_size") != 0); cur = cur->next);
 	if (cur != NULL) {
-		chunk_size = atoi(reinterpret_cast<char *>(xmlNodeListGetString(doc, cur->xmlChildrenNode, 1))) * 1024 * 1024;
+		chunk_size = atoi(reinterpret_cast<char *>(xmlNodeListGetString(doc, cur->xmlChildrenNode, 1))) * (size * 1024) * 1024;
 		//printf("chunk_size from xml: %d\n", chunk_size);
 	} else {
 		chunk_size = CHUNK_SIZE;
