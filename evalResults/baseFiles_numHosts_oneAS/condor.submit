@@ -1,0 +1,14 @@
++Group = "GRAD"
++Project = "OTHER"
+
++ProjectDescription = "ns2 network simulator" 
+
+executable     = /u/spalmer/ns-allinone-2.33/bin/ns
+universe       = vanilla 
+#input          = 
+arguments      = hsim.tcl
+output         = output.out
+error          = output.error
+log            = output.log
+Notification = Error 
+queue
