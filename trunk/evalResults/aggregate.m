@@ -1,3 +1,62 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%       numHosts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+a=sortrows(importdata('results_numHosts1.txt', '\t'),1);
+b=sortrows(importdata('results_numHosts2.txt', '\t'),1);
+c=sortrows(importdata('results_numHosts3.txt', '\t'),1);
+d=sortrows(importdata('results_numHosts4.txt', '\t'),1);
+e=sortrows(importdata('results_numHosts5.txt', '\t'),1);
+f = [a , b(:,2) , c(:,2), d(:,2), e(:,2)];
+file = fopen('results_numHosts.txt', 'w');
+for i= 1:length(f)
+    fprintf(file,'%d\t%f\t%f\n',f(i,1),mean(f(i,2:6)), std(f(i,2:6)) );
+end
+fclose(file);
+numHosts=importdata('results_numHosts.txt');
+% Create plot
+plot(numHosts(:,1),numHosts(:,2),'Marker','o','LineStyle','none');
+% Create xlabel
+xlabel({'Number of Hosts'});
+% Create ylabel
+ylabel({'Time (seconds)'});
+% Create zlabel
+zlabel({'Time'},'Visible','off');
+% Create title
+title({'Hosts Distributed Across Entire Internet'});
+print -depsc2 -tiff results_numHosts.eps
+clf
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%       numHosts_oneAS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+a=sortrows(importdata('results_numHosts_oneAS1.txt', '\t'),1);
+b=sortrows(importdata('results_numHosts_oneAS2.txt', '\t'),1);
+c=sortrows(importdata('results_numHosts_oneAS3.txt', '\t'),1);
+d=sortrows(importdata('results_numHosts_oneAS4.txt', '\t'),1);
+e=sortrows(importdata('results_numHosts_oneAS5.txt', '\t'),1);
+f = [a , b(:,2) , c(:,2), d(:,2), e(:,2)];
+file = fopen('results_numHosts_oneAS.txt', 'w');
+for i= 1:length(f)
+    fprintf(file,'%d\t%f\t%f\n',f(i,1),mean(f(i,2:6)), std(f(i,2:6)) );
+end
+fclose(file);
+numHosts_oneAS=importdata('results_numHosts_oneAS.txt');
+% Create plot
+plot(numHosts_oneAS(:,1),numHosts_oneAS(:,2),'Marker','o','LineStyle','none');
+% Create xlabel
+xlabel({'Number of Hosts'});
+% Create ylabel
+ylabel({'Time (seconds)'});
+% Create zlabel
+zlabel({'Time'},'Visible','off');
+% Create title
+title({'Nodes Distributed Across AS 11537'});
+print -depsc2 -tiff results_numHosts_oneAS.eps
+clf
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%       chunkSize
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 a=sortrows(importdata('results_chunkSize1.txt', '\t'),1);
 b=sortrows(importdata('results_chunkSize2.txt', '\t'),1);
 c=sortrows(importdata('results_chunkSize3.txt', '\t'),1);
@@ -23,6 +82,10 @@ title({'50 Nodes Across Entire Internet'});
 print -depsc2 -tiff results_chunkSize.eps
 clf
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%       mappers and reducers
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 a=importdata('results_mapperReducer1.txt', '\t');
 b=importdata('results_mapperReducer2.txt', '\t');
 c=importdata('results_mapperReducer3.txt', '\t');
