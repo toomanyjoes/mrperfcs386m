@@ -2375,10 +2375,6 @@ $ns duplex-link $n("1221:Napa,CA") $n("4565:Napa,CA") 10.0Gb 0ms DropTail
     set n("4637:Sydney,Australia") [$ns node] }
   if { [info exists n("4637:Perth,Australia")] == 0 } {
     set n("4637:Perth,Australia") [$ns node] }
-  if { [info exists n("4637:tmhs")] == 0 } {
-    set n("4637:tmhs") [$ns node] }
-  if { [info exists n("4637:hhts")] == 0 } {
-    set n("4637:hhts") [$ns node] }
   if { [info exists n("1221:PaloAlto,CA")] == 0 } {
     set n("1221:PaloAlto,CA") [$ns node] }
 
@@ -2393,12 +2389,6 @@ $ns duplex-link $n("1221:PaloAlto,CA") $n("4637:Perth,Australia") 10.0Gb 73.7523
 
 #1221:Palo Alto, CA -> 4637:San Jose, CA 0.124477546789977
 $ns duplex-link $n("1221:PaloAlto,CA") $n("4637:SanJose,CA") 10.0Gb 0.124477546789977ms DropTail
-
-#1221:Palo Alto, CA -> 4637:hhts 100000
-$ns duplex-link $n("1221:PaloAlto,CA") $n("4637:hhts") 10.0Gb 100000ms DropTail
-
-#1221:Palo Alto, CA -> 4637:tmhs 100000
-$ns duplex-link $n("1221:PaloAlto,CA") $n("4637:tmhs") 10.0Gb 100000ms DropTail
 
 #1221:Sydney, Australia -> 4637:Sydney, Australia 0
 $ns duplex-link $n("1221:Sydney,Australia") $n("4637:Sydney,Australia") 10.0Gb 0ms DropTail
@@ -5556,13 +5546,7 @@ $ns duplex-link $n("1299:London,UnitedKingdom") $n("4589:London,UnitedKingdom") 
 #1299:Paris, France -> 4589:Paris, France 0
 $ns duplex-link $n("1299:Paris,France") $n("4589:Paris,France") 10.0Gb 0ms DropTail
 # 1299:4637
-  if { [info exists n("4637:xeig")] == 0 } {
-    set n("4637:xeig") [$ns node] }
-  if { [info exists n("1299:NewYork,NY")] == 0 } {
-    set n("1299:NewYork,NY") [$ns node] }
 
-#1299:New York, NY -> 4637:xeig 100000
-$ns duplex-link $n("1299:NewYork,NY") $n("4637:xeig") 10.0Gb 100000ms DropTail
 # 1299:5400
   if { [info exists n("5400:London,UnitedKingdom")] == 0 } {
     set n("5400:London,UnitedKingdom") [$ns node] }
@@ -8525,8 +8509,6 @@ $ns duplex-link $n("174:Washington,DC") $n("16631:Washington,DC") 10.0Gb 0ms Dro
     set n("174:Birmingham,UnitedKingdom") [$ns node] }
   if { [info exists n("174:Chicago,IL")] == 0 } {
     set n("174:Chicago,IL") [$ns node] }
-  if { [info exists n("174:Bedford,MA")] == 0 } {
-    set n("174:Bedford,MA") [$ns node] }
   if { [info exists n("174:LosAngeles,CA")] == 0 } {
     set n("174:LosAngeles,CA") [$ns node] }
   if { [info exists n("174:Dallas,TX")] == 0 } {
@@ -8610,9 +8592,6 @@ $ns duplex-link $n("174:Barcelona,Spain") $n("174:Zaragoza,Spain") 10.0Gb 1.3449
 #174:Basel, Switzerland -> 174:Zurich, Switzerland 0.366680314568109
 $ns duplex-link $n("174:Basel,Switzerland") $n("174:Zurich,Switzerland") 10.0Gb 0.366680314568109ms DropTail
 
-#174:Bedford, MA -> 174:Boston, MA 100000
-$ns duplex-link $n("174:Bedford,MA") $n("174:Boston,MA") 10.0Gb 100000ms DropTail
-
 #174:Berlin, Germany -> 174:Amsterdam, Netherlands 2.73915048390711
 $ns duplex-link $n("174:Berlin,Germany") $n("174:Amsterdam,Netherlands") 10.0Gb 2.73915048390711ms DropTail
 
@@ -8636,9 +8615,6 @@ $ns duplex-link $n("174:Birmingham,UnitedKingdom") $n("174:London,UnitedKingdom"
 
 #174:Boston, MA -> 174:Albany, NY 1.11646443455727
 $ns duplex-link $n("174:Boston,MA") $n("174:Albany,NY") 10.0Gb 1.11646443455727ms DropTail
-
-#174:Boston, MA -> 174:Bedford, MA 100000
-$ns duplex-link $n("174:Boston,MA") $n("174:Bedford,MA") 10.0Gb 100000ms DropTail
 
 #174:Boston, MA -> 174:Dallas, TX 12.4363734730694
 $ns duplex-link $n("174:Boston,MA") $n("174:Dallas,TX") 10.0Gb 12.4363734730694ms DropTail
@@ -14766,8 +14742,6 @@ $ns duplex-link $n("2497:PaloAlto,CA") $n("209:PaloAlto,CA") 10.0Gb 0ms DropTail
     set n("2497:Milan,Italy") [$ns node] }
   if { [info exists n("2497:LosAngeles,CA")] == 0 } {
     set n("2497:LosAngeles,CA") [$ns node] }
-  if { [info exists n("2497:Ariake,Japan")] == 0 } {
-    set n("2497:Ariake,Japan") [$ns node] }
   if { [info exists n("2497:Tokyo,Japan")] == 0 } {
     set n("2497:Tokyo,Japan") [$ns node] }
   if { [info exists n("2497:Osaka,Japan")] == 0 } {
@@ -14778,24 +14752,6 @@ $ns duplex-link $n("2497:PaloAlto,CA") $n("209:PaloAlto,CA") 10.0Gb 0ms DropTail
     set n("2497:Washington,DC") [$ns node] }
   if { [info exists n("2497:SanJose,CA")] == 0 } {
     set n("2497:SanJose,CA") [$ns node] }
-
-#2497:Ariake, Japan -> 2497:Milan, Italy 100000
-$ns duplex-link $n("2497:Ariake,Japan") $n("2497:Milan,Italy") 10.0Gb 100000ms DropTail
-
-#2497:Ariake, Japan -> 2497:New York, NY 100000
-$ns duplex-link $n("2497:Ariake,Japan") $n("2497:NewYork,NY") 10.0Gb 100000ms DropTail
-
-#2497:Ariake, Japan -> 2497:Osaka, Japan 100000
-$ns duplex-link $n("2497:Ariake,Japan") $n("2497:Osaka,Japan") 10.0Gb 100000ms DropTail
-
-#2497:Ariake, Japan -> 2497:Palo Alto, CA 100000
-$ns duplex-link $n("2497:Ariake,Japan") $n("2497:PaloAlto,CA") 10.0Gb 100000ms DropTail
-
-#2497:Ariake, Japan -> 2497:San Jose, CA 100000
-$ns duplex-link $n("2497:Ariake,Japan") $n("2497:SanJose,CA") 10.0Gb 100000ms DropTail
-
-#2497:Ariake, Japan -> 2497:Tokyo, Japan 100000
-$ns duplex-link $n("2497:Ariake,Japan") $n("2497:Tokyo,Japan") 10.0Gb 100000ms DropTail
 
 #2497:Ashburn, VA -> 2497:Los Angeles, CA 18.3062497069338
 $ns duplex-link $n("2497:Ashburn,VA") $n("2497:LosAngeles,CA") 10.0Gb 18.3062497069338ms DropTail
@@ -14815,14 +14771,8 @@ $ns duplex-link $n("2497:LosAngeles,CA") $n("2497:SanJose,CA") 10.0Gb 2.39033852
 #2497:Los Angeles, CA -> 2497:Washington, DC 18.5226753489951
 $ns duplex-link $n("2497:LosAngeles,CA") $n("2497:Washington,DC") 10.0Gb 18.5226753489951ms DropTail
 
-#2497:Milan, Italy -> 2497:Ariake, Japan 100000
-$ns duplex-link $n("2497:Milan,Italy") $n("2497:Ariake,Japan") 10.0Gb 100000ms DropTail
-
 #2497:Milan, Italy -> 2497:Tokyo, Japan 48.9288696029279
 $ns duplex-link $n("2497:Milan,Italy") $n("2497:Tokyo,Japan") 10.0Gb 48.9288696029279ms DropTail
-
-#2497:New York, NY -> 2497:Ariake, Japan 100000
-$ns duplex-link $n("2497:NewYork,NY") $n("2497:Ariake,Japan") 10.0Gb 100000ms DropTail
 
 #2497:New York, NY -> 2497:Los Angeles, CA 19.7210147124792
 $ns duplex-link $n("2497:NewYork,NY") $n("2497:LosAngeles,CA") 10.0Gb 19.7210147124792ms DropTail
@@ -14836,9 +14786,6 @@ $ns duplex-link $n("2497:NewYork,NY") $n("2497:PaloAlto,CA") 10.0Gb 20.581649799
 #2497:New York, NY -> 2497:Tokyo, Japan 54.7189289138994
 $ns duplex-link $n("2497:NewYork,NY") $n("2497:Tokyo,Japan") 10.0Gb 54.7189289138994ms DropTail
 
-#2497:Osaka, Japan -> 2497:Ariake, Japan 100000
-$ns duplex-link $n("2497:Osaka,Japan") $n("2497:Ariake,Japan") 10.0Gb 100000ms DropTail
-
 #2497:Osaka, Japan -> 2497:Los Angeles, CA 45.8551058266026
 $ns duplex-link $n("2497:Osaka,Japan") $n("2497:LosAngeles,CA") 10.0Gb 45.8551058266026ms DropTail
 
@@ -14850,9 +14797,6 @@ $ns duplex-link $n("2497:Osaka,Japan") $n("2497:PaloAlto,CA") 10.0Gb 43.39938035
 
 #2497:Osaka, Japan -> 2497:San Jose, CA 43.5230646482607
 $ns duplex-link $n("2497:Osaka,Japan") $n("2497:SanJose,CA") 10.0Gb 43.5230646482607ms DropTail
-
-#2497:Palo Alto, CA -> 2497:Ariake, Japan 100000
-$ns duplex-link $n("2497:PaloAlto,CA") $n("2497:Ariake,Japan") 10.0Gb 100000ms DropTail
 
 #2497:Palo Alto, CA -> 2497:New York, NY 20.5816497996003
 $ns duplex-link $n("2497:PaloAlto,CA") $n("2497:NewYork,NY") 10.0Gb 20.5816497996003ms DropTail
@@ -14866,9 +14810,6 @@ $ns duplex-link $n("2497:PaloAlto,CA") $n("2497:SanJose,CA") 10.0Gb 0.1244775467
 #2497:Palo Alto, CA -> 2497:Tokyo, Japan 41.906115378052
 $ns duplex-link $n("2497:PaloAlto,CA") $n("2497:Tokyo,Japan") 10.0Gb 41.906115378052ms DropTail
 
-#2497:San Jose, CA -> 2497:Ariake, Japan 100000
-$ns duplex-link $n("2497:SanJose,CA") $n("2497:Ariake,Japan") 10.0Gb 100000ms DropTail
-
 #2497:San Jose, CA -> 2497:Los Angeles, CA 2.39033852037053
 $ns duplex-link $n("2497:SanJose,CA") $n("2497:LosAngeles,CA") 10.0Gb 2.39033852037053ms DropTail
 
@@ -14880,9 +14821,6 @@ $ns duplex-link $n("2497:SanJose,CA") $n("2497:PaloAlto,CA") 10.0Gb 0.1244775467
 
 #2497:San Jose, CA -> 2497:Tokyo, Japan 42.030205069196
 $ns duplex-link $n("2497:SanJose,CA") $n("2497:Tokyo,Japan") 10.0Gb 42.030205069196ms DropTail
-
-#2497:Tokyo, Japan -> 2497:Ariake, Japan 100000
-$ns duplex-link $n("2497:Tokyo,Japan") $n("2497:Ariake,Japan") 10.0Gb 100000ms DropTail
 
 #2497:Tokyo, Japan -> 2497:Milan, Italy 48.9288696029279
 $ns duplex-link $n("2497:Tokyo,Japan") $n("2497:Milan,Italy") 10.0Gb 48.9288696029279ms DropTail
@@ -20517,8 +20455,6 @@ $ns duplex-link $n("3300:Washington,DC") $n("2914:McLean,VA") 10.0Gb 0.079179328
     set n("3300:Washington,DC") [$ns node] }
   if { [info exists n("3300:TelAviv,Israel")] == 0 } {
     set n("3300:TelAviv,Israel") [$ns node] }
-  if { [info exists n("3300:Hennig,Israel")] == 0 } {
-    set n("3300:Hennig,Israel") [$ns node] }
   if { [info exists n("3300:Stockholm,Sweden")] == 0 } {
     set n("3300:Stockholm,Sweden") [$ns node] }
   if { [info exists n("3300:Santiago,Chile")] == 0 } {
@@ -20541,8 +20477,6 @@ $ns duplex-link $n("3300:Washington,DC") $n("2914:McLean,VA") 10.0Gb 0.079179328
     set n("3300:Barcelona,Spain") [$ns node] }
   if { [info exists n("3300:KualaLumpur,Malaysia")] == 0 } {
     set n("3300:KualaLumpur,Malaysia") [$ns node] }
-  if { [info exists n("3300:Sulzer,Switzerland")] == 0 } {
-    set n("3300:Sulzer,Switzerland") [$ns node] }
   if { [info exists n("3300:Zurich,Switzerland")] == 0 } {
     set n("3300:Zurich,Switzerland") [$ns node] }
   if { [info exists n("3300:MexicoCity,Mexico")] == 0 } {
@@ -20693,9 +20627,6 @@ $ns duplex-link $n("3300:Geneva,Switzerland") $n("3300:Frankfurt,Germany") 10.0G
 
 #3300:Hamburg, Germany -> 3300:Frankfurt, Germany 2.0357355149515
 $ns duplex-link $n("3300:Hamburg,Germany") $n("3300:Frankfurt,Germany") 10.0Gb 2.0357355149515ms DropTail
-
-#3300:Hennig, Israel -> 3300:Tel Aviv, Israel 100000
-$ns duplex-link $n("3300:Hennig,Israel") $n("3300:TelAviv,Israel") 10.0Gb 100000ms DropTail
 
 #3300:Hong Kong -> 3300:Kuala Lumpur, Malaysia 12.5535436649314
 $ns duplex-link $n("3300:HongKong") $n("3300:KualaLumpur,Malaysia") 10.0Gb 12.5535436649314ms DropTail
@@ -20868,9 +20799,6 @@ $ns duplex-link $n("3300:Stockholm,Sweden") $n("3300:Amstelveen,Netherlands") 10
 #3300:Stockholm, Sweden -> 3300:London, UnitedKingdom 7.14458851462163
 $ns duplex-link $n("3300:Stockholm,Sweden") $n("3300:London,UnitedKingdom") 10.0Gb 7.14458851462163ms DropTail
 
-#3300:Sulzer, Switzerland -> 3300:Zurich, Switzerland 100000
-$ns duplex-link $n("3300:Sulzer,Switzerland") $n("3300:Zurich,Switzerland") 10.0Gb 100000ms DropTail
-
 #3300:Sydney, Australia -> 3300:Auckland, NewZealand 10.7861523674496
 $ns duplex-link $n("3300:Sydney,Australia") $n("3300:Auckland,NewZealand") 10.0Gb 10.7861523674496ms DropTail
 
@@ -20879,9 +20807,6 @@ $ns duplex-link $n("3300:Sydney,Australia") $n("3300:KualaLumpur,Malaysia") 10.0
 
 #3300:Sydney, Australia -> 3300:Los Angeles, CA 60.3095464758688
 $ns duplex-link $n("3300:Sydney,Australia") $n("3300:LosAngeles,CA") 10.0Gb 60.3095464758688ms DropTail
-
-#3300:Tel Aviv, Israel -> 3300:Hennig, Israel 100000
-$ns duplex-link $n("3300:TelAviv,Israel") $n("3300:Hennig,Israel") 10.0Gb 100000ms DropTail
 
 #3300:Tel Aviv, Israel -> 3300:Paris, France 16.3842543535516
 $ns duplex-link $n("3300:TelAviv,Israel") $n("3300:Paris,France") 10.0Gb 16.3842543535516ms DropTail
@@ -20918,9 +20843,6 @@ $ns duplex-link $n("3300:Washington,DC") $n("3300:Newark,NJ") 10.0Gb 1.579709798
 
 #3300:Zurich, Switzerland -> 3300:Paris, France 2.4455084125225
 $ns duplex-link $n("3300:Zurich,Switzerland") $n("3300:Paris,France") 10.0Gb 2.4455084125225ms DropTail
-
-#3300:Zurich, Switzerland -> 3300:Sulzer, Switzerland 100000
-$ns duplex-link $n("3300:Zurich,Switzerland") $n("3300:Sulzer,Switzerland") 10.0Gb 100000ms DropTail
 # 3300:3356
   if { [info exists n("3300:Amsterdam,Netherlands")] == 0 } {
     set n("3300:Amsterdam,Netherlands") [$ns node] }
@@ -20977,33 +20899,7 @@ $ns duplex-link $n("3300:Amsterdam,Netherlands") $n("4589:Hoofdorp,Netherlands")
 #3300:Amsterdam, Netherlands -> 4589:Rotterdam, Netherlands 0.303068368870065
 $ns duplex-link $n("3300:Amsterdam,Netherlands") $n("4589:Rotterdam,Netherlands") 10.0Gb 0.303068368870065ms DropTail
 # 3300:4637
-  if { [info exists n("4637:tmh")] == 0 } {
-    set n("4637:tmh") [$ns node] }
-  if { [info exists n("4637:tmhs")] == 0 } {
-    set n("4637:tmhs") [$ns node] }
-  if { [info exists n("3300:KualaLumpur,Malaysia")] == 0 } {
-    set n("3300:KualaLumpur,Malaysia") [$ns node] }
-  if { [info exists n("3300:tmhs")] == 0 } {
-    set n("3300:tmhs") [$ns node] }
-  if { [info exists n("3300:HongKong")] == 0 } {
-    set n("3300:HongKong") [$ns node] }
-  if { [info exists n("3300:tmh")] == 0 } {
-    set n("3300:tmh") [$ns node] }
 
-#3300:Hong Kong -> 4637:tmhs 100000
-$ns duplex-link $n("3300:HongKong") $n("4637:tmhs") 10.0Gb 100000ms DropTail
-
-#3300:Kuala Lumpur, Malaysia -> 4637:tmh 100000
-$ns duplex-link $n("3300:KualaLumpur,Malaysia") $n("4637:tmh") 10.0Gb 100000ms DropTail
-
-#3300:Kuala Lumpur, Malaysia -> 4637:tmhs 100000
-$ns duplex-link $n("3300:KualaLumpur,Malaysia") $n("4637:tmhs") 10.0Gb 100000ms DropTail
-
-#3300:tmh -> 4637:tmh 100000
-$ns duplex-link $n("3300:tmh") $n("4637:tmh") 10.0Gb 100000ms DropTail
-
-#3300:tmhs -> 4637:tmhs 100000
-$ns duplex-link $n("3300:tmhs") $n("4637:tmhs") 10.0Gb 100000ms DropTail
 # 3300:5511
 
 # 3300:6395
@@ -25804,8 +25700,6 @@ $ns duplex-link $n("3356:NewYork,NY") $n("3320:Zurich,Switzerland") 10.0Gb 31.59
     set n("3356:SanJose,CA") [$ns node] }
   if { [info exists n("3356:Denver,CO")] == 0 } {
     set n("3356:Denver,CO") [$ns node] }
-  if { [info exists n("3356:Manchester,MA")] == 0 } {
-    set n("3356:Manchester,MA") [$ns node] }
   if { [info exists n("3356:Indianapolis,IN")] == 0 } {
     set n("3356:Indianapolis,IN") [$ns node] }
   if { [info exists n("3356:Madrid,Spain")] == 0 } {
@@ -25930,9 +25824,6 @@ $ns duplex-link $n("3356:Boston,MA") $n("3356:Denver,CO") 10.0Gb 14.142044716340
 
 #3356:Boston, MA -> 3356:Los Angeles, CA 20.8864181920654
 $ns duplex-link $n("3356:Boston,MA") $n("3356:LosAngeles,CA") 10.0Gb 20.8864181920654ms DropTail
-
-#3356:Boston, MA -> 3356:Manchester, MA 100000
-$ns duplex-link $n("3356:Boston,MA") $n("3356:Manchester,MA") 10.0Gb 100000ms DropTail
 
 #3356:Boston, MA -> 3356:Manchester, UnitedKingdom 25.3158080629189
 $ns duplex-link $n("3356:Boston,MA") $n("3356:Manchester,UnitedKingdom") 10.0Gb 25.3158080629189ms DropTail
@@ -26596,9 +26487,6 @@ $ns duplex-link $n("3356:Madrid,Spain") $n("3356:NewYork,NY") 10.0Gb 28.81934156
 
 #3356:Madrid, Spain -> 3356:Washington, DC 30.4067905705861
 $ns duplex-link $n("3356:Madrid,Spain") $n("3356:Washington,DC") 10.0Gb 30.4067905705861ms DropTail
-
-#3356:Manchester, MA -> 3356:Boston, MA 100000
-$ns duplex-link $n("3356:Manchester,MA") $n("3356:Boston,MA") 10.0Gb 100000ms DropTail
 
 #3356:Manchester, UnitedKingdom -> 3356:Boston, MA 25.3158080629189
 $ns duplex-link $n("3356:Manchester,UnitedKingdom") $n("3356:Boston,MA") 10.0Gb 25.3158080629189ms DropTail
@@ -38137,8 +38025,6 @@ $ns duplex-link $n("4323:Seattle,WA") $n("3561:Seattle,WA") 10.0Gb 0ms DropTail
     set n("4323:NewYork,NY") [$ns node] }
   if { [info exists n("4323:PaloAlto,CA")] == 0 } {
     set n("4323:PaloAlto,CA") [$ns node] }
-  if { [info exists n("4323:Modesto,CA")] == 0 } {
-    set n("4323:Modesto,CA") [$ns node] }
   if { [info exists n("4323:Cincinnati,OH")] == 0 } {
     set n("4323:Cincinnati,OH") [$ns node] }
   if { [info exists n("4323:Columbia,SC")] == 0 } {
@@ -38155,16 +38041,12 @@ $ns duplex-link $n("4323:Seattle,WA") $n("3561:Seattle,WA") 10.0Gb 0ms DropTail
     set n("4323:SanAntonio,TX") [$ns node] }
   if { [info exists n("4323:Houston,TX")] == 0 } {
     set n("4323:Houston,TX") [$ns node] }
-  if { [info exists n("4323:Brookfield,WI")] == 0 } {
-    set n("4323:Brookfield,WI") [$ns node] }
   if { [info exists n("4323:Binghampton,NY")] == 0 } {
     set n("4323:Binghampton,NY") [$ns node] }
   if { [info exists n("4323:Milwaukee,WI")] == 0 } {
     set n("4323:Milwaukee,WI") [$ns node] }
   if { [info exists n("4323:Tampa,FL")] == 0 } {
     set n("4323:Tampa,FL") [$ns node] }
-  if { [info exists n("4323:Pewaukee,WI")] == 0 } {
-    set n("4323:Pewaukee,WI") [$ns node] }
   if { [info exists n("4323:Portland,OR")] == 0 } {
     set n("4323:Portland,OR") [$ns node] }
   if { [info exists n("4323:Durham,NC")] == 0 } {
@@ -38187,8 +38069,6 @@ $ns duplex-link $n("4323:Seattle,WA") $n("3561:Seattle,WA") 10.0Gb 0ms DropTail
     set n("4323:Albany,NY") [$ns node] }
   if { [info exists n("4323:Fayetteville,AR")] == 0 } {
     set n("4323:Fayetteville,AR") [$ns node] }
-  if { [info exists n("4323:Fayetteville,NC")] == 0 } {
-    set n("4323:Fayetteville,NC") [$ns node] }
   if { [info exists n("4323:Rochester,NY")] == 0 } {
     set n("4323:Rochester,NY") [$ns node] }
   if { [info exists n("4323:Dallas,TX")] == 0 } {
@@ -38221,9 +38101,6 @@ $ns duplex-link $n("4323:Albany,NY") $n("4323:Dallas,TX") 10.0Gb 11.444443735446
 
 #4323:Albany, NY -> 4323:Los Angeles, CA 19.776205299589
 $ns duplex-link $n("4323:Albany,NY") $n("4323:LosAngeles,CA") 10.0Gb 19.776205299589ms DropTail
-
-#4323:Albany, NY -> 4323:Modesto, CA 100000
-$ns duplex-link $n("4323:Albany,NY") $n("4323:Modesto,CA") 10.0Gb 100000ms DropTail
 
 #4323:Albany, NY -> 4323:New York, NY 1.08194102317162
 $ns duplex-link $n("4323:Albany,NY") $n("4323:NewYork,NY") 10.0Gb 1.08194102317162ms DropTail
@@ -38273,9 +38150,6 @@ $ns duplex-link $n("4323:Atlanta,GA") $n("4323:LosAngeles,CA") 10.0Gb 15.5956600
 #4323:Atlanta, GA -> 4323:Memphis, TN 2.69471342574201
 $ns duplex-link $n("4323:Atlanta,GA") $n("4323:Memphis,TN") 10.0Gb 2.69471342574201ms DropTail
 
-#4323:Atlanta, GA -> 4323:Modesto, CA 100000
-$ns duplex-link $n("4323:Atlanta,GA") $n("4323:Modesto,CA") 10.0Gb 100000ms DropTail
-
 #4323:Atlanta, GA -> 4323:New York, NY 6.00743024175476
 $ns duplex-link $n("4323:Atlanta,GA") $n("4323:NewYork,NY") 10.0Gb 6.00743024175476ms DropTail
 
@@ -38297,9 +38171,6 @@ $ns duplex-link $n("4323:Atlanta,GA") $n("4323:Tampa,FL") 10.0Gb 3.3539523243465
 #4323:Austin, TX -> 4323:Dallas, TX 1.45877351431596
 $ns duplex-link $n("4323:Austin,TX") $n("4323:Dallas,TX") 10.0Gb 1.45877351431596ms DropTail
 
-#4323:Austin, TX -> 4323:Modesto, CA 100000
-$ns duplex-link $n("4323:Austin,TX") $n("4323:Modesto,CA") 10.0Gb 100000ms DropTail
-
 #4323:Austin, TX -> 4323:New York, NY 12.1428121673817
 $ns duplex-link $n("4323:Austin,TX") $n("4323:NewYork,NY") 10.0Gb 12.1428121673817ms DropTail
 
@@ -38314,9 +38185,6 @@ $ns duplex-link $n("4323:Binghampton,NY") $n("4323:Dallas,TX") 10.0Gb 11.0009242
 
 #4323:Binghampton, NY -> 4323:Los Angeles, CA 19.7210147124792
 $ns duplex-link $n("4323:Binghampton,NY") $n("4323:LosAngeles,CA") 10.0Gb 19.7210147124792ms DropTail
-
-#4323:Binghampton, NY -> 4323:Modesto, CA 100000
-$ns duplex-link $n("4323:Binghampton,NY") $n("4323:Modesto,CA") 10.0Gb 100000ms DropTail
 
 #4323:Binghampton, NY -> 4323:New York, NY 0
 $ns duplex-link $n("4323:Binghampton,NY") $n("4323:NewYork,NY") 10.0Gb 0ms DropTail
@@ -38342,9 +38210,6 @@ $ns duplex-link $n("4323:Boise,ID") $n("4323:Dallas,TX") 10.0Gb 10.3625527909782
 #4323:Boise, ID -> 4323:Los Angeles, CA 5.36302629735981
 $ns duplex-link $n("4323:Boise,ID") $n("4323:LosAngeles,CA") 10.0Gb 5.36302629735981ms DropTail
 
-#4323:Boise, ID -> 4323:Modesto, CA 100000
-$ns duplex-link $n("4323:Boise,ID") $n("4323:Modesto,CA") 10.0Gb 100000ms DropTail
-
 #4323:Boise, ID -> 4323:New York, NY 17.2655910102106
 $ns duplex-link $n("4323:Boise,ID") $n("4323:NewYork,NY") 10.0Gb 17.2655910102106ms DropTail
 
@@ -38359,12 +38224,6 @@ $ns duplex-link $n("4323:Boise,ID") $n("4323:SaltLakeCity,UT") 10.0Gb 2.36336884
 
 #4323:Boise, ID -> 4323:Seattle, WA 3.2684260711766
 $ns duplex-link $n("4323:Boise,ID") $n("4323:Seattle,WA") 10.0Gb 3.2684260711766ms DropTail
-
-#4323:Brookfield, WI -> 4323:Milwaukee, WI 100000
-$ns duplex-link $n("4323:Brookfield,WI") $n("4323:Milwaukee,WI") 10.0Gb 100000ms DropTail
-
-#4323:Brookfield, WI -> 4323:Pewaukee, WI 100000
-$ns duplex-link $n("4323:Brookfield,WI") $n("4323:Pewaukee,WI") 10.0Gb 100000ms DropTail
 
 #4323:Charlotte, NC -> 4323:Ashburn, VA 2.58918694831408
 $ns duplex-link $n("4323:Charlotte,NC") $n("4323:Ashburn,VA") 10.0Gb 2.58918694831408ms DropTail
@@ -38390,9 +38249,6 @@ $ns duplex-link $n("4323:Charlotte,NC") $n("4323:Dallas,TX") 10.0Gb 7.4429021905
 #4323:Charlotte, NC -> 4323:Fayetteville, AR 6.02453477055353
 $ns duplex-link $n("4323:Charlotte,NC") $n("4323:Fayetteville,AR") 10.0Gb 6.02453477055353ms DropTail
 
-#4323:Charlotte, NC -> 4323:Fayetteville, NC 100000
-$ns duplex-link $n("4323:Charlotte,NC") $n("4323:Fayetteville,NC") 10.0Gb 100000ms DropTail
-
 #4323:Charlotte, NC -> 4323:Greensboro, NC 0.667796544198292
 $ns duplex-link $n("4323:Charlotte,NC") $n("4323:Greensboro,NC") 10.0Gb 0.667796544198292ms DropTail
 
@@ -38401,9 +38257,6 @@ $ns duplex-link $n("4323:Charlotte,NC") $n("4323:LosAngeles,CA") 10.0Gb 17.07226
 
 #4323:Charlotte, NC -> 4323:Memphis, TN 4.17892128196011
 $ns duplex-link $n("4323:Charlotte,NC") $n("4323:Memphis,TN") 10.0Gb 4.17892128196011ms DropTail
-
-#4323:Charlotte, NC -> 4323:Modesto, CA 100000
-$ns duplex-link $n("4323:Charlotte,NC") $n("4323:Modesto,CA") 10.0Gb 100000ms DropTail
 
 #4323:Charlotte, NC -> 4323:New York, NY 4.27086377025817
 $ns duplex-link $n("4323:Charlotte,NC") $n("4323:NewYork,NY") 10.0Gb 4.27086377025817ms DropTail
@@ -38464,9 +38317,6 @@ $ns duplex-link $n("4323:Chicago,IL") $n("4323:Milwaukee,WI") 10.0Gb 0.679271467
 
 #4323:Chicago, IL -> 4323:Minneapolis, MN 2.85501508977803
 $ns duplex-link $n("4323:Chicago,IL") $n("4323:Minneapolis,MN") 10.0Gb 2.85501508977803ms DropTail
-
-#4323:Chicago, IL -> 4323:Modesto, CA 100000
-$ns duplex-link $n("4323:Chicago,IL") $n("4323:Modesto,CA") 10.0Gb 100000ms DropTail
 
 #4323:Chicago, IL -> 4323:New York, NY 5.72539765160039
 $ns duplex-link $n("4323:Chicago,IL") $n("4323:NewYork,NY") 10.0Gb 5.72539765160039ms DropTail
@@ -38546,9 +38396,6 @@ $ns duplex-link $n("4323:Dallas,TX") $n("4323:Houston,TX") 10.0Gb 1.797342748742
 #4323:Dallas, TX -> 4323:Los Angeles, CA 10.0456672433203
 $ns duplex-link $n("4323:Dallas,TX") $n("4323:LosAngeles,CA") 10.0Gb 10.0456672433203ms DropTail
 
-#4323:Dallas, TX -> 4323:Modesto, CA 100000
-$ns duplex-link $n("4323:Dallas,TX") $n("4323:Modesto,CA") 10.0Gb 100000ms DropTail
-
 #4323:Dallas, TX -> 4323:New York, NY 11.0009242092306
 $ns duplex-link $n("4323:Dallas,TX") $n("4323:NewYork,NY") 10.0Gb 11.0009242092306ms DropTail
 
@@ -38591,9 +38438,6 @@ $ns duplex-link $n("4323:Denver,CO") $n("4323:Dallas,TX") 10.0Gb 5.3125791656431
 #4323:Denver, CO -> 4323:Los Angeles, CA 6.77495897647902
 $ns duplex-link $n("4323:Denver,CO") $n("4323:LosAngeles,CA") 10.0Gb 6.77495897647902ms DropTail
 
-#4323:Denver, CO -> 4323:Modesto, CA 100000
-$ns duplex-link $n("4323:Denver,CO") $n("4323:Modesto,CA") 10.0Gb 100000ms DropTail
-
 #4323:Denver, CO -> 4323:New York, NY 13.0319252204767
 $ns duplex-link $n("4323:Denver,CO") $n("4323:NewYork,NY") 10.0Gb 13.0319252204767ms DropTail
 
@@ -38615,15 +38459,6 @@ $ns duplex-link $n("4323:Fayetteville,AR") $n("4323:Charlotte,NC") 10.0Gb 6.0245
 #4323:Fayetteville, AR -> 4323:Richmond, VA 9.01883419663043
 $ns duplex-link $n("4323:Fayetteville,AR") $n("4323:Richmond,VA") 10.0Gb 9.01883419663043ms DropTail
 
-#4323:Fayetteville, NC -> 4323:Charlotte, NC 100000
-$ns duplex-link $n("4323:Fayetteville,NC") $n("4323:Charlotte,NC") 10.0Gb 100000ms DropTail
-
-#4323:Fayetteville, NC -> 4323:Richmond, VA 100000
-$ns duplex-link $n("4323:Fayetteville,NC") $n("4323:Richmond,VA") 10.0Gb 100000ms DropTail
-
-#4323:Fresno, CA -> 4323:Modesto, CA 100000
-$ns duplex-link $n("4323:Fresno,CA") $n("4323:Modesto,CA") 10.0Gb 100000ms DropTail
-
 #4323:Fresno, CA -> 4323:Oakland, CA 1.24113922649855
 $ns duplex-link $n("4323:Fresno,CA") $n("4323:Oakland,CA") 10.0Gb 1.24113922649855ms DropTail
 
@@ -38638,9 +38473,6 @@ $ns duplex-link $n("4323:Honolulu,HI") $n("4323:SanFrancisco,CA") 10.0Gb 19.1770
 
 #4323:Houston, TX -> 4323:Dallas, TX 1.79734274874247
 $ns duplex-link $n("4323:Houston,TX") $n("4323:Dallas,TX") 10.0Gb 1.79734274874247ms DropTail
-
-#4323:Houston, TX -> 4323:Modesto, CA 100000
-$ns duplex-link $n("4323:Houston,TX") $n("4323:Modesto,CA") 10.0Gb 100000ms DropTail
 
 #4323:Houston, TX -> 4323:New York, NY 11.4027441257575
 $ns duplex-link $n("4323:Houston,TX") $n("4323:NewYork,NY") 10.0Gb 11.4027441257575ms DropTail
@@ -38696,9 +38528,6 @@ $ns duplex-link $n("4323:LosAngeles,CA") $n("4323:Denver,CO") 10.0Gb 6.774958976
 #4323:Los Angeles, CA -> 4323:Minneapolis, MN 12.2770619574204
 $ns duplex-link $n("4323:LosAngeles,CA") $n("4323:Minneapolis,MN") 10.0Gb 12.2770619574204ms DropTail
 
-#4323:Los Angeles, CA -> 4323:Modesto, CA 100000
-$ns duplex-link $n("4323:LosAngeles,CA") $n("4323:Modesto,CA") 10.0Gb 100000ms DropTail
-
 #4323:Los Angeles, CA -> 4323:New York, NY 19.7210147124792
 $ns duplex-link $n("4323:LosAngeles,CA") $n("4323:NewYork,NY") 10.0Gb 19.7210147124792ms DropTail
 
@@ -38747,17 +38576,11 @@ $ns duplex-link $n("4323:Memphis,TN") $n("4323:Seattle,WA") 10.0Gb 14.9934555244
 #4323:Milwaukee, WI -> 4323:Bakersfield, CA 13.9384652762668
 $ns duplex-link $n("4323:Milwaukee,WI") $n("4323:Bakersfield,CA") 10.0Gb 13.9384652762668ms DropTail
 
-#4323:Milwaukee, WI -> 4323:Brookfield, WI 100000
-$ns duplex-link $n("4323:Milwaukee,WI") $n("4323:Brookfield,WI") 10.0Gb 100000ms DropTail
-
 #4323:Milwaukee, WI -> 4323:Chicago, IL 0.679271467429091
 $ns duplex-link $n("4323:Milwaukee,WI") $n("4323:Chicago,IL") 10.0Gb 0.679271467429091ms DropTail
 
 #4323:Milwaukee, WI -> 4323:Indianapolis, IN 1.97288048272039
 $ns duplex-link $n("4323:Milwaukee,WI") $n("4323:Indianapolis,IN") 10.0Gb 1.97288048272039ms DropTail
-
-#4323:Milwaukee, WI -> 4323:Modesto, CA 100000
-$ns duplex-link $n("4323:Milwaukee,WI") $n("4323:Modesto,CA") 10.0Gb 100000ms DropTail
 
 #4323:Minneapolis, MN -> 4323:Chicago, IL 2.85501508977803
 $ns duplex-link $n("4323:Minneapolis,MN") $n("4323:Chicago,IL") 10.0Gb 2.85501508977803ms DropTail
@@ -38765,74 +38588,8 @@ $ns duplex-link $n("4323:Minneapolis,MN") $n("4323:Chicago,IL") 10.0Gb 2.8550150
 #4323:Minneapolis, MN -> 4323:Los Angeles, CA 12.2770619574204
 $ns duplex-link $n("4323:Minneapolis,MN") $n("4323:LosAngeles,CA") 10.0Gb 12.2770619574204ms DropTail
 
-#4323:Minneapolis, MN -> 4323:Modesto, CA 100000
-$ns duplex-link $n("4323:Minneapolis,MN") $n("4323:Modesto,CA") 10.0Gb 100000ms DropTail
-
 #4323:Minneapolis, MN -> 4323:Seattle, WA 11.1944979526771
 $ns duplex-link $n("4323:Minneapolis,MN") $n("4323:Seattle,WA") 10.0Gb 11.1944979526771ms DropTail
-
-#4323:Modesto, CA -> 4323:Albany, NY 100000
-$ns duplex-link $n("4323:Modesto,CA") $n("4323:Albany,NY") 10.0Gb 100000ms DropTail
-
-#4323:Modesto, CA -> 4323:Atlanta, GA 100000
-$ns duplex-link $n("4323:Modesto,CA") $n("4323:Atlanta,GA") 10.0Gb 100000ms DropTail
-
-#4323:Modesto, CA -> 4323:Austin, TX 100000
-$ns duplex-link $n("4323:Modesto,CA") $n("4323:Austin,TX") 10.0Gb 100000ms DropTail
-
-#4323:Modesto, CA -> 4323:Binghampton, NY 100000
-$ns duplex-link $n("4323:Modesto,CA") $n("4323:Binghampton,NY") 10.0Gb 100000ms DropTail
-
-#4323:Modesto, CA -> 4323:Boise, ID 100000
-$ns duplex-link $n("4323:Modesto,CA") $n("4323:Boise,ID") 10.0Gb 100000ms DropTail
-
-#4323:Modesto, CA -> 4323:Charlotte, NC 100000
-$ns duplex-link $n("4323:Modesto,CA") $n("4323:Charlotte,NC") 10.0Gb 100000ms DropTail
-
-#4323:Modesto, CA -> 4323:Chicago, IL 100000
-$ns duplex-link $n("4323:Modesto,CA") $n("4323:Chicago,IL") 10.0Gb 100000ms DropTail
-
-#4323:Modesto, CA -> 4323:Dallas, TX 100000
-$ns duplex-link $n("4323:Modesto,CA") $n("4323:Dallas,TX") 10.0Gb 100000ms DropTail
-
-#4323:Modesto, CA -> 4323:Denver, CO 100000
-$ns duplex-link $n("4323:Modesto,CA") $n("4323:Denver,CO") 10.0Gb 100000ms DropTail
-
-#4323:Modesto, CA -> 4323:Fresno, CA 100000
-$ns duplex-link $n("4323:Modesto,CA") $n("4323:Fresno,CA") 10.0Gb 100000ms DropTail
-
-#4323:Modesto, CA -> 4323:Houston, TX 100000
-$ns duplex-link $n("4323:Modesto,CA") $n("4323:Houston,TX") 10.0Gb 100000ms DropTail
-
-#4323:Modesto, CA -> 4323:Los Angeles, CA 100000
-$ns duplex-link $n("4323:Modesto,CA") $n("4323:LosAngeles,CA") 10.0Gb 100000ms DropTail
-
-#4323:Modesto, CA -> 4323:Milwaukee, WI 100000
-$ns duplex-link $n("4323:Modesto,CA") $n("4323:Milwaukee,WI") 10.0Gb 100000ms DropTail
-
-#4323:Modesto, CA -> 4323:Minneapolis, MN 100000
-$ns duplex-link $n("4323:Modesto,CA") $n("4323:Minneapolis,MN") 10.0Gb 100000ms DropTail
-
-#4323:Modesto, CA -> 4323:New York, NY 100000
-$ns duplex-link $n("4323:Modesto,CA") $n("4323:NewYork,NY") 10.0Gb 100000ms DropTail
-
-#4323:Modesto, CA -> 4323:Oakland, CA 100000
-$ns duplex-link $n("4323:Modesto,CA") $n("4323:Oakland,CA") 10.0Gb 100000ms DropTail
-
-#4323:Modesto, CA -> 4323:Phoenix, AZ 100000
-$ns duplex-link $n("4323:Modesto,CA") $n("4323:Phoenix,AZ") 10.0Gb 100000ms DropTail
-
-#4323:Modesto, CA -> 4323:Portland, OR 100000
-$ns duplex-link $n("4323:Modesto,CA") $n("4323:Portland,OR") 10.0Gb 100000ms DropTail
-
-#4323:Modesto, CA -> 4323:San Luis Obispo, CA 100000
-$ns duplex-link $n("4323:Modesto,CA") $n("4323:SanLuisObispo,CA") 10.0Gb 100000ms DropTail
-
-#4323:Modesto, CA -> 4323:Seattle, WA 100000
-$ns duplex-link $n("4323:Modesto,CA") $n("4323:Seattle,WA") 10.0Gb 100000ms DropTail
-
-#4323:Modesto, CA -> 4323:Tampa, FL 100000
-$ns duplex-link $n("4323:Modesto,CA") $n("4323:Tampa,FL") 10.0Gb 100000ms DropTail
 
 #4323:New York, NY -> 4323:Albany, NY 1.08194102317162
 $ns duplex-link $n("4323:NewYork,NY") $n("4323:Albany,NY") 10.0Gb 1.08194102317162ms DropTail
@@ -38885,9 +38642,6 @@ $ns duplex-link $n("4323:NewYork,NY") $n("4323:LosAngeles,CA") 10.0Gb 19.7210147
 #4323:New York, NY -> 4323:Memphis, TN 7.66528402232675
 $ns duplex-link $n("4323:NewYork,NY") $n("4323:Memphis,TN") 10.0Gb 7.66528402232675ms DropTail
 
-#4323:New York, NY -> 4323:Modesto, CA 100000
-$ns duplex-link $n("4323:NewYork,NY") $n("4323:Modesto,CA") 10.0Gb 100000ms DropTail
-
 #4323:New York, NY -> 4323:Phoenix, AZ 17.184736870328
 $ns duplex-link $n("4323:NewYork,NY") $n("4323:Phoenix,AZ") 10.0Gb 17.184736870328ms DropTail
 
@@ -38906,9 +38660,6 @@ $ns duplex-link $n("4323:NewYork,NY") $n("4323:Washington,DC") 10.0Gb 1.62733364
 #4323:Oakland, CA -> 4323:Fresno, CA 1.24113922649855
 $ns duplex-link $n("4323:Oakland,CA") $n("4323:Fresno,CA") 10.0Gb 1.24113922649855ms DropTail
 
-#4323:Oakland, CA -> 4323:Modesto, CA 100000
-$ns duplex-link $n("4323:Oakland,CA") $n("4323:Modesto,CA") 10.0Gb 100000ms DropTail
-
 #4323:Oakland, CA -> 4323:Palo Alto, CA 0.209120850523717
 $ns duplex-link $n("4323:Oakland,CA") $n("4323:PaloAlto,CA") 10.0Gb 0.209120850523717ms DropTail
 
@@ -38926,9 +38677,6 @@ $ns duplex-link $n("4323:Orange,CA") $n("4323:SanDiego,CA") 10.0Gb 0.63985699516
 
 #4323:Palo Alto, CA -> 4323:Oakland, CA 0.209120850523717
 $ns duplex-link $n("4323:PaloAlto,CA") $n("4323:Oakland,CA") 10.0Gb 0.209120850523717ms DropTail
-
-#4323:Pewaukee, WI -> 4323:Brookfield, WI 100000
-$ns duplex-link $n("4323:Pewaukee,WI") $n("4323:Brookfield,WI") 10.0Gb 100000ms DropTail
 
 #4323:Phoenix, AZ -> 4323:Albany, NY 17.3365055795158
 $ns duplex-link $n("4323:Phoenix,AZ") $n("4323:Albany,NY") 10.0Gb 17.3365055795158ms DropTail
@@ -38959,9 +38707,6 @@ $ns duplex-link $n("4323:Phoenix,AZ") $n("4323:Denver,CO") 10.0Gb 4.718550228037
 
 #4323:Phoenix, AZ -> 4323:Los Angeles, CA 2.94005274291922
 $ns duplex-link $n("4323:Phoenix,AZ") $n("4323:LosAngeles,CA") 10.0Gb 2.94005274291922ms DropTail
-
-#4323:Phoenix, AZ -> 4323:Modesto, CA 100000
-$ns duplex-link $n("4323:Phoenix,AZ") $n("4323:Modesto,CA") 10.0Gb 100000ms DropTail
 
 #4323:Phoenix, AZ -> 4323:New York, NY 17.184736870328
 $ns duplex-link $n("4323:Phoenix,AZ") $n("4323:NewYork,NY") 10.0Gb 17.184736870328ms DropTail
@@ -39002,9 +38747,6 @@ $ns duplex-link $n("4323:Portland,OR") $n("4323:Dallas,TX") 10.0Gb 13.1265206356
 #4323:Portland, OR -> 4323:Los Angeles, CA 6.60391289813038
 $ns duplex-link $n("4323:Portland,OR") $n("4323:LosAngeles,CA") 10.0Gb 6.60391289813038ms DropTail
 
-#4323:Portland, OR -> 4323:Modesto, CA 100000
-$ns duplex-link $n("4323:Portland,OR") $n("4323:Modesto,CA") 10.0Gb 100000ms DropTail
-
 #4323:Portland, OR -> 4323:New York, NY 19.6027951370426
 $ns duplex-link $n("4323:Portland,OR") $n("4323:NewYork,NY") 10.0Gb 19.6027951370426ms DropTail
 
@@ -39019,9 +38761,6 @@ $ns duplex-link $n("4323:Richmond,VA") $n("4323:Durham,NC") 10.0Gb 3.24978285989
 
 #4323:Richmond, VA -> 4323:Fayetteville, AR 9.01883419663043
 $ns duplex-link $n("4323:Richmond,VA") $n("4323:Fayetteville,AR") 10.0Gb 9.01883419663043ms DropTail
-
-#4323:Richmond, VA -> 4323:Fayetteville, NC 100000
-$ns duplex-link $n("4323:Richmond,VA") $n("4323:Fayetteville,NC") 10.0Gb 100000ms DropTail
 
 #4323:Richmond, VA -> 4323:Greensboro, NC 3.46389254693352
 $ns duplex-link $n("4323:Richmond,VA") $n("4323:Greensboro,NC") 10.0Gb 3.46389254693352ms DropTail
@@ -39080,9 +38819,6 @@ $ns duplex-link $n("4323:SanLuisObispo,CA") $n("4323:Dallas,TX") 10.0Gb 11.06860
 #4323:San Luis Obispo, CA -> 4323:Los Angeles, CA 1.22304753039424
 $ns duplex-link $n("4323:SanLuisObispo,CA") $n("4323:LosAngeles,CA") 10.0Gb 1.22304753039424ms DropTail
 
-#4323:San Luis Obispo, CA -> 4323:Modesto, CA 100000
-$ns duplex-link $n("4323:SanLuisObispo,CA") $n("4323:Modesto,CA") 10.0Gb 100000ms DropTail
-
 #4323:San Luis Obispo, CA -> 4323:New York, NY 20.4064367194466
 $ns duplex-link $n("4323:SanLuisObispo,CA") $n("4323:NewYork,NY") 10.0Gb 20.4064367194466ms DropTail
 
@@ -39128,9 +38864,6 @@ $ns duplex-link $n("4323:Seattle,WA") $n("4323:Memphis,TN") 10.0Gb 14.9934555244
 #4323:Seattle, WA -> 4323:Minneapolis, MN 11.1944979526771
 $ns duplex-link $n("4323:Seattle,WA") $n("4323:Minneapolis,MN") 10.0Gb 11.1944979526771ms DropTail
 
-#4323:Seattle, WA -> 4323:Modesto, CA 100000
-$ns duplex-link $n("4323:Seattle,WA") $n("4323:Modesto,CA") 10.0Gb 100000ms DropTail
-
 #4323:Seattle, WA -> 4323:New York, NY 19.3209613118993
 $ns duplex-link $n("4323:Seattle,WA") $n("4323:NewYork,NY") 10.0Gb 19.3209613118993ms DropTail
 
@@ -39160,9 +38893,6 @@ $ns duplex-link $n("4323:Tampa,FL") $n("4323:Dallas,TX") 10.0Gb 7.34711766697769
 
 #4323:Tampa, FL -> 4323:Los Angeles, CA 17.355078362519
 $ns duplex-link $n("4323:Tampa,FL") $n("4323:LosAngeles,CA") 10.0Gb 17.355078362519ms DropTail
-
-#4323:Tampa, FL -> 4323:Modesto, CA 100000
-$ns duplex-link $n("4323:Tampa,FL") $n("4323:Modesto,CA") 10.0Gb 100000ms DropTail
 
 #4323:Tampa, FL -> 4323:Phoenix, AZ 14.4196449041964
 $ns duplex-link $n("4323:Tampa,FL") $n("4323:Phoenix,AZ") 10.0Gb 14.4196449041964ms DropTail
@@ -41414,12 +41144,6 @@ $ns duplex-link $n("4637:SanJose,CA") $n("1:SanJose,CA") 10.0Gb 0ms DropTail
     set n("4637:Sydney,Australia") [$ns node] }
   if { [info exists n("4637:Perth,Australia")] == 0 } {
     set n("4637:Perth,Australia") [$ns node] }
-  if { [info exists n("4637:tmhs")] == 0 } {
-    set n("4637:tmhs") [$ns node] }
-  if { [info exists n("->1221:PaloAlto,CA")] == 0 } {
-    set n("->1221:PaloAlto,CA") [$ns node] }
-  if { [info exists n("4637:hhts")] == 0 } {
-    set n("4637:hhts") [$ns node] }
   if { [info exists n("1221:PaloAlto,CA")] == 0 } {
     set n("1221:PaloAlto,CA") [$ns node] }
 
@@ -41437,12 +41161,6 @@ $ns duplex-link $n("4637:SanJose,CA") $n("1221:PaloAlto,CA") 10.0Gb 0.1244775467
 
 #4637:Sydney, Australia -> 1221:Sydney, Australia 0
 $ns duplex-link $n("4637:Sydney,Australia") $n("1221:Sydney,Australia") 10.0Gb 0ms DropTail
-
-#4637:hhts -> 1221:Palo Alto, CA 100000
-$ns duplex-link $n("4637:hhts") $n("->1221:PaloAlto,CA") 10.0Gb 100000ms DropTail
-
-#4637:tmhs -> 1221:Palo Alto, CA 100000
-$ns duplex-link $n("4637:tmhs") $n("->1221:PaloAlto,CA") 10.0Gb 100000ms DropTail
 # 4637:1239
   if { [info exists n("4637:SanJose,CA")] == 0 } {
     set n("4637:SanJose,CA") [$ns node] }
@@ -41480,13 +41198,7 @@ $ns duplex-link $n("4637:Relay,MD") $n("1239:Relay,MD") 10.0Gb 0ms DropTail
 #4637:San Jose, CA -> 1239:San Jose, CA 0
 $ns duplex-link $n("4637:SanJose,CA") $n("1239:SanJose,CA") 10.0Gb 0ms DropTail
 # 4637:1299
-  if { [info exists n("4637:xeig")] == 0 } {
-    set n("4637:xeig") [$ns node] }
-  if { [info exists n("->1299:NewYork,NY")] == 0 } {
-    set n("->1299:NewYork,NY") [$ns node] }
 
-#4637:xeig -> 1299:New York, NY 100000
-$ns duplex-link $n("4637:xeig") $n("->1299:NewYork,NY") 10.0Gb 100000ms DropTail
 # 4637:16631
   if { [info exists n("4637:SanJose,CA")] == 0 } {
     set n("4637:SanJose,CA") [$ns node] }
@@ -41592,33 +41304,7 @@ $ns duplex-link $n("4637:Ashburn,VA") $n("2914:Ashburn,VA") 10.0Gb 0ms DropTail
 #4637:Palo Alto, CA -> 2914:Palo Alto, CA 0
 $ns duplex-link $n("4637:PaloAlto,CA") $n("2914:PaloAlto,CA") 10.0Gb 0ms DropTail
 # 4637:3300
-  if { [info exists n("4637:tmh")] == 0 } {
-    set n("4637:tmh") [$ns node] }
-  if { [info exists n("4637:tmhs")] == 0 } {
-    set n("4637:tmhs") [$ns node] }
-  if { [info exists n("->3300:KualaLumpur,Malaysia")] == 0 } {
-    set n("->3300:KualaLumpur,Malaysia") [$ns node] }
-  if { [info exists n("3300:tmhs")] == 0 } {
-    set n("3300:tmhs") [$ns node] }
-  if { [info exists n("3300:HongKong")] == 0 } {
-    set n("3300:HongKong") [$ns node] }
-  if { [info exists n("3300:tmh")] == 0 } {
-    set n("3300:tmh") [$ns node] }
 
-#4637:tmh -> 3300:Kuala Lumpur, Malaysia 100000
-$ns duplex-link $n("4637:tmh") $n("->3300:KualaLumpur,Malaysia") 10.0Gb 100000ms DropTail
-
-#4637:tmh -> 3300:tmh 100000
-$ns duplex-link $n("4637:tmh") $n("3300:tmh") 10.0Gb 100000ms DropTail
-
-#4637:tmhs -> 3300:Hong Kong 100000
-$ns duplex-link $n("4637:tmhs") $n("3300:HongKong") 10.0Gb 100000ms DropTail
-
-#4637:tmhs -> 3300:Kuala Lumpur, Malaysia 100000
-$ns duplex-link $n("4637:tmhs") $n("->3300:KualaLumpur,Malaysia") 10.0Gb 100000ms DropTail
-
-#4637:tmhs -> 3300:tmhs 100000
-$ns duplex-link $n("4637:tmhs") $n("3300:tmhs") 10.0Gb 100000ms DropTail
 # 4637:3356
   if { [info exists n("4637:SanJose,CA")] == 0 } {
     set n("4637:SanJose,CA") [$ns node] }
@@ -41690,44 +41376,24 @@ $ns duplex-link $n("4637:PaloAlto,CA") $n("4565:Napa,CA") 10.0Gb 0.4793253129410
 # 4637:4637
   if { [info exists n("4637:SanJose,CA")] == 0 } {
     set n("4637:SanJose,CA") [$ns node] }
-  if { [info exists n("4637:tmh")] == 0 } {
-    set n("4637:tmh") [$ns node] }
   if { [info exists n("4637:PaloAlto,CA")] == 0 } {
     set n("4637:PaloAlto,CA") [$ns node] }
   if { [info exists n("4637:NewYork,NY")] == 0 } {
     set n("4637:NewYork,NY") [$ns node] }
-  if { [info exists n("->4637:SanFrancisco,CA")] == 0 } {
-    set n("->4637:SanFrancisco,CA") [$ns node] }
   if { [info exists n("4637:Miami,FL")] == 0 } {
     set n("4637:Miami,FL") [$ns node] }
-  if { [info exists n("4637:yck")] == 0 } {
-    set n("4637:yck") [$ns node] }
   if { [info exists n("4637:HongKong")] == 0 } {
     set n("4637:HongKong") [$ns node] }
   if { [info exists n("4637:LosAngeles,CA")] == 0 } {
     set n("4637:LosAngeles,CA") [$ns node] }
-  if { [info exists n("4637:xeig")] == 0 } {
-    set n("4637:xeig") [$ns node] }
   if { [info exists n("4637:Newark,NJ")] == 0 } {
     set n("4637:Newark,NJ") [$ns node] }
   if { [info exists n("4637:Sydney,Australia")] == 0 } {
     set n("4637:Sydney,Australia") [$ns node] }
-  if { [info exists n("->4637:SanJose,CA")] == 0 } {
-    set n("->4637:SanJose,CA") [$ns node] }
   if { [info exists n("4637:Perth,Australia")] == 0 } {
     set n("4637:Perth,Australia") [$ns node] }
-  if { [info exists n("4637:tmhs")] == 0 } {
-    set n("4637:tmhs") [$ns node] }
-  if { [info exists n("->4637:NewYork,NY")] == 0 } {
-    set n("->4637:NewYork,NY") [$ns node] }
-  if { [info exists n("->4637:PaloAlto,CA")] == 0 } {
-    set n("->4637:PaloAlto,CA") [$ns node] }
-  if { [info exists n("4637:hhts")] == 0 } {
-    set n("4637:hhts") [$ns node] }
   if { [info exists n("4637:Chicago,IL")] == 0 } {
     set n("4637:Chicago,IL") [$ns node] }
-  if { [info exists n("->4637:LosAngeles,CA")] == 0 } {
-    set n("->4637:LosAngeles,CA") [$ns node] }
   if { [info exists n("4637:Dallas,TX")] == 0 } {
     set n("4637:Dallas,TX") [$ns node] }
   if { [info exists n("4637:Tokyo,Japan")] == 0 } {
@@ -41736,18 +41402,12 @@ $ns duplex-link $n("4637:PaloAlto,CA") $n("4565:Napa,CA") 10.0Gb 0.4793253129410
     set n("4637:Kyoto,Japan") [$ns node] }
   if { [info exists n("4637:Ashburn,VA")] == 0 } {
     set n("4637:Ashburn,VA") [$ns node] }
-  if { [info exists n("4637:hht")] == 0 } {
-    set n("4637:hht") [$ns node] }
   if { [info exists n("4637:Anaheim,CA")] == 0 } {
     set n("4637:Anaheim,CA") [$ns node] }
-  if { [info exists n("4637:London,UnitedKingdom")] == 0 } {
-    set n("4637:London,UnitedKingdom") [$ns node] }
   if { [info exists n("4637:Relay,MD")] == 0 } {
     set n("4637:Relay,MD") [$ns node] }
   if { [info exists n("4637:SanFrancisco,CA")] == 0 } {
     set n("4637:SanFrancisco,CA") [$ns node] }
-  if { [info exists n("4637:car")] == 0 } {
-    set n("4637:car") [$ns node] }
   if { [info exists n("4637:Auckland,NewZealand")] == 0 } {
     set n("4637:Auckland,NewZealand") [$ns node] }
   if { [info exists n("4637:Washington,DC")] == 0 } {
@@ -41780,9 +41440,6 @@ $ns duplex-link $n("4637:Chicago,IL") $n("4637:NewYork,NY") 10.0Gb 5.72539765160
 #4637:Chicago, IL -> 4637:San Jose, CA 14.7744081963979
 $ns duplex-link $n("4637:Chicago,IL") $n("4637:SanJose,CA") 10.0Gb 14.7744081963979ms DropTail
 
-#4637:Chicago, IL -> 4637:xeig 100000
-$ns duplex-link $n("4637:Chicago,IL") $n("4637:xeig") 10.0Gb 100000ms DropTail
-
 #4637:Dallas, TX -> 4637:Chicago, IL 6.43760504337832
 $ns duplex-link $n("4637:Dallas,TX") $n("4637:Chicago,IL") 10.0Gb 6.43760504337832ms DropTail
 
@@ -41803,12 +41460,6 @@ $ns duplex-link $n("4637:Kyoto,Japan") $n("4637:SanJose,CA") 10.0Gb 43.319957413
 
 #4637:Kyoto, Japan -> 4637:Tokyo, Japan 1.71491687349014
 $ns duplex-link $n("4637:Kyoto,Japan") $n("4637:Tokyo,Japan") 10.0Gb 1.71491687349014ms DropTail
-
-#4637:London, UnitedKingdom -> 4637:hhts 100000
-$ns duplex-link $n("4637:London,UnitedKingdom") $n("4637:hhts") 10.0Gb 100000ms DropTail
-
-#4637:London, UnitedKingdom -> 4637:xeig 100000
-$ns duplex-link $n("4637:London,UnitedKingdom") $n("4637:xeig") 10.0Gb 100000ms DropTail
 
 #4637:Los Angeles, CA -> 4637:Anaheim, CA 0.268083922965192
 $ns duplex-link $n("4637:LosAngeles,CA") $n("4637:Anaheim,CA") 10.0Gb 0.268083922965192ms DropTail
@@ -41834,12 +41485,6 @@ $ns duplex-link $n("4637:LosAngeles,CA") $n("4637:Sydney,Australia") 10.0Gb 60.3
 #4637:Los Angeles, CA -> 4637:Tokyo, Japan 44.3434837672523
 $ns duplex-link $n("4637:LosAngeles,CA") $n("4637:Tokyo,Japan") 10.0Gb 44.3434837672523ms DropTail
 
-#4637:Los Angeles, CA -> 4637:hhts 100000
-$ns duplex-link $n("4637:LosAngeles,CA") $n("4637:hhts") 10.0Gb 100000ms DropTail
-
-#4637:Los Angeles, CA -> 4637:tmhs 100000
-$ns duplex-link $n("4637:LosAngeles,CA") $n("4637:tmhs") 10.0Gb 100000ms DropTail
-
 #4637:Miami, FL -> 4637:Ashburn, VA 7.48038803606758
 $ns duplex-link $n("4637:Miami,FL") $n("4637:Ashburn,VA") 10.0Gb 7.48038803606758ms DropTail
 
@@ -41855,9 +41500,6 @@ $ns duplex-link $n("4637:Miami,FL") $n("4637:Washington,DC") 10.0Gb 7.4442639318
 #4637:New York, NY -> 4637:Chicago, IL 5.72539765160039
 $ns duplex-link $n("4637:NewYork,NY") $n("4637:Chicago,IL") 10.0Gb 5.72539765160039ms DropTail
 
-#4637:New York, NY -> 4637:xeig 100000
-$ns duplex-link $n("4637:NewYork,NY") $n("4637:xeig") 10.0Gb 100000ms DropTail
-
 #4637:Newark, NJ -> 4637:Ashburn, VA 1.69718579567516
 $ns duplex-link $n("4637:Newark,NJ") $n("4637:Ashburn,VA") 10.0Gb 1.69718579567516ms DropTail
 
@@ -41866,9 +41508,6 @@ $ns duplex-link $n("4637:Newark,NJ") $n("4637:Relay,MD") 10.0Gb 1.36499892719274
 
 #4637:Newark, NJ -> 4637:Washington, DC 1.57970979874265
 $ns duplex-link $n("4637:Newark,NJ") $n("4637:Washington,DC") 10.0Gb 1.57970979874265ms DropTail
-
-#4637:Newark, NJ -> 4637:xeig 100000
-$ns duplex-link $n("4637:Newark,NJ") $n("4637:xeig") 10.0Gb 100000ms DropTail
 
 #4637:Palo Alto, CA -> 4637:Los Angeles, CA 2.50820183694084
 $ns duplex-link $n("4637:PaloAlto,CA") $n("4637:LosAngeles,CA") 10.0Gb 2.50820183694084ms DropTail
@@ -41882,12 +41521,6 @@ $ns duplex-link $n("4637:PaloAlto,CA") $n("4637:SanJose,CA") 10.0Gb 0.1244775467
 #4637:Palo Alto, CA -> 4637:Sydney, Australia 59.74640888143
 $ns duplex-link $n("4637:PaloAlto,CA") $n("4637:Sydney,Australia") 10.0Gb 59.74640888143ms DropTail
 
-#4637:Palo Alto, CA -> 4637:hhts 100000
-$ns duplex-link $n("4637:PaloAlto,CA") $n("4637:hhts") 10.0Gb 100000ms DropTail
-
-#4637:Palo Alto, CA -> 4637:tmhs 100000
-$ns duplex-link $n("4637:PaloAlto,CA") $n("4637:tmhs") 10.0Gb 100000ms DropTail
-
 #4637:Perth, Australia -> 4637:Los Angeles, CA 75.0056877324584
 $ns duplex-link $n("4637:Perth,Australia") $n("4637:LosAngeles,CA") 10.0Gb 75.0056877324584ms DropTail
 
@@ -41897,9 +41530,6 @@ $ns duplex-link $n("4637:Perth,Australia") $n("4637:PaloAlto,CA") 10.0Gb 73.7523
 #4637:Perth, Australia -> 4637:Sydney, Australia 16.4178099619897
 $ns duplex-link $n("4637:Perth,Australia") $n("4637:Sydney,Australia") 10.0Gb 16.4178099619897ms DropTail
 
-#4637:Perth, Australia -> 4637:hhts 100000
-$ns duplex-link $n("4637:Perth,Australia") $n("4637:hhts") 10.0Gb 100000ms DropTail
-
 #4637:Relay, MD -> 4637:Miami, FL 7.65029780033209
 $ns duplex-link $n("4637:Relay,MD") $n("4637:Miami,FL") 10.0Gb 7.65029780033209ms DropTail
 
@@ -41908,12 +41538,6 @@ $ns duplex-link $n("4637:Relay,MD") $n("4637:Newark,NJ") 10.0Gb 1.36499892719274
 
 #4637:San Francisco, CA -> 4637:San Jose, CA 0.381420811600469
 $ns duplex-link $n("4637:SanFrancisco,CA") $n("4637:SanJose,CA") 10.0Gb 0.381420811600469ms DropTail
-
-#4637:San Francisco, CA -> 4637:hhts 100000
-$ns duplex-link $n("4637:SanFrancisco,CA") $n("4637:hhts") 10.0Gb 100000ms DropTail
-
-#4637:San Francisco, CA -> 4637:tmhs 100000
-$ns duplex-link $n("4637:SanFrancisco,CA") $n("4637:tmhs") 10.0Gb 100000ms DropTail
 
 #4637:San Jose, CA -> 4637:Chicago, IL 14.7744081963979
 $ns duplex-link $n("4637:SanJose,CA") $n("4637:Chicago,IL") 10.0Gb 14.7744081963979ms DropTail
@@ -41936,9 +41560,6 @@ $ns duplex-link $n("4637:SanJose,CA") $n("4637:Sydney,Australia") 10.0Gb 59.8122
 #4637:San Jose, CA -> 4637:Tokyo, Japan 42.030205069196
 $ns duplex-link $n("4637:SanJose,CA") $n("4637:Tokyo,Japan") 10.0Gb 42.030205069196ms DropTail
 
-#4637:San Jose, CA -> 4637:tmhs 100000
-$ns duplex-link $n("4637:SanJose,CA") $n("4637:tmhs") 10.0Gb 100000ms DropTail
-
 #4637:Sydney, Australia -> 4637:Anaheim, CA 60.4348629327623
 $ns duplex-link $n("4637:Sydney,Australia") $n("4637:Anaheim,CA") 10.0Gb 60.4348629327623ms DropTail
 
@@ -41960,12 +41581,6 @@ $ns duplex-link $n("4637:Sydney,Australia") $n("4637:Perth,Australia") 10.0Gb 16
 #4637:Sydney, Australia -> 4637:San Jose, CA 59.8122862074532
 $ns duplex-link $n("4637:Sydney,Australia") $n("4637:SanJose,CA") 10.0Gb 59.8122862074532ms DropTail
 
-#4637:Sydney, Australia -> 4637:hhts 100000
-$ns duplex-link $n("4637:Sydney,Australia") $n("4637:hhts") 10.0Gb 100000ms DropTail
-
-#4637:Sydney, Australia -> 4637:tmhs 100000
-$ns duplex-link $n("4637:Sydney,Australia") $n("4637:tmhs") 10.0Gb 100000ms DropTail
-
 #4637:Tokyo, Japan -> 4637:Hong Kong 14.1254042821176
 $ns duplex-link $n("4637:Tokyo,Japan") $n("4637:HongKong") 10.0Gb 14.1254042821176ms DropTail
 
@@ -41983,117 +41598,6 @@ $ns duplex-link $n("4637:Washington,DC") $n("4637:Miami,FL") 10.0Gb 7.4442639318
 
 #4637:Washington, DC -> 4637:Newark, NJ 1.57970979874265
 $ns duplex-link $n("4637:Washington,DC") $n("4637:Newark,NJ") 10.0Gb 1.57970979874265ms DropTail
-
-#4637:car -> 4637:hhts 100000
-$ns duplex-link $n("4637:car") $n("4637:hhts") 10.0Gb 100000ms DropTail
-
-#4637:car -> 4637:tmhs 100000
-$ns duplex-link $n("4637:car") $n("4637:tmhs") 10.0Gb 100000ms DropTail
-
-#4637:hht -> 4637:hhts 100000
-$ns duplex-link $n("4637:hht") $n("4637:hhts") 10.0Gb 100000ms DropTail
-
-#4637:hht -> 4637:tmh 100000
-$ns duplex-link $n("4637:hht") $n("4637:tmh") 10.0Gb 100000ms DropTail
-
-#4637:hht -> 4637:tmhs 100000
-$ns duplex-link $n("4637:hht") $n("4637:tmhs") 10.0Gb 100000ms DropTail
-
-#4637:hht -> 4637:yck 100000
-$ns duplex-link $n("4637:hht") $n("4637:yck") 10.0Gb 100000ms DropTail
-
-#4637:hhts -> 4637:London, UnitedKingdom 100000
-$ns duplex-link $n("4637:hhts") $n("4637:London,UnitedKingdom") 10.0Gb 100000ms DropTail
-
-#4637:hhts -> 4637:Los Angeles, CA 100000
-$ns duplex-link $n("4637:hhts") $n("->4637:LosAngeles,CA") 10.0Gb 100000ms DropTail
-
-#4637:hhts -> 4637:Palo Alto, CA 100000
-$ns duplex-link $n("4637:hhts") $n("->4637:PaloAlto,CA") 10.0Gb 100000ms DropTail
-
-#4637:hhts -> 4637:Perth, Australia 100000
-$ns duplex-link $n("4637:hhts") $n("4637:Perth,Australia") 10.0Gb 100000ms DropTail
-
-#4637:hhts -> 4637:San Francisco, CA 100000
-$ns duplex-link $n("4637:hhts") $n("->4637:SanFrancisco,CA") 10.0Gb 100000ms DropTail
-
-#4637:hhts -> 4637:Sydney, Australia 100000
-$ns duplex-link $n("4637:hhts") $n("4637:Sydney,Australia") 10.0Gb 100000ms DropTail
-
-#4637:hhts -> 4637:car 100000
-$ns duplex-link $n("4637:hhts") $n("4637:car") 10.0Gb 100000ms DropTail
-
-#4637:hhts -> 4637:hht 100000
-$ns duplex-link $n("4637:hhts") $n("4637:hht") 10.0Gb 100000ms DropTail
-
-#4637:hhts -> 4637:tmh 100000
-$ns duplex-link $n("4637:hhts") $n("4637:tmh") 10.0Gb 100000ms DropTail
-
-#4637:hhts -> 4637:tmhs 100000
-$ns duplex-link $n("4637:hhts") $n("4637:tmhs") 10.0Gb 100000ms DropTail
-
-#4637:tmh -> 4637:hht 100000
-$ns duplex-link $n("4637:tmh") $n("4637:hht") 10.0Gb 100000ms DropTail
-
-#4637:tmh -> 4637:hhts 100000
-$ns duplex-link $n("4637:tmh") $n("4637:hhts") 10.0Gb 100000ms DropTail
-
-#4637:tmh -> 4637:tmhs 100000
-$ns duplex-link $n("4637:tmh") $n("4637:tmhs") 10.0Gb 100000ms DropTail
-
-#4637:tmh -> 4637:yck 100000
-$ns duplex-link $n("4637:tmh") $n("4637:yck") 10.0Gb 100000ms DropTail
-
-#4637:tmhs -> 4637:Los Angeles, CA 100000
-$ns duplex-link $n("4637:tmhs") $n("->4637:LosAngeles,CA") 10.0Gb 100000ms DropTail
-
-#4637:tmhs -> 4637:Palo Alto, CA 100000
-$ns duplex-link $n("4637:tmhs") $n("->4637:PaloAlto,CA") 10.0Gb 100000ms DropTail
-
-#4637:tmhs -> 4637:San Francisco, CA 100000
-$ns duplex-link $n("4637:tmhs") $n("->4637:SanFrancisco,CA") 10.0Gb 100000ms DropTail
-
-#4637:tmhs -> 4637:San Jose, CA 100000
-$ns duplex-link $n("4637:tmhs") $n("->4637:SanJose,CA") 10.0Gb 100000ms DropTail
-
-#4637:tmhs -> 4637:Sydney, Australia 100000
-$ns duplex-link $n("4637:tmhs") $n("4637:Sydney,Australia") 10.0Gb 100000ms DropTail
-
-#4637:tmhs -> 4637:car 100000
-$ns duplex-link $n("4637:tmhs") $n("4637:car") 10.0Gb 100000ms DropTail
-
-#4637:tmhs -> 4637:hht 100000
-$ns duplex-link $n("4637:tmhs") $n("4637:hht") 10.0Gb 100000ms DropTail
-
-#4637:tmhs -> 4637:hhts 100000
-$ns duplex-link $n("4637:tmhs") $n("4637:hhts") 10.0Gb 100000ms DropTail
-
-#4637:tmhs -> 4637:tmh 100000
-$ns duplex-link $n("4637:tmhs") $n("4637:tmh") 10.0Gb 100000ms DropTail
-
-#4637:tmhs -> 4637:yck 100000
-$ns duplex-link $n("4637:tmhs") $n("4637:yck") 10.0Gb 100000ms DropTail
-
-#4637:xeig -> 4637:Chicago, IL 100000
-$ns duplex-link $n("4637:xeig") $n("4637:Chicago,IL") 10.0Gb 100000ms DropTail
-
-#4637:xeig -> 4637:London, UnitedKingdom 100000
-$ns duplex-link $n("4637:xeig") $n("4637:London,UnitedKingdom") 10.0Gb 100000ms DropTail
-
-#4637:xeig -> 4637:New York, NY 100000
-$ns duplex-link $n("4637:xeig") $n("->4637:NewYork,NY") 10.0Gb 100000ms DropTail
-
-#4637:xeig -> 4637:Newark, NJ 100000
-$ns duplex-link $n("4637:xeig") $n("4637:Newark,NJ") 10.0Gb 100000ms DropTail
-
-#4637:yck -> 4637:hht 100000
-$ns duplex-link $n("4637:yck") $n("4637:hht") 10.0Gb 100000ms DropTail
-
-#4637:yck -> 4637:tmh 100000
-$ns duplex-link $n("4637:yck") $n("4637:tmh") 10.0Gb 100000ms DropTail
-
-#4637:yck -> 4637:tmhs 100000
-$ns duplex-link $n("4637:yck") $n("4637:tmhs") 10.0Gb 100000ms DropTail
 # 4637:4755
   if { [info exists n("4637:NewYork,NY")] == 0 } {
     set n("4637:NewYork,NY") [$ns node] }
@@ -51397,8 +50901,6 @@ $ns duplex-link $n("7018:WestPalmBeach,FL") $n("701:WestPalmBeach,FL") 10.0Gb 0m
     set n("7018:SouthBend,IN") [$ns node] }
   if { [info exists n("7018:Madison,WI")] == 0 } {
     set n("7018:Madison,WI") [$ns node] }
-  if { [info exists n("7018:Gardena,CA")] == 0 } {
-    set n("7018:Gardena,CA") [$ns node] }
   if { [info exists n("7018:Cleveland,OH")] == 0 } {
     set n("7018:Cleveland,OH") [$ns node] }
   if { [info exists n("7018:Richmond,VA")] == 0 } {
@@ -51786,9 +51288,6 @@ $ns duplex-link $n("7018:Freehold,NJ") $n("7018:NewYork,NY") 10.0Gb 0.2862776756
 #7018:Galva, IL -> 7018:Chicago, IL 1.0662323550404
 $ns duplex-link $n("7018:Galva,IL") $n("7018:Chicago,IL") 10.0Gb 1.0662323550404ms DropTail
 
-#7018:Gardena, CA -> 7018:Los Angeles, CA 100000
-$ns duplex-link $n("7018:Gardena,CA") $n("7018:LosAngeles,CA") 10.0Gb 100000ms DropTail
-
 #7018:Grand Rapids, MI -> 7018:Chicago, IL 1.02159942613511
 $ns duplex-link $n("7018:GrandRapids,MI") $n("7018:Chicago,IL") 10.0Gb 1.02159942613511ms DropTail
 
@@ -51848,9 +51347,6 @@ $ns duplex-link $n("7018:LosAngeles,CA") $n("7018:Chicago,IL") 10.0Gb 14.0526484
 
 #7018:Los Angeles, CA -> 7018:Dallas, TX 10.0456672433203
 $ns duplex-link $n("7018:LosAngeles,CA") $n("7018:Dallas,TX") 10.0Gb 10.0456672433203ms DropTail
-
-#7018:Los Angeles, CA -> 7018:Gardena, CA 100000
-$ns duplex-link $n("7018:LosAngeles,CA") $n("7018:Gardena,CA") 10.0Gb 100000ms DropTail
 
 #7018:Los Angeles, CA -> 7018:Las Vegas, NV 1.85801368545196
 $ns duplex-link $n("7018:LosAngeles,CA") $n("7018:LasVegas,NV") 10.0Gb 1.85801368545196ms DropTail
@@ -53894,8 +53390,6 @@ $ns duplex-link $n("701:Vancouver,Canada") $n("6539:Vancouver,Canada") 10.0Gb 0m
     set n("701:Orlando,FL") [$ns node] }
   if { [info exists n("701:Winnipeg,Canada")] == 0 } {
     set n("701:Winnipeg,Canada") [$ns node] }
-  if { [info exists n("701:Waterloo,Canada")] == 0 } {
-    set n("701:Waterloo,Canada") [$ns node] }
   if { [info exists n("701:Cheyenne,WY")] == 0 } {
     set n("701:Cheyenne,WY") [$ns node] }
   if { [info exists n("701:Windsor,Canada")] == 0 } {
@@ -55153,9 +54647,6 @@ $ns duplex-link $n("701:Toronto,Canada") $n("701:Washington,DC") 10.0Gb 2.826476
 #701:Toronto, Canada -> 701:Waterford, Ireland 26.1652191259998
 $ns duplex-link $n("701:Toronto,Canada") $n("701:Waterford,Ireland") 10.0Gb 26.1652191259998ms DropTail
 
-#701:Toronto, Canada -> 701:Waterloo, Canada 100000
-$ns duplex-link $n("701:Toronto,Canada") $n("701:Waterloo,Canada") 10.0Gb 100000ms DropTail
-
 #701:Toronto, Canada -> 701:Windsor, Canada 1.66374566111016
 $ns duplex-link $n("701:Toronto,Canada") $n("701:Windsor,Canada") 10.0Gb 1.66374566111016ms DropTail
 
@@ -55305,9 +54796,6 @@ $ns duplex-link $n("701:Washington,DC") $n("701:Vancouver,Canada") 10.0Gb 18.957
 
 #701:Waterford, Ireland -> 701:Toronto, Canada 26.1652191259998
 $ns duplex-link $n("701:Waterford,Ireland") $n("701:Toronto,Canada") 10.0Gb 26.1652191259998ms DropTail
-
-#701:Waterloo, Canada -> 701:Toronto, Canada 100000
-$ns duplex-link $n("701:Waterloo,Canada") $n("701:Toronto,Canada") 10.0Gb 100000ms DropTail
 
 #701:Windsor, Canada -> 701:Toronto, Canada 1.66374566111016
 $ns duplex-link $n("701:Windsor,Canada") $n("701:Toronto,Canada") 10.0Gb 1.66374566111016ms DropTail
@@ -62074,6 +61562,7 @@ $ns duplex-link $n("9942:Sydney,Australia") $n("9942:Wollongong,Australia") 10.0
 
 #9942:Wollongong, Australia -> 9942:Sydney, Australia 0.303548497283278
 $ns duplex-link $n("9942:Wollongong,Australia") $n("9942:Sydney,Australia") 10.0Gb 0.303548497283278ms DropTail
+
 
 	array get n
 }
