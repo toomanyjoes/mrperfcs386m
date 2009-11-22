@@ -11,12 +11,6 @@
     set n("4637:Sydney,Australia") [$ns node] }
   if { [info exists n("4637:Perth,Australia")] == 0 } {
     set n("4637:Perth,Australia") [$ns node] }
-  if { [info exists n("4637:tmhs")] == 0 } {
-    set n("4637:tmhs") [$ns node] }
-  if { [info exists n("->1221:PaloAlto,CA")] == 0 } {
-    set n("->1221:PaloAlto,CA") [$ns node] }
-  if { [info exists n("4637:hhts")] == 0 } {
-    set n("4637:hhts") [$ns node] }
   if { [info exists n("1221:PaloAlto,CA")] == 0 } {
     set n("1221:PaloAlto,CA") [$ns node] }
 
@@ -34,9 +28,3 @@ $ns duplex-link $n("4637:SanJose,CA") $n("1221:PaloAlto,CA") 10.0Gb 0.1244775467
 
 #4637:Sydney, Australia -> 1221:Sydney, Australia 0
 $ns duplex-link $n("4637:Sydney,Australia") $n("1221:Sydney,Australia") 10.0Gb 0ms DropTail
-
-#4637:hhts -> 1221:Palo Alto, CA 100000
-$ns duplex-link $n("4637:hhts") $n("->1221:PaloAlto,CA") 10.0Gb 100000ms DropTail
-
-#4637:tmhs -> 1221:Palo Alto, CA 100000
-$ns duplex-link $n("4637:tmhs") $n("->1221:PaloAlto,CA") 10.0Gb 100000ms DropTail
