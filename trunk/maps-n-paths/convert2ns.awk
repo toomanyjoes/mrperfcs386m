@@ -4,6 +4,7 @@
 
 BEGIN { }
 NF == 4 {
+    if($4 > 10000) next
   result = result "#" $0 "\n"
   if($2 == "->") {
     result = result "$ns duplex-link $n(\"" $1 "\") $n(\"" $3 "\") 10.0Gb " $4 "ms DropTail\n\n"
@@ -14,6 +15,7 @@ NF == 4 {
     result = result "ERROR1\n\n"
 }
 NF == 5 {
+    if($5 > 10000) next
   result = result "#" $0 "\n"
   if($2 == "->") {
     result = result "$ns duplex-link $n(\"" $1 "\") $n(\"" $3 $4 "\") 10.0Gb " $5 "ms DropTail\n\n"
@@ -29,6 +31,7 @@ NF == 5 {
     result = result "ERROR1\n\n"
 }
 NF == 6 {
+    if($6 > 10000) next
   result = result "#" $0 "\n"
   if($2 == "->") {
     result = result "$ns duplex-link $n(\"" $1 "\") $n(\"" $2 $3 $4 $5 "\") 10.0Gb " $6 "ms DropTail\n\n"
@@ -49,6 +52,7 @@ NF == 6 {
     result = result "ERROR1\n\n"
 }
 NF == 7 {
+    if($7 > 10000) next
   result = result "#" $0 "\n"
   if( $3 == "->") {
     result = result "$ns duplex-link $n(\"" $1 $2 "\") $n(\"" $4 $5 $6 "\") 10.0Gb " $7 "ms DropTail\n\n"
@@ -64,6 +68,7 @@ NF == 7 {
     result = result "ERROR1\n\n"
 }
 NF == 8 {
+    if($8 > 10000) next
   result = result "#" $0 "\n"
   if( $4 == "->") {
     result = result "$ns duplex-link $n(\"" $1 $2 $3 "\") $n(\"" $5 $6 $7 "\") 10.0Gb " $8 "ms DropTail\n\n"
@@ -84,6 +89,7 @@ NF == 8 {
     result = result "ERROR2\n\n"
 }
 NF == 9 {
+  if($9 > 10000) next
   result = result "#" $0 "\n"
   if( $4 == "->") {
     result = result "$ns duplex-link $n(\"" $1 $2 $3 "\") $n(\"" $5 $6 $7  $8 "\") 10.0Gb " $9 "ms DropTail\n\n"
@@ -111,6 +117,7 @@ NF == 9 {
 NF == 10 {
   result = result "#" $0 "\n"
   if( $5 == "->") {
+    if($10 > 10000) next
     result = result "$ns duplex-link $n(\"" $1 $2 $3 $4 "\") $n(\"" $6 $7 $8 $9 "\") 10.0Gb " $10 "ms DropTail\n\n"
     router[$1 $2 $3 $4] = 1
     router[$6 $7 $8 $9] = 1

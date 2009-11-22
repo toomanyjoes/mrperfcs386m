@@ -19,8 +19,6 @@
     set n("3300:Washington,DC") [$ns node] }
   if { [info exists n("3300:TelAviv,Israel")] == 0 } {
     set n("3300:TelAviv,Israel") [$ns node] }
-  if { [info exists n("3300:Hennig,Israel")] == 0 } {
-    set n("3300:Hennig,Israel") [$ns node] }
   if { [info exists n("3300:Stockholm,Sweden")] == 0 } {
     set n("3300:Stockholm,Sweden") [$ns node] }
   if { [info exists n("3300:Santiago,Chile")] == 0 } {
@@ -43,8 +41,6 @@
     set n("3300:Barcelona,Spain") [$ns node] }
   if { [info exists n("3300:KualaLumpur,Malaysia")] == 0 } {
     set n("3300:KualaLumpur,Malaysia") [$ns node] }
-  if { [info exists n("3300:Sulzer,Switzerland")] == 0 } {
-    set n("3300:Sulzer,Switzerland") [$ns node] }
   if { [info exists n("3300:Zurich,Switzerland")] == 0 } {
     set n("3300:Zurich,Switzerland") [$ns node] }
   if { [info exists n("3300:MexicoCity,Mexico")] == 0 } {
@@ -195,9 +191,6 @@ $ns duplex-link $n("3300:Geneva,Switzerland") $n("3300:Frankfurt,Germany") 10.0G
 
 #3300:Hamburg, Germany -> 3300:Frankfurt, Germany 2.0357355149515
 $ns duplex-link $n("3300:Hamburg,Germany") $n("3300:Frankfurt,Germany") 10.0Gb 2.0357355149515ms DropTail
-
-#3300:Hennig, Israel -> 3300:Tel Aviv, Israel 100000
-$ns duplex-link $n("3300:Hennig,Israel") $n("3300:TelAviv,Israel") 10.0Gb 100000ms DropTail
 
 #3300:Hong Kong -> 3300:Kuala Lumpur, Malaysia 12.5535436649314
 $ns duplex-link $n("3300:HongKong") $n("3300:KualaLumpur,Malaysia") 10.0Gb 12.5535436649314ms DropTail
@@ -370,9 +363,6 @@ $ns duplex-link $n("3300:Stockholm,Sweden") $n("3300:Amstelveen,Netherlands") 10
 #3300:Stockholm, Sweden -> 3300:London, UnitedKingdom 7.14458851462163
 $ns duplex-link $n("3300:Stockholm,Sweden") $n("3300:London,UnitedKingdom") 10.0Gb 7.14458851462163ms DropTail
 
-#3300:Sulzer, Switzerland -> 3300:Zurich, Switzerland 100000
-$ns duplex-link $n("3300:Sulzer,Switzerland") $n("3300:Zurich,Switzerland") 10.0Gb 100000ms DropTail
-
 #3300:Sydney, Australia -> 3300:Auckland, NewZealand 10.7861523674496
 $ns duplex-link $n("3300:Sydney,Australia") $n("3300:Auckland,NewZealand") 10.0Gb 10.7861523674496ms DropTail
 
@@ -381,9 +371,6 @@ $ns duplex-link $n("3300:Sydney,Australia") $n("3300:KualaLumpur,Malaysia") 10.0
 
 #3300:Sydney, Australia -> 3300:Los Angeles, CA 60.3095464758688
 $ns duplex-link $n("3300:Sydney,Australia") $n("3300:LosAngeles,CA") 10.0Gb 60.3095464758688ms DropTail
-
-#3300:Tel Aviv, Israel -> 3300:Hennig, Israel 100000
-$ns duplex-link $n("3300:TelAviv,Israel") $n("3300:Hennig,Israel") 10.0Gb 100000ms DropTail
 
 #3300:Tel Aviv, Israel -> 3300:Paris, France 16.3842543535516
 $ns duplex-link $n("3300:TelAviv,Israel") $n("3300:Paris,France") 10.0Gb 16.3842543535516ms DropTail
@@ -420,6 +407,3 @@ $ns duplex-link $n("3300:Washington,DC") $n("3300:Newark,NJ") 10.0Gb 1.579709798
 
 #3300:Zurich, Switzerland -> 3300:Paris, France 2.4455084125225
 $ns duplex-link $n("3300:Zurich,Switzerland") $n("3300:Paris,France") 10.0Gb 2.4455084125225ms DropTail
-
-#3300:Zurich, Switzerland -> 3300:Sulzer, Switzerland 100000
-$ns duplex-link $n("3300:Zurich,Switzerland") $n("3300:Sulzer,Switzerland") 10.0Gb 100000ms DropTail

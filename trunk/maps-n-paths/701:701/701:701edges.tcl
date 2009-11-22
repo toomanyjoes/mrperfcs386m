@@ -59,8 +59,6 @@
     set n("701:Orlando,FL") [$ns node] }
   if { [info exists n("701:Winnipeg,Canada")] == 0 } {
     set n("701:Winnipeg,Canada") [$ns node] }
-  if { [info exists n("701:Waterloo,Canada")] == 0 } {
-    set n("701:Waterloo,Canada") [$ns node] }
   if { [info exists n("701:Cheyenne,WY")] == 0 } {
     set n("701:Cheyenne,WY") [$ns node] }
   if { [info exists n("701:Windsor,Canada")] == 0 } {
@@ -1318,9 +1316,6 @@ $ns duplex-link $n("701:Toronto,Canada") $n("701:Washington,DC") 10.0Gb 2.826476
 #701:Toronto, Canada -> 701:Waterford, Ireland 26.1652191259998
 $ns duplex-link $n("701:Toronto,Canada") $n("701:Waterford,Ireland") 10.0Gb 26.1652191259998ms DropTail
 
-#701:Toronto, Canada -> 701:Waterloo, Canada 100000
-$ns duplex-link $n("701:Toronto,Canada") $n("701:Waterloo,Canada") 10.0Gb 100000ms DropTail
-
 #701:Toronto, Canada -> 701:Windsor, Canada 1.66374566111016
 $ns duplex-link $n("701:Toronto,Canada") $n("701:Windsor,Canada") 10.0Gb 1.66374566111016ms DropTail
 
@@ -1470,9 +1465,6 @@ $ns duplex-link $n("701:Washington,DC") $n("701:Vancouver,Canada") 10.0Gb 18.957
 
 #701:Waterford, Ireland -> 701:Toronto, Canada 26.1652191259998
 $ns duplex-link $n("701:Waterford,Ireland") $n("701:Toronto,Canada") 10.0Gb 26.1652191259998ms DropTail
-
-#701:Waterloo, Canada -> 701:Toronto, Canada 100000
-$ns duplex-link $n("701:Waterloo,Canada") $n("701:Toronto,Canada") 10.0Gb 100000ms DropTail
 
 #701:Windsor, Canada -> 701:Toronto, Canada 1.66374566111016
 $ns duplex-link $n("701:Windsor,Canada") $n("701:Toronto,Canada") 10.0Gb 1.66374566111016ms DropTail

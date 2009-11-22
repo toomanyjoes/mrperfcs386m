@@ -101,8 +101,6 @@
     set n("3356:SanJose,CA") [$ns node] }
   if { [info exists n("3356:Denver,CO")] == 0 } {
     set n("3356:Denver,CO") [$ns node] }
-  if { [info exists n("3356:Manchester,MA")] == 0 } {
-    set n("3356:Manchester,MA") [$ns node] }
   if { [info exists n("3356:Indianapolis,IN")] == 0 } {
     set n("3356:Indianapolis,IN") [$ns node] }
   if { [info exists n("3356:Madrid,Spain")] == 0 } {
@@ -227,9 +225,6 @@ $ns duplex-link $n("3356:Boston,MA") $n("3356:Denver,CO") 10.0Gb 14.142044716340
 
 #3356:Boston, MA -> 3356:Los Angeles, CA 20.8864181920654
 $ns duplex-link $n("3356:Boston,MA") $n("3356:LosAngeles,CA") 10.0Gb 20.8864181920654ms DropTail
-
-#3356:Boston, MA -> 3356:Manchester, MA 100000
-$ns duplex-link $n("3356:Boston,MA") $n("3356:Manchester,MA") 10.0Gb 100000ms DropTail
 
 #3356:Boston, MA -> 3356:Manchester, UnitedKingdom 25.3158080629189
 $ns duplex-link $n("3356:Boston,MA") $n("3356:Manchester,UnitedKingdom") 10.0Gb 25.3158080629189ms DropTail
@@ -893,9 +888,6 @@ $ns duplex-link $n("3356:Madrid,Spain") $n("3356:NewYork,NY") 10.0Gb 28.81934156
 
 #3356:Madrid, Spain -> 3356:Washington, DC 30.4067905705861
 $ns duplex-link $n("3356:Madrid,Spain") $n("3356:Washington,DC") 10.0Gb 30.4067905705861ms DropTail
-
-#3356:Manchester, MA -> 3356:Boston, MA 100000
-$ns duplex-link $n("3356:Manchester,MA") $n("3356:Boston,MA") 10.0Gb 100000ms DropTail
 
 #3356:Manchester, UnitedKingdom -> 3356:Boston, MA 25.3158080629189
 $ns duplex-link $n("3356:Manchester,UnitedKingdom") $n("3356:Boston,MA") 10.0Gb 25.3158080629189ms DropTail

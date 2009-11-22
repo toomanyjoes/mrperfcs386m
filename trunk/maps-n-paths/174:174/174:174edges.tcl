@@ -71,8 +71,6 @@
     set n("174:Birmingham,UnitedKingdom") [$ns node] }
   if { [info exists n("174:Chicago,IL")] == 0 } {
     set n("174:Chicago,IL") [$ns node] }
-  if { [info exists n("174:Bedford,MA")] == 0 } {
-    set n("174:Bedford,MA") [$ns node] }
   if { [info exists n("174:LosAngeles,CA")] == 0 } {
     set n("174:LosAngeles,CA") [$ns node] }
   if { [info exists n("174:Dallas,TX")] == 0 } {
@@ -156,9 +154,6 @@ $ns duplex-link $n("174:Barcelona,Spain") $n("174:Zaragoza,Spain") 10.0Gb 1.3449
 #174:Basel, Switzerland -> 174:Zurich, Switzerland 0.366680314568109
 $ns duplex-link $n("174:Basel,Switzerland") $n("174:Zurich,Switzerland") 10.0Gb 0.366680314568109ms DropTail
 
-#174:Bedford, MA -> 174:Boston, MA 100000
-$ns duplex-link $n("174:Bedford,MA") $n("174:Boston,MA") 10.0Gb 100000ms DropTail
-
 #174:Berlin, Germany -> 174:Amsterdam, Netherlands 2.73915048390711
 $ns duplex-link $n("174:Berlin,Germany") $n("174:Amsterdam,Netherlands") 10.0Gb 2.73915048390711ms DropTail
 
@@ -182,9 +177,6 @@ $ns duplex-link $n("174:Birmingham,UnitedKingdom") $n("174:London,UnitedKingdom"
 
 #174:Boston, MA -> 174:Albany, NY 1.11646443455727
 $ns duplex-link $n("174:Boston,MA") $n("174:Albany,NY") 10.0Gb 1.11646443455727ms DropTail
-
-#174:Boston, MA -> 174:Bedford, MA 100000
-$ns duplex-link $n("174:Boston,MA") $n("174:Bedford,MA") 10.0Gb 100000ms DropTail
 
 #174:Boston, MA -> 174:Dallas, TX 12.4363734730694
 $ns duplex-link $n("174:Boston,MA") $n("174:Dallas,TX") 10.0Gb 12.4363734730694ms DropTail

@@ -171,8 +171,6 @@
     set n("7018:SouthBend,IN") [$ns node] }
   if { [info exists n("7018:Madison,WI")] == 0 } {
     set n("7018:Madison,WI") [$ns node] }
-  if { [info exists n("7018:Gardena,CA")] == 0 } {
-    set n("7018:Gardena,CA") [$ns node] }
   if { [info exists n("7018:Cleveland,OH")] == 0 } {
     set n("7018:Cleveland,OH") [$ns node] }
   if { [info exists n("7018:Richmond,VA")] == 0 } {
@@ -560,9 +558,6 @@ $ns duplex-link $n("7018:Freehold,NJ") $n("7018:NewYork,NY") 10.0Gb 0.2862776756
 #7018:Galva, IL -> 7018:Chicago, IL 1.0662323550404
 $ns duplex-link $n("7018:Galva,IL") $n("7018:Chicago,IL") 10.0Gb 1.0662323550404ms DropTail
 
-#7018:Gardena, CA -> 7018:Los Angeles, CA 100000
-$ns duplex-link $n("7018:Gardena,CA") $n("7018:LosAngeles,CA") 10.0Gb 100000ms DropTail
-
 #7018:Grand Rapids, MI -> 7018:Chicago, IL 1.02159942613511
 $ns duplex-link $n("7018:GrandRapids,MI") $n("7018:Chicago,IL") 10.0Gb 1.02159942613511ms DropTail
 
@@ -622,9 +617,6 @@ $ns duplex-link $n("7018:LosAngeles,CA") $n("7018:Chicago,IL") 10.0Gb 14.0526484
 
 #7018:Los Angeles, CA -> 7018:Dallas, TX 10.0456672433203
 $ns duplex-link $n("7018:LosAngeles,CA") $n("7018:Dallas,TX") 10.0Gb 10.0456672433203ms DropTail
-
-#7018:Los Angeles, CA -> 7018:Gardena, CA 100000
-$ns duplex-link $n("7018:LosAngeles,CA") $n("7018:Gardena,CA") 10.0Gb 100000ms DropTail
 
 #7018:Los Angeles, CA -> 7018:Las Vegas, NV 1.85801368545196
 $ns duplex-link $n("7018:LosAngeles,CA") $n("7018:LasVegas,NV") 10.0Gb 1.85801368545196ms DropTail
