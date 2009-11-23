@@ -1,3 +1,4 @@
+alpha = 0.1;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%       numHosts
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -9,7 +10,20 @@ e=sortrows(importdata('results_numHosts5.txt', '\t'),1);
 f = [a , b(:,2) , c(:,2), d(:,2), e(:,2)];
 file = fopen('results_numHosts.txt', 'w');
 for i= 1:length(f)
-    fprintf(file,'%d\t%f\t%f\n',f(i,1),mean(f(i,2:6)), std(f(i,2:6)) );
+    g = f(i,2:6);
+    g = g(~isnan(g));
+    for j = 1:length(f)
+        t = ttest2(f(i,2:6),f(j,2:6),alpha);
+        break;
+    end
+    if(t == 1)
+        fprintf(file,'%d\t%f\t%f\t',f(i,1),mean(g(:)), std(g(:)) );
+        for j = 1:length(f)
+            fprintf(file,'%d\t',ttest2(f(i,2:6),f(j,2:6),alpha));
+        end
+        fprintf(file, '\n');
+%    fprintf(file,'%d\t%f\t%f\n',f(i,1),mean(g(:)), std(g(:)) );
+    end
 end
 fclose(file);
 numHosts=importdata('results_numHosts.txt');
@@ -22,8 +36,8 @@ ylabel({'Time (seconds)'});
 % Create zlabel
 zlabel({'Time'},'Visible','off');
 % Create title
-title({'Hosts Distributed Across Entire Internet'});
-print -depsc2 -tiff results_numHosts.eps
+title({'Hosts Distributed Across Entire Mapped Internet (Chunk Size = 6MB)'});
+print -dps2 results_numHosts.ps
 clf
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -37,7 +51,20 @@ e=sortrows(importdata('results_numHosts_oneAS5.txt', '\t'),1);
 f = [a , b(:,2) , c(:,2), d(:,2), e(:,2)];
 file = fopen('results_numHosts_oneAS.txt', 'w');
 for i= 1:length(f)
-    fprintf(file,'%d\t%f\t%f\n',f(i,1),mean(f(i,2:6)), std(f(i,2:6)) );
+    g = f(i,2:6);
+    g = g(~isnan(g));
+    for j = 1:length(f)
+        t = ttest2(f(i,2:6),f(j,2:6),alpha);
+        break;
+    end
+    if(t == 1)
+        fprintf(file,'%d\t%f\t%f\t',f(i,1),mean(g(:)), std(g(:)) );
+        for j = 1:length(f)
+            fprintf(file,'%d\t',ttest2(f(i,2:6),f(j,2:6),alpha));
+        end
+        fprintf(file, '\n');
+    %fprintf(file,'%d\t%f\t%f\n',f(i,1),mean(g(:)), std(g(:)) );
+    end
 end
 fclose(file);
 numHosts_oneAS=importdata('results_numHosts_oneAS.txt');
@@ -50,10 +77,10 @@ ylabel({'Time (seconds)'});
 % Create zlabel
 zlabel({'Time'},'Visible','off');
 % Create title
-title({'Nodes Distributed Across AS 11537'});
-print -depsc2 -tiff results_numHosts_oneAS.eps
-clf
-
+title({'Nodes Distributed Across AS 11537 (Chunk Size = 6MB)'});
+print -dps2 results_numHosts_oneAS.ps
+ clf
+ 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%       chunkSize
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -65,7 +92,12 @@ e=sortrows(importdata('results_chunkSize5.txt', '\t'),1);
 f = [a , b(:,2) , c(:,2), d(:,2), e(:,2)];
 file = fopen('results_chunkSize.txt', 'w');
 for i= 1:length(f)
-    fprintf(file,'%d\t%f\t%f\n',f(i,1),mean(f(i,2:6)), std(f(i,2:6)) );
+    fprintf(file,'%d\t%f\t%f\t',f(i,1),mean(f(i,2:6)), std(f(i,2:6)) );
+    for j = 1:length(f)
+        fprintf(file,'%d\t',ttest2(f(i,2:6),f(j,2:6)));
+    end
+    fprintf(file, '\n');
+%     fprintf(file,'%d\t%f\t%f\n',f(i,1),mean(f(i,2:6)), std(f(i,2:6)) );
 end
 fclose(file);
 chunkSize=importdata('results_chunkSize.txt');
@@ -78,8 +110,77 @@ ylabel({'Time (seconds)'});
 % Create zlabel
 zlabel({'Time'},'Visible','off');
 % Create title
-title({'50 Nodes Across Entire Internet'});
-print -depsc2 -tiff results_chunkSize.eps
+title({'50 Nodes Across Entire Mapped Internet'});
+print -dps2 results_chunkSize.ps
+clf
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%       chunkSize data center
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+a=sortrows(importdata('results_dataCenterChunkSize1.txt', '\t'),1);
+b=sortrows(importdata('results_dataCenterChunkSize2.txt', '\t'),1);
+c=sortrows(importdata('results_dataCenterChunkSize3.txt', '\t'),1);
+d=sortrows(importdata('results_dataCenterChunkSize4.txt', '\t'),1);
+e=sortrows(importdata('results_dataCenterChunkSize5.txt', '\t'),1);
+f = [a , b(:,2) , c(:,2), d(:,2), e(:,2)];
+file = fopen('results_dataCenterChunkSize.txt', 'w');
+for i= 1:length(f)
+    fprintf(file,'%d\t%f\t%f\t',f(i,1),mean(f(i,2:6)), std(f(i,2:6)) );
+    for j = 1:length(f)
+        fprintf(file,'%d\t',ttest2(f(i,2:6),f(j,2:6)));
+    end
+    fprintf(file, '\n');
+%     fprintf(file,'%d\t%f\t%f\n',f(i,1),mean(f(i,2:6)), std(f(i,2:6)) );
+end
+fclose(file);
+chunkSize=importdata('results_dataCenterChunkSize.txt');
+% Create plot
+plot(chunkSize(:,1),chunkSize(:,2),'Marker','o','LineStyle','none');
+% Create xlabel
+xlabel({'Size of Chunks (MB)'});
+% Create ylabel
+ylabel({'Time (seconds)'});
+% Create zlabel
+zlabel({'Time'},'Visible','off');
+% Create title
+title({'6 Nodes in a Dobule Rack Data Center'});
+print -dps2 results_dataCenterChunkSize.ps
+clf
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%       numHosts data center
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+a=sortrows(importdata('results_dataCenterNumHosts1.txt', '\t'),1);
+b=sortrows(importdata('results_dataCenterNumHosts2.txt', '\t'),1);
+c=sortrows(importdata('results_dataCenterNumHosts3.txt', '\t'),1);
+d=sortrows(importdata('results_dataCenterNumHosts4.txt', '\t'),1);
+e=sortrows(importdata('results_dataCenterNumHosts5.txt', '\t'),1);
+f = [a , b(:,2) , c(:,2), d(:,2), e(:,2)];
+file = fopen('results_dataCenterNumHosts.txt', 'w');
+for i= 1:length(f)
+    g = f(i,2:6);
+    g = g(~isnan(g));
+    fprintf(file,'%d\t%f\t%f\t',f(i,1),mean(g(:)), std(g(:)) );
+    for j = 1:length(f)
+        fprintf(file,'%d\t',ttest2(f(i,2:6),f(j,2:6)));
+    end
+    fprintf(file, '\n');
+%     fprintf(file,'%d\t%f\t%f\n',f(i,1),mean(g(:)), std(g(:)) );
+end
+fclose(file);
+numHosts=importdata('results_dataCenterNumHosts.txt');
+% Create plot
+plot(numHosts(:,1),numHosts(:,2),'Marker','o','LineStyle','none');
+% Create xlabel
+xlabel({'Number of Hosts'});
+% Create ylabel
+ylabel({'Time (seconds)'});
+% Create zlabel
+zlabel({'Time'},'Visible','off');
+% Create title
+title({'Hosts in a Double Rack Data Center (Chunk Size = 6MB)'});
+print -dps2 results_dataCenterNumHosts.ps
 clf
 
 
@@ -94,7 +195,12 @@ e=importdata('results_mapperReducer5.txt', '\t');
 f = [a , b(:,3) , c(:,3), d(:,3), e(:,3)];
 file = fopen('results_mapperReducer.txt', 'w');
 for i= 1:length(f)
-    fprintf(file,'%d\t%d\t%f\t%f\n',f(i,1),f(i,2),mean(f(i,3:7)), std(f(i,3:7)) );
+    fprintf(file,'%d\t%d\t%f\t%f\t',f(i,1),f(i,2),mean(f(i,3:7)), std(f(i,3:7)) );
+    for j = 1:length(f)
+        fprintf(file,'%d\t',ttest2(f(i,3:7),f(j,3:7)));
+    end
+    fprintf(file, '\n');
+%     fprintf(file,'%d\t%d\t%f\t%f\n',f(i,1),f(i,2),mean(f(i,3:7)), std(f(i,3:7)) );
     %fprintf(file,'%d\t%d\t%f\n',f(i,1),f(i,2),mean(f(i,3:7)) );
 end
 fclose(file);
@@ -117,11 +223,18 @@ ylabel({'Mappers per Node'});
 % Create zlabel
 zlabel({'Time (seconds)'});
 % Create title
-title({''});
-print -depsc2 -tiff results_mapperReducer_shaded.eps
+title({'50 Hosts Across Entire Mapped Internet (Chunk Size = 6MB)'});
+print -dps2 results_mapperReducer_shaded.ps
 clf
+% Create xlabel
+xlabel({'Reducers per Node'});
+% Create ylabel
+ylabel({'Mappers per Node'});
+% Create zlabel
+zlabel({'Time (seconds)'});
+% Create title
+title({'50 Hosts Across Entire Mapped Internet (Chunk Size = 6MB)'});
 mesh(x,x,times);
-print -depsc2 -tiff results_mapperReducer_mesh.eps
+print -dps2 results_mapperReducer_mesh.ps
 clf
-
 
