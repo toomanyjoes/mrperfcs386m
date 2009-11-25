@@ -28,10 +28,10 @@ for i= 1:length(f)
     end
 end
 fclose(file);
-numHosts=importdata('results/results_numHosts.txt');
+numHostsI=importdata('results/results_numHosts.txt');
 % Create plot
-subplot(2,1,2);
-plot(numHosts(:,1),numHosts(:,2),'Marker','o','LineStyle','none');
+%subplot(3,1,2);
+plot(numHostsI(:,1),numHostsI(:,2),'Marker','o','LineStyle','none');
 % Create xlabel
 xlabel({'Number of Hosts','(b)'});
 % Create ylabel
@@ -40,8 +40,8 @@ ylabel({'Time (seconds)'});
 zlabel({'Time'},'Visible','off');
 % Create title
 title({'Hosts Distributed Across Entire Mapped Internet'});
-%print -dps2 results/results_numHosts.ps
-%clf
+print -dps2 results/results_numHosts.ps
+clf
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%       numHosts data center
@@ -74,7 +74,7 @@ end
 fclose(file);
 numHosts=importdata('results/results_dataCenterNumHosts.txt');
 % Create plot
-subplot(2,1,1);
+%subplot(2,1,1);
 plot(numHosts(:,1),numHosts(:,2),'Marker','o','LineStyle','none');
 % Create xlabel
 xlabel({'Number of Hosts','(a)'});
@@ -84,8 +84,8 @@ ylabel({'Time (seconds)'});
 zlabel({'Time'},'Visible','off');
 % Create title
 title({'Hosts in a Double Rack Data Center (Chunk Size = 6MB)'});
-print -dps2 results/results_NumHostsBoth.ps
-%print -dps2 results/results_dataCenterNumHosts.ps
+%print -dps2 results/results_NumHostsBoth.ps
+print -dps2 results/results_dataCenterNumHosts.ps
 clf
 
 
@@ -120,15 +120,17 @@ end
 fclose(file);
 numHosts_oneAS=importdata('results/results_numHosts_oneAS.txt');
 % Create plot
+%subplot(2,1,2);
 plot(numHosts_oneAS(:,1),numHosts_oneAS(:,2),'Marker','o','LineStyle','none');
 % Create xlabel
-xlabel({'Number of Hosts'});
+xlabel({'Number of Hosts','(c)'});
 % Create ylabel
 ylabel({'Time (seconds)'});
 % Create zlabel
 zlabel({'Time'},'Visible','off');
 % Create title
 title({'Nodes Distributed Across AS 11537 (Chunk Size = 6MB)'});
+%print -dps2 results/results_NumHostsBoth.ps
 print -dps2 results/results_numHosts_oneAS.ps
  clf
  
@@ -166,16 +168,51 @@ title({'50 Nodes Across Entire Mapped Internet'});
 %print -dps2 results/results_chunkSize.ps
 %clf
 
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%       chunkSize data center
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% a=sortrows(importdata('results_dataCenterChunkSize1.txt', '\t'),1);
+% b=sortrows(importdata('results_dataCenterChunkSize2.txt', '\t'),1);
+% c=sortrows(importdata('results_dataCenterChunkSize3.txt', '\t'),1);
+% d=sortrows(importdata('results_dataCenterChunkSize4.txt', '\t'),1);
+% e=sortrows(importdata('results_dataCenterChunkSize5.txt', '\t'),1);
+% f = [a , b(:,2) , c(:,2), d(:,2), e(:,2)];
+% file = fopen('results/results_dataCenterChunkSize.txt', 'w');
+% for i= 1:length(f)
+%     fprintf(file,'%d\t%f\t%f\t',f(i,1),mean(f(i,2:6)), std(f(i,2:6)) );
+%     for j = 1:length(f)
+%         fprintf(file,'%d\t',ttest2(f(i,2:6),f(j,2:6),alpha));
+%     end
+%     fprintf(file, '\n');
+% %     fprintf(file,'%d\t%f\t%f\n',f(i,1),mean(f(i,2:6)), std(f(i,2:6)) );
+% end
+% fclose(file);
+% chunkSize=importdata('results/results_dataCenterChunkSize.txt');
+% % Create plot
+% subplot(2,1,1);
+% plot(chunkSize(:,1),chunkSize(:,2),'Marker','o','LineStyle','none');
+% % Create xlabel
+% xlabel({'Size of Chunks (MB)','(a)'});
+% % Create ylabel
+% ylabel({'Time (seconds)'});
+% % Create zlabel
+% zlabel({'Time'},'Visible','off');
+% % Create title
+% title({'6 Nodes in a Dobule Rack Data Center'});
+% print -dps2 results/results_dataCenterChunkSizeBoth.ps
+% clf
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%       chunkSize data center
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-a=sortrows(importdata('results_dataCenterChunkSize1.txt', '\t'),1);
-b=sortrows(importdata('results_dataCenterChunkSize2.txt', '\t'),1);
-c=sortrows(importdata('results_dataCenterChunkSize3.txt', '\t'),1);
-d=sortrows(importdata('results_dataCenterChunkSize4.txt', '\t'),1);
-e=sortrows(importdata('results_dataCenterChunkSize5.txt', '\t'),1);
+a=sortrows(importdata('results_dataCenterChunkSize2_1.txt', '\t'),1);
+b=sortrows(importdata('results_dataCenterChunkSize2_2.txt', '\t'),1);
+c=sortrows(importdata('results_dataCenterChunkSize2_3.txt', '\t'),1);
+d=sortrows(importdata('results_dataCenterChunkSize2_4.txt', '\t'),1);
+e=sortrows(importdata('results_dataCenterChunkSize2_5.txt', '\t'),1);
 f = [a , b(:,2) , c(:,2), d(:,2), e(:,2)];
-file = fopen('results/results_dataCenterChunkSize.txt', 'w');
+file = fopen('results/results_dataCenterChunkSize2.txt', 'w');
 for i= 1:length(f)
     fprintf(file,'%d\t%f\t%f\t',f(i,1),mean(f(i,2:6)), std(f(i,2:6)) );
     for j = 1:length(f)
@@ -185,19 +222,20 @@ for i= 1:length(f)
 %     fprintf(file,'%d\t%f\t%f\n',f(i,1),mean(f(i,2:6)), std(f(i,2:6)) );
 end
 fclose(file);
-chunkSize=importdata('results/results_dataCenterChunkSize.txt');
+chunkSize=importdata('results/results_dataCenterChunkSize2.txt');
 % Create plot
 subplot(2,1,1);
 plot(chunkSize(:,1),chunkSize(:,2),'Marker','o','LineStyle','none');
 % Create xlabel
-xlabel({'Size of Chunks (MB)','(a)'});
+xlabel({'Size of Chunks (MB)'});
 % Create ylabel
 ylabel({'Time (seconds)'});
 % Create zlabel
 zlabel({'Time'},'Visible','off');
 % Create title
-title({'6 Nodes in a Dobule Rack Data Center'});
+title({'50 Nodes in a Dobule Rack Data Center'});
 print -dps2 results/results_dataCenterChunkSizeBoth.ps
+%print -dps2 results/results_dataCenterChunkSize2.ps
 clf
 
 
@@ -244,11 +282,11 @@ title({'50 Hosts Across Entire Mapped Internet (Chunk Size = 6MB)'});
 print -dps2 results/results_mapperReducer_shaded.ps
 clf
 % Create xlabel
-xlabel({'Reducers per Node'});
+xlabel({'Reducers per Node'},'Visible','on');
 % Create ylabel
-ylabel({'Mappers per Node'});
+ylabel({'Mappers per Node'},'Visible','on');
 % Create zlabel
-zlabel({'Time (seconds)'});
+zlabel({'Time (seconds)'},'Visible','on');
 % Create title
 title({'50 Hosts Across Entire Mapped Internet (Chunk Size = 6MB)'});
 mesh(x,x,times);
