@@ -69,11 +69,24 @@ Joe Elizondo and Samuel Palmer
 \end_layout
 
 \begin_layout Abstract
-Abstract 
+The term edge based cloud computing refers to a network of edge systems
+ that provide the services currently provided by data center clouds.
+ In this paper we present modifications to MRPerf, an existing tool used
+ to simulate MapReduce in data center clouds, that enable it to simulate
+ Hadoop MapReduce jobs in edge networks.
+ Our results indicate that the default Hadoop scheduler does not perform
+ optimally in an edge environment and should be replaced.
 \end_layout
 
 \begin_layout Section
 Introduction 
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Introduction"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -105,57 +118,12 @@ Edge based cloud computing is a combination of two popular ideas, edge computing
  We also customize our simulation settings to account for sluggish nodes
  and node churn.
  Our final report will probably have a structure similar to the following.
- Section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Related-Work"
-
-\end_inset
-
- we will discuss some related work, section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Tools"
-
-\end_inset
-
- we will present an overview of the tools used, section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Simulation-Design"
-
-\end_inset
-
- we will talk about some of the challenges we faced in designing our simulation,
- section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Implementation"
-
-\end_inset
-
- we discuss our implementation, section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Experiments-and-Results"
-
-\end_inset
-
- we will discuss some experiments and results, section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Conclusions"
-
-\end_inset
-
- we will present some conclusions, and section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Future-Research"
-
-\end_inset
-
- we will talk about potential future research in this area.
+ Section 2 we will discuss some related work, section 3 we will present
+ an overview of the tools used, section 4 we will talk about some of the
+ challenges we faced in designing our simulation, section 5 we discuss our
+ implementation, section 6 we will discuss some experiments and results,
+ section 7 we will present some conclusions, and section 8 we will talk
+ about potential future research in this area.
 \end_layout
 
 \begin_layout Section
@@ -170,12 +138,22 @@ name "sec:Related-Work"
 \end_layout
 
 \begin_layout Standard
-So far we have found related work in this area to be sparse and we are still
- looking into any papers published on edge-based cloud computing; however,
- it is evident that this area is still in a stage of early development.
- Because of this our work will focus more on the feasibility of this type
- of infrastructure from the aspect of performance and in doing so we will
- ignore many practical issues such as security and privacy.
+[7 or whatever] presented LATE, a scheduling algorithm to handle heterogeneity
+ in a data center environment.
+ LATE attempts to schedule tasks based on the longest approximate time to
+ completion.
+ The approximation is based on the heterogeneity of the nodes and the current
+ progress of the task.
+ The work presented in [7] provides useful insights into the scheduling
+ process in heterogeneous environments.
+\end_layout
+
+\begin_layout Standard
+In general, work applying cloud computing concepts directly to edge networks
+ is sparse and this area of research is still in a stage of early development.
+ Because of this our work focused more on the feasibility of edge based
+ cloud computing, MapReduce in particular, from the aspect of performance
+ and in doing so we ignored many practical issues such as security and privacy.
 \end_layout
 
 \begin_layout Section
@@ -190,30 +168,27 @@ name "sec:Tools"
 \end_layout
 
 \begin_layout Standard
-We used two main tools for our simulation.
- The most useful tool of the two being MRPerf 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Wang09LSAP,Wang09MASCOTS,WangREADME"
-
-\end_inset
-
-.
- This tool was designed to simulate MapReduce jobs when provided with a
- network topology.
+We leveraged two existing projects for our work.
+ The first is MRPerf [2][3].
+ It was designed to simulate MapReduce jobs when provided with a network
+ topology for a data center.
  MRPerf can measure the performance of these MapReduce jobs with a good
  amount of accuracy and deliver performance information to the user.
- We also used the now unsupported Boston University Representative Internet
- Topology Generator (BRITE)
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Medina01"
+ 
+\end_layout
 
-\end_inset
-
- to generate our preliminary network topologies.
- Brite produces TCL code the represents a network based on user defined
- input parameters.
+\begin_layout Standard
+We considered the use of a topology generator such as GT-ITM 
+\backslash
+cite:gtitm or BRITE 
+\backslash
+cite:brite but decided that we would obtain more realistic results if we
+ used information about the actual Internet instead of generating router
+ topologies.
+ We decided to use the data collected from the Rocketfuel
+\backslash
+cite:Spring02 project which mapped a significant portion of the Internet.
+ These data provided us with a realistic topology for edge based simulations.
 \end_layout
 
 \begin_layout Subsection
@@ -236,105 +211,66 @@ We chose to use MRPerf because of its impressive implementation of MapReduce
 ting machines to break up a computationally intensive job into separate
  tasks, requiring complex scheduling algorithms, process the tasks, and
  then merge them back together upon completion.
- MRPerf was build on top of two popular packages, ns-2
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Fall"
-
-\end_inset
-
- and hadoop
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Hadoop"
-
-\end_inset
-
-.
+ MRPerf was build on top of two popular packages, ns-2[6] and hadoop[7].
  MRPerf merges MapReduce and network simulation to achieve a seamless simulation
  environment.
  MRPerf claims to have the ability to simulate a wide range of network topologie
 s and also has the ability to evaluate the performance of MapReduce operations
  on that network.
- MRPerf was originally designed for use in a data center type infrastructure.
+ It was originally designed for use in a data center type infrastructure.
  With that in consideration, MRPerf claims to predict simulation performance
  within 5.22% of actual measurements for map and 12.83% for reduce for a double
- rack cluster with 16 to 128 cores
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Wang09MASCOTS"
-
-\end_inset
-
-.
+ rack cluster with 16 to 128 cores[3].
+ Although MRPerf was designed to simulate MapReduce in multi-rack data center
+ with many nodes per rack and high bandwidth single hop links connecting
+ them together it allows some flexibility since it was built on top of the
+ ns-2 network simulator.
+ This gave us the capability to simulate any topology that ns-2 supports
+ using MRPerf.
+ ns-2 has already proven to be capable of simulating a large variety of
+ networks including networks based on grid computing and peer to peer type
+ topologies [10] [11] that our network closely resembles.
 \end_layout
 
 \begin_layout Subsection
-BRITE
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:BRITE"
-
-\end_inset
-
-
+Rocketfuel
 \end_layout
 
 \begin_layout Standard
 We wanted to run our simulation on a fairly large network to get an accurate
- idea of performance when route scheduling, node churn, and link latency
- are all taken into consideration.
- The hand generation of this type of network quickly grew beyond our ability.
- Because of this we employed a tool to create a network topology based on
- the parameters that we provide.
- BRITE creates a random set of nodes and routers based on two different
- probability models, Waxman and Barabási-Albert 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Medina01"
-
-\end_inset
-
-.
- Some of the more important parameters we made use of were the max/min link
- speeds, number of nodes, maximum out-degree of nodes, and random or incremental
- node growth.
+ idea of performance when route scheduling and link latency are taken into
+ consideration.
+ Rocketfuel was a project completed in 2003 at the University of Washington
+ that mapped ISP topologies using traceroutes from 800 different vantage
+ points.
+ Their maps cover ISPs in the United States, Europe, Australia, and India.
+ We used the link latencies discovered by the Rocketfuel project to as input
+ to our simulations.
+ This allows us to use a more accurate representation of a real edge based
+ network for our simulations.
 \end_layout
 
 \begin_layout Section
-Simulation Design 
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:Simulation-Design"
-
-\end_inset
-
-
+Simulation Design
 \end_layout
 
 \begin_layout Standard
-The accuracy of the results in our simulation rely heavily on the accurate
- representation of the edge computing network topology we create.
- Once we have a network that we are content with we can pass the topology
- to MRPerf and rely on their system to give us accurate feedback on performance.
- To build a accurate representation of our network we have to be familiar
- with the parameters that MRPerf uses throughout the simulation process.
- MRPerf implements MapReduce based on three classes of parameters: cluster
- parameters, configuration parameters, and framework parameters.
- To represent our network we must change the default assumptions that MRPerf
- makes about the network infrastructure and in many cases make some customizatio
-ns directly to the python code.
+In addition to using an accurate edge topology we also needed to modify
+ some of the parameters used in MRPerf to simulate MapReduce tasks.
+ MRPerf simulates MapReduce tasks based on three classes of parameters:
+ cluster parameters, configuration parameters, and framework parameters.
+ The rest of this section is dedicated to describing these parameters as
+ well as modifications that could be made to improve performance in edge
+ networks.
+ Section 
+\backslash
+section:Implementation describes the modifications that we actually made
+ to MRPerf for our evaluations.
+ 
 \end_layout
 
 \begin_layout Subsection
-Cluster Parameters
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Cluster-Parameters"
-
-\end_inset
-
-
+Cluster parameters 
 \end_layout
 
 \begin_layout Standard
@@ -344,7 +280,7 @@ MRPerf is designed to work with a data center using racks which consist
  These racks of nodes are connected together to form a cluster.
  In an edge computing network there is no concept of a centralized cluster
  of computational power.
- Edge computing networks use PCs that are connected to the internet via
+ Edge computing networks use PCs that are connected to the Internet via
  a LAN through a router or gateway.
  This means that a packet's destination is almost always several network
  hops away.
@@ -356,18 +292,11 @@ MRPerf is designed to work with a data center using racks which consist
  have a high level of heterogeneity.
  The interconnect topologies also play a role in the cluster parameters.
  The inter/intra-rack topology of a data center is much less complex than
- the internet.
+ the Internet.
 \end_layout
 
 \begin_layout Subsection
-Configuration Parameters
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Configuration-Parameters"
-
-\end_inset
-
-
+Configuration parameters
 \end_layout
 
 \begin_layout Standard
@@ -386,14 +315,7 @@ Configuration parameters are related to the MapReduce jobs themselves.
 \end_layout
 
 \begin_layout Subsection
-Framework Parameters
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Framework-Parameters"
-
-\end_inset
-
-
+Framework parameters
 \end_layout
 
 \begin_layout Standard
@@ -405,19 +327,10 @@ Framework parameters deal with data placement and scheduling algorithms.
  wrong choice when compute nodes could potentially be in a different country.
  MRPerf compares three types of data locality, node-local, rack-local, rack-remo
 te.
- Our data placement algorithm will be similar to their rack remote setup,
- which is the slowest for all tests run 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Wang09MASCOTS"
-
-\end_inset
-
-.
- Scheduling will also need to be adjusted to optimize job scheduling for
- the internet rather than a data center.
- Changes to these algorithms require a good amount of customization to the
- MRPerf source code.
+ Our simulations use the rack-remote algorithm in MRPerf, which was the
+ slowest for all of the data center evaluations [3].
+ The scheduling algorithm can also be optimized for edge networks to account
+ for node heterogeneity, bandwidth capacity, and round trip time.
  As discussed above the proper balance of data chunk size, data placement,
  and task scheduling are important so that the system does not suffer huge
  performance losses transferring large amounts of data over relatively slow
@@ -426,62 +339,79 @@ key "Wang09MASCOTS"
 
 \begin_layout Subsection
 Limitations
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Limitations"
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
 There are a couple of limitations that are inherent when working with MRPerf
  that are worth discussing.
- These limitations are related to disk storage and node reliability.
+ These limitations are related to disk storage and simulation of node reliabilit
+y.
  The former works to our advantage in this case.
  MRPerf only allows for one single storage device per node.
  In a data center this might be an unusual constraint however since the
  average PC that constitutes our edge computing network will have only a
- single storage disk this should not present a problem in our experiments.
- The other limitation, left unhandled, could indeed skew our results to
- the positive.
- MRPerf, though it allows for single node and link failures, doesn't support
- lagging or partially failing nodes.
- An accurate representation of a network for our simulation requires that
- some nodes lag when given a job.
- In this case our scheduling algorithm will have to compensate for this
- deficiency.
- By having a larger amount of failing nodes we can simulate a scheduling
- algorithm that treats a lagging node as a fully failing node.
- In this case a failing node in our simulation could also represent a node
- that operates below a certain performance threshold whose job the scheduler
- kills and gives to another node.
-\end_layout
-
-\begin_layout Subsection
-Other Challenges
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Other-Challenges"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Other challenges include the fact that this type of network topology is
- non-existent.
- None of our performance results, at this time can, be compared with similar
- tests on an actual system.
+ single storage disk this should not present a problem in our evaluation.
+ The early release of MRPerf available does not currently support realistic
+ node failures or lagging nodes.
+ Ideally, we would have been able to simulate lagging nodes and failed nodes
+ in our evaluation.
+ However, without an accurate mechanism to simulate these cases we leave
+ this for future work.
 \end_layout
 
 \begin_layout Section
 Implementation
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:Implementation"
+\end_layout
+
+\begin_layout Standard
+The goal of our implementation was to discover if the MapReduce framework
+ is feasible in an edge network.
+ The implementation used in our simulations addressed some but not all of
+ the issues discussed in Section 
+\backslash
+ref:simulationDesign.
+ We discuss the issues that have not been addressed in Section 
+\backslash
+ref:FutureWork.
+\end_layout
+
+\begin_layout Subsection
+MRPerf Input and Pre-Processing Overview
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename mrperf_arch.png
+	width 7.8cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+(a) shows the original MRPerf architecture.
+ The shaded components in (b) were changed or added for the edge based MapReduce
+ simulations.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
 
 \end_inset
 
@@ -489,113 +419,61 @@ name "sec:Implementation"
 \end_layout
 
 \begin_layout Standard
-To configure MRPerf for our simulation purposes we had to address all of
- the issues discussed in the previous section.
- These issue arise because of the significant differences between our research
- and MRPerf's default assumptions.
- These different assumptions are present because MRPerf was designed to
- work with a data center type architecture with a centralized infrastructure.
- Without modifications any tests run would simulate a multi-rack data center
- with many nodes per rack and high bandwidth single hop links connecting
- them together.
- However MRPerf allows some flexibility since it was built on top of the
- ns-2 network simulator.
- Because of this any topology supported by ns-2 is also supported by MRPerf.
- ns-2 has been used to simulate all types of networks including grid computing
- and peer to peer type topologies 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Kun05,Zegura96"
+Figure 
+\backslash
+figure:MRPerfArch (a) shows the original MRPerf architecute.
+ The topology, data layout, and job specifications are provided as input
+ in the form of XML and TCL code.
+ The topology is provided in XML format which is parsed by a Python script.
+ This script outputs the necessary TCL code for use in ns-2 and an XML data
+ layout file which is read directly by the MRPerf module integrated into
+ ns-2.
+ In addition to the XML input which specifies the topology the TCL input
+ contains the MapReduce job specification such as the number of map and
+ reduce slots available for each node.
+ These variables are used directly by the simulator.
+\end_layout
 
-\end_inset
+\begin_layout Standard
+Figure 
+\backslash
+figure:MRPerfArch (b) highlights the changes and additions to the MRPerf
+ architecture that were required to simulate the edge based networks.
+ The basic idea behind our modifications was to create "racks" each containing
+ one node.
+ These one node "racks" could then use the remote rack scheduling algorithm
+ to receive data and tasks across the network.
+ The following discussion outlines the modifications made to each part of
+ the MRPerf architecture in order to realize this idea.
+ 
+\end_layout
 
- that our network closely resembles.
- By using a topology generating tool, discussed in section 3, we create
- a large topology for our simulation purposes and pass that in to MRPerf.
- We then send MapReduce jobs to our network using MRPerf.
- By default MRPerf expects the topology to be in XML format.
- While this format makes simple additions more convenient it also makes
- simulating a network of tens of thousands of nodes a chore to create.
- Because of this we bypass the MRPerf's XML translator and have our topology
- generator create our topology directly in TCL.
- The implementation challenges (section 
+\begin_layout Standard
+
+\emph on
+Topology and Topology Reader.
+
+\emph default
+ The original construction of MRPerf accounted for the CPU speed, amount
+ of memory, and I/O speed but forced all nodes participating in a computation
+ to be homogeneous.
+ We changed the semantics of the topology reader to allow a different host
+ configuration for each rack.
+ We then employed the use of a script to generate sets of end hosts which
+ we attached to the routers.
+ Table 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sec:Simulation-Design"
+reference "tab:hostSpecs"
 
 \end_inset
 
-) arise almost entirely in creating an accurate representation of the edge
- computing network.
- Topology generators are a good starting point for us but we must adjust
- many parameters and customize a good portion of the source code for our
- system to faithfully represent actual performance results.
- Some parameters we adjust are the link speeds and latency for each edge
- router as well as the link speed and latency for the network backbone.
- Router connectivity is also important to get correct for an accurate simulation.
- The bulk of our ongoing research is in this area and we plan to have more
- to report as we test our implementation.
- We have provided a small preliminary visualization of a subnet in our network
- topology, Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Preliminary-Topology-Visualization"
-
-\end_inset
-
-.
- Routers are represented as black circles and compute nodes as green squares.
- The node initializing the job request is labeled 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-textquotedbl
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{}
-\end_layout
-
-\end_inset
-
-JT
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-textquotedbl
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{}
-\end_layout
-
-\end_inset
-
- (job tracker).
- The thicker black lines parallel to the link lines represent a flow of
- packets through the link.
+ summarizes the range of specifications that we used in our evaluation.
+ In addition to including a range of host specifications we modified the
+ Topology Reader to randomly choose the bandwidth of the last hop from the
+ Internet router to the host based on a normal distribution.
+ In our evaluation we set the mean of the distribution at 16 Mbps with a
+ standard deviation of 8 Mbps.
 \begin_inset Float table
 wide false
 sideways false
@@ -800,6 +678,13 @@ Memory capacity (GB)
 
 \begin_layout Plain Layout
 Summary of ranges used in host specification
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:hostSpecs"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -813,44 +698,33 @@ Summary of ranges used in host specification
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
 
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename prelim-visual.png
-	scale 30
+\emph on
+Data Layout and Layout Reader.
 
-\end_inset
-
-
+\emph default
+ The data layout components of MRPerf control size of data chunks and the
+ initial scheduling of data chunks to individual disks.
+ The semantic modification we made in the topology portion of MRPerf forced
+ us to also modify the initial chunk distribution.
+ 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption
+\begin_layout Standard
 
-\begin_layout Plain Layout
-Preliminary Topology Visualization
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Preliminary-Topology-Visualization"
+\emph on
+Router Topology.
 
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
+\emph default
+ The original Topology Reader component of MRPerf generated a complete data
+ center topology script for use in ns-2 based on a specification provided
+ in the form of an XML document.
+ The results for the experiments with hosts distributed across the mapped
+ Internet are presented in Figure TCL code that is interpreted by ns-2.
+ For our simulations we directly converted the topologies provided by the
+ Rocketfuel results into TCL code and simply made the Topology Reader output
+ a call to this code.
+ 
 \end_layout
 
 \begin_layout Section
@@ -873,75 +747,6 @@ We conducted experiments in which we varied several aspects of the simulation
  generator.
  All of the hosts in the edge experiments All statistically insignificant
  data points have been removed.
- For the chunk size experiments we conducted two types of experiments, one
- in which the nodes are in a double rack data center and one in which nodes
- are randomly distributed throughout the mapped portion of the Internet.
- For both types we used 50 node topologies which we held constant for all
- experiments.
- Results for these experiments are presented in Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:chunkSize"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-For experiments in which we varied the number of mapper and reducer slots
- per node we used a chunk size of 6 MB and a 50 node topology randomly distribut
-ed across the mapped portion of the Internet.
- The topology was held constant as we varied the number of mapper and reducer
- slots.
- The results of this experiment is presented in Figure 
-
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:mapperReducer"
-
-\end_inset
-
-
-\lang english
-.
-\end_layout
-
-\begin_layout Standard
-We ran three types of experiments that varied the number of nodes.
- We varied the number of nodes in a double rack data center, distributed
- across the mapped portion of the Internet, and distributed across one autonomou
-s system consisting of 15 mapped routers which span the United States.
- Each consecutive experiment for the edge based data kept the previous experimen
-t's topology and added 10 additional nodes randomly distributed throughout
- the topology.
- The results for the data center and edge based experiments are presented
- in Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:dataCenterNumHosts"
-
-\end_inset
-
-, Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:numHosts"
-
-\end_inset
-
- and Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:numHosts_oneAS"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\align left
 \begin_inset Float figure
 wide false
 sideways false
@@ -979,6 +784,22 @@ name "fig:chunkSize"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+For the chunk size experiments we conducted two types of experiments, one
+ in which the nodes are in a double rack data center and one in which nodes
+ are randomly distributed throughout the mapped portion of the Internet.
+ For both types we used 50 node topologies which we held constant for all
+ experiments.
+ Results for these experiments are presented in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:chunkSize"
+
+\end_inset
+
+.
 \begin_inset Float figure
 wide false
 sideways false
@@ -1018,6 +839,25 @@ name "fig:mapperReducer"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+For experiments in which we varied the number of mapper and reducer slots
+ per node we used a chunk size of 6 MB and a 50 node topology randomly distribut
+ed across the mapped portion of the Internet.
+ The topology was held constant as we varied the number of mapper and reducer
+ slots.
+ The results of this experiment is presented in Figure 
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:mapperReducer"
+
+\end_inset
+
+
+\lang english
+.
 \begin_inset Float figure
 wide false
 sideways false
@@ -1134,6 +974,39 @@ name "fig:numHosts_oneAS"
 
 \end_layout
 
+\begin_layout Standard
+We ran three types of experiments that varied the number of nodes.
+ We varied the number of nodes in a double rack data center, distributed
+ across the mapped portion of the Internet, and distributed across one autonomou
+s system consisting of 15 mapped routers which span the United States.
+ Each consecutive experiment for the edge based data kept the previous experimen
+t's topology and added 10 additional nodes randomly distributed throughout
+ the topology.
+ The results for the data center and edge based experiments are presented
+ in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:dataCenterNumHosts"
+
+\end_inset
+
+, Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:numHosts"
+
+\end_inset
+
+ and Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:numHosts_oneAS"
+
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Section
 Conclusions
 \begin_inset CommandInset label
@@ -1146,8 +1019,33 @@ name "sec:Conclusions"
 \end_layout
 
 \begin_layout Standard
-This section will discuss the conclusions that we've reached through our
- research.
+From our results we can conclude that the data chunk size used in edge based
+ MapReduce jobs should be considerably smaller than what is usually used
+ in data center MapReduce jobs.
+ Figure 
+\backslash
+fig:chunkSize shows that while certain data center topologies can suffer
+ if the chunk size is too small the edge based network produces the best
+ results when the chunk size is small.
+ 
+\end_layout
+
+\begin_layout Standard
+We can see from Figure 
+\backslash
+fig:dataCenterNumHosts that the total run time increases as more nodes are
+ added after a certain point for the data center topology evaluated.
+ This is probably caused because the sort algorithm becomes I/O bound and
+ no longer benefits from extra computational power.
+ It is more difficult to draw conclusions about the effects of adding more
+ nodes in an edge based cloud.
+ Perhaps the only definite conclusion that we can draw is that the default
+ scheduler should be replaced by one that is aware of the network topology
+ and node specifications.
+ In our evaluation it was possible for the scheduler to do very well with
+ one topology and very poorly when a distant node is added which the scheduler
+ blindly scheduled tasks to.
+ The development of this new scheduler is left for future work.
 \end_layout
 
 \begin_layout Section
@@ -1162,17 +1060,24 @@ name "sec:Future-Research"
 \end_layout
 
 \begin_layout Standard
-Another simulation tool that could be used to gather performance results
- of a edge-based cloud computing network is CloudSim.
- Future research could involve investigating the use of MapReduce with this
- Java based simulation tool that has recently been developed 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Buyya09,Rose09"
+We did not present results related to modifications to the Hadoop scheduling
+ algorithm used by MRPerf.
+ This is primarily because the early release of MRPerf we used for our simulatio
+ns does not support realistic node failures.
+ We are confident that a scheduling algorithm that is aware of the round
+ trip times to each node and heterogeneity of the nodes would perform better
+ than the default Hadoop scheduling algorithm.
+ An analysis that involves the simulation of node churn is also left for
+ future work.
+ 
+\end_layout
 
-\end_inset
-
-.
+\begin_layout Standard
+A possible alternate simulation tool to MRPerf is CloudSim
+\backslash
+cite:CloudSim.
+ Future research could investigate the use of MapReduce with this Java based
+ simulation tool that has recently been developed.
  CloudSim was built on top of the existing tools, JavaSim and GridSim, which
  have already proven themselves valid for simulation.
  CloudSim itself is an effort to add a new layer of features on top of these
