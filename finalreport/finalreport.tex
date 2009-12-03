@@ -56,18 +56,12 @@ dollar ratio by leveraging the enormous amount of unused computational
 power in idle home computer processors that have access to always-on
 internet connections. Despite its potential this type of computing
 paradigm is not being used and is only sparsely investigated. This
-paper will present the results of our research on edge based cloud
-computing and some of the benefits and challenges we discovered through
-our work. In order to determine the full potential of this non-existent
-network we use simulation and run MapReduce jobs that push the network
-beyond the usual peer-to-peer/grid computing type simple data transfer
-that these topologies are commonly used for. MapReduce operations
-involve a high level of coordination and communication between machines
-in addition to transferring large amounts of data. For our simulation
-environment we investigate MRPerf, a MapReduce tool built on top of
+paper presents simulation results for MapReduce \cite{Dean04} jobs in an edge based cloud.
+The high level of coordination and communication involved in MapReduce extends beyond the usual peer-to-peer and grid computing type of computation associated with edge computing. For our simulation
+environment we investigated MRPerf, a MapReduce simulation tool built on top of
 the network simulator ns-2, which was developed by researchers at
 Virginia Tech and IBM Almaden Research Center. To simulate an edge
-based network we will change the parameters in our configuration to
+based network we modified parameters in our configuration to
 better mimic a peer-to-peer type system of nodes without central infrastructure.
 Each node has fewer resources and is located at a further distance
 from one another than nodes in a data center. 
