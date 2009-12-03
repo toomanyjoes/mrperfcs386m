@@ -39,7 +39,7 @@
 The term edge based cloud computing refers to a network of edge systems
 that provide the services currently provided by data center clouds.
 In this paper we present modifications to MRPerf, an existing tool
-used to simulate MapReduce in data center clouds, that enable it to
+used to simulate MapReduce in data center clouds, enabling it to
 simulate Hadoop MapReduce jobs in edge networks. Our results indicate
 that the default Hadoop scheduler does not perform optimally in an
 edge environment and should be replaced. We also conclude that bandwidth
@@ -74,7 +74,7 @@ discusses some related work, Section \ref{sec:Tools} presents an
 overview of the tools used for our simulations, Section \ref{sec:Simulation-Design}
 discusses the parameters that affect MapReduce jobs, Section \ref{sec:Implementation}
 discusses our implementation of the edge based simulator, Section
-\ref{sec:Simulations-and-Results} discusses the simulations and and
+\ref{sec:Simulations-and-Results} discusses our simulations and
 results, Section \ref{sec:Conclusions} presents the conclusions drawn
 from the simulation results, and Section \ref{sec:Future-Research}
 discusses potential future research in the area of edge based cloud
@@ -83,7 +83,7 @@ computing.
 
 \section{Related Work\label{sec:Related-Work}}
 
-\cite{Zaharia08} presented LATE, a scheduling algorithm to handle
+Zaharia et al.\cite{Zaharia08} presented LATE, a scheduling algorithm to handle
 heterogeneity in a data center environment. LATE attempts to schedule
 tasks based on the longest approximate time to completion. The approximation
 is based on the heterogeneity of the nodes and the current progress
@@ -132,12 +132,10 @@ for map and 12.83\% for reduce for a double rack cluster with 16 to
 128 cores \cite{Wang09MASCOTS}. Although MRPerf was designed to simulate
 MapReduce jobs for multi-rack data centers with many nodes per rack and high
 bandwidth single hop links connecting them together it allows some
-flexibility since it was built on top of the ns-2 network simulator.
-This gave us the capability to simulate any topology that ns-2 supports
-using MRPerf. ns-2 has already proven to be capable of simulating
+flexibility since it was built on top of the ns-2 network simulator. ns-2 has already proven to be capable of simulating 
 a large variety of networks including networks based on grid computing
-and peer to peer type topologies \cite{Kun05,Zegura96} that our network
-closely resembles.
+and peer to peer type topologies \cite{Kun05,Zegura96}. In our work
+we take advantage of this by creating a topology that closely resembles the internet and passing that to MRPerf's topology reader (Figure \ref{fig:MRPerf-arch}).
 
 
 \subsection{Rocketfuel}
@@ -209,7 +207,7 @@ be considered when partitioning data across available resources. In
 a data center with many compute nodes the wrong choice of data placement
 can affect performance to a degree, but is not nearly as costly as
 the wrong choice when compute nodes could potentially be in a different
-country. \cite{Wang09MASCOTS} compares three types of data locality: node-local,
+country. Wang et al.\cite{Wang09MASCOTS} compares three types of data locality: node-local,
 rack-local, and rack-remote. Our simulations used the rack-remote algorithm
 in MRPerf, which was the slowest of all of the data center evaluations
 \cite{Wang09MASCOTS}.
