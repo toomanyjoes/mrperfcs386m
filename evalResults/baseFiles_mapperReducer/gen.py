@@ -330,7 +330,7 @@ class topology_t:
 								% (len(ng.children())))
 					# spalmer
 					#hostSpeeds = {0 : '6Mb', 1 : '30Mb', 2 : '4Mb', 3 : '5Mb', 4 : '5Mb', 5 : '6Mb', 6 : '6Mb', 7 : '6Mb', 8 : '7Mb', 9 : '7Mb', 10 : '8Mb', 11 : '10Mb', 12 : '10Mb', 13 : '14Mb', 14 : '14Mb', 15 : '14Mb', 16 : '30Mb', 17 : '30Mb', 18 : '30Mb',}
-					f.write('\tnewnode "n_rg0_%d_ng0_$i" $routers([expr %s %% $numRouters]) %sMb %sms\n' % (nodeCtr, random.randint(0,int(netsize)-1), abs(random.normalvariate(16.0, 8.0)), abs(random.normalvariate(0.25, 0.07))))
+					f.write('\tnewnode "n_rg0_%d_ng0_$i" $routers([expr %s %% $numRouters]) %sMb %sms\n' % (nodeCtr, random.randint(0,int(netsize)-1), abs(random.normalvariate(baseFiles_BWBB, 8.0)), abs(random.normalvariate(0.25, 0.07))))
 					nodeCtr = nodeCtr + 1
 #					f.write('\tnewnode "%s_$i" $%s\n' % (ng.name(), r.name()))
 					num_of_nodes += len(ng.children())
@@ -821,8 +821,9 @@ def gen(topo, conf):
 		dir.appendChild(new_file)
 
 		print "unitsize %s chunk size %s" % (conf.size.unit_size, chunk_size)
-		chunks = int(random.uniform(conf.size.min_unit, conf.size.max_unit) \
-					 * conf.size.unit_size / chunk_size)
+		#chunks = int(random.uniform(conf.size.min_unit, conf.size.max_unit) \
+		#			 * conf.size.unit_size / chunk_size)
+		chunks = 1024/chunk_size
 #		if i % 10 == 0:
 #			print i
 

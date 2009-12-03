@@ -1,4 +1,4 @@
-proc create-router-topology {  } {
+proc create-router-topology  { } {
 	global ns
 
 # 101:101

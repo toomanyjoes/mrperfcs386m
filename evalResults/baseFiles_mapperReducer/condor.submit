@@ -2,10 +2,12 @@
 +Project = "OTHER"
 
 +ProjectDescription = "ns2 network simulator" 
-
-executable     = /u/spalmer/ns-allinone-2.33/bin/ns
+executable     = /u/elizondo/ns-allinone-2.33/bin/ns
 universe       = vanilla 
 #input          = 
+
+Rank = Memory >= 4000
+
 arguments      = hsim.tcl
 output         = output.out
 error          = output.error

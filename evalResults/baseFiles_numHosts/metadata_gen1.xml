@@ -6,9 +6,9 @@
 		<max_files>1</max_files>
 	</number_files>
 	<file_size>
-		<unit_size>1</unit_size>
-		<min_unit>100</min_unit>
-		<max_unit>100</max_unit>
+		<unit_size>6</unit_size>
+		<min_unit>50</min_unit>
+		<max_unit>50</max_unit>
 	</file_size>
 	<replication_level>3</replication_level>
 	<gen_method>random</gen_method>
