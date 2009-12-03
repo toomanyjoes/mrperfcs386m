@@ -87,10 +87,9 @@ computing.
 heterogeneity in a data center environment. LATE attempts to schedule
 tasks based on the longest approximate time to completion. The approximation
 is based on the heterogeneity of the nodes and the current progress
-of the task. The work presented in \cite{Zaharia08} provides useful
-insights into the scheduling process in heterogeneous environments.
+of the task. The work presented in \cite{Zaharia08} could potentially be extended to schedule tasks in an edge based cloud where it includes latency and node bandwidth in its approximate time to completion calculations.
 
-In general, work applying cloud computing concepts directly to edge
+In general, work applying cloud computing concepts, such as those that drive the MapReduce programming model, directly to edge
 networks is sparse and this area of research is still in a stage of
 early development. Because of this our work focused more on the feasibility
 of edge based cloud computing, MapReduce in particular, from the aspect
@@ -107,7 +106,7 @@ can measure the performance of these MapReduce jobs with a good amount
 of accuracy and deliver performance information to the user. 
 
 We considered the use of a topology generator such as GT-ITM \cite{Zegura96}
-or BRITE \cite{Medina01} but decided that we would obtain more realistic
+or BRITE \cite{Medina01} to provide us with a WAN model but decided that we would obtain more realistic
 results if we used information about the actual Internet instead of
 generating router topologies. We decided to use the data collected
 from the Rocketfuel \cite{Spring02} project which mapped a significant
@@ -118,23 +117,20 @@ for edge based simulations.
 \subsection{MRPerf\label{sub:MRPerf}}
 
 We chose to use MRPerf because of its impressive implementation of
-MapReduce and the accuracy of its simulation results. Our research
-involves testing an edge computing network with demanding highly coordinated
+MapReduce and the accuracy of its simulation results. Our goal was to evaluate an edge computing network with computationally demanding, highly coordinated
 applications. MapReduce is a good tool for testing this because its
 design requires participating machines to break up a computationally
-intensive job into separate tasks, requiring complex scheduling algorithms,
+intensive job into separate tasks, schedule the tasks efficiently,
 process the tasks, and then merge them back together upon completion.
-MRPerf was build on top of two popular packages, ns-2 \cite{Fall}
-and hadoop \cite{Hadoop}. MRPerf merges MapReduce and network simulation
-to achieve a seamless simulation environment. MRPerf claims to have
-the ability to simulate a wide range of network topologies and also
-has the ability to evaluate the performance of MapReduce operations
-on that network. It was originally designed for use in a data center
-type infrastructure. With that in consideration, MRPerf claims to
+MRPerf merges MapReduce and network simulation
+to achieve a seamless simulation environment.
+It accomplishes this by utilizing the popular packet level network simulator ns-2 \cite{Fall}
+and the hadoop \cite{Hadoop} scheduling algorithm to schedule tasks. MRPerf claims to have
+the ability to simulate MapReduce operations in a wide range of data center topologies. For data center topologies MRPerf claims to
 predict simulation performance within 5.22\% of actual measurements
 for map and 12.83\% for reduce for a double rack cluster with 16 to
 128 cores \cite{Wang09MASCOTS}. Although MRPerf was designed to simulate
-MapReduce in multi-rack data center with many nodes per rack and high
+MapReduce jobs for multi-rack data centers with many nodes per rack and high
 bandwidth single hop links connecting them together it allows some
 flexibility since it was built on top of the ns-2 network simulator.
 This gave us the capability to simulate any topology that ns-2 supports
@@ -176,17 +172,17 @@ modifications that we actually made to MRPerf for our evaluations.
 \subsection{Cluster parameters }
 
 MRPerf is designed to work with a data center using racks which consist
-of many nodes that are close to each other on the network, this means
-that a packet many times is just one hop away from its destination.
+of many nodes that are close to each other in the network, this means
+that many times packets are one hop away from their destination.
 These racks of nodes are connected together to form a cluster. In
 an edge computing network there is no concept of a centralized cluster
 of computational power. Edge computing networks use PCs that are connected
 to the Internet via a LAN through a router or gateway. This means
 that a packet's destination is almost always several network hops
-away. The racks that make up a cluster have many compute nodes each
+away. The racks that make up a data center cluster have many compute nodes each
 of which have several processors whereas a PC in an edge network has
 anywhere from one to four processors. Another difference in the cluster
-parameters is related to node heterogeneity. A data center setup has
+parameters is related to node heterogeneity. A data center setup usually has
 homogeneous nodes, whereas in an edge network nodes have a high level
 of heterogeneity. The interconnect topologies also play a role in
 the cluster parameters. The inter/intra-rack topology of a data center
@@ -197,13 +193,12 @@ is much less complex than the Internet.
 
 Configuration parameters are related to the MapReduce jobs themselves.
 They adjust settings such as data chuck size, data replication, tasks
-per node, and tasks in each job. All of these settings are optimized
-for a data center by default. Some of the changes we have to make
-will depend upon the optimal configuration of an edge computing network.
-Whether data chunk size is large or small depends upon whether an
+per node, and tasks in each job. The default hadoop settings are optimized
+for data centers. Some of the changes to the configuration parameters depend upon the optimal configuration of the edge computing network.
+Whether data chunk size is large or small depends upon whether the
 edge computing system performs better when I/O is optimized or when
 parallelism is increased. The cost of data replication is clearly
-higher in an edge computing network than in a data center and .
+higher in an edge computing network than in a data center so the cost of redundancy should be weighed against the cost of rescheduling failed tasks.
 
 
 \subsection{Framework parameters}
@@ -214,28 +209,29 @@ be considered when partitioning data across available resources. In
 a data center with many compute nodes the wrong choice of data placement
 can affect performance to a degree, but is not nearly as costly as
 the wrong choice when compute nodes could potentially be in a different
-country. MRPerf compares three types of data locality, node-local,
-rack-local, rack-remote. Our simulations use the rack-remote algorithm
-in MRPerf, which was the slowest for all of the data center evaluations
-\cite{Wang09MASCOTS}. The scheduling algorithm can also be optimized
+country. \cite{Wang09MASCOTS} compares three types of data locality: node-local,
+rack-local, and rack-remote. Our simulations used the rack-remote algorithm
+in MRPerf, which was the slowest of all of the data center evaluations
+\cite{Wang09MASCOTS}.
+
+The scheduling algorithm can also be optimized
 for edge networks to account for node heterogeneity, bandwidth capacity,
 and round trip time. As discussed above the proper balance of data
 chunk size, data placement, and task scheduling are important so that
-the system does not suffer huge performance losses transferring large
-amounts of data over relatively slow links to a non-optimal number
-of nodes.
+the system does not suffer huge performance losses when transferring large
+amounts of data over relatively slow links to computationally slow nodes.
 
 
 \subsection{Limitations}
 
-There are a couple of limitations that are inherent when working with
-MRPerf that are worth discussing. These limitations are related to
+Some of the inherent limitations of
+MRPerf are worth discussing. These limitations are related to
 disk storage and simulation of node reliability. The former works
-to our advantage in this case. MRPerf only allows for one single storage
+to our advantage in this case. MRPerf only allows for a single storage
 device per node. In a data center this might be an unusual constraint
 however since the average PC that constitutes our edge computing network
 will have only a single storage disk this should not present a problem
-in our evaluation. The early release of MRPerf available does not
+in our evaluation. The early release of MRPerf that is publicly available does not
 currently support realistic node failures or lagging nodes. Ideally,
 we would have been able to simulate lagging nodes and failed nodes
 in our evaluation. However, without an accurate mechanism to simulate
