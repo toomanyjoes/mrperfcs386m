@@ -125,7 +125,7 @@ process the tasks, and then merge them back together upon completion.
 MRPerf merges MapReduce and network simulation
 to achieve a seamless simulation environment.
 It accomplishes this by utilizing the popular packet level network simulator ns-2 \cite{Fall}
-and the hadoop \cite{Hadoop} scheduling algorithm to schedule tasks. MRPerf claims to have
+and the Hadoop \cite{Hadoop} scheduling algorithm to schedule tasks. MRPerf claims to have
 the ability to simulate MapReduce operations in a wide range of data center topologies. For data center topologies MRPerf claims to
 predict simulation performance within 5.22\% of actual measurements
 for map and 12.83\% for reduce for a double rack cluster with 16 to
@@ -193,7 +193,7 @@ is much less complex than the Internet.
 
 Configuration parameters are related to the MapReduce jobs themselves.
 They adjust settings such as data chuck size, data replication, tasks
-per node, and tasks in each job. The default hadoop settings are optimized
+per node, and tasks in each job. The default Hadoop settings are optimized
 for data centers. Some of the changes to the configuration parameters depend upon the optimal configuration of the edge computing network.
 Whether data chunk size is large or small depends upon whether the
 edge computing system performs better when I/O is optimized or when
@@ -330,8 +330,6 @@ distribution.
 \emph{Router Topology.} The original Topology Reader component of
 MRPerf generated a complete data center topology script for use in
 ns-2 based on a specification provided in the form of an XML document.
-The results for the experiments with hosts distributed across the
-mapped Internet are presented in \ref{fig:numHosts}.
 For our simulations we directly converted the topologies
 provided by the Rocketfuel results into TCL code and simply made the
 Topology Reader output a call to this code. 
@@ -405,12 +403,12 @@ each node varies. \label{fig:bandwidth}}
 \end{figure}
 
 
-In the simulations in which we varied the bandwidth of the link connecting
+For the simulations in which we varied the bandwidth of the link connecting
 the end hosts to the routers we used a 50 node topology where nodes
 were distributed across the entire mapped Internet. This topology
 was held constant as we varied the mean of the normal distribution
 that was used to assign the bandwidth of the end hosts' links. The
-standard deviation of the normal distribution was held at 8Mbps. The
+standard deviation of the normal distribution was held at 8 Mbps. The
 results from these simulations are presented in Figure \ref{fig:bandwidth}.
 
 %
@@ -441,7 +439,7 @@ the entire United States and parts of southern Canada.\label{fig:numHosts_oneAS}
 \end{figure}
 
 
-We ran simulations that varied the number of nodes in a network for three different topologies.
+We ran simulations that varied the number of nodes in a network for three different types of topologies.
 We varied the number of nodes that were distributed
 across the mapped portion of the Internet, the number of nodes that were distributed across
 one autonomous system consisting of 15 mapped routers which span the
@@ -461,7 +459,7 @@ shows that while certain data center topologies can suffer if the
 chunk size is too small the edge based network produces the best results
 when the chunk size is small. 
 
-The results from our experiments varying mappers and reducers per node (Figure \ref{fig:mapperReducer}) show that edge-based
+The results from our simulations varying the available number of map and reduce slots on each node (Figure \ref{fig:mapperReducer}) show that edge-based
 MapReduce jobs benefit when the number of available map slots on each
 node increases but does not necessarily benefit as the number of reduce
 slots available on each node increases. Figure \ref{fig:dataCenterMapperReducer}
@@ -473,7 +471,7 @@ of map slots and reduce slots should be configured carefully not only
 to suit the type of MapReduce job that is running but also based on
 the configuration of the topology. 
 
-We can conclude from our bandwidth experiments (Figure \ref{fig:bandwidth}) that adding additional
+We can conclude from our bandwidth simulations (Figure \ref{fig:bandwidth}) that adding additional
 bandwidth to the end host links is no longer beneficial to the MapReduce
 job performance after a certain bandwidth is reached. For the topology
 used in the simulation this point is at about 20 Mbps. This suggests
@@ -485,7 +483,7 @@ run time increases as more nodes are added after a certain point for
 the data center topology evaluated. This is probably caused because
 the sort algorithm becomes I/O bound and no longer benefits from extra
 computational power. It is more difficult to draw conclusions about
-the effects of adding more nodes in an edge based cloud (Figures \ref{fig:numHosts}, and \ref{fig:numHosts_oneAS}). Perhaps the
+the effects of adding more nodes in an edge based cloud (Figures \ref{fig:numHosts} and \ref{fig:numHosts_oneAS}). Perhaps the
 only definite conclusion that we can draw is that the default scheduler
 should be replaced by one that is aware of the network topology and
 node specifications. In our evaluation it was possible for the scheduler
