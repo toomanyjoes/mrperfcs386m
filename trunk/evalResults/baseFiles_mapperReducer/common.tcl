@@ -339,16 +339,16 @@ MRPerf/NodeApp instproc recv {data} {
 		[$task set expire_timer] reset
 
 		if {[$task info vars mchain] != ""} {
-			puts "[$self now]: alive from reduce $task"
+			#puts "[$self now]: alive from reduce $task"
 		} else {
-			puts "[$self now]: alive from map $task"
+			#puts "[$self now]: alive from map $task"
 		}
 
 	} elseif {[string first "map task" $data] == 0} {
 		# mappers receive. Note that one node can have multiple mappers
 		set task [string range $data 9 end]
-		puts $stats "MapAttempt TASKID=\"$task\" TASK_ATTEMPT_ID=\"$self\" START_TIME=\"[$self now]\" HOSTNAME=\"[[$task worker] hostname]\""
-		puts "[$self now]: $task map task start [$task chunk] [$task worker]"
+		#puts $stats "MapAttempt TASKID=\"$task\" TASK_ATTEMPT_ID=\"$self\" START_TIME=\"[$self now]\" HOSTNAME=\"[[$task worker] hostname]\""
+		#puts "[$self now]: $task map task start [$task chunk] [$task worker]"
 		$self set maptask $task
 
 		$task set alive_timer [$ns after $timers(alive) "$self send_alive $task"]
@@ -519,11 +519,11 @@ MRPerf/NodeApp instproc recv {data} {
 			return
 		}
 
-		puts "[$self now]: $task map finish [$task worker] [$task chunk]"
+		#puts "[$self now]: $task map finish [$task worker] [$task chunk]"
 
 		$ns cancel [$task set alive_timer]
 		$ns cancel [[$task set expire_timer] set eid]
-		puts $stats "MapAttempt TASKID=\"$task\" TASK_STATUS=\"SUCCESS\" FINISH_TIME=\"[$self now]\" HOSTNAME=\"[[$task worker] hostname]\""
+		#puts $stats "MapAttempt TASKID=\"$task\" TASK_STATUS=\"SUCCESS\" FINISH_TIME=\"[$self now]\" HOSTNAME=\"[[$task worker] hostname]\""
 
 		set chunkstr [$task chunk]
 		set alist [split $chunkstr ":"]
@@ -550,7 +550,7 @@ MRPerf/NodeApp instproc recv {data} {
 	} elseif {[string first "reduce task" $data] == 0} {
 		# reducers receive. One node can have multiple reducers.
 		set rtask [string range $data 12 end]
-		puts $stats "ReduceAttempt TASKID=\"$rtask\" TASK_ATTEMPT_ID=\"$self\" START_TIME=\"[$self now]\" HOSTNAME=\"[[$rtask worker] hostname]\""
+		#puts $stats "ReduceAttempt TASKID=\"$rtask\" TASK_ATTEMPT_ID=\"$self\" START_TIME=\"[$self now]\" HOSTNAME=\"[[$rtask worker] hostname]\""
 		$self out1 "reducer($rtask) started on node([$rtask worker])"
 
 		$self set reducetask $rtask
@@ -599,7 +599,7 @@ MRPerf/NodeApp instproc recv {data} {
 	} elseif {[string first "ghost map" $data] == 0} {
 		set alist [split $data]
 		set ghost_map [lindex $alist 2]
-		puts "[$self now]: ghost map $ghost_map found by $self"
+		#puts "[$self now]: ghost map $ghost_map found by $self"
 
 		$ghost_map mark_ghost
 
@@ -680,7 +680,7 @@ MRPerf/NodeApp instproc recv {data} {
 		$ns cancel [[$task set expire_timer] set eid]
 
 		set c [$rtask set counters]
-		puts $stats "ReduceAttempt TASKID=\"$rtask\" TASK_ATTEMPT_ID=\"[$self dst]\" TASK_STATUS=\"SUCCESS\" HOSTNAME=\"[[$rtask worker] hostname]\" SHUFFLE_FINISHED=\"[$c set shuffle_finished]\" SORT_FINISHED=\"[$c set sort_finished]\" FINISH_TIME=\"[$self now]\""
+		#puts $stats "ReduceAttempt TASKID=\"$rtask\" TASK_ATTEMPT_ID=\"[$self dst]\" TASK_STATUS=\"SUCCESS\" HOSTNAME=\"[[$rtask worker] hostname]\" SHUFFLE_FINISHED=\"[$c set shuffle_finished]\" SORT_FINISHED=\"[$c set sort_finished]\" FINISH_TIME=\"[$self now]\""
 		$rtask write-counters
 
 		$rtask set finish_time [$self now]
