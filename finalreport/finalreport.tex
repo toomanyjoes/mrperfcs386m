@@ -202,7 +202,7 @@ higher in an edge computing network than in a data center so the cost of redunda
 \subsection{Framework parameters}
 
 Framework parameters deal with data placement and scheduling algorithms.
-The distance of nodes relative the machine requesting jobs needs to
+The distance of nodes relative to the machine requesting jobs needs to
 be considered when partitioning data across available resources. In
 a data center with many compute nodes the wrong choice of data placement
 can affect performance to a degree, but is not nearly as costly as
@@ -258,7 +258,7 @@ in (b) were changed or added for the edge based MapReduce simulations.\label{fig
 \end{figure}
 
 
-Figure \ref{fig:MRPerf-arch} (a) shows the original MRPerf architecute.
+Figure \ref{fig:MRPerf-arch} (a) shows the original MRPerf architecture.
 The topology, data layout, and job specifications are provided as
 input in the form of XML and TCL code. The topology is provided in
 XML format which is parsed by a Python script. This script outputs
@@ -335,13 +335,12 @@ Topology Reader output a call to this code.
 
 \section{Simulations and Results\label{sec:Simulations-and-Results}}
 
-We conducted simulations in which we varied several aspects of the
-simulation including the number of nodes, chunk size, link bandwidth,
+We conducted simulations in which we varied several aspects including the number of nodes, chunk size, link bandwidth,
 and the number of map and reduce slots per node. The results presented
 in this section are the average over five simulations given the same
-parameters the only variable being the specific property that was being tested.
+parameters the only variable being the specific property that we were testing.
 All of the hosts in the edge simulations have specifications taken
-at random from the specifications presented in Table \ref{tab:hostSpecs}.
+at random from what is listed in Table \ref{tab:hostSpecs}.
 Each simulation consisted of a MapReduce job sorting one gigabyte
 of data. All statistically insignificant data points have been removed.
 
@@ -355,7 +354,7 @@ variable.\label{fig:chunkSize}}
 \end{figure}
 
 
-For the chunk size simulations we conducted two types of simulations,
+For examining the effects of chunk size on run times we conducted two types of simulations,
 one in which the nodes are in a double rack data center and one in
 which nodes are randomly distributed throughout the mapped portion
 of the Internet. For both types we used 50 node topologies which we
